@@ -1,0 +1,325 @@
+COMMUNICATIONS RESOURCE AVAILABILITY WORKSHEET,,,,,,,Frequency Band,,,Description,
+,,,,,,,Amateur,,,20240131,
+,,,,,,,,,,,
+Ch #,"Channel
+Configuration",Display Name,Channel/Repeater Name,RX Freq,"N/W
+L/C/U","Rx Tone,
+CC/TS/TG",TX Freq,"N/W
+L/C/U","Tx Tone,
+CC/TS/TG",Mode,Remarks
+Analog Voice — VHF High (2m),,,,,,,,,,,
+V01,Repeater,V01PSR,PSRG,146.9600,W,CSQ†,146.3600,W,103.5,A,coordination; WW7PSR; Allstar 2462
+V02,Simplex,V02PSO,PSRG Output,146.9600,W,CSQ,146.9600,W,103.5,A,coordination simplex
+V03,Repeater,V03DXC,WW DX Club,147.0000,W,CSQ†,146.4000,W,103.5,A,tactical; W7DX
+V04,Repeater,V04WSE,West Seattle VHF,145.1300,W,CSQ,144.5300,W,103.5,A,tactical; W7AW; shared non-protected
+⋮,,,,,,,,,,,
+V21,Simplex,V21652,Simplex Calling 146.52,146.5200,W,CSQ,146.5200,W,141.3,A,simplex calling
+V22,Simplex,V22654,Simplex 146.54,146.5400,W,CSQ,146.5400,W,141.3,A,simplex
+V23,Simplex,V23656,Simplex 146.56,146.5600,W,CSQ,146.5600,W,141.3,A,simplex
+V24,Simplex,V24658,Simplex 146.58,146.5800,W,CSQ,146.5800,W,141.3,A,simplex
+V25,Simplex,V25748,Simplex 147.48,147.4800,W,CSQ,147.4800,W,141.3,A,simplex; Shilshole Bay Hub
+V26,Simplex,V26752,Simplex 147.52,147.5200,W,CSQ,147.5200,W,141.3,A,simplex
+V27,Simplex,V27754,Simplex 147.54,147.5400,W,CSQ,147.5400,W,141.3,A,simplex
+V28,Simplex,V28756,Simplex 147.56,147.5600,W,CSQ,147.5600,W,141.3,A,simplex
+V29,Simplex,V29758,Simplex 147.58,147.5800,W,CSQ,147.5800,W,141.3,A,simplex
+V30,Simplex,V30760,Simplex 147.60,147.6000,W,CSQ,147.6000,W,141.3,A,simplex
+V31,Simplex,V31660,Simplex Cross-Band 146.60,146.6000,W,CSQ,146.6000,W,141.3,A,simplex cross-band link
+⋮,,,,,,,,,,,
+V41,Repeater,V41KCA,KC ARES Tiger,147.0800,W,CSQ†,147.6800,W,110.9,A,KC ARES; WA EMD R6; WW7STR
+V42,Repeater,V42SAR,KC SAR/ECC Rattlesnake,145.1100,W,CSQ†,144.5100,W,127.3,A,KC7SAR
+V43,Repeater,V43LED,K7LED Rattlesnake,146.8200,W,CSQ†,146.2200,W,103.5,A,NTS; SATERN
+V45,Repeater,V45BEA,BEARS Tiger VHF,145.3300,W,CSQ†,144.7300,W,179.9,A,K7NWS Tiger Mt W
+V46,Repeater,V46MSV,MST VAMC VHF,146.9000,W,CSQ†,146.3000,W,103.5,A,MST Tactical; WW7MST
+V47,Repeater,V47BLD,WA EMD Baldi Mt,147.1400,W,CSQ,147.7700,W,123.0,A,WB7DOB Baldi Mt
+V48,Repeater,V48BFW,WA EMD Baw Faw Pk,147.0600,W,CSQ†,147.6600,W,110.9,A,K7PG Baw Faw Pk; was V82
+⋮,,,,,,,,,,,
+V51,Repeater,V51KRK,Kirkland VHF,145.4900,W,CSQ,144.8900,W,103.5,A,K7LWH Bellevue
+V52,Repeater,V52RED,Redmond VHF,145.3100,W,CSQ†,144.7100,W,103.5,A,KC7IYE Redmond
+V53,Repeater,V53MRC,Mercer Is VHF,147.1600,W,CSQ†,147.7600,W,146.2,A,W7MIR Mercer Is
+V54,Repeater,V54ESF,ESFR VHF,147.1000,W,CSQ†,147.7000,W,123.0,A,KC7RAS Cougar Mt
+V56,Repeater,V56MPV,Maple Valley,147.2600,W,CSQ†,147.8600,W,103.5,A,KF7NPL Maple Valley
+V57,Repeater,V57KNT,Kent VHF,147.3200,W,CSQ†,147.9200,W,103.5,A,K7CST Kent
+V58,Repeater,V58AUB,Auburn VHF,147.2400,W,CSQ†,147.8400,W,123.0,A,K7SYE Auburn
+V59,Repeater,V59HLN,Highline ARC VHF,146.6600,W,CSQ†,146.0600,W,103.5,A,NC7G Seatac
+V60,Repeater,V60FDW,Federal Way VHF,147.0400,W,CSQ†,147.6400,W,103.5,A,WA7FW Federal Way
+V61,Repeater,V61BTH,Bothell,147.3400,W,CSQ,147.9400,W,100.0,A,K6RFK Woodinville
+⋮,,,,,,,,,,,
+V71,Repeater,V71SLY,Snohomish Co Lynwood,146.7800,W,CSQ,146.1800,W,D172,A,WA7DEM Lynwood
+V72,Repeater,V72SGF,Snohomish Co Granite Falls,146.9200,W,CSQ†,146.3200,W,123.0,A,WA7DEM Green Mt
+V73,Repeater,V73KSD,Kitsap Co Silverdale,145.4300,W,CSQ†,144.8300,W,88.5,A,KD7WDG Silverdale
+V74,Repeater,V74PGR,Pierce Co Grass,145.3700,W,CSQ,144.7700,W,136.5,A,W7AAO Grass Mt; WA EMD
+V75,Repeater,V75PCP,Pierce Co Cap Pk,145.4700,W,CSQ†,144.8700,W,100.0,A,K7CPR Capitol Pk; WA EMD
+V76,Repeater,V76ISL,Island Co South,147.2200,W,CSQ†,147.8200,W,127.3,A,W7AVM Clinton
+V77,Repeater,V77GRH,Gray's Harbor Co VHF,145.3900,W,CSQ,144.7900,W,118.8,A,W7EOC Cosmopolis
+V78,Repeater,V78KCR,Kittitas Co,147.3600,W,CSQ,147.9600,W,131.8,A,WR7KCR Cle Elum (Sky Meadows)
+⋮,,,,,,,,,,,
+V81,Repeater,V81GLD,WW7RA Gold VHF,146.6200,W,CSQ†,146.0200,W,103.5,A,wide area
+V83,Repeater,V83SLB,K7SLB Cougar,146.4750,W,CSQ,147.4750,W,110.9,A,wide area; note non-standard split
+V84,Repeater,V84SMP,WR7KCR Stampede Pass,147.3600,W,CSQ,147.9600,W,141.3,A,I-90 travel
+V85,Repeater,V85EBG,WR7KCR Ellensburg,146.7200,W,CSQ,146.1200,W,131.8,A,I-90 travel
+V86,Repeater,V86LAR,W7LT Larch Mt,146.8400,W,CSQ,146.2400,W,CSQ,A,I-5 travel; Multnomah Co (OR) ARES
+Analog Voice — UHF (70cm),,,,,,,,,,,
+U01,Repeater,U01CLM,Columbia Center,444.5500,W,CSQ†,449.5500,W,141.3,A,coordination; W7ACS; Allstar 48844
+U02,Simplex,U02CLO,Columbia Center Output,444.5500,W,CSQ,444.5500,W,141.3,A,coordination simplex
+U03,Repeater,U03BH1,Beacon Hill 1,440.5250,W,CSQ†,445.5250,W,141.3,A,tactical; W7ACS; Beacon Tower
+U04,Repeater,U04BH2,Beacon Hill 2,442.3000,W,CSQ†,447.3000,W,141.3,A,tactical; W7ACS; Beacon Tower; Allstar 48832
+U05,Repeater,U05CH1,Capitol Hill 1,443.0250,W,CSQ†,448.0250,W,141.3,MF,tactical; W7ACS; Kaiser Permanente
+U06,Repeater,U06CH2,Capitol Hill 2,442.8750,W,CSQ†,447.8750,W,141.3,A,tactical; W7ACS; Capitol Park
+U07,Repeater,U07MAG,Magnolia,443.4750,W,CSQ†,448.4750,W,141.3,A,tactical; W7ACS; Allstar 48836
+U08,Repeater,U08MPL,Maple Leaf,443.6500,W,CSQ†,448.6500,W,141.3,A,tactical; W7ACS
+U09,Repeater,U09LFP,Lake Forest Park,440.6000,W,CSQ†,445.6000,W,141.3,A,tactical; W7ACS; Allstar 48834
+U10,Repeater,U10QA1,Queen Anne 1,444.7000,W,CSQ†,449.7000,W,103.5,A,tactical; WW7SEA; Allstar 48845
+U11,Repeater,U11WSE,West Seattle UHF,441.8000,W,CSQ†,446.8000,W,141.3,A,tactical; W7AW
+U12,Repeater,U12SSC,South Seattle College,443.3750,W,CSQ†,448.3750,W,103.5,MF,tactical; K7RSD
+U13,Repeater,U13WCR,Westcrest,443.2000,W,CSQ†,448.2000,W,141.3,A,tactical; W7ACS
+U14,Repeater,U14QA2,Queen Anne 2,444.4250,W,CSQ†,449.4250,W,141.3,MF,tactical; WW7SEA; KOMO Tower
+U15,Repeater,U15CH3,Capitol Hill 3,444.3750,W,CSQ†,449.3750,W,88.5,MF,tactical; AJ7JA; Madison/Pine
+U16,Repeater,U16CH4,Capitol Hill 4,443.5250,W,CSQ†,448.5250,W,110.9,MP,tactical; K7SLB; Madison/Pine
+U17,Repeater,U17PR1,Portable Repeater 1,440.0000,W,CSQ†,445.0000,W,141.3,A,ACS portable; W7ACS
+U18,Repeater,U18PR2,Portable Repeater 2,443.0000,W,CSQ†,448.0000,W,141.3,A,ACS portable; W7ACS
+⋮,,,,,,,,,,,
+U21,Simplex,U21580,Simplex 445.800,445.8000,W,CSQ,445.8000,W,141.3,A,simplex
+U22,Simplex,U22582,Simplex 445.825,445.8250,W,CSQ,445.8250,W,141.3,A,simplex
+U23,Simplex,U23585,Simplex 445.850,445.8500,W,CSQ,445.8500,W,141.3,A,simplex
+U24,Simplex,U24587,Simplex 445.875,445.8750,W,CSQ,445.8750,W,141.3,A,simplex
+U25,Simplex,U25559,Simplex 445.900,445.9000,W,CSQ,445.9000,W,141.3,A,simplex
+U26,Simplex,U26597,Simplex 445.975,445.9750,W,CSQ,445.9750,W,141.3,A,simplex
+U27,Simplex,U27600,Simplex Calling 446.000,446.0000,W,CSQ,446.0000,W,141.3,A,simplex calling
+U28,Simplex,U28002,Simplex Cross-Band 440.025,440.0250,W,CSQ,440.0250,W,141.3,A,simplex cross-band link
+⋮,,,,,,,,,,,
+U41,Repeater,U41CPK,WA EMD Capitol Pk,444.9500,W,CSQ,449.9500,W,118.8,A,N7UJK; BeachNet
+U42,Repeater,U42MSV,MST VAMC UHF,443.5500,W,CSQ†,448.5500,W,103.5,A,WW7MST; MST tactical
+U43,Repeater,U43MSN,MST UWMC Northwest,444.8250,W,CSQ†,449.8250,W,103.5,A,WW7MST; MST tactical
+U44,Repeater,U44MST,MST Tacoma General Hosp,443.6750,W,CSQ†,448.6750,W,103.5,A,WW7MST; MST tactical
+U45,Repeater,U45MSO,MST St Peter Hosp Olympia,440.5500,W,CSQ†,445.5500,W,103.5,A,WW7MST; MST tactical
+U46,Repeater,U46ARC,Red Cross NW Region,441.5500,W,CSQ†,446.5500,W,103.5,A,WW7STR Cougar Mt
+⋮,,,,,,,,,,,
+U51,Repeater,U51SLN,Shoreline UHF,440.3000,W,CSQ,445.3000,W,103.5,A,W7AUX Shoreline; liaison preferred
+U52,Repeater,U52KRK,Kirkland UHF,441.0750,W,CSQ,446.0750,W,103.5,A,K7LWH Kirkland
+U53,Repeater,U53RED,Redmond UHF,440.6750,W,CSQ†,445.6750,W,103.5,A,N6OBY Redmond
+U54,Repeater,U54MER,Mercer Is UHF,440.1500,W,CSQ†,445.1500,W,103.5,A,W7MIR Mercer Is
+U55,Repeater,U55BEL,Bellevue,441.1000,W,CSQ†,446.1000,W,156.7,A,K7BEL Bellevue
+U56,Repeater,U56SAM,ESFR UHF,440.2500,W,CSQ†,445.2500,W,123.0,A,N7ERP Cougar Mt
+U57,Repeater,U57SQV,Snoq Valley UHF,441.8250,W,CSQ†,446.8250,W,103.5,A,KE7GFZ Cougar Mt
+U58,Repeater,U58SNQ,Snoqualmie UHF,444.9250,W,CSQ†,449.9250,W,85.4,A,N7SNO Snoqualmie
+U59,Repeater,U59DES,Des Moines,443.7000,W,CSQ,448.7000,W,123.0,A,WA7DES Des Moines
+U60,Repeater,U60RNT,Renton,441.9750,W,CSQ†,446.9750,W,103.5,A,K7FDF Renton
+U61,Repeater,U61HLN,Highline ARC UHF,443.1000,W,CSQ†,448.1000,W,103.5,A,WA7ST Seatac
+U62,Repeater,U62KDS,Bellevue Alternate,444.7750,W,CSQ,449.7750,W,173.8,A,KI7DS Bellevue
+U63,Repeater,U63FED,Federal Way UHF,442.9500,W,CSQ†,447.9500,W,103.5,MF,WA7FW Federal Way
+U64,Repeater,U64VSH,Vashon/Maury Is,443.5000,W,CSQ,448.5000,W,103.5,A,W7VMI Vashon Is
+U65,Repeater,U65BUR,Burien,441.1250,W,CSQ,446.1250,W,103.5,A,W7BUR Burien
+U66,Repeater,U66SL2,Shoreline UHF Alternate,442.8250,W,CSQ,447.8250,W,103.5,A,W7AUX Shoreline; in-city preferred
+U67,Repeater,U67NSE,"Northshore, Kenmore, LFP",442.0000,W,CSQ†,447.0000,W,141.3,A,NE7MC Kenmore
+⋮,,,,,,,,,,,
+U71,Repeater,U71SMT,Snohomish Co Mntlk Ter,443.7250,W,CSQ†,448.7250,W,103.5,A,WA7DEM Mountlake Terrace
+U72,Repeater,U72BAI,Bainbridge Is,444.4750,W,CSQ†,449.4750,W,103.5,A,W7NPC Bainbridge Is
+⋮,,,,,,,,,,,
+U81,Repeater,U81PER,PSE Rattlesnake,441.7750,W,CSQ†,446.7750,W,103.5,A,W7PSE Network
+U82,Repeater,U82PEB,PSE Baldi,441.7000,W,CSQ,446.7000,W,103.5,A,W7PSE Network
+U83,Repeater,U83PEG,PSE Green Mt,441.7500,W,CSQ,446.7500,W,103.5,A,W7PSE Network
+U84,Repeater,U84PEA,PSE Anacortes,441.7250,W,CSQ,446.7250,W,103.5,A,W7PSE Network
+U85,Repeater,U85PEY,PSE Mt Blyn,442.4250,W,CSQ,447.4250,W,103.5,A,W7PSE Network
+U86,Repeater,U86PES,PSE Sumner,443.6250,W,CSQ,448.6250,W,103.5,A,W7PSE Network
+U87,Repeater,U87PPC,K7PP Cougar,443.4000,W,CSQ†,448.4000,W,123.0,A,K7PP Network; CTCSS 151.4
+U88,Repeater,U88PPG,K7PP Gold,441.2000,W,CSQ†,446.2000,W,123.0,A,K7PP Network
+U89,Repeater,U89PPK,K7PP KO Pk,441.3000,W,CSQ†,446.3000,W,123.0,A,K7PP Network; CTCSS 151.4
+U90,Repeater,U90TIG,WA7HJR Tiger,444.6500,W,CSQ†,449.6500,W,131.8,A,Evergreen Intertie
+U91,Repeater,U91GLD,WW7RA Gold UHF,442.6500,W,CSQ†,447.6500,W,103.5,A,wide area
+U92,Repeater,U92BCK,K7DK Buck Mt,440.9500,W,CSQ†,445.9500,W,110.9,A,wide area
+U93,Repeater,U93LSQ,K7LWH Lincoln Square,444.6000,W,CSQ,449.6000,W,103.5,A,K7LWH Bellevue
+U94,Repeater,U94SLB,K7SLB Cougar,440.1000,W,CSQ†,445.1000,W,110.9,MP,K7SLB Cougar Mt (formerly Ch 9)
+Analog Voice — VHF Low (6m),,,,,,,,,,,
+L01,Repeater,L01WSE,West Seattle,53.2900,W,CSQ,51.5900,W,100.0,A,W7AW West Seattle
+L02,Repeater,L02PSR,PSRG,52.8700,W,CSQ,51.1700,W,103.5,A,WW7PSR Capitol Hill/Beacon Hill
+⋮,,,,,,,,,,,
+L21,Simplex,L21252,Simplex Calling 52.525,52.5250,W,CSQ,52.5250,W,CSQ,A,simplex calling
+L22,Simplex,L22231,Simplex 52.31,52.3100,W,CSQ,52.3100,W,CSQ,A,simplex
+L23,Simplex,L23233,Simplex 52.33,52.3300,W,CSQ,52.3300,W,CSQ,A,simplex
+L24,Simplex,L24235,Simplex 52.35,52.3500,W,CSQ,52.3500,W,CSQ,A,simplex
+L25,Simplex,L25237,Simplex 52.37,52.3700,W,CSQ,52.3700,W,CSQ,A,simplex
+L26,Simplex,L26239,Simplex 52.39,52.3900,W,CSQ,52.3900,W,CSQ,A,simplex
+L27,Simplex,L27241,Simplex 52.41,52.4100,W,CSQ,52.4100,W,CSQ,A,simplex
+L28,Simplex,L28243,Simplex 52.43,52.4300,W,CSQ,52.4300,W,CSQ,A,simplex
+L29,Simplex,L29245,Simplex 52.45,52.4500,W,CSQ,52.4500,W,CSQ,A,simplex
+L30,Simplex,L30247,Simplex 52.47,52.4700,W,CSQ,52.4700,W,CSQ,A,simplex
+L31,Simplex,L31249,Simplex 52.49,52.4900,W,CSQ,52.4900,W,CSQ,A,simplex
+L32,Simplex,L32251,Simplex 52.51,52.5100,W,CSQ,52.5100,W,CSQ,A,simplex
+L33,Simplex,L33253,Simplex 52.53,52.5300,W,CSQ,52.5300,W,CSQ,A,simplex
+L34,Simplex,L34255,Simplex 52.55,52.5500,W,CSQ,52.5500,W,CSQ,A,simplex
+L35,Simplex,L35259,Data Simplex 52.59,52.5900,W,CSQ,52.5900,W,CSQ,D,simplex data; also D71
+⋮,,,,,,,,,,,
+L41,Repeater,L41GRS,WA EMD Grass Mt,53.8700,W,CSQ,52.1700,W,100.0,A,W7SIX Grass Mt
+L43,Repeater,L43ASH,WA DNR Ashford,53.3900,W,CSQ,51.6900,W,100.0,A,K7TGU Ashford
+⋮,,,,,,,,,100.0,,
+L52,Repeater,L52RED,Redmond,53.0700,W,CSQ,51.3700,W,100.0,A,KC7IYE Redmond
+L53,Repeater,L53KRK,Kirkland,53.1700,W,CSQ,51.4700,W,100,A,K7LWH Kirkland
+⋮,,,,,,,,,,,
+L71,Repeater,L71RVR,Pierce Co Grass Mt,53.6700,W,CSQ†,51.9700,W,136.5,A,K7DKK
+L72,Repeater,L72BAI,Kitsap Co; Bainbridge Is,53.4300,W,CSQ,51.7300,W,100,A,W7NPC
+L73,Repeater,L73BLY,Blyn Mt,53.3700,W,CSQ,51.6700,W,100.0,A,WR7V Blyn Mt; WA EMD R2
+⋮,,,,,,,,,,,
+L81,Repeater,L81BFW,Baw Faw Pk,52.9300,W,CSQ†,51.2300,W,100,A,K7CH Baw Faw Pk
+L82,Repeater,L82SOU,South Mt,53.0300,W,CSQ,51.3300,W,100.0,A,K7CH South Mt
+L83,Repeater,L83EVT,Everett,53.1300,W,CSQ,51.4300,W,100.0,A,KF7T Everett
+L84,Repeater,L84TAC,Tacoma Baldi,53.1900,W,CSQ,51.4900,W,100,A,K7HW Tacoma Baldi
+L85,Repeater,L85CNS,Mt Constitution,53.2100,W,CSQ,51.5100,W,100,A,W7MBY Mt Constitution
+L86,Repeater,L86BAL,Baldi,53.3300,W,CSQ,51.6300,W,100.0,A,N7OEP Baldi
+L87,Repeater,L87SUL,Sultan,53.3500,W,CSQ,51.6500,W,100.0,A,W7SKY Sultan
+L88,Repeater,L88EAT,Eatonville,53.4100,W,CSQ,51.7100,W,100,A,W7PFR Eatonville
+L89,Repeater,L89CPK,Capitol Pk,53.5700,W,CSQ,51.8700,W,100.0,A,W7SIX Capitol Pk
+L90,Repeater,L90CUL,Cultas Mt,53.5900,W,CSQ,51.8900,W,100.0,A,K7OET Cultas Mt
+L91,Repeater,L91COU,Cougar Mt,53.8300,W,CSQ,52.1300,W,123.0,A,N7ERP Cougar Mt
+Analog Voice — VHF 220 MHz/1.25m,,,,,,,,,,,
+⋮,,,,,,,,,,,
+T21,Simplex,T21340,Simplex 223.40,223.4000,W,CSQ,223.4000,W,141.3,A,"simplex voice, shared with data"
+T22,Simplex,T21342,Simplex 223.42,223.4200,W,CSQ,223.4200,W,141.3,A,"simplex voice, shared with data"
+T23,Simplex,T21344,Simplex 223.44,223.4400,W,CSQ,223.4400,W,141.3,A,"simplex voice, shared with data"
+T24,Simplex,T21346,Simplex 223.46,223.4600,W,CSQ,223.4600,W,141.3,A,"simplex voice, shared with data"
+T25,Simplex,T21348,Simplex 223.48,223.4800,W,CSQ,223.4800,W,141.3,A,"simplex voice, shared with data"
+T26,Simplex,T21350,Simplex Calling 223.5,223.5000,W,CSQ,223.5000,W,141.3,A,simplex calling
+T27,Simplex,T27409,Cross-Band 224.09,224.0900,W,CSQ,224.0900,W,141.3,A,cross-band repeat
+⋮,,,,,,,,,,,
+T41,Repeater,T41EMD,WA EMD Camp Murray,223.8400,W,CSQ,222.2400,W,100.0,A,W7EMD; PNW220 Network (planned)
+T42,Repeater,T42LED,K7LED E Tiger Mt,224.1200,W,CSQ†,222.5200,W,103.5,A,NTS; SATERN
+T43,Repeater,T43BEA,BEARS W Tiger Mt,224.3400,W,CSQ,222.7400,W,103.5,A,K7NWS; PNW220 Network
+T44,Repeater,T44MST,MST Beacon Hill,224.6800,W,CSQ,223.0800,W,100.0,A,MST tactical; WW7MST
+⋮,,,,,,,,,,,
+T51,Repeater,T51SLN,Shoreline,224.0200,W,CSQ†,222.4200,W,103.5,A,W7AUX
+T52,Repeater,T52KRK,Kirkland,224.3600,W,CSQ†,222.7600,W,103.5,A,K7LWH
+⋮,,,,,,,,,,,
+T71,Repeater,T71SMV,Snohomish Co Marysville,224.3800,W,CSQ†,222.7800,W,103.8,A,WA7DEM
+⋮,,,,,,,,,,,
+T81,Repeater,T81LFP,Lake Forest Park,224.2200,W,CSQ,222.6200,W,103.5,A,WA7FUS; PNW220 Network
+T82,Repeater,T82BAL,Baldi Mt,224.8800,W,CSQ,223.2800,W,103.5,A,W7WRG; PNW220 Network
+T83,Repeater,T83BFW,Baw Faw Pk,224.0800,W,CSQ,222.4800,W,103.5,A,W7WRG; PNW220 Network
+T84,Repeater,T84HST,Haystack Mt ,224.2800,W,CSQ,222.6800,W,103.5,A,W7WRG; PNW220 Network
+T85,Repeater,T85COU,Cougar Mt,224.4400,W,CSQ,222.8400,W,103.5,A,KF7BJI; PNW220 Network
+Data,,,,,,,,,,,
+"The following channels above 50 MHz are allocated by WWARA for non-coordinated digital/data operations.
+All W7ACS nodes use VARA FM. Except where noted, other data nodes use Packet (1200 baud AX.25)",,,,,,,,,,,
+D01,Simplex,144350,Data 144.350,144.3500,W,CSQ,144.3500,W,CSQ,,
+D02,Simplex,144390,Data 144.390,144.3900,W,CSQ,144.3900,W,CSQ,,APRS
+D03,Simplex,144900,Data 144.900,144.9000,W,CSQ,144.9000,W,CSQ,,KD7DK-10 VARA
+D04,Simplex,144910,Data 144.910,144.9100,W,CSQ,144.9100,W,CSQ,,
+D05,Simplex,144930,Data 144.930,144.9300,W,CSQ,144.9300,W,CSQ,,
+D06,Simplex,144950,Data 144.950,144.9500,W,CSQ,144.9500,W,CSQ,,W7EFR-10; K7CST-10
+D07,Simplex,144970,Data 144.970,144.9700,W,CSQ,144.9700,W,CSQ,,
+D08,Simplex,144975,Data 144.975,144.9750,W,CSQ,144.9750,W,CSQ,,
+D09,Simplex,144990,Data 144.990,144.9900,W,CSQ,144.9900,W,CSQ,,ACS data simplex
+D10,Simplex,145010,Data 145.010,145.0100,W,CSQ,145.0100,W,CSQ,,
+D11,Simplex,145030,Data 145.030,145.0300,W,CSQ,145.0300,W,CSQ,,W7MIR-10 VARA; WA7AUB-10
+D12,Simplex,145050,Data 145.050,145.0500,W,CSQ,145.0500,W,CSQ,,K7NHV-10 VARA; W7AUX-10
+D13,Simplex,145070,Data 145.070,145.0700,W,CSQ,145.0700,W,CSQ,,W7VMI-10 VARA
+D14,Simplex,145090,Data 145.090,145.0900,W,CSQ,145.0900,W,CSQ,,
+D15,Simplex,145100,Data 145.100,145.1000,W,CSQ,145.1000,W,CSQ,,
+D16,Simplex,145510,Data 145.510,145.5100,W,CSQ,145.5100,W,CSQ,,ACS data simplex; Digital Voice simplex
+D17,Simplex,145530,Data 145.530,145.5300,W,CSQ,145.5300,W,CSQ,,
+D18,Simplex,145550,Data 145.550,145.5500,W,CSQ,145.5500,W,CSQ,,
+D19,Simplex,145570,Data 145.570,145.5700,W,CSQ,145.5700,W,CSQ,,
+D20,Simplex,145590,Data 145.590,145.5900,W,CSQ,145.5900,W,CSQ,,
+D21,Simplex,145610,Data 145.610,145.6100,W,CSQ,145.6100,W,CSQ,,
+D22,Simplex,145630,Data 145.630,145.6300,W,CSQ,145.6300,W,CSQ,,W7EFR-12; KD7WDG-10
+D23,Simplex,145650,Data 145.650,145.6500,W,CSQ,145.6500,W,CSQ,,W7AUX-11 VARA
+D24,Simplex,145670,Data 145.670,145.6700,W,CSQ,145.6700,W,CSQ,,K7REM-10
+D25,Simplex,145690,Data 145.690,145.6900,W,CSQ,145.6900,W,CSQ,,W7EFR-2
+D26,Simplex,145710,Data 145.710,145.7100,W,CSQ,145.7100,W,CSQ,,
+D27,Simplex,145730,Data 145.730,145.7300,W,CSQ,145.7300,W,CSQ,,
+D28,Simplex,145750,Data 145.750,145.7500,W,CSQ,145.7500,W,CSQ,,
+D29,Simplex,145770,Data 145.770,145.7700,W,CSQ,145.7700,W,CSQ,,
+D30,Simplex,145790,Data 145.790,145.7900,W,CSQ,145.7900,W,CSQ,,Digital Voice simplex
+⋮,,,,,,,,,,,
+D31,Simplex,430800,Data 430.800,430.8000,W,CSQ,430.8000,W,CSQ,,W7ACS-10 Beacon A
+D32,Simplex,430825,Data 430.825,430.8250,W,CSQ,430.8250,W,CSQ,,W7MIR-11 VARA FM
+D33,Simplex,430850,Data 430.850,430.8500,W,CSQ,430.8500,W,CSQ,,W7ACS-12 First Hill A
+D34,Simplex,430875,Data 430.875,430.8750,W,CSQ,430.8750,W,CSQ,,W7ACS-9 Magnolia
+D35,Simplex,430900,Data 430.900,430.9000,W,CSQ,430.9000,W,CSQ,,
+D36,Simplex,430925,Data 430.925,430.9250,W,CSQ,430.9250,W,CSQ,,
+D37,Simplex,430950,Data 430.950,430.9500,W,CSQ,430.9500,W,CSQ,,W7ACS-14 Capitol Park A
+D38,Simplex,430975,Data 430.975,430.9750,W,CSQ,430.9750,W,CSQ,,
+D39,Simplex,431000,Data 431.000,431.0000,W,CSQ,431.0000,W,CSQ,,W7ACS-8 Broadview (Northwest)
+D40,Simplex,439800,Data 439.800,439.8000,W,CSQ,439.8000,W,CSQ,,W7ACS-11 Beacon B
+D41,Simplex,439825,Data 439.825,439.8250,W,CSQ,439.8250,W,CSQ,,NC7G-10 VARA FM
+D42,Simplex,439850,Data 439.850,439.8500,W,CSQ,439.8500,W,CSQ,,W7AW-10 VARA FM (planned)
+D43,Simplex,439875,Data 439.875,439.8750,W,CSQ,439.8750,W,CSQ,,W7ACS Magnolia B (planned)
+D44,Simplex,439900,Data 439.900,439.9000,W,CSQ,439.9000,W,CSQ,,ACS data simplex
+D45,Simplex,439925,Data 439.925,439.9250,W,CSQ,439.9250,W,CSQ,,
+D46,Simplex,439950,Data 439.950,439.9500,W,CSQ,439.9500,W,CSQ,,W7ACS-15 Capitol Park B
+D47,Simplex,439975,Data 439.975,439.9750,W,CSQ,439.9750,W,CSQ,,
+D48,Simplex,440800,Data 440.800,440.8000,W,CSQ,440.8000,W,CSQ,,
+D49,Simplex,440825,Data 440.825,440.8250,W,CSQ,440.8250,W,CSQ,,ACS data simplex
+D50,Simplex,440850,Data 440.850,440.8500,W,CSQ,440.8500,W,CSQ,,W7ACS-13 First Hill; KD7WDG VARA
+D51,Simplex,440875,Data 440.875,440.8750,W,CSQ,440.8750,W,CSQ,,WA7DEM-11
+D52,Simplex,440900,Data 440.900,440.9000,W,CSQ,440.9000,W,CSQ,,WA7AUB-10 VARA
+D53,Simplex,440925,Data 440.925,440.9250,W,CSQ,440.9250,W,CSQ,,
+D54,Simplex,440950,Data 440.950,440.9500,W,CSQ,440.9500,W,CSQ,,
+D55,Simplex,441000,Data Calling 441.000,441.0000,W,CSQ,441.0000,W,CSQ,,Digital Voice simplex calling
+⋮,,,,,,,,,,,
+D61,Simplex,D50600,Data 50.60,50.6000,W,CSQ,50.6000,W,CSQ,,
+D62,Simplex,D50620,Data 50.62,50.6200,W,CSQ,50.6200,W,CSQ,,
+D63,Simplex,D50640,Data 50.64,50.6400,W,CSQ,50.6400,W,CSQ,,
+D64,Simplex,D50660,Data 50.66,50.6600,W,CSQ,50.6600,W,CSQ,,
+D65,Simplex,D50680,Data 50.68,50.6800,W,CSQ,50.6800,W,CSQ,,
+D66,Simplex,D50700,Data 50.70,50.7000,W,CSQ,50.7000,W,CSQ,,
+D67,Simplex,D50720,Data 50.72,50.7200,W,CSQ,50.7200,W,CSQ,,
+D68,Simplex,D50740,Data 50.74,50.7400,W,CSQ,50.7400,W,CSQ,,
+D69,Simplex,D50760,Data 50.76,50.7600,W,CSQ,50.7600,W,CSQ,,
+D70,Simplex,D50780,Data 50.78,50.7800,W,CSQ,50.7800,W,CSQ,,
+D71,Simplex,D52590,Data 52.59,52.5900,W,CSQ,52.5900,W,CSQ,,ACS simplex data
+D72,Simplex,D52610,Data 52.61,52.6100,W,CSQ,52.6100,W,CSQ,,
+D73,Simplex,D52630,Data 52.63,52.6300,W,CSQ,52.6300,W,CSQ,,
+D74,Simplex,D52650,Data 52.65,52.6500,W,CSQ,52.6500,W,CSQ,,
+D75,Simplex,D52670,Data 52.67,52.6700,W,CSQ,52.6700,W,CSQ,,
+D76,Simplex,D52690,Data 52.69,52.6900,W,CSQ,52.6900,W,CSQ,,
+D77,Simplex,D52710,Data 52.71,52.7100,W,CSQ,52.7100,W,CSQ,,
+D78,Simplex,D52730,Data 52.73,52.7300,W,CSQ,52.7300,W,CSQ,,
+D79,Simplex,D52750,Data 52.75,52.7500,W,CSQ,52.7500,W,CSQ,,
+D80,Simplex,D52770,Data 52.77,52.7700,W,CSQ,52.7700,W,CSQ,,
+D81,Simplex,D52790,Data 52.79,52.7900,W,CSQ,52.7900,W,CSQ,,
+⋮,,,,,,,,,,,
+D82,Simplex,223400,Data 223.40,223.4000,W,CSQ,223.4000,W,CSQ,,shared with simplex voice
+D83,Simplex,223420,Data 223.42,223.4200,W,CSQ,223.4200,W,CSQ,,shared with simplex voice
+D84,Simplex,223440,Data 223.44,223.4400,W,CSQ,223.4400,W,CSQ,,shared with simplex voice
+D85,Simplex,223460,Data 223.46,223.4600,W,CSQ,223.4600,W,CSQ,,shared with simplex voice
+D86,Simplex,223480,Data 223.48,223.4800,W,CSQ,223.4800,W,CSQ,,shared with simplex voice
+D87,Simplex,223570,Data 223.57,223.5700,W,CSQ,223.5700,W,CSQ,,within 100 kHz data channel #1
+D88,Simplex,223590,Data 223.59,223.5900,W,CSQ,223.5900,W,CSQ,,within 100 kHz data channel #1
+D89,Simplex,223610,Data 223.61,223.6100,W,CSQ,223.6100,W,CSQ,,within 100 kHz data channel #1
+D90,Simplex,223630,Data 223.63,223.6300,W,CSQ,223.6300,W,CSQ,,within 100 kHz data channel #1
+D91,Simplex,223650,Data 223.65,223.6500,W,CSQ,223.6500,W,CSQ,,within 100 kHz data channel #1
+D92,Simplex,223670,Data 223.67,223.6700,W,CSQ,223.6700,W,CSQ,,within 100 kHz data channel #2
+D93,Simplex,223690,Data 223.69,223.6900,W,CSQ,223.6900,W,CSQ,,within 100 kHz data channel #2
+D94,Simplex,223710,Data 223.71,223.7100,W,CSQ,223.7100,W,CSQ,,within 100 kHz data channel #2
+D95,Simplex,223730,Data 223.73,223.7300,W,CSQ,223.7300,W,CSQ,,within 100 kHz data channel #2
+D96,Simplex,223750,Data 223.75,223.7500,W,CSQ,223.7500,W,CSQ,,within 100 kHz data channel #2
+Digital Voice (DMR),,,,,,,,,,,
+"The following information is included for reference only. For current official information, see seattledmr.org and pnwdigital.net 
+Talkgroups are listed on the 'DMR Talkgroups' worksheet. Low power simplex and repeater channels have been
+allocated by WWARA for non-coordinated use, e.g., with DV hotspots.",,,,,,,,,,,
+,Repeater,LFP,Seattle/North,441.0250,N,CC2,446.0250,N,CC2,D,W7ACS; Lake Forest Park; Seattle DMR
+,Repeater,SCE,Seattle/Central,440.7750,N,CC2,445.7750,N,CC2,D,WW7PSR; Capitol Park; Seattle DMR
+,Repeater,SWE,Seattle/West,440.9750,N,CC2,445.9750,N,CC2,D,W7AW; Westcrest; Seattle DMR
+,Repeater,BWT,BEARS/W Tiger,442.0750,N,CC2,447.0750,N,CC2,D,W7NWS; W Tiger Mt; Seattle DMR
+,Repeater,BUC,Buck Mt,440.7625,N,CC2,445.7625,N,CC2,D,Buck Mt; Seattle DMR
+,Repeater,SME,Seattle/Metro,441.3250,N,CC1,446.3250,N,CC1,D,K7SLB; Downtown
+,Repeater,SCO,Seattle/Cougar Mt,441.2875,N,CC1,446.2875,N,CC1,D,N7ERP; aka Bellevue
+,Repeater,SSO,Seattle/South,440.9250,N,CC1,445.9250,N,CC1,D,KF7BJI; Rainier Valley
+,Repeater,STI,Seattle/Tiger Mt,442.0250,N,CC1,447.0250,N,CC1,D,W7WWI; aka Issaquah
+,Simplex,Sim V01,DMR Simplex 145.79,145.7900,N,CC1/TS1/TG99,145.7900,N,CC1/TS1/TG99,D,DMR simplex
+,Simplex,Sim V02,DMR Simplex 145.51,145.5100,N,CC1/TS1/TG99,145.5100,N,CC1/TS1/TG99,D,DMR simplex
+,Simplex,Sim U01,DMR Simplex Calling 441.0,441.0000,N,CC1/TS1/TG99,441.0000,N,CC1/TS1/TG99,D,DMR simplex calling
+,Simplex,Sim U02,DMR Simplex 446.5,446.5000,N,CC1/TS1/TG99,446.5000,N,CC1/TS1/TG99,D,DMR simplex
+,Simplex,Sim U03,DMR Simplex 446.075,446.0750,N,CC1/TS1/TG99,446.0750,N,CC1/TS1/TG99,D,DMR simplex
+,Simplex,Sim U04,DMR Simplex 443.45,443.4500,N,CC1/TS1/TG99,443.4500,N,CC1/TS1/TG99,D,DMR simplex
+,Simplex,Sim U05,DMR LP Simplex 430.4125,430.4125,N,CC1/TS1/TG99,430.4125,N,CC1/TS1/TG99,D,DMR LP (≤5W) simplex
+,Simplex,Sim U06,DMR LP Simplex 439.4125,439.4125,N,CC1/TS1/TG99,439.4125,N,CC1/TS1/TG99,D,DMR LP (≤5W) simplex
+,Simplex,Sim U07,DMR LP Simplex 430.425,430.4250,N,CC1/TS1/TG99,430.4250,N,CC1/TS1/TG99,D,DMR LP (≤5W) simplex
+,Simplex,Sim U08,DMR LP Simplex 439.425,439.4250,N,CC1/TS1/TG99,439.4250,N,CC1/TS1/TG99,D,DMR LP (≤5W) simplex
+,Repeater,Rpt U09R,DMR LP Repeater 430.4375 +9,430.4375,N,TS1/TG3181,439.4375,N,TS1/TG3181,D,DMR LP (≤5W) repeater
+,Repeater,Rpt U10R,DMR LP Repeater 430.45 +9,430.4500,N,TS1/TG3181,439.4500,N,TS1/TG3181,D,DMR LP (≤5W) repeater
+,Repeater,Rpt U11R,DMR LP Repeater 430.4625 +9,430.4625,N,TS1/TG3181,439.4625,N,TS1/TG3181,D,DMR LP (≤5W) repeater
+,Repeater,Rpt U12R,DMR LP Repeater 430.475 +9,430.4750,N,TS1/TG3181,439.4750,N,TS1/TG3181,D,DMR LP (≤5W) repeater
+,,,,,,,,,,,
+"Continuous tone squelch (CTCSS) should be disabled unless needed to reduce co-channel interference or to block non-voice transmissions. ""CSQ†"" indicates a that a repeater provides an RX Tone. Except where noted, RX Tone is same as TX Tone.",,,,,,,,,,,
+"The convention calls for frequency lists to show four digits after the decimal place, followed by either an “N” or a “W”, depending on whether the frequency is narrow or wide band. Mode refers to analog, digital, or mixed mode. “A” indicates analog, ""X"" indicates AX.25 packet, ""S"" indicates D-STAR, ""D"" indicates DMR, ""F"" indicates System Fusion (C4FM), and ""P"" indicates Project 25. The prefix ""M"" indicates analog/digital mixed mode.  All channels are shown as if programmed in a control station, mobile or portable radio. Repeater and base stations must be programmed with the Rx and Tx reversed.",,,,,,,,,,,
+ICS 217A Excel (Modified for Seattle ACS),,,,,,,,,,,11/2018

@@ -1,36 +1,36 @@
 ,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment,
-110,53.2900,51.5900,1.7000 MHz,Minus,FM,L01WSE,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,West Seattle; W7AW West Seattle
-111,52.8700,51.1700,1.7000 MHz,Minus,FM,L02PSR,Y,Tone,103.5,,Scan, 5 kHz, N, High,N,N,PSRG; WW7PSR Capitol Hill/Beacon Hill
-112,52.5250,52.5250,,Simplex,FM,L21SCL,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex Calling 52.525; simplex calling
-113,52.3100,52.3100,,Simplex,FM,L22S31,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.31; simplex
-114,52.3300,52.3300,,Simplex,FM,L23S33,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.33; simplex
-115,52.3500,52.3500,,Simplex,FM,L24S35,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.35; simplex
-116,52.3700,52.3700,,Simplex,FM,L25S37,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.37; simplex
-117,52.3900,52.3900,,Simplex,FM,L26S39,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.39; simplex
-118,52.4100,52.4100,,Simplex,FM,L27S41,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.41; simplex
-119,52.4300,52.4300,,Simplex,FM,L28S43,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.43; simplex
-120,52.4500,52.4500,,Simplex,FM,L29S45,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.45; simplex
-121,52.4700,52.4700,,Simplex,FM,L30S47,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.47; simplex
-122,52.4900,52.4900,,Simplex,FM,L31S49,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.49; simplex
-123,52.5100,52.5100,,Simplex,FM,L32S51,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.51; simplex
-124,52.5300,52.5300,,Simplex,FM,L33S53,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.53; simplex
-125,52.5500,52.5500,,Simplex,FM,L34S55,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.55; simplex
-126,52.5900,52.5900,,Simplex,FM,L35D71,Y,None,,,Scan, 5 kHz, N, High,N,N,Data Simplex 52.59; simplex data
-127,53.8700,52.1700,1.7000 MHz,Minus,FM,L41GRS,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,WA EMD Grass Mt; W7SIX Grass Mt
-128,53.3900,51.6900,1.7000 MHz,Minus,FM,L43ASH,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,WA DNR Ashford; K7TGU Ashford
-129,53.0700,51.3700,1.7000 MHz,Minus,FM,L52RED,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,Redmond; KC7IYE Redmond
-130,53.1700,51.4700,1.7000 MHz,Minus,FM,L53KRK,Y,Tone,100,,Scan, 5 kHz, N, High,N,N,Kirkland; K7LWH Kirkland
-131,53.6700,51.9700,1.7000 MHz,Minus,FM,L71RVR,Y,Tone,136.5,,Scan, 5 kHz, N, High,N,N,Pierce Co Grass Mt; K7DKK
-132,53.4300,51.7300,1.7000 MHz,Minus,FM,L72BAI,Y,Tone,100,,Scan, 5 kHz, N, High,N,N,Kitsap Co; Bainbridge Is; W7NPC
-133,53.3700,51.6700,1.7000 MHz,Minus,FM,L73BLY,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,Blyn Mt; WR7V Blyn Mt; WA EMD R2
-134,52.9300,51.2300,1.7000 MHz,Minus,FM,L81BFW,Y,Tone,100,,Scan, 5 kHz, N, High,N,N,Baw Faw Pk; K7CH Baw Faw Peak
-135,53.0300,51.3300,1.7000 MHz,Minus,FM,L82SOU,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,South Mt; K7CH South Mountain
-136,53.1300,51.4300,1.7000 MHz,Minus,FM,L83EVT,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,Everett; KF7T Everett
-137,53.1900,51.4900,1.7000 MHz,Minus,FM,L84TAC,Y,Tone,100,,Scan, 5 kHz, N, High,N,N,Tacoma Baldi; K7HW Tacoma Baldi
-138,53.2100,51.5100,1.7000 MHz,Minus,FM,L85CNS,Y,Tone,100,,Scan, 5 kHz, N, High,N,N,Mt Constitution; W7MBY Mt Constitution
-139,53.3300,51.6300,1.7000 MHz,Minus,FM,L86BAL,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,Baldi; N7OEP Baldi
-140,53.3500,51.6500,1.7000 MHz,Minus,FM,L87SUL,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,Sultan; W7SKY Sultan
-141,53.4100,51.7100,1.7000 MHz,Minus,FM,L88EAT,Y,Tone,100,,Scan, 5 kHz, N, High,N,N,Eatonville; W7PFR Eatonville
-142,53.5700,51.8700,1.7000 MHz,Minus,FM,L89CPK,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,Capitol Peak; W7SIX Capitol Peak
-143,53.5900,51.8900,1.7000 MHz,Minus,FM,L90CUL,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,Cultas Mt; K7OET Cultas Mt
-144,53.8300,52.1300,1.7000 MHz,Minus,FM,L91COU,Y,Tone,123.0,,Scan, 5 kHz, N, High,N,N,Cougar Mt; N7ERP Cougar Mt
+111,53.2900,51.5900,1.7000 MHz,Minus,FM,L01WSE,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,West Seattle; W7AW West Seattle
+112,52.8700,51.1700,1.7000 MHz,Minus,FM,L02PSR,Y,Tone,103.5,,Scan, 5 kHz, N, High,N,N,PSRG; WW7PSR Capitol Hill/Beacon Hill
+113,52.5250,52.5250,,Simplex,FM,L21252,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex Calling 52.525; simplex calling
+114,52.3100,52.3100,,Simplex,FM,L22231,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.31; simplex
+115,52.3300,52.3300,,Simplex,FM,L23233,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.33; simplex
+116,52.3500,52.3500,,Simplex,FM,L24235,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.35; simplex
+117,52.3700,52.3700,,Simplex,FM,L25237,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.37; simplex
+118,52.3900,52.3900,,Simplex,FM,L26239,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.39; simplex
+119,52.4100,52.4100,,Simplex,FM,L27241,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.41; simplex
+120,52.4300,52.4300,,Simplex,FM,L28243,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.43; simplex
+121,52.4500,52.4500,,Simplex,FM,L29245,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.45; simplex
+122,52.4700,52.4700,,Simplex,FM,L30247,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.47; simplex
+123,52.4900,52.4900,,Simplex,FM,L31249,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.49; simplex
+124,52.5100,52.5100,,Simplex,FM,L32251,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.51; simplex
+125,52.5300,52.5300,,Simplex,FM,L33253,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.53; simplex
+126,52.5500,52.5500,,Simplex,FM,L34255,Y,None,,,Scan, 5 kHz, N, High,N,N,Simplex 52.55; simplex
+127,52.5900,52.5900,,Simplex,FM,L35259,Y,None,,,Scan, 5 kHz, N, High,N,N,Data Simplex 52.59; simplex data; also D71
+128,53.8700,52.1700,1.7000 MHz,Minus,FM,L41GRS,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,WA EMD Grass Mt; W7SIX Grass Mt
+129,53.3900,51.6900,1.7000 MHz,Minus,FM,L43ASH,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,WA DNR Ashford; K7TGU Ashford
+130,53.0700,51.3700,1.7000 MHz,Minus,FM,L52RED,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,Redmond; KC7IYE Redmond
+131,53.1700,51.4700,1.7000 MHz,Minus,FM,L53KRK,Y,Tone,100,,Scan, 5 kHz, N, High,N,N,Kirkland; K7LWH Kirkland
+132,53.6700,51.9700,1.7000 MHz,Minus,FM,L71RVR,Y,Tone,136.5,,Scan, 5 kHz, N, High,N,N,Pierce Co Grass Mt; K7DKK
+133,53.4300,51.7300,1.7000 MHz,Minus,FM,L72BAI,Y,Tone,100,,Scan, 5 kHz, N, High,N,N,Kitsap Co; Bainbridge Is; W7NPC
+134,53.3700,51.6700,1.7000 MHz,Minus,FM,L73BLY,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,Blyn Mt; WR7V Blyn Mt; WA EMD R2
+135,52.9300,51.2300,1.7000 MHz,Minus,FM,L81BFW,Y,Tone,100,,Scan, 5 kHz, N, High,N,N,Baw Faw Pk; K7CH Baw Faw Pk
+136,53.0300,51.3300,1.7000 MHz,Minus,FM,L82SOU,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,South Mt; K7CH South Mt
+137,53.1300,51.4300,1.7000 MHz,Minus,FM,L83EVT,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,Everett; KF7T Everett
+138,53.1900,51.4900,1.7000 MHz,Minus,FM,L84TAC,Y,Tone,100,,Scan, 5 kHz, N, High,N,N,Tacoma Baldi; K7HW Tacoma Baldi
+139,53.2100,51.5100,1.7000 MHz,Minus,FM,L85CNS,Y,Tone,100,,Scan, 5 kHz, N, High,N,N,Mt Constitution; W7MBY Mt Constitution
+140,53.3300,51.6300,1.7000 MHz,Minus,FM,L86BAL,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,Baldi; N7OEP Baldi
+141,53.3500,51.6500,1.7000 MHz,Minus,FM,L87SUL,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,Sultan; W7SKY Sultan
+142,53.4100,51.7100,1.7000 MHz,Minus,FM,L88EAT,Y,Tone,100,,Scan, 5 kHz, N, High,N,N,Eatonville; W7PFR Eatonville
+143,53.5700,51.8700,1.7000 MHz,Minus,FM,L89CPK,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,Capitol Pk; W7SIX Capitol Pk
+144,53.5900,51.8900,1.7000 MHz,Minus,FM,L90CUL,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,Cultas Mt; K7OET Cultas Mt
+145,53.8300,52.1300,1.7000 MHz,Minus,FM,L91COU,Y,Tone,123.0,,Scan, 5 kHz, N, High,N,N,Cougar Mt; N7ERP Cougar Mt
