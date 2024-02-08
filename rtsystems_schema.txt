@@ -1,0 +1,88 @@
+RT systems seems a bit flexible on the exact form of the CSV files it
+can read. The names in the header line tell the software which each column is,
+and columns can be omitted if not needed.
+
+The two schemas shown here were exported from different devices.
+
+<ch>			0-999			column header is blank, column ignored
+Receive Frequency	146.96000
+Transmit Frequency	146.36000		always present even for simplex
+Offset Frequency	600 kHz | 5.0000 MHz
+Offset Direction	Minus | Plus | Simplex
+Operating Mode		FM | AM
+Name			e.g. "PSRG"
+Tone Mode		None | Tone
+CTCSS			67.0			always present
+Rx CTCSS		67.0			always present
+DCS			023			always present
+Rx DC			023			always present
+DCS Polarity		023
+Tx Power		High | Low
+Skip			Y | N
+Busy Lockout		(blank)
+Comment			may be blank
+
+
+
+
+From FT-60:
+
+<ch>			1-1000			column header is blank, column ignored
+Receive Frequency	146.96000
+Transmit Frequency	146.36000
+Offset Frequency	600 kHz | 5.00000 MHz | (blank)
+Offset Direction	Minus | Plus | Simplex
+Operating Mode		FM | AM
+Name			e.g. PSRG
+Show Name		Y
+Tone Mode		  None
+			  Tone		Tone on TX
+			  T Sql		Tone on RX
+			  Rev CTCSS	RX squelch if tone *is* received
+			  DCS		DCS code on TX
+			  D Code
+			  T DCS		CTCSS on TX, DCS on RX
+			  D Tone	DCX on TX, CTCSS on RX
+CTCSS			103.5
+DCS			023
+Skip			Scan
+Step			e.g. "5 kHz"
+Clock Shift		N
+Tx Power		High | Low
+Tx Narrow		N
+Pager Enable		N
+Bank 1			N
+Bank 2			Y
+Bank 3			N
+Bank 4			N
+Bank 5			N
+Bank 6			N
+Bank 7			N
+Bank 8			N
+Bank 9			N
+Bank 10			N
+Comment			any string
+
+
+
+Another variant:
+
+<ch>									1
+Receive Frequency	146.9600
+Transmit Frequency	146.3600
+Offset Frequency	600 kHz
+Offset Direction	Minus
+Operating Mode		FM
+Name			V01PSR
+Show Name		Y
+Tone Mode		Tone
+CTCSS			103.5
+DCS			<blank>
+Skip			Scan
+Step			5 kHz
+Clock Shift		N
+Tx Power		High
+Tx Narrow		N
+Pager Enable		N
+Comment			PSRG; coordination; WW7PSR; Allstar 2462
+

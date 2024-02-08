@@ -1,0 +1,42 @@
+CHIRP schema
+
+The names in the header line tell the software which each column is.
+
+Location	Memory location, starting at 1
+Name		e.g. "PSRG"
+Frequency	e.g. 146.960000
+Duplex		off, +, -, or <blank>
+Offset		e.g. 0.60000
+Tone		one of:
+		  <blank>	no tone
+		  Tone		Tone on TX; rToneFreq
+		  TSQL		Tone on TX & RX; rToneFreq
+		  DTCS		DTCS on TX & RX; DtcsCode
+		  TSQL-R	Tone on RX; rToneFreq
+		  DTCS-R	DTCS on RX; DtcsCode
+		  Cross		see CrossMode
+		  note: see https://chirp.danplanet.com/projects/chirp/wiki/DevelopersToneModes
+		  for cases where cToneFreq is used instead.
+rToneFreq	e.g. 103.5	required, even if not used
+cToneFreq			required, even if not used
+DtcsCode	e.g. 023	required, even if not used
+DtcsPolarity	e.g. NN
+RxDtcsCode	e.g. 023	required, even if not used
+CrossMode	one of:
+		  Tone->Tone	TX rToneFreq; RX cToneFreq
+		  Tone->DTCS	TX rToneFreq; RX DtcsCode
+		  DTCS->Tone	TX DtcsCode; RX rToneFreq
+		  DTCS->	TX DtcsCode
+		  ->DTCS	RX DtcsCode
+		  ->Tone	RX rToneFreq
+		  DTCS->DTCS
+Mode		WFM, FM, NFM
+TStep		e.g. 5.00
+Skip		<blank>, S
+Power		e.g. 5.0W
+Comment		any text
+URCALL		?
+RPT1CALL	?
+RPT2CALL	?
+DVCODE		?
+
