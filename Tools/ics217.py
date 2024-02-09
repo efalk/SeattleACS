@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf8 -*-
 
-# Parse lines from the ACS 217 spreadsheet, e.g. W7ACS_ICS-217A_20230505.csv
+# Parse lines from the ACS ICS-217 spreadsheet, e.g. W7ACS_ICS-217A_20230505.csv
+# Likely only works for ICS-217 spreadsheets from ACS.
 #
 # Typical usage:
 #
-#    import acs
+#    import ics217
 #
 #    reader = csv.reader(sys.stdin)
 #
 #    for l in reader:
-#        acsRec = acs.parse(l)
+#        acsRec = ics217.parse(l)
 #        if not acsRec:
 #           continue            # this is fine; not all records contain data
 
@@ -31,9 +32,9 @@
 
 import sys
 
-class Acs(object):
+class ics217(object):
     def __init__(this, line):
-        """Create an Acs object from a list of csv values. Caller
+        """Create an ics217 object from a list of csv values. Caller
         must have already vetted the input. The parse() function
         below can handle that."""
         this.Chan = line[0]     # memory #, 0-based
@@ -49,16 +50,17 @@ class Acs(object):
         this.Mode = line[10]
         this.Remarks = line[11]
     def __repr__(this):
-        return f'''Acs("{this.Chan}", "{this.Config}", "{this.Name}", "{this.Comment}", "{this.Rxfreq}", "{this.Rxwid}", "{this.Rxtone}", "{this.Txfreq}", "{this.Txwid}", "{this.Txtone}", "{this.Mode}", "{this.Remarks}"'''
+        return f'''ics217("{this.Chan}", "{this.Config}", "{this.Name}", "{this.Comment}", "{this.Rxfreq}", "{this.Rxwid}", "{this.Rxtone}", "{this.Txfreq}", "{this.Txwid}", "{this.Txtone}", "{this.Mode}", "{this.Remarks}"'''
 
 
-def parse(line):
-    """Given a list, most likely provided by the csv module, return an Acs object or
-    None if the list can be parsed."""
+def parse(line, cls=None):
+    """Given a list, most likely provided by the csv module, return
+    an ics217 object or None if the list can't be parsed."""
+    if not cls: cls = ics217
     if len(line) < 12: return None
     if not line[0] or line[0][0] not in "VUL": return None
     try:
-        return Acs(line)
+        return cls(line)
     except Exception as e:
         print("Failed to parse: ", line, file=sys.stdout)
         print(e, file=sys.stdout)
