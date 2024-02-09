@@ -1,7 +1,24 @@
 #!/usr/bin/env python3
 # -*- coding: utf8 -*-
 
-# Convert CSV file from ACS 217 spreadsheet to format CHIRP uses
+usage = """Convert CSV file from ACS 217 spreadsheet to format CHIRP uses
+
+  Acs2Chirp.py < W7ACS_ICS-217A_20240131.csv > ACS_chirp.csv
+
+  Options:
+        -b <band>       Any combination of the letters VULTD
+                                V = VHF (2m band)
+                                U = UHF (70cm band)
+                                L = Low frequency (6m band)
+                                T = 220 MHz band (1.25m band)
+                                D = digital
+                            default is VU
+        -s <n>          Start numbering at <n>; default is 1
+
+Generates CSV files compatible with CHIRP software.  These files
+should work with any radio, but if not, please contact Ed Falk,
+KK7NNS au gmail.com directly and we'll figure it out.
+"""
 
 import csv
 import errno
@@ -14,72 +31,92 @@ import sys
 import ics217
 
 def main():
-    reader = csv.reader(sys.stdin)
+    ifile = sys.stdin
+    ifile = open("W7ACS_ICS-217A_20240131.csv", "r")
+    reader = csv.reader(ifile)
 
-    print("Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPolarity,RxDtcsCode,CrossMode,Mode,TStep,Skip,Power,Comment,URCALL,RPT1CALL,RPT2CALL,DVCODE")
-
+    bands = 'VU'
     count = 1
+    try:
+        (optlist, args) = getopt.getopt(sys.argv[1:], 'hb:s:', ['help'])
+        for flag, value in optlist:
+            if flag in ('-h', '--help'):
+                print(usage)
+                return 0
+            elif flag == '-b':
+                bands = value
+            elif flag == '-s':
+                try:
+                    count = int(value)
+                except ValueError:
+                    print(f"-s '{value}' needs to be an integer", file=sys.stderr)
+                    return 2
+    except getopt.GetoptError as e:
+        print(e, file=sys.stderr)
+        print(usage, file=sys.stderr)
+        return 2
+
+    Chirp.header(sys.stdout)
+
     for l in reader:
-
-        # Input (ACS 217):
-        #  CH#, e.g. "V01"
-        #  config: Repeater; Simplex
-        #  name
-        #  comment
-        #  rx freq
-        #  narrow/wide: W; N
-        #  RX tone: always "CSQ" (carrier squelch, i.e. no tone)
-        #  Tx Freq
-        #  narrow/wide: W; N
-        #  TX tone: e.g. 103.5
-        #  Mode: A; MF; MP; D
-        #  Remarks
-
-        acsRec = ics217.parse(l)
+        acsRec = ics217.parse(l, bands)
         if not acsRec:
             continue
 
-        Chan = acsRec.Chan       # memory #, 0-based
-        Config = acsRec.Config  
-        Name = acsRec.Name       # memory label
-        Comment = acsRec.Comment  
-        Rxfreq = acsRec.Rxfreq       # RX freq
-        Wide = acsRec.Txwid
-        Txfreq = acsRec.Txfreq       # RX freq
-        Tone = acsRec.Txtone  
-        Remarks = acsRec.Remarks  
+        try:
+            Chirp.write(acsRec, sys.stdout, count)
+        except Exception as e:
+            # Just ignore these
+            continue
+
+        count += 1
+
+
+class Chirp(object):
+    @staticmethod
+    def header(ofile):
+        """Write out the header line for the CSV file."""
+        print("Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPolarity,RxDtcsCode,CrossMode,Mode,TStep,Skip,Power,Comment,URCALL,RPT1CALL,RPT2CALL,DVCODE", file=ofile)
+
+    @staticmethod
+    def write(icsrec, ofile, count):
+        """Write out one record. This may throw an exception if any of
+        the ics-217 fields are not valid."""
+        Chan = icsrec.Chan       # memory #, 0-based
+        Config = icsrec.Config  
+        Name = icsrec.Name       # memory label
+        Comment = icsrec.Comment  
+        Rxfreq = icsrec.Rxfreq       # RX freq
+        Wide = icsrec.Txwid
+        Txfreq = icsrec.Txfreq       # RX freq
+        Tone = icsrec.Txtone  
+        Remarks = icsrec.Remarks  
 
         # Derived values
-        try:
-            Offset = float(Txfreq) - float(Rxfreq)
-            if Config == 'Simplex' or Txfreq == Rxfreq: Duplex = ''
-            elif Offset > 0: Duplex = '+'
-            else: Duplex = '-'
+        Offset = float(Txfreq) - float(Rxfreq)
+        if Config == 'Simplex' or Txfreq == Rxfreq: Duplex = ''
+        elif Offset > 0: Duplex = '+'
+        else: Duplex = '-'
 
-            if Tone == 'CSQ':
-                ToneMode = ''
-                Tone = '88.5'
-                Dtcs = '023'
-            elif Tone.startswith('D'):
-                ToneMode = 'DTCS'
-                Dtcs = Tone[1:]
-                Tone = '88.5'
-            else:
-                ToneMode = 'Tone'
-                Dtcs = '023'
+        if Tone == 'CSQ':
+            ToneMode = ''
+            Tone = '88.5'
+            Dtcs = '023'
+        elif Tone.startswith('D'):
+            ToneMode = 'DTCS'
+            Dtcs = Tone[1:]
+            Tone = '88.5'
+        else:
+            ToneMode = 'Tone'
+            Dtcs = '023'
 
-            if Comment and Remarks:
-                Comment = Comment + '; ' + Remarks
-            elif Remarks:
-                Comment = Remarks
+        if Comment and Remarks:
+            Comment = Comment + '; ' + Remarks
+        elif Remarks:
+            Comment = Remarks
 
-            if Wide == 'W': Wide = 'FM'
-            elif Wide == 'N': Wide = 'NFM'
-
-        except Exception as e:
-            print("Failed to parse: ", l, file=sys.stdout)
-            print(e, file=sys.stdout)
-            continue
+        if Wide == 'W': Wide = 'FM'
+        elif Wide == 'N': Wide = 'NFM'
 
         # Output (Chirp):
         #  Location  Memory location, starting at 1
@@ -104,11 +141,7 @@ def main():
         #  RPT2CALL  <blank>
         #  DVCODE    <blank>
 
-        #print(f"{count},{Rxfreq},{Txfreq},{Offset_s},{Mode},FM,{Name},Y,{ToneMode},{Tone},{Dtcs},Scan, 5 kHz, N, High,N,N,{Comment}")
         print(f"{count},{Name},{Rxfreq},{Duplex},{abs(Offset):.6f},{ToneMode},{Tone},{Tone},{Dtcs},NN,{Dtcs},Tone->Tone,{Wide},5.00,,5.0W,{Comment},,,,")
-
-        count += 1
-
 
 
 if __name__ == '__main__':

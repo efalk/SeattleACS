@@ -50,15 +50,17 @@ class ics217(object):
         this.Mode = line[10]
         this.Remarks = line[11]
     def __repr__(this):
-        return f'''ics217("{this.Chan}", "{this.Config}", "{this.Name}", "{this.Comment}", "{this.Rxfreq}", "{this.Rxwid}", "{this.Rxtone}", "{this.Txfreq}", "{this.Txwid}", "{this.Txtone}", "{this.Mode}", "{this.Remarks}"'''
+        return f'''ics217("{this.Chan}", "{this.Config}", "{this.Name}", "{this.Comment}", "{this.Rxfreq}", "{this.Rxwid}", "{this.Rxtone}", "{this.Txfreq}", "{this.Txwid}", "{this.Txtone}", "{this.Mode}", "{this.Remarks}")'''
 
 
-def parse(line, cls=None):
+def parse(line, prefixes='VULTD', cls=None):
     """Given a list, most likely provided by the csv module, return
     an ics217 object or None if the list can't be parsed."""
     if not cls: cls = ics217
     if len(line) < 12: return None
-    if not line[0] or line[0][0] not in "VUL": return None
+    # line[4] is RX freq; if that's blank, then the entire record is invalid
+    if not line[0] or line[0][0] not in prefixes or not line[4]:
+        return None
     try:
         return cls(line)
     except Exception as e:
