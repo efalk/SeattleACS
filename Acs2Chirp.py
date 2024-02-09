@@ -11,7 +11,7 @@ import signal
 import string
 import sys
 
-import acs
+import ics217
 
 def main():
     reader = csv.reader(sys.stdin)
@@ -35,7 +35,7 @@ def main():
         #  Mode: A; MF; MP; D
         #  Remarks
 
-        acsRec = acs.parse(l)
+        acsRec = ics217.parse(l)
         if not acsRec:
             continue
 
