@@ -1,0 +1,8 @@
+,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,Rx CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment,
+121,162.400000,162.4000,,Simplex,FM,NOAA01,Y,None,88.5,88.5,023,Scan,5 kHz,N,High,N,N,
+122,162.425000,162.4250,,Simplex,FM,NOAA02,Y,None,88.5,88.5,023,Scan,5 kHz,N,High,N,N,
+123,162.450000,162.4500,,Simplex,FM,NOAA03,Y,None,88.5,88.5,023,Scan,5 kHz,N,High,N,N,
+124,162.475000,162.4750,,Simplex,FM,NOAA04,Y,None,88.5,88.5,023,Scan,5 kHz,N,High,N,N,
+125,162.500000,162.5000,,Simplex,FM,NOAA05,Y,None,88.5,88.5,023,Scan,5 kHz,N,High,N,N,
+126,162.525000,162.5250,,Simplex,FM,NOAA06,Y,None,88.5,88.5,023,Scan,5 kHz,N,High,N,N,
+127,162.550000,162.5500,,Simplex,FM,NOAA07,Y,None,88.5,88.5,023,Scan,5 kHz,N,High,N,N,
