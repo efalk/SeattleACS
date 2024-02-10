@@ -1,0 +1,20 @@
+,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment,
+146,223.4000,223.4000,,Simplex,FM,T21340,Y,Tone,141.3,,Scan, 5 kHz, N, High,N,N,Simplex 223.40; simplex voice, shared with data
+147,223.4200,223.4200,,Simplex,FM,T21342,Y,Tone,141.3,,Scan, 5 kHz, N, High,N,N,Simplex 223.42; simplex voice, shared with data
+148,223.4400,223.4400,,Simplex,FM,T21344,Y,Tone,141.3,,Scan, 5 kHz, N, High,N,N,Simplex 223.44; simplex voice, shared with data
+149,223.4600,223.4600,,Simplex,FM,T21346,Y,Tone,141.3,,Scan, 5 kHz, N, High,N,N,Simplex 223.46; simplex voice, shared with data
+150,223.4800,223.4800,,Simplex,FM,T21348,Y,Tone,141.3,,Scan, 5 kHz, N, High,N,N,Simplex 223.48; simplex voice, shared with data
+151,223.5000,223.5000,,Simplex,FM,T21350,Y,Tone,141.3,,Scan, 5 kHz, N, High,N,N,Simplex Calling 223.5; simplex calling
+152,224.0900,224.0900,,Simplex,FM,T27409,Y,Tone,141.3,,Scan, 5 kHz, N, High,N,N,Cross-Band 224.09; cross-band repeat
+153,223.8400,222.2400,1.6000 MHz,Minus,FM,T41EMD,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,WA EMD Camp Murray; W7EMD; PNW220 Network (planned)
+154,224.1200,222.5200,1.6000 MHz,Minus,FM,T42LED,Y,Tone,103.5,,Scan, 5 kHz, N, High,N,N,K7LED E Tiger Mt; NTS; SATERN
+155,224.3400,222.7400,1.6000 MHz,Minus,FM,T43BEA,Y,Tone,103.5,,Scan, 5 kHz, N, High,N,N,BEARS W Tiger Mt; K7NWS; PNW220 Network
+156,224.6800,223.0800,1.6000 MHz,Minus,FM,T44MST,Y,Tone,100.0,,Scan, 5 kHz, N, High,N,N,MST Beacon Hill; MST tactical; WW7MST
+157,224.0200,222.4200,1.6000 MHz,Minus,FM,T51SLN,Y,Tone,103.5,,Scan, 5 kHz, N, High,N,N,Shoreline; W7AUX
+158,224.3600,222.7600,1.6000 MHz,Minus,FM,T52KRK,Y,Tone,103.5,,Scan, 5 kHz, N, High,N,N,Kirkland; K7LWH
+159,224.3800,222.7800,1.6000 MHz,Minus,FM,T71SMV,Y,Tone,103.8,,Scan, 5 kHz, N, High,N,N,Snohomish Co Marysville; WA7DEM
+160,224.2200,222.6200,1.6000 MHz,Minus,FM,T81LFP,Y,Tone,103.5,,Scan, 5 kHz, N, High,N,N,Lake Forest Park; WA7FUS; PNW220 Network
+161,224.8800,223.2800,1.6000 MHz,Minus,FM,T82BAL,Y,Tone,103.5,,Scan, 5 kHz, N, High,N,N,Baldi Mt; W7WRG; PNW220 Network
+162,224.0800,222.4800,1.6000 MHz,Minus,FM,T83BFW,Y,Tone,103.5,,Scan, 5 kHz, N, High,N,N,Baw Faw Pk; W7WRG; PNW220 Network
+163,224.2800,222.6800,1.6000 MHz,Minus,FM,T84HST,Y,Tone,103.5,,Scan, 5 kHz, N, High,N,N,Haystack Mt ; W7WRG; PNW220 Network
+164,224.4400,222.8400,1.6000 MHz,Minus,FM,T85COU,Y,Tone,103.5,,Scan, 5 kHz, N, High,N,N,Cougar Mt; KF7BJI; PNW220 Network
