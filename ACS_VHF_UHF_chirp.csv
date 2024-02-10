@@ -19,7 +19,7 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 18,V43LED,146.8200,-,0.600000,Tone,103.5,103.5,023,NN,023,Tone->Tone,FM,5.00,,5.0W,K7LED Rattlesnake; NTS; SATERN,,,,
 19,V45BEA,145.3300,-,0.600000,Tone,179.9,179.9,023,NN,023,Tone->Tone,FM,5.00,,5.0W,BEARS Tiger VHF; K7NWS Tiger Mt W,,,,
 20,V46MSV,146.9000,-,0.600000,Tone,103.5,103.5,023,NN,023,Tone->Tone,FM,5.00,,5.0W,MST VAMC VHF; MST Tactical; WW7MST,,,,
-21,V47BLD,147.1400,+,0.630000,Tone,123.0,123.0,023,NN,023,Tone->Tone,FM,5.00,,5.0W,WA EMD Baldi Mt; WB7DOB Baldi Mt,,,,
+21,V47BLD,147.1400,+,0.600000,Tone,123.0,123.0,023,NN,023,Tone->Tone,FM,5.00,,5.0W,WA EMD Baldi Mt; WB7DOB Baldi Mt,,,,
 22,V48BFW,147.0600,+,0.600000,Tone,110.9,110.9,023,NN,023,Tone->Tone,FM,5.00,,5.0W,WA EMD Baw Faw Pk; K7PG Baw Faw Pk; was V82,,,,
 23,V51KRK,145.4900,-,0.600000,Tone,103.5,103.5,023,NN,023,Tone->Tone,FM,5.00,,5.0W,Kirkland VHF; K7LWH Bellevue,,,,
 24,V52RED,145.3100,-,0.600000,Tone,103.5,103.5,023,NN,023,Tone->Tone,FM,5.00,,5.0W,Redmond VHF; KC7IYE Redmond,,,,
