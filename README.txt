@@ -4,7 +4,10 @@ Files for programming radios for Seattle Emergency Hub and ACS.
 
 csv files are either for Chirp, or RT Systems software (Yaesu FT-60)
 
-The RT Systems files might work on any RT Systems software; not thoroughly tested
+The RT Systems files might work on any RT Systems software. They has been
+successfully tested with Explorer QRZ-1 and other radios. If you find a radio this
+doesn't work with, feel free to contact me off line; I'll see what needs
+to be changed.
 
 W7ACS_ICS-217A_20230505.csv	Seattle ACS ics-217 frequency list
 W7ACS_ICS-217A_20240131.csv	Seattle ACS ics-217 frequency list
@@ -19,6 +22,9 @@ ACS_DATA_RT.csv			ACS frequencies from W7ACS_ICS-217A_20240131.xlsx
 ACS_DATA_chirp.csv		ACS frequencies from W7ACS_ICS-217A_20240131.xlsx
 Hub_RT.csv			GMRS frequencies and repeaters for emergency hubs
 Hub_chirp.csv			GMRS frequencies and repeaters for emergency hubs
+NOAA_RT.csv			NOAA weather frequencies
+NOAA_chirp.csv			NOAA weather frequencies
+
 
 Utility programs:
 
@@ -44,10 +50,10 @@ to start elsewhere, run the programs manually with the "-s _n_" value of your ch
 
 My own preferred workflow is as follows:
 
-	Download current radio settings into a tab within the software
-	Load the csv(s) into a second tab within the software,
-	Copy-paste rows from the second tab into the tab for my radio.
-	Upload back to the radio
+• Download current radio settings into a tab within the software.
+• Load the csv(s) into a second tab within the software.
+• Copy-paste rows from the second tab into the tab for my radio.
+• Upload back to the radio.
 
 This process lets you store csv entries into whatever memories you like in the
 radio, and lets you update the radio without losing other data. The "-s" option
