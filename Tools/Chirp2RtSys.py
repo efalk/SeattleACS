@@ -82,7 +82,7 @@ for line in sys.stdin:
         OffsetDir = 'Simplex'
 
     off2 = float(Offset)
-    if off2 == 0.0:
+    if off2 == 0.0 or Duplex == '':
         Offset = ''
     elif off2 > 1.0:
         Offset = Offset + " MHz"
