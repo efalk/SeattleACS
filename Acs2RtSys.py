@@ -14,6 +14,7 @@ usage = """Convert CSV file from ACS 217 spreadsheet to format RT Systems uses
                                 D = digital
                             Default is VU
         -s <n>          Start numbering at <n>; default is 1
+        -B <bank>       Select bank for devices that use it (i.e. FT-60)
 
 Currently generates output csv files that have been tested with Yaesu FT-60,
 Yaesu FT-5, and Explorer QRZ-1. These files should work with RT Systems software
@@ -47,19 +48,21 @@ def main():
 
     bands = 'VU'
     count = 1
+    bank = None
     output = RtSys
     try:
-        (optlist, args) = getopt.getopt(sys.argv[1:], 'hb:s:', ['help'])
+        (optlist, args) = getopt.getopt(sys.argv[1:], 'hb:s:B:', ['help'])
         for flag, value in optlist:
             if flag in ('-h', '--help'):
                 print(usage)
                 return 0
             elif flag == '-b':
                 bands = value
+            elif flag == '-B':
+                bank = getInt(value)
             elif flag == '-s':
-                try:
-                    count = int(value)
-                except ValueError:
+                count = getInt(value)
+                if count is None:
                     print(f"-s '{value}' needs to be an integer", file=sys.stderr)
                     return 2
     except getopt.GetoptError as e:
@@ -67,7 +70,7 @@ def main():
         print(usage, file=sys.stderr)
         return 2
 
-    output.header(sys.stdout)
+    output.header(sys.stdout, bank)
 
     for l in reader:
         acsRec = ics217.parse(l, bands)
@@ -75,7 +78,7 @@ def main():
             continue
 
         try:
-            output.write(acsRec, sys.stdout, count)
+            output.write(acsRec, sys.stdout, count, bank)
         except Exception as e:
             # Parse failures are normal, don't report them; they just clutter
             # the output.
@@ -94,12 +97,17 @@ class RtSys(object):
     # Output schema is based on the Yaesu FT-60, without bank select
     # TODO: RxTone, RxDCS. For now, always set to CSQ.
     @staticmethod
-    def header(ofile):
+    def header(ofile, bank):
         """Write out the header line for the CSV file."""
-        print(",Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment,", file=ofile)
+        if bank is not None and bank >= 1 and bank <= 10:
+            Banks = [f"Bank {i}," for i in range(1,11)]
+            Banks = ''.join(Banks)
+        else:
+            Banks = ''
+        print(",Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable," + Banks + "Comment,", file=ofile)
 
     @staticmethod
-    def write(icsrec, ofile, count):
+    def write(icsrec, ofile, count, bank):
         """Write out one record. This may throw an exception if any of
         the ics-217 fields are not valid."""
         # There are some derived values here, so we compute them now.
@@ -112,6 +120,12 @@ class RtSys(object):
         Txfreq = icsrec.Txfreq       # RX freq
         Tone = icsrec.Txtone
         Remarks = icsrec.Remarks
+        if bank is not None and bank >= 1 and bank <= 10:
+            Banks = ["N,"] * 10
+            Banks[bank-1] = 'Y,'
+            Banks = ''.join(Banks)
+        else:
+            Banks = ''
 
         Offset = float(Txfreq) - float(Rxfreq)
         if Config == 'Simplex' or Txfreq == Rxfreq:
@@ -164,7 +178,14 @@ class RtSys(object):
         # Pager Enable          N
         # Comment               any string
 
-        print(f"{count},{Rxfreq},{Txfreq},{Offset_s},{Mode},Auto,{Name},{'Y' if Name else 'N'},{ToneMode},{Tone},{Dcs},Scan,Auto,N,High,{'Y' if Wide=="N" else 'N'},N,{Comment}", file=ofile)
+        Wide = 'Y' if Wide=="N" else 'N'
+        print(f"{count},{Rxfreq},{Txfreq},{Offset_s},{Mode},Auto,{Name},{'Y' if Name else 'N'},{ToneMode},{Tone},{Dcs},Scan,Auto,N,High,{Wide},N,{Banks}{Comment}", file=ofile)
+
+def getInt(s, dflt=None):
+    try:
+        return int(s)
+    except:
+        return dflt
 
 
 if __name__ == '__main__':
