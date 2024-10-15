@@ -1,0 +1,10 @@
+,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment,
+1,430.8000,430.8000,,Simplex,Auto,430800,Y,None,,,Scan,Auto,N,High,N,N,Data 430.800; W7ACS-10 Beacon A
+2,430.8250,430.8250,,Simplex,Auto,430825,Y,None,,,Scan,Auto,N,High,N,N,Data 430.825; W7MIR-11 VARA FM
+3,430.8500,430.8500,,Simplex,Auto,430850,Y,None,,,Scan,Auto,N,High,N,N,Data 430.850; W7ACS-12 First Hill A
+4,440.8500,440.8500,,Simplex,Auto,440850,Y,None,,,Scan,Auto,N,High,N,N,Data 440.850; W7ACS-13 First Hill; KD7WDG VARA
+5,430.9500,430.9500,,Simplex,Auto,430950,Y,None,,,Scan,Auto,N,High,N,N,Data 430.950; W7ACS-14 Capitol Park A
+6,439.9500,439.9500,,Simplex,Auto,439950,Y,None,,,Scan,Auto,N,High,N,N,Data 439.950; W7ACS-15 Capitol Park B
+7,430.8750,430.8750,,Simplex,Auto,430875,Y,None,,,Scan,Auto,N,High,N,N,Data 430.875; W7ACS-9 Magnolia
+8,431.0000,431.0000,,Simplex,Auto,431000,Y,None,,,Scan,Auto,N,High,N,N,Data 431.000; W7ACS-8 Broadview (Northwest)
+9,144.9000,144.9000,,Simplex,Auto,144900,Y,None,,,Scan,Auto,N,High,N,N,Data 144.900; KD7DK-10 VARA
