@@ -22,6 +22,7 @@ ACS_DATA_RT.csv			ACS frequencies from W7ACS_ICS-217A_20240131.xlsx
 ACS_DATA_chirp.csv		ACS frequencies from W7ACS_ICS-217A_20240131.xlsx
 Hub_RT.csv			GMRS frequencies and repeaters for emergency hubs
 Hub_chirp.csv			GMRS frequencies and repeaters for emergency hubs
+Hub_GMRS_chirp.csv		Same, for GMRS radios.
 NOAA_RT.csv			NOAA weather frequencies
 NOAA_chirp.csv			NOAA weather frequencies
 
