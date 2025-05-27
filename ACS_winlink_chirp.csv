@@ -8,3 +8,4 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 7,MAGNOL,430.8750,,0.000000,,88.5,88.5,023,NN,023,Tone->Tone,FM,5.00,,5.0W,Data 430.875; W7ACS-9 Magnolia,,,,
 8,Broadview,431.0000,,0.000000,,88.5,88.5,023,NN,023,Tone->Tone,FM,5.00,,5.0W,Data 431.000; W7ACS-8 Broadview (Northwest),,,,
 9,KD7DK,144.9000,,0.000000,,88.5,88.5,023,NN,023,Tone->Tone,FM,5.00,,5.0W,Data 144.900; KD7DK-10 VARA,,,,
+10,NewWL,144.8700,,0.000000,,88.5,88.5,023,NN,023,Tone->Tone,FM,5.00,,5.0W,Data 144.87,,,,
