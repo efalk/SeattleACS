@@ -17,7 +17,7 @@
 
 # Schema (ACS 217):
 #   0 CH#, e.g. "V01"
-#   1 config: Repeater, Simplex
+#   1 config: "Repeater" | "Simplex"
 #   2 name
 #   3 comment
 #   4 rx freq
@@ -44,7 +44,7 @@ class ics217(object):
         this.Rxfreq = line[4]     # RX freq
         this.Rxwid = line[5]
         this.Rxtone = line[6]
-        this.Txfreq = line[7]     # RX freq
+        this.Txfreq = line[7]     # TX freq
         this.Txwid = line[8]
         this.Txtone = line[9]
         this.Mode = line[10]

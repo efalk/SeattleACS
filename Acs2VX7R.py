@@ -5,8 +5,8 @@
 
 import sys
 
-import ics217
 import common
+import ics217
 
 class VX7R(object):
     """This generats the CSV file that a VX-7R uses."""
