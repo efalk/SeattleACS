@@ -92,7 +92,7 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 91,U64VSH,443.5000,+,5.000000,Tone,103.5,103.5,023,NN,023,Tone->Tone,FM,5.00,,5.0W,Vashon/Maury Is; W7VMI Vashon Is,,,,
 92,U65BUR,441.1250,+,5.000000,Tone,103.5,103.5,023,NN,023,Tone->Tone,FM,5.00,,5.0W,Burien; W7BUR Burien,,,,
 93,U66SL2,442.8250,+,5.000000,Tone,103.5,103.5,023,NN,023,Tone->Tone,FM,5.00,,5.0W,Shoreline UHF Alternate; W7AUX Shoreline; in-city preferred,,,,
-94,U67NSE,442.0000,+,5.000000,Tone,141.3,141.3,023,NN,023,Tone->Tone,FM,5.00,,5.0W,Northshore, Kenmore, LFP; NE7MC Kenmore,,,,
+94,U67NSE,442.0000,+,5.000000,Tone,141.3,141.3,023,NN,023,Tone->Tone,FM,5.00,,5.0W,Northshore Kenmore LFP; NE7MC Kenmore,,,,
 95,U71SMT,443.7250,+,5.000000,Tone,103.5,103.5,023,NN,023,Tone->Tone,FM,5.00,,5.0W,Snohomish Co Mntlk Ter; WA7DEM Mountlake Terrace,,,,
 96,U72BAI,444.4750,+,5.000000,Tone,103.5,103.5,023,NN,023,Tone->Tone,FM,5.00,,5.0W,Bainbridge Is; W7NPC Bainbridge Is,,,,
 97,U81PER,441.7750,+,5.000000,Tone,103.5,103.5,023,NN,023,Tone->Tone,FM,5.00,,5.0W,PSE Rattlesnake; W7PSE Network,,,,
