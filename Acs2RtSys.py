@@ -106,12 +106,10 @@ class RtSys(object):
         Wide = 'Y' if Wide=="N" else 'N'
         print(f"{count},{Rxfreq},{Txfreq},{Offset_s},{Mode},Auto,{Name},{'Y' if Name else 'N'},{ToneMode},{Tone},{Dcs},Scan,Auto,N,High,{Wide},N,{Banks}{Comment}", file=ofile)
 
-def getInt(s, dflt=None):
-    try:
-        return int(s)
-    except:
-        return dflt
-
-
 if __name__ == '__main__':
-    sys.exit(common.main(RtSys))
+    signal.signal(signal.SIGPIPE, signal.SIG_DFL)
+    try:
+      sys.exit(common.main(RtSys))
+    except KeyboardInterrupt as e:
+      print()
+      sys.exit(1)
