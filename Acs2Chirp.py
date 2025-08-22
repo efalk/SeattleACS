@@ -30,66 +30,17 @@ import signal
 import string
 import sys
 
+import common
 import ics217
-
-def main():
-    ifile = sys.stdin
-    #ifile = open("W7ACS_ICS-217A_20240131.csv", "r")
-    reader = csv.reader(ifile)
-
-    bands = 'VU'
-    count = 1
-    verbose = 0
-    try:
-        (optlist, args) = getopt.getopt(sys.argv[1:], 'hb:s:v', ['help'])
-        for flag, value in optlist:
-            if flag in ('-h', '--help'):
-                print(usage)
-                return 0
-            elif flag == '-b':
-                bands = None if value == "all" else value
-            elif flag == '-s':
-                try:
-                    count = int(value)
-                except ValueError:
-                    print(f"-s '{value}' needs to be an integer", file=sys.stderr)
-                    return 2
-            elif flag == '-v':
-                verbose += 1
-    except getopt.GetoptError as e:
-        print(e, file=sys.stderr)
-        print(usage, file=sys.stderr)
-        return 2
-
-    Chirp.header(sys.stdout)
-
-    for l in reader:
-        if verbose >= 2:
-            print(l, file=sys.stderr)
-        acsRec = ics217.parse(l, bands)
-        if not acsRec:
-            continue
-
-        try:
-            Chirp.write(acsRec, sys.stdout, count)
-        except Exception as e:
-            # Just ignore these
-            if verbose:
-                print(e, file=sys.stderr)
-                print(acsRec, file=sys.stderr)
-            continue
-
-        count += 1
-
 
 class Chirp(object):
     @staticmethod
-    def header(ofile):
+    def header(ofile, bank):
         """Write out the header line for the CSV file."""
         print("Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPolarity,RxDtcsCode,CrossMode,Mode,TStep,Skip,Power,Comment,URCALL,RPT1CALL,RPT2CALL,DVCODE", file=ofile)
 
     @staticmethod
-    def write(icsrec, ofile, count):
+    def write(icsrec, ofile, count, bank):
         """Write out one record. This may throw an exception if any of
         the ics-217 fields are not valid."""
         Chan = icsrec.Chan       # memory #, 0-based
@@ -157,7 +108,7 @@ class Chirp(object):
 if __name__ == '__main__':
   signal.signal(signal.SIGPIPE, signal.SIG_DFL)
   try:
-    sys.exit(main())
+    sys.exit(common.main(Chirp, usage))
   except KeyboardInterrupt as e:
     print()
     sys.exit(1)
