@@ -30,7 +30,8 @@ CrossMode	one of:
 		  ->DTCS	RX DtcsCode
 		  ->Tone	RX rToneFreq
 		  DTCS->DTCS
-Mode		WFM, FM, NFM
+Mode		WFM, FM, NFM, AM, NAM, DV, LSB, USB, CW, RTTY, DIG, PKT, NCW,NCWR,
+		CWR, P25, Auto, RTTYR, FSK, FSKR, DMR, DN
 TStep		e.g. 5.00
 Skip		<blank>, S
 Power		e.g. 5.0W
