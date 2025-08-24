@@ -70,17 +70,21 @@ def main(writer, usage=usage):
     writer.header(sys.stdout, bank)
 
     for l in reader:
+        if verbose >= 2:
+            print(l, file=sys.stderr)
         acsRec = ics217.parse(l, bands)
         if not acsRec:
             continue
 
         try:
+            if verbose: print(acsRec, file=sys.stderr)
             writer.write(acsRec, sys.stdout, count, bank)
         except Exception as e:
             # Parse failures are normal, don't report them; they just clutter
             # the output.
-            #print("Failed to parse: ", l, file=sys.stderr)
-            #print(e, file=sys.stderr)
+            if verbose:
+                print("Failed to write: ", acsRec, file=sys.stderr)
+                print(e, file=sys.stderr)
             continue
 
         count += 1
