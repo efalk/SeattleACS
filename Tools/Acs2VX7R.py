@@ -5,6 +5,8 @@
 
 import sys
 
+from typing import TextIO
+
 import ics217
 import common
 
@@ -13,13 +15,13 @@ class VX7R(object):
     # Output schema is based on the Yaesu VX-7R
     # TODO: RxTone, RxDCS. For now, always set to CSQ.
     @staticmethod
-    def header(ofile, bank):
+    def header(ofile: TextIO, bank: int):
         """Write out the header line for the CSV file."""
         # Ignore bank; this radio doesn't use it
         print("#,Tag,Freq,Mode,Scn Md,Step,Masked,RPT SH,Shift,TS/DCS,Tone,DCS,TX Pwr,Dev,Clk Sh,Icon", file=ofile)
 
     @staticmethod
-    def write(icsrec, ofile, count, bank):
+    def write(icsrec: ics217, ofile: TextIO, count: int, bank: int):
         """Write out one record. This may throw an exception if any of
         the ics-217 fields are not valid."""
         # There are some derived values here, so we compute them now.

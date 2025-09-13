@@ -11,6 +11,8 @@ import signal
 import string
 import sys
 
+from typing import TextIO
+
 import common
 import ics217
 
@@ -21,8 +23,9 @@ class RtSys(object):
     radios at some later date."""
     # Output schema is based on the Yaesu FT-60, without bank select
     # TODO: RxTone, RxDCS. For now, always set to CSQ.
+
     @staticmethod
-    def header(ofile, bank):
+    def header(ofile: TextIO, bank: int):
         """Write out the header line for the CSV file."""
         if bank is not None and bank >= 1 and bank <= 10:
             Banks = [f"Bank {i}," for i in range(1,11)]
@@ -32,7 +35,7 @@ class RtSys(object):
         print("n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable," + Banks + "Comment", file=ofile)
 
     @staticmethod
-    def write(icsrec, ofile, count, bank):
+    def write(icsrec: ics217, ofile: TextIO, count: int, bank: int):
         """Write out one record. This may throw an exception if any of
         the ics-217 fields are not valid."""
         # There are some derived values here, so we compute them now.
@@ -80,9 +83,9 @@ class RtSys(object):
             Dcs = ''
 
         if Comment and Remarks:
-            Comment = Comment + '; ' + Remarks
+            Comment = Chan + ': ' + Comment + '; ' + Remarks
         elif Remarks:
-            Comment = Remarks
+            Comment = Chan + ': ' + Remarks
 
         # <ch>                  1-1000                  column header is blank, column ignored
         # Receive Frequency     146.96000

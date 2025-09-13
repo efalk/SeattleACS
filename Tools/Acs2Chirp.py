@@ -30,17 +30,19 @@ import signal
 import string
 import sys
 
+from typing import TextIO
+
 import common
 import ics217
 
 class Chirp(object):
     @staticmethod
-    def header(ofile, bank):
+    def header(ofile: TextIO, bank: int):
         """Write out the header line for the CSV file."""
         print("Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPolarity,RxDtcsCode,CrossMode,Mode,TStep,Skip,Power,Comment,URCALL,RPT1CALL,RPT2CALL,DVCODE", file=ofile)
 
     @staticmethod
-    def write(icsrec, ofile, count, bank):
+    def write(icsrec: ics217, ofile: TextIO, count: int, bank: int):
         """Write out one record. This may throw an exception if any of
         the ics-217 fields are not valid."""
         Chan = icsrec.Chan       # memory #, 0-based
@@ -48,6 +50,7 @@ class Chirp(object):
         Name = icsrec.Name       # memory label
         Comment = icsrec.Comment  
         Rxfreq = icsrec.Rxfreq       # RX freq
+        Mode = icsrec.Mode
         Wide = icsrec.Txwid
         Txfreq = icsrec.Txfreq       # RX freq
         Tone = icsrec.Txtone  
@@ -72,12 +75,22 @@ class Chirp(object):
             Dtcs = '023'
 
         if Comment and Remarks:
-            Comment = Comment + '; ' + Remarks
+            Comment = Chan + ': ' + Comment + '; ' + Remarks
         elif Remarks:
-            Comment = Remarks
+            Comment = Chan + ': ' + Remarks
 
-        if Wide == 'W': Wide = 'FM'
-        elif Wide == 'N': Wide = 'NFM'
+        if Mode == 'A':
+            if float(Rxfreq) >= 100.0:         # FM
+                if Wide == 'W': Wide = 'FM'
+                elif Wide == 'N': Wide = 'NFM'
+            else:
+                if Wide == 'W': Wide = 'AM'
+                elif Wide == 'N': Wide = 'NAM'
+        elif Mode == 'D':
+            Wide = 'DIG'
+        else:
+            if Wide == 'W': Wide = 'FM'
+            elif Wide == 'N': Wide = 'NFM'
 
         # Output (Chirp):
         #  Location  Memory location, starting at 1
