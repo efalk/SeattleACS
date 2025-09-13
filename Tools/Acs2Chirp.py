@@ -30,19 +30,18 @@ import signal
 import string
 import sys
 
-from typing import TextIO
-
 import common
 import ics217
 
 class Chirp(object):
     @staticmethod
-    def header(ofile: TextIO, bank: int):
+    def header(csvout: csv.writer, bank: int):
         """Write out the header line for the CSV file."""
-        print("Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPolarity,RxDtcsCode,CrossMode,Mode,TStep,Skip,Power,Comment,URCALL,RPT1CALL,RPT2CALL,DVCODE", file=ofile)
+        #print("Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPolarity,RxDtcsCode,CrossMode,Mode,TStep,Skip,Power,Comment,URCALL,RPT1CALL,RPT2CALL,DVCODE", file=ofile)
+        csvout.writerow(["Location","Name","Frequency","Duplex","Offset","Tone","rToneFreq","cToneFreq","DtcsCode","DtcsPolarity","RxDtcsCode","CrossMode","Mode","TStep","Skip","Power","Comment","URCALL","RPT1CALL","RPT2CALL","DVCODE"])
 
     @staticmethod
-    def write(icsrec: ics217, ofile: TextIO, count: int, bank: int):
+    def write(icsrec: ics217, csvout: csv.writer, count: int, bank: int):
         """Write out one record. This may throw an exception if any of
         the ics-217 fields are not valid."""
         Chan = icsrec.Chan       # memory #, 0-based
@@ -115,7 +114,7 @@ class Chirp(object):
         #  RPT2CALL  <blank>
         #  DVCODE    <blank>
 
-        print(f"{count},{Name},{Rxfreq},{Duplex},{abs(Offset):.6f},{ToneMode},{Tone},{Tone},{Dtcs},NN,{Dtcs},Tone->Tone,{Wide},5.00,,5.0W,{Comment},,,,")
+        csvout.writerow([count, Name, Rxfreq, Duplex, f"{abs(Offset):.6f}", ToneMode, Tone, Tone, Dtcs, 'NN', Dtcs, 'Tone->Tone', Wide, 5.00, '', '5.0W', Comment, '', '', '', ''])
 
 
 if __name__ == '__main__':
@@ -123,5 +122,5 @@ if __name__ == '__main__':
   try:
     sys.exit(common.main(Chirp, usage))
   except KeyboardInterrupt as e:
-    print()
+    print(file=sys.stderr)
     sys.exit(1)

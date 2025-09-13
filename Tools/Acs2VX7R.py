@@ -3,9 +3,8 @@
 
 # Convert CSV file from ACS 217 spreadsheet to format RT Systems uses for VX-7R
 
+import csv
 import sys
-
-from typing import TextIO
 
 import ics217
 import common
@@ -15,13 +14,13 @@ class VX7R(object):
     # Output schema is based on the Yaesu VX-7R
     # TODO: RxTone, RxDCS. For now, always set to CSQ.
     @staticmethod
-    def header(ofile: TextIO, bank: int):
+    def header(csvout: csv.writer, bank: int):
         """Write out the header line for the CSV file."""
         # Ignore bank; this radio doesn't use it
-        print("#,Tag,Freq,Mode,Scn Md,Step,Masked,RPT SH,Shift,TS/DCS,Tone,DCS,TX Pwr,Dev,Clk Sh,Icon", file=ofile)
+        csvout.writerow(["#","Tag","Freq","Mode","Scn Md","Step","Masked","RPT SH","Shift","TS/DCS","Tone","DCS","TX Pwr","Dev","Clk Sh","Icon"])
 
     @staticmethod
-    def write(icsrec: ics217, ofile: TextIO, count: int, bank: int):
+    def write(icsrec: ics217, csvout: csv.writer, count: int, bank: int):
         """Write out one record. This may throw an exception if any of
         the ics-217 fields are not valid."""
         # There are some derived values here, so we compute them now.
@@ -54,7 +53,7 @@ class VX7R(object):
             TSDCS = 'TONE'
             Dcs = ''
 
-        print(f"{count},{Tag},{Rxfreq},{Mode},Off,5 kHz,False,{RptSh},{Shift_s},{TSDCS},{Tone},{Dcs},MAX,NORM,OFF,13", file=ofile)
+        csvout.writerow([count, Tag, Rxfreq, Mode, 'Off', '5 kHz', 'False', RptSh, Shift_s, TSDCS, Tone, Dcs,'MAX', 'NORM', 'OFF', 13])
 
 if __name__ == '__main__':
     sys.exit(common.main(VX7R))

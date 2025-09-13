@@ -41,6 +41,7 @@ def main(writer, usage=usage):
     ifile = sys.stdin
 
     reader = csv.reader(ifile)
+    csvout = csv.writer(sys.stdout)
 
     bands = None
     count = 1
@@ -67,7 +68,7 @@ def main(writer, usage=usage):
         print(usage, file=sys.stderr)
         return 2
 
-    writer.header(sys.stdout, bank)
+    writer.header(csvout, bank)
 
     for l in reader:
         if verbose >= 2:
@@ -78,7 +79,7 @@ def main(writer, usage=usage):
 
         try:
             if verbose: print(acsRec, file=sys.stderr)
-            writer.write(acsRec, sys.stdout, count, bank)
+            writer.write(acsRec, csvout, count, bank)
         except Exception as e:
             # Parse failures are normal, don't report them; they just clutter
             # the output.

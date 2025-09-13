@@ -11,8 +11,6 @@ import signal
 import string
 import sys
 
-from typing import TextIO
-
 import common
 import ics217
 
@@ -25,17 +23,16 @@ class RtSys(object):
     # TODO: RxTone, RxDCS. For now, always set to CSQ.
 
     @staticmethod
-    def header(ofile: TextIO, bank: int):
+    def header(csvout: csv.writer, bank: int):
         """Write out the header line for the CSV file."""
         if bank is not None and bank >= 1 and bank <= 10:
             Banks = [f"Bank {i}," for i in range(1,11)]
-            Banks = ''.join(Banks)
         else:
-            Banks = ''
-        print("n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable," + Banks + "Comment", file=ofile)
+            Banks = []
+        csvout.writerow(["n","Receive Frequency","Transmit Frequency","Offset Frequency","Offset Direction","Operating Mode","Name","Show Name","Tone Mode","CTCSS","DCS","Skip","Step","Clock Shift","Tx Power","Tx Narrow","Pager Enable"] + Banks + ["Comment"])
 
     @staticmethod
-    def write(icsrec: ics217, ofile: TextIO, count: int, bank: int):
+    def write(icsrec: ics217, csvout: csv.writer, count: int, bank: int):
         """Write out one record. This may throw an exception if any of
         the ics-217 fields are not valid."""
         # There are some derived values here, so we compute them now.
@@ -51,9 +48,8 @@ class RtSys(object):
         if bank is not None and bank >= 1 and bank <= 10:
             Banks = ["N,"] * 10
             Banks[bank-1] = 'Y,'
-            Banks = ''.join(Banks)
         else:
-            Banks = ''
+            Banks = []
 
         Offset = float(Txfreq) - float(Rxfreq)
         if Config == 'Simplex' or Txfreq == Rxfreq:
@@ -107,12 +103,12 @@ class RtSys(object):
         # Comment               any string
 
         Wide = 'Y' if Wide=="N" else 'N'
-        print(f"{count},{Rxfreq},{Txfreq},{Offset_s},{Mode},Auto,{Name},{'Y' if Name else 'N'},{ToneMode},{Tone},{Dcs},Scan,Auto,N,High,{Wide},N,{Banks}{Comment}", file=ofile)
+        csvout.writerow([count, Rxfreq, Txfreq, Offset_s, Mode, 'Auto', Name, 'Y' if Name else 'N', ToneMode, Tone, Dcs, 'Scan', 'Auto', 'N', 'High', Wide, 'N'] + Banks + [Comment])
 
 if __name__ == '__main__':
     signal.signal(signal.SIGPIPE, signal.SIG_DFL)
     try:
       sys.exit(common.main(RtSys))
     except KeyboardInterrupt as e:
-      print()
+      print(file=sys.stderr)
       sys.exit(1)
