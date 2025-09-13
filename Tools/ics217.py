@@ -32,26 +32,34 @@
 
 import sys
 
-class ics217(object):
+import channel
+from channel import csvget
+
+class ics217(channel.Channel):
     def __init__(this, line):
         """Create an ics217 object from a list of csv values. Caller
         must have already vetted the input. The parse() function
         below can handle that."""
+        this.Group = None
         this.Chan = line[0]     # memory #, 0-based
         this.Config = line[1]
         this.Name = line[2]     # memory label
         this.Comment = line[3]
-        this.Rxfreq = line[4]     # RX freq
-        this.Rxwid = line[5]
+        this._Rxfreq = line[4]     # RX freq
+        this.Wide = line[5]
         this.Rxtone = line[6]
-        this.Txfreq = line[7]     # RX freq
+        this._Txfreq = line[7]     # TX freq
         this.Txwid = line[8]
         this.Txtone = line[9]
         this.Mode = line[10]
         this.Remarks = line[11]
-    def __repr__(this):
-        return f'''ics217("{this.Chan}", "{this.Config}", "{this.Name}", "{this.Comment}", "{this.Rxfreq}", "{this.Rxwid}", "{this.Rxtone}", "{this.Txfreq}", "{this.Txwid}", "{this.Txtone}", "{this.Mode}", "{this.Remarks}")'''
+        this._Offset = None
 
+    def __repr__(this):
+        return f'''ics217({repr(this.Chan)}, {repr(this.Config)}, {repr(this.Name)}, {repr(this.Comment)}, {repr(this.Rxfreq)}, {repr(this.Wide)}, {repr(this.Rxtone)}, {repr(this.Txfreq)}, {repr(this.Txwid)}, {repr(this.Txtone)}, {repr(this.Mode)}, {repr(this.Remarks)})'''
+
+    def __str__(this):
+        return f'''{csvget(this.Chan)},{csvget(this.Config)},{csvget(this.Name)},{csvget(this.Comment)},{csvget(this.Rxfreq)},{csvget(this.Wide)},{csvget(this.Rxtone)},{csvget(this.Txfreq)},{csvget(this.Txwid)},{csvget(this.Txtone)},{csvget(this.Mode)},{csvget(this.Remarks)}'''
 
 def parse(line, prefixes='VULTD', cls=None):
     """Given a list, most likely provided by the csv module, return
@@ -67,3 +75,5 @@ def parse(line, prefixes='VULTD', cls=None):
         print("Failed to parse: ", line, file=sys.stdout)
         print(e, file=sys.stdout)
         return None
+
+
