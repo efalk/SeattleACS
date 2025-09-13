@@ -1,4 +1,4 @@
-,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment,
+n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment,
 1,53.2900,51.5900,1.7000 MHz,Minus,Auto,L01WSE,Y,Tone,100.0,,Scan,Auto,N,High,N,N,West Seattle; W7AW West Seattle
 2,52.8700,51.1700,1.7000 MHz,Minus,Auto,L02PSR,Y,Tone,103.5,,Scan,Auto,N,High,N,N,PSRG; WW7PSR Capitol Hill/Beacon Hill
 3,52.5250,52.5250,,Simplex,Auto,L21252,Y,None,,,Scan,Auto,N,High,N,N,Simplex Calling 52.525; simplex calling

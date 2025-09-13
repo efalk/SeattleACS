@@ -1,4 +1,4 @@
-,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment,
+n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment,
 1,146.9600,146.3600,600 kHz,Minus,Auto,V01PSR,Y,Tone,103.5,,Scan,Auto,N,High,N,N,PSRG; coordination; WW7PSR; Allstar 2462
 2,146.9600,146.9600,,Simplex,Auto,V02PSO,Y,Tone,103.5,,Scan,Auto,N,High,N,N,PSRG Output; coordination simplex
 3,147.0000,146.4000,600 kHz,Minus,Auto,V03DXC,Y,Tone,103.5,,Scan,Auto,N,High,N,N,WW DX Club; tactical; W7DX

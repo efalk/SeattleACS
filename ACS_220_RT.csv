@@ -1,4 +1,4 @@
-,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment,
+n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment,
 1,223.4000,223.4000,,Simplex,Auto,T21340,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 223.40; simplex voice, shared with data
 2,223.4200,223.4200,,Simplex,Auto,T21342,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 223.42; simplex voice, shared with data
 3,223.4400,223.4400,,Simplex,Auto,T21344,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 223.44; simplex voice, shared with data

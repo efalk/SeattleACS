@@ -104,7 +104,7 @@ class RtSys(object):
             Banks = ''.join(Banks)
         else:
             Banks = ''
-        print(",Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable," + Banks + "Comment,", file=ofile)
+        print("n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable," + Banks + "Comment,", file=ofile)
 
     @staticmethod
     def write(icsrec, ofile, count, bank):

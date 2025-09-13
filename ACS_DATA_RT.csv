@@ -1,4 +1,4 @@
-,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment,
+n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment,
 1,144.3500,144.3500,,Simplex,Auto,144350,Y,None,,,Scan,Auto,N,High,N,N,Data 144.350
 2,144.3900,144.3900,,Simplex,Auto,144390,Y,None,,,Scan,Auto,N,High,N,N,Data 144.390; APRS
 3,144.9000,144.9000,,Simplex,Auto,144900,Y,None,,,Scan,Auto,N,High,N,N,Data 144.900; KD7DK-10 VARA PUBLIC
