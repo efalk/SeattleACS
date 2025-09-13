@@ -17,7 +17,7 @@
 
 # Schema (ACS 217):
 #   0 CH#, e.g. "V01"
-#   1 config: Repeater, Simplex
+#   1 config: "Repeater" | "Simplex"
 #   2 name
 #   3 comment
 #   4 rx freq
