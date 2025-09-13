@@ -1,5 +1,5 @@
 
-# Edit this next line whenever a new ICS-217 is issues
+# Edit this next line whenever a new ICS-217 is issued
 #ICS217 = W7ACS_ICS-217A_20240131.csv
 ICS217 = W7ACS_ICS-217A_20250912.csv
 
