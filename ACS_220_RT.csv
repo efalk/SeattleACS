@@ -1,20 +1,20 @@
-n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment,
-1,223.4000,223.4000,,Simplex,Auto,T21340,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 223.40; simplex voice, shared with data
-2,223.4200,223.4200,,Simplex,Auto,T21342,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 223.42; simplex voice, shared with data
-3,223.4400,223.4400,,Simplex,Auto,T21344,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 223.44; simplex voice, shared with data
-4,223.4600,223.4600,,Simplex,Auto,T21346,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 223.46; simplex voice, shared with data
-5,223.4800,223.4800,,Simplex,Auto,T21348,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 223.48; simplex voice, shared with data
-6,223.5000,223.5000,,Simplex,Auto,T21350,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex Calling 223.5; simplex calling
-7,224.0900,224.0900,,Simplex,Auto,T27409,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Cross-Band 224.09; cross-band repeat
-8,223.8400,222.2400,1.6000 MHz,Minus,Auto,T41EMD,Y,Tone,100.0,,Scan,Auto,N,High,N,N,WA EMD Camp Murray; W7EMD; PNW220 Network (planned)
-9,224.1200,222.5200,1.6000 MHz,Minus,Auto,T42LED,Y,Tone,103.5,,Scan,Auto,N,High,N,N,K7LED E Tiger Mt; NTS; SATERN
-10,224.3400,222.7400,1.6000 MHz,Minus,Auto,T43BEA,Y,Tone,103.5,,Scan,Auto,N,High,N,N,BEARS W Tiger Mt; K7NWS; PNW220 Network
-11,224.6800,223.0800,1.6000 MHz,Minus,Auto,T44MST,Y,Tone,100.0,,Scan,Auto,N,High,N,N,MST Beacon Hill; MST tactical; WW7MST linked, but is intended to be an inbound repeater for remote stations. It will work with voice, but the system is not optimized for that path.
-12,224.0200,222.4200,1.6000 MHz,Minus,Auto,T51SLN,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Shoreline; W7AUX
-13,224.3600,222.7600,1.6000 MHz,Minus,Auto,T52KRK,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Kirkland; K7LWH
-14,224.3800,222.7800,1.6000 MHz,Minus,Auto,T71SMV,Y,Tone,103.8,,Scan,Auto,N,High,N,N,Snohomish Co Marysville; WA7DEM
-15,224.2200,222.6200,1.6000 MHz,Minus,Auto,T81LFP,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Lake Forest Park; WA7FUS; PNW220 Network
-16,224.8800,223.2800,1.6000 MHz,Minus,Auto,T82BAL,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Baldi Mt; W7WRG; PNW220 Network
-17,224.0800,222.4800,1.6000 MHz,Minus,Auto,T83BFW,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Baw Faw Pk; W7WRG; PNW220 Network
-18,224.2800,222.6800,1.6000 MHz,Minus,Auto,T84HST,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Haystack Mt ; W7WRG; PNW220 Network
-19,224.4400,222.8400,1.6000 MHz,Minus,Auto,T85COU,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Cougar Mt; KF7BJI; PNW220 Network
+n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment
+1,223.4000,223.4000,,Simplex,Auto,T21340,Y,Tone,141.3,,Scan,Auto,N,High,N,N,"T21: Simplex 223.40; simplex voice, shared with data"
+2,223.4200,223.4200,,Simplex,Auto,T21342,Y,Tone,141.3,,Scan,Auto,N,High,N,N,"T22: Simplex 223.42; simplex voice, shared with data"
+3,223.4400,223.4400,,Simplex,Auto,T21344,Y,Tone,141.3,,Scan,Auto,N,High,N,N,"T23: Simplex 223.44; simplex voice, shared with data"
+4,223.4600,223.4600,,Simplex,Auto,T21346,Y,Tone,141.3,,Scan,Auto,N,High,N,N,"T24: Simplex 223.46; simplex voice, shared with data"
+5,223.4800,223.4800,,Simplex,Auto,T21348,Y,Tone,141.3,,Scan,Auto,N,High,N,N,"T25: Simplex 223.48; simplex voice, shared with data"
+6,223.5000,223.5000,,Simplex,Auto,T21350,Y,Tone,141.3,,Scan,Auto,N,High,N,N,T26: Simplex Calling 223.5; simplex calling
+7,224.0900,224.0900,,Simplex,Auto,T27409,Y,Tone,141.3,,Scan,Auto,N,High,N,N,T27: Cross-Band 224.09; cross-band repeat
+8,223.8400,222.2400,1.6000 MHz,Minus,Auto,T41EMD,Y,Tone,100.0,,Scan,Auto,N,High,N,N,T41: WA EMD Camp Murray; W7EMD; PNW220 Network (planned)
+9,224.1200,222.5200,1.6000 MHz,Minus,Auto,T42LED,Y,Tone,103.5,,Scan,Auto,N,High,N,N,T42: K7LED E Tiger Mt; NTS; SATERN
+10,224.3400,222.7400,1.6000 MHz,Minus,Auto,T43BEA,Y,Tone,103.5,,Scan,Auto,N,High,N,N,T43: BEARS W Tiger Mt; K7NWS; PNW220 Network
+11,224.6800,223.0800,1.6000 MHz,Minus,Auto,T44MST,Y,Tone,100.0,,Scan,Auto,N,High,N,N,"T44: MST Beacon Hill; MST tactical; WW7MST linked, but is intended to be an inbound repeater for remote stations. It will work with voice, but the system is not optimized for that path."
+12,224.0200,222.4200,1.6000 MHz,Minus,Auto,T51SLN,Y,Tone,103.5,,Scan,Auto,N,High,N,N,T51: Shoreline; W7AUX
+13,224.3600,222.7600,1.6000 MHz,Minus,Auto,T52KRK,Y,Tone,103.5,,Scan,Auto,N,High,N,N,T52: Kirkland; K7LWH
+14,224.3800,222.7800,1.6000 MHz,Minus,Auto,T71SMV,Y,Tone,103.8,,Scan,Auto,N,High,N,N,T71: Snohomish Co Marysville; WA7DEM
+15,224.2200,222.6200,1.6000 MHz,Minus,Auto,T81LFP,Y,Tone,103.5,,Scan,Auto,N,High,N,N,T81: Lake Forest Park; WA7FUS; PNW220 Network
+16,224.8800,223.2800,1.6000 MHz,Minus,Auto,T82BAL,Y,Tone,103.5,,Scan,Auto,N,High,N,N,T82: Baldi Mt; W7WRG; PNW220 Network
+17,224.0800,222.4800,1.6000 MHz,Minus,Auto,T83BFW,Y,Tone,103.5,,Scan,Auto,N,High,N,N,T83: Baw Faw Pk; W7WRG; PNW220 Network
+18,224.2800,222.6800,1.6000 MHz,Minus,Auto,T84HST,Y,Tone,103.5,,Scan,Auto,N,High,N,N,T84: Haystack Mt ; W7WRG; PNW220 Network
+19,224.4400,222.8400,1.6000 MHz,Minus,Auto,T85COU,Y,Tone,103.5,,Scan,Auto,N,High,N,N,T85: Cougar Mt; KF7BJI; PNW220 Network
