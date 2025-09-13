@@ -1,0 +1,10 @@
+Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPolarity,RxDtcsCode,CrossMode,Mode,TStep,Skip,Power,Comment,URCALL,RPT1CALL,RPT2CALL,DVCODE
+1,H1WSEA,462.5500,-,5.000000,Tone,103.5,103.5,023,NN,023,Tone->Tone,FM,5.0,,5.0W,H1: GMRS 1 West Seattle; Seattle Emergency Hubs; WQJE383,,,,
+2,H2BHIL,462.5750,+,5.000000,Tone,103.5,103.5,023,NN,023,Tone->Tone,FM,5.0,,5.0W,H2: GMRS 2 Beacon Hill; Seattle Emergency Hubs,,,,
+3,H3CAPH,462.6000,+,5.000000,Tone,103.5,103.5,023,NN,023,Tone->Tone,FM,5.0,,5.0W,H3: GMRS 3 Capitol Hill; Seattle Emergency Hubs; KAD2844,,,,
+4,H4MAG,462.6250,+,5.000000,Tone,100.0,100.0,023,NN,023,Tone->Tone,FM,5.0,,5.0W,H4: GMRS 4 Magnolia; Seattle Emergency Hubs,,,,
+5,H6MAPL,462.6750,+,5.000000,Tone,141.3,141.3,023,NN,023,Tone->Tone,FM,5.0,,5.0W,H6: GMRS 6 Maple Leaf; Seattle Emergency Hubs; KAD2844,,,,
+6,H4ETIG,462.6250,,0.000000,Tone,141.3,141.3,023,NN,023,Tone->Tone,FM,5.0,,5.0W,GMRS 4 East Tiger,,,,
+7,H5OLYM,462.6500,+,5.000000,Tone,141.3,141.3,023,NN,023,Tone->Tone,FM,5.0,,5.0W,GMRS 5 Olympia,,,,
+8,H7LKFP,462.7250,+,5.000000,Tone,141.3,141.3,023,NN,023,Tone->Tone,FM,5.0,,5.0W,H7: GMRS 7 Lake Forest Park; WRTQ652,,,,
+9,H7SNOH,462.7250,+,5.000000,Tone,141.3,141.3,023,NN,023,Tone->Tone,FM,5.0,,5.0W,H7: GMRS 7 Snohomish; WQVZ485,,,,
