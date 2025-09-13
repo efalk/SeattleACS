@@ -1,4 +1,4 @@
-,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment,
+,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment
 1,430.8000,430.8000,,Simplex,Auto,Beacon,Y,None,,,Scan,Auto,N,High,N,N,Data 430.800; W7ACS-10 Beacon A
 2,430.8250,430.8250,,Simplex,Auto,W7MIR,Y,None,,,Scan,Auto,N,High,N,N,Data 430.825; W7MIR-11 VARA FM
 3,430.8500,430.8500,,Simplex,Auto,FirstH,Y,None,,,Scan,Auto,N,High,N,N,Data 430.850; W7ACS-12 First Hill A
