@@ -1,31 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf8 -*-
 
-usage = """Convert CSV file from ACS 217 spreadsheet to format RT Systems uses
-
-  Acs2RtSys.py < W7ACS_ICS-217A_20240131.csv > ACS_RT.csv
-
-  Options:
-        -b <band>       Any combination of the letters VULTD
-                                V = VHF (2m band)
-                                U = UHF (70cm band)
-                                L = Low frequency (6m band)
-                                T = 220 MHz band (1.25m band)
-                                D = digital
-                            Default is VU
-        -s <n>          Start numbering at <n>; default is 1
-        -B <bank>       Select bank for devices that use it (i.e. FT-60)
-
-Currently generates output csv files that have been tested with Yaesu FT-60,
-Yaesu FT-5, and Explorer QRZ-1. These files should work with RT Systems software
-for any device, but if not, please contact Ed Falk, KK7NNS au gmail.com directly
-and we'll figure it out.
-"""
-
-# TODO: add an option to specify the output format. Currently, only "RtSys"
-# exists.
-
-
 # Convert CSV file from ACS 217 spreadsheet to format RT Systems uses for FT-60
 
 import csv
@@ -36,58 +11,8 @@ import signal
 import string
 import sys
 
+import common
 import ics217
-
-# See below for the ics217 subclasses responsible for formatting the
-# output.
-
-def main():
-    ifile = sys.stdin
-
-    reader = csv.reader(ifile)
-
-    bands = 'VU'
-    count = 1
-    bank = None
-    output = RtSys
-    try:
-        (optlist, args) = getopt.getopt(sys.argv[1:], 'hb:s:B:', ['help'])
-        for flag, value in optlist:
-            if flag in ('-h', '--help'):
-                print(usage)
-                return 0
-            elif flag == '-b':
-                bands = value
-            elif flag == '-B':
-                bank = getInt(value)
-            elif flag == '-s':
-                count = getInt(value)
-                if count is None:
-                    print(f"-s '{value}' needs to be an integer", file=sys.stderr)
-                    return 2
-    except getopt.GetoptError as e:
-        print(e, file=sys.stderr)
-        print(usage, file=sys.stderr)
-        return 2
-
-    output.header(sys.stdout, bank)
-
-    for l in reader:
-        acsRec = ics217.parse(l, bands)
-        if not acsRec:
-            continue
-
-        try:
-            output.write(acsRec, sys.stdout, count, bank)
-        except Exception as e:
-            # Parse failures are normal, don't report them; they just clutter
-            # the output.
-            #print("Failed to parse: ", l, file=sys.stderr)
-            #print(e, file=sys.stderr)
-            continue
-
-        count += 1
-
 
 class RtSys(object):
     """This is the "generic" RT Systems code. It generates output that
@@ -104,7 +29,7 @@ class RtSys(object):
             Banks = ''.join(Banks)
         else:
             Banks = ''
-        print("n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable," + Banks + "Comment,", file=ofile)
+        print("n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable," + Banks + "Comment", file=ofile)
 
     @staticmethod
     def write(icsrec, ofile, count, bank):
@@ -189,4 +114,4 @@ def getInt(s, dflt=None):
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    sys.exit(common.main(RtSys))
