@@ -18,13 +18,13 @@
 # Schema (ACS 217):
 #   0 CH#, e.g. "V01"
 #   1 config: "Repeater" | "Simplex"
-#   2 name
-#   3 comment
-#   4 rx freq
+#   2 name, displayed by radio, e.g. "V01PSR"
+#   3 comment, e.g. "PSRG" or "KC ARES Tiger"
+#   4 Rx freq
 #   5 narrow/wide: W, N
 #   6 RX tone: "CSQ" or a frequency
-#   7 Tx Freq
-#   8 narrow/wide: W, N
+#   7 Tx Freq, typically for repeater uplink
+#   8 Tx narrow/wide: W, N
 #   9 TX tone: "CSQ" or a Frequency e.g. 103.5
 #  10 Mode: A, MF, MP, D; almost always "A"
 #  11 Remarks
@@ -36,6 +36,7 @@ import channel
 from channel import csvget
 
 class ics217(channel.Channel):
+    """Represents one ICS217 record. See above for list of fields."""
     def __init__(this, line):
         """Create an ics217 object from a list of csv values. Caller
         must have already vetted the input. The parse() function
@@ -61,13 +62,13 @@ class ics217(channel.Channel):
     def __str__(this):
         return f'''{csvget(this.Chan)},{csvget(this.Config)},{csvget(this.Name)},{csvget(this.Comment)},{csvget(this.Rxfreq)},{csvget(this.Wide)},{csvget(this.Rxtone)},{csvget(this.Txfreq)},{csvget(this.Txwid)},{csvget(this.Txtone)},{csvget(this.Mode)},{csvget(this.Remarks)}'''
 
-def parse(line, prefixes='VULTD', cls=None):
+def parse(line, prefixes='VULTDH', cls=None):
     """Given a list, most likely provided by the csv module, return
     an ics217 object or None if the list can't be parsed."""
     if not cls: cls = ics217
     if len(line) < 12: return None
     # line[4] is RX freq; if that's blank, then the entire record is invalid
-    if not line[0] or line[0][0] not in prefixes or not line[4]:
+    if not line[0] or (prefixes and line[0][0] not in prefixes) or not line[4]:
         return None
     try:
         return cls(line)
