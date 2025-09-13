@@ -1,6 +1,7 @@
 
 # Edit this next line whenever a new ICS-217 is issues
 ICS217 = W7ACS_ICS-217A_20240131.csv
+ICS217 = W7ACS_ICS-217A_20250912.csv
 
 CSV_FILES := ACS_VHF_UHF_RT.csv ACS_VHF_UHF_chirp.csv ACS_LOW_RT.csv ACS_LOW_chirp.csv \
 	ACS_220_RT.csv ACS_220_chirp.csv ACS_DATA_RT.csv ACS_DATA_chirp.csv

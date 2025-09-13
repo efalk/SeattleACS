@@ -1,7 +1,7 @@
 ,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment,
 1,144.3500,144.3500,,Simplex,Auto,144350,Y,None,,,Scan,Auto,N,High,N,N,Data 144.350
 2,144.3900,144.3900,,Simplex,Auto,144390,Y,None,,,Scan,Auto,N,High,N,N,Data 144.390; APRS
-3,144.9000,144.9000,,Simplex,Auto,144900,Y,None,,,Scan,Auto,N,High,N,N,Data 144.900; KD7DK-10 VARA
+3,144.9000,144.9000,,Simplex,Auto,144900,Y,None,,,Scan,Auto,N,High,N,N,Data 144.900; KD7DK-10 VARA PUBLIC
 4,144.9100,144.9100,,Simplex,Auto,144910,Y,None,,,Scan,Auto,N,High,N,N,Data 144.910
 5,144.9300,144.9300,,Simplex,Auto,144930,Y,None,,,Scan,Auto,N,High,N,N,Data 144.930
 6,144.9500,144.9500,,Simplex,Auto,144950,Y,None,,,Scan,Auto,N,High,N,N,Data 144.950; W7EFR-10; K7CST-10
@@ -10,7 +10,7 @@
 9,144.9900,144.9900,,Simplex,Auto,144990,Y,None,,,Scan,Auto,N,High,N,N,Data 144.990; ACS data simplex
 10,145.0100,145.0100,,Simplex,Auto,145010,Y,None,,,Scan,Auto,N,High,N,N,Data 145.010
 11,145.0300,145.0300,,Simplex,Auto,145030,Y,None,,,Scan,Auto,N,High,N,N,Data 145.030; W7MIR-10 VARA; WA7AUB-10
-12,145.0500,145.0500,,Simplex,Auto,145050,Y,None,,,Scan,Auto,N,High,N,N,Data 145.050; K7NHV-10 VARA; W7AUX-10
+12,145.0500,145.0500,,Simplex,Auto,145050,Y,None,,,Scan,Auto,N,High,N,N,Data 145.050; K7NHV-10 VARA; W7AUX-10 (packet)
 13,145.0700,145.0700,,Simplex,Auto,145070,Y,None,,,Scan,Auto,N,High,N,N,Data 145.070; W7VMI-10 VARA
 14,145.0900,145.0900,,Simplex,Auto,145090,Y,None,,,Scan,Auto,N,High,N,N,Data 145.090
 15,145.1000,145.1000,,Simplex,Auto,145100,Y,None,,,Scan,Auto,N,High,N,N,Data 145.100
@@ -29,64 +29,69 @@
 28,145.7500,145.7500,,Simplex,Auto,145750,Y,None,,,Scan,Auto,N,High,N,N,Data 145.750
 29,145.7700,145.7700,,Simplex,Auto,145770,Y,None,,,Scan,Auto,N,High,N,N,Data 145.770
 30,145.7900,145.7900,,Simplex,Auto,145790,Y,None,,,Scan,Auto,N,High,N,N,Data 145.790; Digital Voice simplex
-31,430.8000,430.8000,,Simplex,Auto,430800,Y,None,,,Scan,Auto,N,High,N,N,Data 430.800; W7ACS-10 Beacon A
-32,430.8250,430.8250,,Simplex,Auto,430825,Y,None,,,Scan,Auto,N,High,N,N,Data 430.825; W7MIR-11 VARA FM
-33,430.8500,430.8500,,Simplex,Auto,430850,Y,None,,,Scan,Auto,N,High,N,N,Data 430.850; W7ACS-12 First Hill A
-34,430.8750,430.8750,,Simplex,Auto,430875,Y,None,,,Scan,Auto,N,High,N,N,Data 430.875; W7ACS-9 Magnolia
-35,430.9000,430.9000,,Simplex,Auto,430900,Y,None,,,Scan,Auto,N,High,N,N,Data 430.900
-36,430.9250,430.9250,,Simplex,Auto,430925,Y,None,,,Scan,Auto,N,High,N,N,Data 430.925
-37,430.9500,430.9500,,Simplex,Auto,430950,Y,None,,,Scan,Auto,N,High,N,N,Data 430.950; W7ACS-14 Capitol Park A
-38,430.9750,430.9750,,Simplex,Auto,430975,Y,None,,,Scan,Auto,N,High,N,N,Data 430.975
-39,431.0000,431.0000,,Simplex,Auto,431000,Y,None,,,Scan,Auto,N,High,N,N,Data 431.000; W7ACS-8 Broadview (Northwest)
-40,439.8000,439.8000,,Simplex,Auto,439800,Y,None,,,Scan,Auto,N,High,N,N,Data 439.800; W7ACS-11 Beacon B
-41,439.8250,439.8250,,Simplex,Auto,439825,Y,None,,,Scan,Auto,N,High,N,N,Data 439.825; NC7G-10 VARA FM
-42,439.8500,439.8500,,Simplex,Auto,439850,Y,None,,,Scan,Auto,N,High,N,N,Data 439.850; W7AW-10 VARA FM (planned)
-43,439.8750,439.8750,,Simplex,Auto,439875,Y,None,,,Scan,Auto,N,High,N,N,Data 439.875; W7ACS Magnolia B (planned)
-44,439.9000,439.9000,,Simplex,Auto,439900,Y,None,,,Scan,Auto,N,High,N,N,Data 439.900; ACS data simplex
-45,439.9250,439.9250,,Simplex,Auto,439925,Y,None,,,Scan,Auto,N,High,N,N,Data 439.925
-46,439.9500,439.9500,,Simplex,Auto,439950,Y,None,,,Scan,Auto,N,High,N,N,Data 439.950; W7ACS-15 Capitol Park B
-47,439.9750,439.9750,,Simplex,Auto,439975,Y,None,,,Scan,Auto,N,High,N,N,Data 439.975
-48,440.8000,440.8000,,Simplex,Auto,440800,Y,None,,,Scan,Auto,N,High,N,N,Data 440.800
-49,440.8250,440.8250,,Simplex,Auto,440825,Y,None,,,Scan,Auto,N,High,N,N,Data 440.825; ACS data simplex
-50,440.8500,440.8500,,Simplex,Auto,440850,Y,None,,,Scan,Auto,N,High,N,N,Data 440.850; W7ACS-13 First Hill; KD7WDG VARA
-51,440.8750,440.8750,,Simplex,Auto,440875,Y,None,,,Scan,Auto,N,High,N,N,Data 440.875; WA7DEM-11
-52,440.9000,440.9000,,Simplex,Auto,440900,Y,None,,,Scan,Auto,N,High,N,N,Data 440.900; WA7AUB-10 VARA
-53,440.9250,440.9250,,Simplex,Auto,440925,Y,None,,,Scan,Auto,N,High,N,N,Data 440.925
-54,440.9500,440.9500,,Simplex,Auto,440950,Y,None,,,Scan,Auto,N,High,N,N,Data 440.950
-55,441.0000,441.0000,,Simplex,Auto,441000,Y,None,,,Scan,Auto,N,High,N,N,Data Calling 441.000; Digital Voice simplex calling
-56,50.6000,50.6000,,Simplex,Auto,D50600,Y,None,,,Scan,Auto,N,High,N,N,Data 50.60
-57,50.6200,50.6200,,Simplex,Auto,D50620,Y,None,,,Scan,Auto,N,High,N,N,Data 50.62
-58,50.6400,50.6400,,Simplex,Auto,D50640,Y,None,,,Scan,Auto,N,High,N,N,Data 50.64
-59,50.6600,50.6600,,Simplex,Auto,D50660,Y,None,,,Scan,Auto,N,High,N,N,Data 50.66
-60,50.6800,50.6800,,Simplex,Auto,D50680,Y,None,,,Scan,Auto,N,High,N,N,Data 50.68
-61,50.7000,50.7000,,Simplex,Auto,D50700,Y,None,,,Scan,Auto,N,High,N,N,Data 50.70
-62,50.7200,50.7200,,Simplex,Auto,D50720,Y,None,,,Scan,Auto,N,High,N,N,Data 50.72
-63,50.7400,50.7400,,Simplex,Auto,D50740,Y,None,,,Scan,Auto,N,High,N,N,Data 50.74
-64,50.7600,50.7600,,Simplex,Auto,D50760,Y,None,,,Scan,Auto,N,High,N,N,Data 50.76
-65,50.7800,50.7800,,Simplex,Auto,D50780,Y,None,,,Scan,Auto,N,High,N,N,Data 50.78
-66,52.5900,52.5900,,Simplex,Auto,D52590,Y,None,,,Scan,Auto,N,High,N,N,Data 52.59; ACS simplex data
-67,52.6100,52.6100,,Simplex,Auto,D52610,Y,None,,,Scan,Auto,N,High,N,N,Data 52.61
-68,52.6300,52.6300,,Simplex,Auto,D52630,Y,None,,,Scan,Auto,N,High,N,N,Data 52.63
-69,52.6500,52.6500,,Simplex,Auto,D52650,Y,None,,,Scan,Auto,N,High,N,N,Data 52.65
-70,52.6700,52.6700,,Simplex,Auto,D52670,Y,None,,,Scan,Auto,N,High,N,N,Data 52.67
-71,52.6900,52.6900,,Simplex,Auto,D52690,Y,None,,,Scan,Auto,N,High,N,N,Data 52.69
-72,52.7100,52.7100,,Simplex,Auto,D52710,Y,None,,,Scan,Auto,N,High,N,N,Data 52.71
-73,52.7300,52.7300,,Simplex,Auto,D52730,Y,None,,,Scan,Auto,N,High,N,N,Data 52.73
-74,52.7500,52.7500,,Simplex,Auto,D52750,Y,None,,,Scan,Auto,N,High,N,N,Data 52.75
-75,52.7700,52.7700,,Simplex,Auto,D52770,Y,None,,,Scan,Auto,N,High,N,N,Data 52.77
-76,52.7900,52.7900,,Simplex,Auto,D52790,Y,None,,,Scan,Auto,N,High,N,N,Data 52.79
-77,223.4000,223.4000,,Simplex,Auto,223400,Y,None,,,Scan,Auto,N,High,N,N,Data 223.40; shared with simplex voice
-78,223.4200,223.4200,,Simplex,Auto,223420,Y,None,,,Scan,Auto,N,High,N,N,Data 223.42; shared with simplex voice
-79,223.4400,223.4400,,Simplex,Auto,223440,Y,None,,,Scan,Auto,N,High,N,N,Data 223.44; shared with simplex voice
-80,223.4600,223.4600,,Simplex,Auto,223460,Y,None,,,Scan,Auto,N,High,N,N,Data 223.46; shared with simplex voice
-81,223.4800,223.4800,,Simplex,Auto,223480,Y,None,,,Scan,Auto,N,High,N,N,Data 223.48; shared with simplex voice
-82,223.5700,223.5700,,Simplex,Auto,223570,Y,None,,,Scan,Auto,N,High,N,N,Data 223.57; within 100 kHz data channel #1
-83,223.5900,223.5900,,Simplex,Auto,223590,Y,None,,,Scan,Auto,N,High,N,N,Data 223.59; within 100 kHz data channel #1
-84,223.6100,223.6100,,Simplex,Auto,223610,Y,None,,,Scan,Auto,N,High,N,N,Data 223.61; within 100 kHz data channel #1
-85,223.6300,223.6300,,Simplex,Auto,223630,Y,None,,,Scan,Auto,N,High,N,N,Data 223.63; within 100 kHz data channel #1
-86,223.6500,223.6500,,Simplex,Auto,223650,Y,None,,,Scan,Auto,N,High,N,N,Data 223.65; within 100 kHz data channel #1
-87,223.6700,223.6700,,Simplex,Auto,223670,Y,None,,,Scan,Auto,N,High,N,N,Data 223.67; within 100 kHz data channel #2
-88,223.6900,223.6900,,Simplex,Auto,223690,Y,None,,,Scan,Auto,N,High,N,N,Data 223.69; within 100 kHz data channel #2
-89,223.7100,223.7100,,Simplex,Auto,223710,Y,None,,,Scan,Auto,N,High,N,N,Data 223.71; within 100 kHz data channel #2
-90,223.7300,223.7300,,Simplex,Auto,223730,Y,None,,,Scan,Auto,N,High,N,N,Data 223.73; within 100 kHz data channel #2
-91,223.7500,223.7500,,Simplex,Auto,223750,Y,None,,,Scan,Auto,N,High,N,N,Data 223.75; within 100 kHz data channel #2
+31,144.6300,144.6300,,Simplex,Auto,144630,Y,None,,,Scan,Auto,N,High,N,N,Data 144.630; KD7WDG-10 1200 Baud AX.25
+32,144.8700,144.8700,,Simplex,Auto,144870,Y,None,,,Scan,Auto,N,High,N,N,Data 144.870; First Hill VHF W7ACS-5 PUBLIC
+33,144.9000,144.9000,,Simplex,Auto,144900,Y,None,,,Scan,Auto,N,High,N,N,Data 144.900; W7ACS-7 VARA Queen Anne PUBLIC
+34,430.8000,430.8000,,Simplex,Auto,430800,Y,None,,,Scan,Auto,N,High,N,N,Data 430.800; W7ACS-10 Beacon A PUBLIC
+35,430.8250,430.8250,,Simplex,Auto,430825,Y,None,,,Scan,Auto,N,High,N,N,Data 430.825; W7MIR-11 VARA FM
+36,430.8500,430.8500,,Simplex,Auto,430850,Y,None,,,Scan,Auto,N,High,N,N,Data 430.850; W7ACS-12 First Hill A PUBLIC
+37,430.8750,430.8750,,Simplex,Auto,430875,Y,None,,,Scan,Auto,N,High,N,N,Data 430.875; W7ACS-9 Magnolia PUBLIC
+38,430.9000,430.9000,,Simplex,Auto,430900,Y,None,,,Scan,Auto,N,High,N,N,Data 430.900
+39,430.9250,430.9250,,Simplex,Auto,430925,Y,None,,,Scan,Auto,N,High,N,N,Data 430.925
+40,430.9500,430.9500,,Simplex,Auto,430950,Y,None,,,Scan,Auto,N,High,N,N,Data 430.950; W7ACS-14 Capitol Park A PUBLIC
+41,430.9750,430.9750,,Simplex,Auto,430975,Y,None,,,Scan,Auto,N,High,N,N,Data 430.975
+42,431.0000,431.0000,,Simplex,Auto,431000,Y,None,,,Scan,Auto,N,High,N,N,Data 431.000
+43,439.8000,439.8000,,Simplex,Auto,439800,Y,None,,,Scan,Auto,N,High,N,N,Data 439.800; W7ACS-11 Beacon B PUBLIC
+44,439.8250,439.8250,,Simplex,Auto,439825,Y,None,,,Scan,Auto,N,High,N,N,Data 439.825; NC7G-10 VARA FM
+45,439.8500,439.8500,,Simplex,Auto,439850,Y,None,,,Scan,Auto,N,High,N,N,Data 439.850; W7AW-10 VARA FM (planned)
+46,439.8750,439.8750,,Simplex,Auto,439875,Y,None,,,Scan,Auto,N,High,N,N,Data 439.875; W7ACS Magnolia B (planned)
+47,439.9000,439.9000,,Simplex,Auto,439900,Y,None,,,Scan,Auto,N,High,N,N,Data 439.900; ACS data simplex
+48,439.9250,439.9250,,Simplex,Auto,439925,Y,None,,,Scan,Auto,N,High,N,N,Data 439.925
+49,439.9500,439.9500,,Simplex,Auto,439950,Y,None,,,Scan,Auto,N,High,N,N,Data 439.950; W7ACS-15 Capitol Park B PUBLIC
+50,439.9750,439.9750,,Simplex,Auto,439975,Y,None,,,Scan,Auto,N,High,N,N,Data 439.975; W7ACS-8 Broadview (Northwest) PUBLIC
+51,440.8000,440.8000,,Simplex,Auto,440800,Y,None,,,Scan,Auto,N,High,N,N,Data 440.800
+52,440.8250,440.8250,,Simplex,Auto,440825,Y,None,,,Scan,Auto,N,High,N,N,Data 440.825; ACS data simplex
+53,440.8500,440.8500,,Simplex,Auto,440850,Y,None,,,Scan,Auto,N,High,N,N,Data 440.850; W7ACS-13 First Hill PUBLIC; KD7WDG VARA
+54,440.8750,440.8750,,Simplex,Auto,440875,Y,None,,,Scan,Auto,N,High,N,N,Data 440.875; WA7DEM-11
+55,440.9000,440.9000,,Simplex,Auto,440900,Y,None,,,Scan,Auto,N,High,N,N,Data 440.900; WA7AUB-10 VARA
+56,440.9250,440.9250,,Simplex,Auto,440925,Y,None,,,Scan,Auto,N,High,N,N,Data 440.925
+57,440.9500,440.9500,,Simplex,Auto,440950,Y,None,,,Scan,Auto,N,High,N,N,Data 440.950
+58,441.0000,441.0000,,Simplex,Auto,441000,Y,None,,,Scan,Auto,N,High,N,N,Data Calling 441.000; Digital Voice simplex calling
+59,440.8500,440.8500,,Simplex,Auto,440850,Y,None,,,Scan,Auto,N,High,N,N,Data 440.850; Kitsap County DEM; VARA FM
+60,50.6000,50.6000,,Simplex,Auto,D50600,Y,None,,,Scan,Auto,N,High,N,N,Data 50.60; W7ACS-6 VARA Queen Anne
+61,50.6200,50.6200,,Simplex,Auto,D50620,Y,None,,,Scan,Auto,N,High,N,N,Data 50.62
+62,50.6400,50.6400,,Simplex,Auto,D50640,Y,None,,,Scan,Auto,N,High,N,N,Data 50.64
+63,50.6600,50.6600,,Simplex,Auto,D50660,Y,None,,,Scan,Auto,N,High,N,N,Data 50.66
+64,50.6800,50.6800,,Simplex,Auto,D50680,Y,None,,,Scan,Auto,N,High,N,N,Data 50.68
+65,50.7000,50.7000,,Simplex,Auto,D50700,Y,None,,,Scan,Auto,N,High,N,N,Data 50.70
+66,50.7200,50.7200,,Simplex,Auto,D50720,Y,None,,,Scan,Auto,N,High,N,N,Data 50.72
+67,50.7400,50.7400,,Simplex,Auto,D50740,Y,None,,,Scan,Auto,N,High,N,N,Data 50.74
+68,50.7600,50.7600,,Simplex,Auto,D50760,Y,None,,,Scan,Auto,N,High,N,N,Data 50.76
+69,50.7800,50.7800,,Simplex,Auto,D50780,Y,None,,,Scan,Auto,N,High,N,N,Data 50.78
+70,52.5900,52.5900,,Simplex,Auto,D52590,Y,None,,,Scan,Auto,N,High,N,N,Data 52.59; ACS simplex data; also L35
+71,52.6100,52.6100,,Simplex,Auto,D52610,Y,None,,,Scan,Auto,N,High,N,N,Data 52.61
+72,52.6300,52.6300,,Simplex,Auto,D52630,Y,None,,,Scan,Auto,N,High,N,N,Data 52.63
+73,52.6500,52.6500,,Simplex,Auto,D52650,Y,None,,,Scan,Auto,N,High,N,N,Data 52.65
+74,52.6700,52.6700,,Simplex,Auto,D52670,Y,None,,,Scan,Auto,N,High,N,N,Data 52.67
+75,52.6900,52.6900,,Simplex,Auto,D52690,Y,None,,,Scan,Auto,N,High,N,N,Data 52.69
+76,52.7100,52.7100,,Simplex,Auto,D52710,Y,None,,,Scan,Auto,N,High,N,N,Data 52.71
+77,52.7300,52.7300,,Simplex,Auto,D52730,Y,None,,,Scan,Auto,N,High,N,N,Data 52.73
+78,52.7500,52.7500,,Simplex,Auto,D52750,Y,None,,,Scan,Auto,N,High,N,N,Data 52.75
+79,52.7700,52.7700,,Simplex,Auto,D52770,Y,None,,,Scan,Auto,N,High,N,N,Data 52.77
+80,52.7900,52.7900,,Simplex,Auto,D52790,Y,None,,,Scan,Auto,N,High,N,N,Data 52.79
+81,223.4000,223.4000,,Simplex,Auto,223400,Y,None,,,Scan,Auto,N,High,N,N,Data 223.40; shared with simplex voice
+82,223.4200,223.4200,,Simplex,Auto,223420,Y,None,,,Scan,Auto,N,High,N,N,Data 223.42; shared with simplex voice
+83,223.4400,223.4400,,Simplex,Auto,223440,Y,None,,,Scan,Auto,N,High,N,N,Data 223.44; shared with simplex voice
+84,223.4600,223.4600,,Simplex,Auto,223460,Y,None,,,Scan,Auto,N,High,N,N,Data 223.46; shared with simplex voice
+85,223.4800,223.4800,,Simplex,Auto,223480,Y,None,,,Scan,Auto,N,High,N,N,Data 223.48; shared with simplex voice
+86,223.5700,223.5700,,Simplex,Auto,223570,Y,None,,,Scan,Auto,N,High,N,N,Data 223.57; within 100 kHz data channel #1
+87,223.5900,223.5900,,Simplex,Auto,223590,Y,None,,,Scan,Auto,N,High,N,N,Data 223.59; within 100 kHz data channel #1
+88,223.6100,223.6100,,Simplex,Auto,223610,Y,None,,,Scan,Auto,N,High,N,N,Data 223.61; within 100 kHz data channel #1
+89,223.6300,223.6300,,Simplex,Auto,223630,Y,None,,,Scan,Auto,N,High,N,N,Data 223.63; within 100 kHz data channel #1
+90,223.6500,223.6500,,Simplex,Auto,223650,Y,None,,,Scan,Auto,N,High,N,N,Data 223.65; within 100 kHz data channel #1
+91,223.6700,223.6700,,Simplex,Auto,223670,Y,None,,,Scan,Auto,N,High,N,N,Data 223.67; within 100 kHz data channel #2
+92,223.6900,223.6900,,Simplex,Auto,223690,Y,None,,,Scan,Auto,N,High,N,N,Data 223.69; within 100 kHz data channel #2
+93,223.7100,223.7100,,Simplex,Auto,223710,Y,None,,,Scan,Auto,N,High,N,N,Data 223.71; within 100 kHz data channel #2
+94,223.7300,223.7300,,Simplex,Auto,223730,Y,None,,,Scan,Auto,N,High,N,N,Data 223.73; within 100 kHz data channel #2
+95,223.7500,223.7500,,Simplex,Auto,223750,Y,None,,,Scan,Auto,N,High,N,N,Data 223.75; within 100 kHz data channel #2
+96,223.5800,223.5800,,Simplex,Auto,223580,Y,None,,,Scan,Auto,N,High,N,N,Data 223.580; Kitsap County DEM; VARA FM
