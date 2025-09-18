@@ -62,6 +62,22 @@ class ics217(channel.Channel):
     def __str__(this):
         return f'''{csvget(this.Chan)},{csvget(this.Config)},{csvget(this.Name)},{csvget(this.Comment)},{csvget(this.Rxfreq)},{csvget(this.Wide)},{csvget(this.Rxtone)},{csvget(this.Txfreq)},{csvget(this.Txwid)},{csvget(this.Txtone)},{csvget(this.Mode)},{csvget(this.Remarks)}'''
 
+    def getComment(this):
+        """Return a reasonable comment for this item"""
+        try:
+            c = []
+            if this.Chan not in this.Name: c.append(this.Chan + ': ')
+            if this.Comment and this.Remarks:
+                c.extend([this.Comment, '; ', this.Remarks])
+            elif this.Comment:
+                c.append(this.Comment)
+            elif this.Remarks:
+                c.append(this.Remarks)
+            return ''.join(c)
+        except Exception as e:
+            print(this, e, file=sys.stderr)
+            raise
+
 def parse(line, prefixes='VULTDH', cls=None):
     """Given a list, most likely provided by the csv module, return
     an ics217 object or None if the list can't be parsed."""

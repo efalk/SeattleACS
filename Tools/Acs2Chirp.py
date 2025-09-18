@@ -47,13 +47,11 @@ class Chirp(object):
         Chan = icsrec.Chan       # memory #, 0-based
         Config = icsrec.Config  
         Name = icsrec.Name       # memory label
-        Comment = icsrec.Comment  
         Rxfreq = icsrec.Rxfreq       # RX freq
         Mode = icsrec.Mode
         Wide = icsrec.Txwid
         Txfreq = icsrec.Txfreq       # RX freq
         Tone = icsrec.Txtone  
-        Remarks = icsrec.Remarks  
 
         # Derived values
         Offset = float(Txfreq) - float(Rxfreq)
@@ -73,10 +71,7 @@ class Chirp(object):
             ToneMode = 'Tone'
             Dtcs = '023'
 
-        if Comment and Remarks:
-            Comment = Chan + ': ' + Comment + '; ' + Remarks
-        elif Remarks:
-            Comment = Chan + ': ' + Remarks
+        Comment = icsrec.getComment()
 
         if Mode == 'A':
             if float(Rxfreq) >= 100.0:         # FM
