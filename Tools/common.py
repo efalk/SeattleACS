@@ -3,6 +3,7 @@
 
 import csv
 import getopt
+import re
 import sys
 
 usage = f"""Convert CSV file from ACS 217 spreadsheet to format RT Systems uses
@@ -19,6 +20,7 @@ usage = f"""Convert CSV file from ACS 217 spreadsheet to format RT Systems uses
                                 H = Seattle Emergency Hubs GMRS
                             Default is all
         -N              Use the 'U..N' entries (default is don't use)
+        -R <regex>      Use regex to select entries, e.g. 'V' or 'U..N'
         -s <n>          Start numbering at <n>; default is 1
         -B <bank>       Select bank for devices that use it (i.e. FT-60)
         -v              Increase verbosity
@@ -48,8 +50,9 @@ def main(writer, usage=usage):
     count = 1
     bank = None
     newEntries = False
+    regex = None
     try:
-        (optlist, args) = getopt.getopt(sys.argv[1:], 'hb:s:B:Nv', ['help'])
+        (optlist, args) = getopt.getopt(sys.argv[1:], 'hb:s:B:NR:v', ['help'])
         for flag, value in optlist:
             if flag in ('-h', '--help'):
                 print(usage)
@@ -58,6 +61,8 @@ def main(writer, usage=usage):
                 bands = None if value == "all" else value
             elif flag == '-N':
                 newEntries = True
+            elif flag == '-R':
+                regex = re.compile(value)
             elif flag == '-B':
                 bank = getInt(value)
             elif flag == '-s':
@@ -74,10 +79,10 @@ def main(writer, usage=usage):
 
     writer.header(csvout, bank)
 
-    for l in reader:
+    for line in reader:
         if verbose >= 2:
-            print(l, file=sys.stderr)
-        acsRec = ics217.parse(l, bands, newEntries)
+            print(line, file=sys.stderr)
+        acsRec = ics217.parse(line, bands, newEntries, regex)
         if not acsRec:
             continue
 

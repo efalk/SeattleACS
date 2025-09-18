@@ -19,10 +19,10 @@ ACS_VHF_UHF_chirp.csv: ${ICS217}
 	./Tools/Acs2Chirp.py -b VU < ${ICS217} > $@
 
 ACS_UHF_NARROW_RT.csv: ${ICS217}
-	./Tools/Acs2RtSys.py -b VU -N < ${ICS217} > $@
+	./Tools/Acs2RtSys.py -R 'U..N' < ${ICS217} > $@
 
 ACS_UHF_NARROW_chirp.csv: ${ICS217}
-	./Tools/Acs2Chirp.py -b VU -N < ${ICS217} > $@
+	./Tools/Acs2Chirp.py -R 'U..N' < ${ICS217} > $@
 
 ACS_LOW_RT.csv: ${ICS217}
 	./Tools/Acs2RtSys.py -b L < ${ICS217} > $@
