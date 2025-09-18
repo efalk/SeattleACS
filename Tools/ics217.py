@@ -78,13 +78,15 @@ class ics217(channel.Channel):
             print(this, e, file=sys.stderr)
             raise
 
-def parse(line, prefixes='VULTDH', cls=None):
+def parse(line, prefixes='VULTDH', newEntries=False, cls=None):
     """Given a list, most likely provided by the csv module, return
     an ics217 object or None if the list can't be parsed."""
     if not cls: cls = ics217
     if len(line) < 12: return None
     # line[4] is RX freq; if that's blank, then the entire record is invalid
     if not line[0] or (prefixes and line[0][0] not in prefixes) or not line[4]:
+        return None
+    if line[0].endswith('N') ^ newEntries:
         return None
     try:
         return cls(line)

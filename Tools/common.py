@@ -18,6 +18,7 @@ usage = f"""Convert CSV file from ACS 217 spreadsheet to format RT Systems uses
                                 D = digital
                                 H = Seattle Emergency Hubs GMRS
                             Default is all
+        -N              Use the 'U..N' entries (default is don't use)
         -s <n>          Start numbering at <n>; default is 1
         -B <bank>       Select bank for devices that use it (i.e. FT-60)
         -v              Increase verbosity
@@ -46,14 +47,17 @@ def main(writer, usage=usage):
     bands = None
     count = 1
     bank = None
+    newEntries = False
     try:
-        (optlist, args) = getopt.getopt(sys.argv[1:], 'hb:s:B:v', ['help'])
+        (optlist, args) = getopt.getopt(sys.argv[1:], 'hb:s:B:Nv', ['help'])
         for flag, value in optlist:
             if flag in ('-h', '--help'):
                 print(usage)
                 return 0
             elif flag == '-b':
                 bands = None if value == "all" else value
+            elif flag == '-N':
+                newEntries = True
             elif flag == '-B':
                 bank = getInt(value)
             elif flag == '-s':
@@ -73,7 +77,7 @@ def main(writer, usage=usage):
     for l in reader:
         if verbose >= 2:
             print(l, file=sys.stderr)
-        acsRec = ics217.parse(l, bands)
+        acsRec = ics217.parse(l, bands, newEntries)
         if not acsRec:
             continue
 
