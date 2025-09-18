@@ -1,0 +1,23 @@
+n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment
+1,444.5500,449.5500,5.0000 MHz,Plus,Auto,U01CLM,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U01N: Columbia Center; coordination; W7ACS; Allstar 48844
+2,444.5500,444.5500,,Simplex,Auto,U02CLO,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U02N: Columbia Center Output; coordination simplex
+3,440.5250,445.5250,5.0000 MHz,Plus,Auto,U03BH1,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U03N: Beacon Hill 1; tactical; W7ACS; Beacon Tower
+4,442.3000,447.3000,5.0000 MHz,Plus,Auto,U04BH2,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U04N: Beacon Hill 2; tactical; W7ACS; Beacon Tower; Allstar 48832
+5,443.0250,448.0250,5.0000 MHz,Plus,Auto,U05CH1,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,"U05N: Capitol Hill 1; tactical; W7ACS; KP Hospital, Allstar 48841"
+6,442.8750,447.8750,5.0000 MHz,Plus,Auto,U06CH2,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,"U06N: Capitol Hill 2; tactical; W7ACS; Capitol Park, Allstar 48842"
+7,443.4750,448.4750,5.0000 MHz,Plus,Auto,U07MAG,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U07N: Magnolia; tactical; W7ACS; Allstar 48836
+8,443.6500,448.6500,5.0000 MHz,Plus,Auto,U08MPL,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U08N: Maple Leaf; tactical; W7ACS
+9,440.6000,445.6000,5.0000 MHz,Plus,Auto,U09LFP,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U09N: Lake Forest Park; tactical; W7ACS; Allstar 48834
+10,444.7000,449.7000,5.0000 MHz,Plus,Auto,U10QA1,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U10N: Queen Anne 1; tactical; WW7SEA; Allstar 48845
+11,441.8000,446.8000,5.0000 MHz,Plus,Auto,U11WSE,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U11N: West Seattle UHF; tactical; W7AW
+12,443.3750,448.3750,5.0000 MHz,Plus,Auto,U12SSC,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U12N: South Seattle College; tactical; K7RSD
+13,443.2000,448.2000,5.0000 MHz,Plus,Auto,U13WCR,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U13N: Westcrest; tactical; W7ACS
+14,444.4250,449.4250,5.0000 MHz,Plus,Auto,U14QA2,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U14N: Queen Anne 2; tactical; WW7SEA; KOMO Tower
+15,444.3750,449.3750,5.0000 MHz,Plus,Auto,U15CH3,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U15N: Capitol Hill 3; tactical; AJ7JA; Madison/Pine
+16,443.5250,448.5250,5.0000 MHz,Plus,Auto,U16CH4,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U16N: Capitol Hill 4; tactical; K7SLB; Madison/Pine
+17,445.8000,445.8000,,Simplex,Auto,U21580,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U21N: Simplex 445.800; simplex
+18,445.8250,445.8250,,Simplex,Auto,U22582,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U22N: Simplex 445.825; simplex
+19,445.8500,445.8500,,Simplex,Auto,U23585,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U23N: Simplex 445.850; simplex
+20,445.8750,445.8750,,Simplex,Auto,U24587,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U24N: Simplex 445.875; simplex
+21,445.9000,445.9000,,Simplex,Auto,U25559,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U25N: Simplex 445.900; simplex
+22,445.9750,445.9750,,Simplex,Auto,U26597,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,U26N: Simplex 445.975; simplex
