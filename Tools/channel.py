@@ -75,7 +75,7 @@ def csvget(value):
 
 class Channel(object):
     def __init__(self, group, channel, txfreq, rxfreq, offset,
-        name, comment, txtone, rxtone, wide, power):
+        name, comment, txtone, rxtone, mode, wide, power):
         self.Group = group
         self.Chan = channel
         self._Txfreq = txfreq
@@ -85,12 +85,14 @@ class Channel(object):
         self.Comment = comment
         self.Txtone = txtone
         self.Rxtone = rxtone
+        self.Mode = mode
         self.Wide = wide
         self.Power = power
 
     def __repr__(self):
-        return f'''Channel({repr(self.Group)}, {repr(self.Chan)}, {repr(self._Txfreq)}, {repr(self._Rxfreq)}, {repr(self._Offset)}, {repr(self.Name)}, {repr(self.Comment)}, {repr(self.Txtone)}, {repr(self.Rxtone)}, {repr(self.Wide)}, {repr(self.Power)})'''
+        return f'''Channel({repr(self.Group)}, {repr(self.Chan)}, {repr(self._Txfreq)}, {repr(self._Rxfreq)}, {repr(self._Offset)}, {repr(self.Name)}, {repr(self.Comment)}, {repr(self.Txtone)}, {repr(self.Rxtone)}, {repr(self.Mode)}, {repr(self.Wide)}, {repr(self.Power)})'''
 
+    # Note: offset = uplink - downlink
     @property
     def Txfreq(self):
         if self._Txfreq is not None:
@@ -98,7 +100,7 @@ class Channel(object):
         try:
             rxfreq = decimal.Decimal(self._Rxfreq)
             offset = decimal.Decimal(self._Offset)
-            txfreq = rxfreq - offset
+            txfreq = rxfreq + offset
             return str(txfreq)
         except:
             return None
@@ -110,7 +112,7 @@ class Channel(object):
         try:
             txfreq = decimal.Decimal(self._Txfreq)
             offset = decimal.Decimal(self._Offset)
-            rxfreq = txfreq + offset
+            rxfreq = txfreq - offset
             return str(rxfreq)
         except:
             return None
@@ -122,7 +124,7 @@ class Channel(object):
         try:
             txfreq = decimal.Decimal(self._Txfreq)
             rxfreq = decimal.Decimal(self._Rxfreq)
-            offset = rxfreq - txfreq
+            offset = txfreq - rxfreq
             return str(offset)
         except:
             return None
@@ -131,7 +133,7 @@ class Channel(object):
     def FromValues(line):
         """Given a list, most likely provided by the csv module, return
         a channel object or None if the list can't be parsed."""
-        if len(line) < 11:
+        if len(line) < 12:
             return None
         try:
             return Channel(*line)
@@ -150,6 +152,7 @@ class Channel(object):
                 self.Comment,
                 self.Txtone,
                 self.Rxtone,
+                self.Mode,
                 self.Wide,
                 self.Power]
 

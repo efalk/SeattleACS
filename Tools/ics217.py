@@ -26,7 +26,7 @@
 #   7 Tx Freq, typically for repeater uplink
 #   8 Tx narrow/wide: W, N
 #   9 TX tone: "CSQ" or a Frequency e.g. 103.5
-#  10 Mode: A, MF, MP, D; almost always "A"
+#  10 Mode: A, F, MF, MP, D; almost always "A"
 #  11 Remarks
 
 
@@ -55,6 +55,7 @@ class ics217(channel.Channel):
         this.Mode = line[10]
         this.Remarks = line[11]
         this._Offset = None
+        if this.Mode == 'A' and float(this.Rxfreq) >= 100.0: this.Mode = 'F'
 
     def __repr__(this):
         return f'''ics217({repr(this.Chan)}, {repr(this.Config)}, {repr(this.Name)}, {repr(this.Comment)}, {repr(this.Rxfreq)}, {repr(this.Wide)}, {repr(this.Rxtone)}, {repr(this.Txfreq)}, {repr(this.Txwid)}, {repr(this.Txtone)}, {repr(this.Mode)}, {repr(this.Remarks)})'''

@@ -3,6 +3,8 @@
 
 # Convert CSV file from ACS 217 spreadsheet to format RT Systems uses for VX-7R
 
+# TODO: this may need updating; see updates to Acs2Chirp
+
 import csv
 import sys
 

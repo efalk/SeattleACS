@@ -42,14 +42,19 @@ class RtSys(object):
         Rxfreq = icsrec.Rxfreq       # RX freq
         Wide = icsrec.Txwid
         Txfreq = icsrec.Txfreq       # RX freq
-        Tone = icsrec.Txtone
+        Txtone = icsrec.Txtone
+        Rxtone = icsrec.Rxtone
         if bank is not None and bank >= 1 and bank <= 10:
             Banks = ["N,"] * 10
             Banks[bank-1] = 'Y,'
         else:
             Banks = []
 
-        Offset = float(Txfreq) - float(Rxfreq)
+        if not Txtone: Txtone = 'CSQ'
+        if not Rxtone or Rxtone.startswith('TSQ'): Rxtone = Txtone
+
+        # Derived values
+        Offset = float(icsrec.Offset)
         if Config == 'Simplex' or Txfreq == Rxfreq:
             Offset_s = ''
         elif abs(Offset) < 1.0:
@@ -58,23 +63,37 @@ class RtSys(object):
             Offset_s = "%.4f MHz" % abs(Offset)
 
         if Config == 'Simplex' or Txfreq == Rxfreq:
-            Mode = "Simplex"
+            OpMode = "Simplex"
         elif Offset > 0:
-            Mode = "Plus"
+            OpMode = "Plus"
         else:
-            Mode = "Minus"
+            OpMode = "Minus"
 
-        if Tone.startswith('CSQ'):
-            ToneMode = 'None'
-            Tone = ''
-            Dcs = ''
-        elif Tone.startswith('D'):
-            ToneMode = 'DCS'
-            Dcs = Tone[1:]
-            Tone = ''
+        CTCSS = ''
+        DCS = ''
+
+        # There are nine possibilities for Txtone/Rxtone
+        # This radio doesn't support different Tx/Rx tones.
+        if Txtone == 'CSQ':
+            ToneMode = 'None'   # Rx tone or DCS not supported
+        elif Txtone[0] == 'D':
+            DCS = Txtone[1:]
+            if Rxtone.startswith('CSQ'):
+                ToneMode = 'DCS'
+            elif Rxtone[0] == 'D':
+                ToneMode = 'DCS'    # TODO: should this be 'D Code'?
+            else:
+                CTCSS = Rxtone
+                ToneMode = 'D Tone'
         else:
-            ToneMode = 'Tone'
-            Dcs = ''
+            CTCSS = Txtone
+            if Rxtone.startswith('CSQ'):
+                ToneMode = 'Tone'   # Most common case
+            elif Rxtone[0] == 'D':
+                DCS = Rxtone[1:]
+                ToneMode = 'T DCS'
+            else:
+                ToneMode = 'T Sql'
 
         Comment = icsrec.getComment()
 
@@ -98,7 +117,7 @@ class RtSys(object):
         # Comment               any string
 
         Wide = 'Y' if Wide=="N" else 'N'
-        csvout.writerow([count, Rxfreq, Txfreq, Offset_s, Mode, 'Auto', Name, 'Y' if Name else 'N', ToneMode, Tone, Dcs, 'Scan', 'Auto', 'N', 'High', Wide, 'N'] + Banks + [Comment])
+        csvout.writerow([count, Rxfreq, Txfreq, Offset_s, OpMode, 'Auto', Name, 'Y' if Name else 'N', ToneMode, CTCSS, DCS, 'Scan', 'Auto', 'N', 'High', Wide, 'N'] + Banks + [Comment])
 
 if __name__ == '__main__':
     signal.signal(signal.SIGPIPE, signal.SIG_DFL)

@@ -42,6 +42,7 @@ verbose = 0
 def main(writer, usage=usage):
     global verbose
     ifile = sys.stdin
+    #ifile = open('foo.csv','r')
 
     reader = csv.reader(ifile)
     csvout = csv.writer(sys.stdout)

@@ -45,13 +45,17 @@ class Chirp(object):
         """Write out one record. This may throw an exception if any of
         the ics-217 fields are not valid."""
         Chan = icsrec.Chan       # memory #, 0-based
-        Config = icsrec.Config  
+        Config = icsrec.Config
         Name = icsrec.Name       # memory label
         Rxfreq = icsrec.Rxfreq       # RX freq
         Mode = icsrec.Mode
         Wide = icsrec.Txwid
         Txfreq = icsrec.Txfreq       # RX freq
-        Tone = icsrec.Txtone  
+        Txtone = icsrec.Txtone
+        Rxtone = icsrec.Rxtone
+
+        if not Txtone: Txtone = 'CSQ'
+        if not Rxtone or Rxtone.startswith('TSQ'): Rxtone = Txtone
 
         # Derived values
         Offset = float(Txfreq) - float(Rxfreq)
@@ -59,27 +63,56 @@ class Chirp(object):
         elif Offset > 0: Duplex = '+'
         else: Duplex = '-'
 
-        if Tone == 'CSQ':
-            ToneMode = ''
-            Tone = '88.5'
-            Dtcs = '023'
-        elif Tone.startswith('D'):
-            ToneMode = 'DTCS'
-            Dtcs = Tone[1:]
-            Tone = '88.5'
+        rToneFreq = '88.5'
+        cToneFreq = '88.5'  # Only used on cross mode
+        RxDtcsCode = '023'
+        CrossMode = 'Tone->Tone'
+
+        # There are nine possibilities for Txtone/Rxtone
+        # (Actually ten because you could have Tone->Tone with
+        # different frequencies)
+        if Txtone == 'CSQ':
+            if Rxtone.startswith('CSQ'):
+                ToneMode = ''
+            elif Rxtone[0] == 'D':
+                ToneMode = 'DTCS-R'
+                RxDtcsCode = Rxtone[1:]
+            else:
+                rToneFreq = Rxtone
+                ToneMode = 'TSQL-R'
+        elif Txtone[0] == 'D':
+            RxDtcsCode = Txtone[1:]
+            if Rxtone.startswith('CSQ'):
+                ToneMode = 'DTCS'   # Chirp doesn't seem to support this case
+            elif Rxtone[0] == 'D':
+                ToneMode = 'DTCS'
+            else:
+                rToneFreq = Rxtone
+                ToneMode = 'Cross'
+                CrossMode = 'DTCS->Tone'
         else:
-            ToneMode = 'Tone'
-            Dtcs = '023'
+            rToneFreq = cToneFreq = Txtone
+            if Rxtone.startswith('CSQ'):
+                ToneMode = 'Tone'   # Most common case
+            elif Rxtone[0] == 'D':
+                RxDtcsCode = Rxtone[1:]
+                ToneMode = 'Cross'
+                CrossMode = 'Tone->DTCS'
+            else:
+                if Rxtone == Txtone:
+                    ToneMode = 'TSQL'
+                else:
+                    cToneFreq = Rxtone
+                    ToneMode = 'Cross'
 
         Comment = icsrec.getComment()
 
-        if Mode == 'A':
-            if float(Rxfreq) >= 100.0:         # FM
-                if Wide == 'W': Wide = 'FM'
-                elif Wide == 'N': Wide = 'NFM'
-            else:
-                if Wide == 'W': Wide = 'AM'
-                elif Wide == 'N': Wide = 'NAM'
+        if Mode == 'F':
+            if Wide == 'N': Wide = 'NFM'
+            else: Wide = 'FM'
+        elif Mode == 'A':
+            if Wide == 'N': Wide = 'NAM'
+            else: Wide = 'AM'
         elif Mode == 'D':
             Wide = 'DIG'
         else:
@@ -92,7 +125,7 @@ class Chirp(object):
         #  Frequency e.g. 146.960000
         #  Duplex        off, +, -, or <blank>
         #  Offset        e.g. 0.60000
-        #  Tone      <blank> Tone TSQL DTCS TSQL-R DTCS-R Cross
+        #  Txtone    <blank> Tone TSQL DTCS TSQL-R DTCS-R Cross
         #  rToneFreq
         #  cToneFreq
         #  DtcsCode  e.g. 023
@@ -109,7 +142,7 @@ class Chirp(object):
         #  RPT2CALL  <blank>
         #  DVCODE    <blank>
 
-        csvout.writerow([count, Name, Rxfreq, Duplex, f"{abs(Offset):.6f}", ToneMode, Tone, Tone, Dtcs, 'NN', Dtcs, 'Tone->Tone', Wide, 5.00, '', '5.0W', Comment, '', '', '', ''])
+        csvout.writerow([count, Name, Rxfreq, Duplex, f"{abs(Offset):.6f}", ToneMode, rToneFreq, cToneFreq, RxDtcsCode, 'NN', RxDtcsCode, CrossMode, Wide, 5.00, '', '5.0W', Comment, '', '', '', ''])
 
 
 if __name__ == '__main__':
