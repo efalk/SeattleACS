@@ -4,7 +4,7 @@ n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operati
 3,462.6000,467.6000,5.0000 MHz,Plus,Auto,H3CAPH,Y,Tone,103.5,,Scan,Auto,N,High,N,N,GMRS 3 Capitol Hill; Seattle Emergency Hubs; KAD2844
 4,462.6250,467.6250,5.0000 MHz,Plus,Auto,H4MAG,Y,Tone,100.0,,Scan,Auto,N,High,N,N,GMRS 4 Magnolia; Seattle Emergency Hubs
 5,462.6750,467.6750,5.0000 MHz,Plus,Auto,H6MAPL,Y,Tone,141.3,,Scan,Auto,N,High,N,N,GMRS 6 Maple Leaf; Seattle Emergency Hubs; KAD2844
-6,462.6250,467.6250,5.0000 MHz,Plus,Auto,H4ETIG,Y,Tone,141.3,,Scan,Auto,N,High,N,N,GMRS 4 East Tiger
+6,462.6250,467.6250,5.0000 MHz,Plus,Auto,H4ETIG,Y,T Sql,141.3,,Scan,Auto,N,High,N,N,GMRS 4 East Tiger
 7,462.6500,467.6500,5.0000 MHz,Plus,Auto,H5OLYM,Y,Tone,141.3,,Scan,Auto,N,High,N,N,GMRS 5 Olympia
-8,462.7250,467.7250,5.0000 MHz,Plus,Auto,H7LKFP,Y,Tone,141.3,,Scan,Auto,N,High,N,N,GMRS 7 Lake Forest Park; WRTQ652
-9,462.7250,467.7250,5.0000 MHz,Plus,Auto,H7SNOH,Y,Tone,141.3,,Scan,Auto,N,High,N,N,GMRS 7 Snohomish; WQVZ485
+8,462.7250,467.7250,5.0000 MHz,Plus,Auto,H7LKFP,Y,T Sql,141.3,,Scan,Auto,N,High,N,N,GMRS 7 Lake Forest Park; WRTQ652
+9,462.7250,467.7250,5.0000 MHz,Plus,Auto,H7SNOH,Y,T Sql,141.3,,Scan,Auto,N,High,N,N,GMRS 7 Snohomish; WQVZ485

@@ -37,7 +37,7 @@ Name			e.g. PSRG
 Show Name		Y
 Tone Mode		  None
 			  Tone		Tone on TX
-			  T Sql		Tone on RX
+			  T Sql		Tone on RX (as well as TX?)
 			  Rev CTCSS	RX squelch if tone *is* received
 			  DCS		DCS code on TX
 			  D Code

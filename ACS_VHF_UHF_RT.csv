@@ -70,12 +70,12 @@ n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operati
 69,445.9000,445.9000,,Simplex,Auto,U25559,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 445.900; simplex
 70,445.9750,445.9750,,Simplex,Auto,U26597,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 445.975; simplex
 71,446.0000,446.0000,,Simplex,Auto,U27600,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex Calling 446.000; simplex calling
-72,440.0000,445.0000,5.0000 MHz,Plus,Auto,U31P1A,Y,Tone,103.5,,Scan,Auto,N,High,Y,N,Portable Repeater 1A; ACS portable; W7ACS
-73,440.0000,445.0000,5.0000 MHz,Plus,Auto,U32P1B,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,Portable Repeater 1B; ACS portable; W7ACS
-74,440.0000,445.0000,5.0000 MHz,Plus,Auto,U33P1C,Y,Tone,141.3,,Scan,Auto,N,High,Y,N,Portable Repeater 1C; ACS portable; W7ACS
-75,443.0000,448.0000,5.0000 MHz,Plus,Auto,U34P2A,Y,Tone,103.5,,Scan,Auto,N,High,Y,N,Portable Repeater 2A; ACS portable; W7ACS
-76,443.0000,448.0000,5.0000 MHz,Plus,Auto,U35P2B,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,Portable Repeater 2B; ACS portable; W7ACS
-77,443.0000,448.0000,5.0000 MHz,Plus,Auto,U36P2C,Y,Tone,141.3,,Scan,Auto,N,High,Y,N,Portable Repeater 2C; ACS portable; W7ACS
+72,440.0000,445.0000,5.0000 MHz,Plus,Auto,U31P1A,Y,T Sql,103.5,,Scan,Auto,N,High,Y,N,Portable Repeater 1A; ACS portable; W7ACS
+73,440.0000,445.0000,5.0000 MHz,Plus,Auto,U32P1B,Y,T Sql,123.0,,Scan,Auto,N,High,Y,N,Portable Repeater 1B; ACS portable; W7ACS
+74,440.0000,445.0000,5.0000 MHz,Plus,Auto,U33P1C,Y,T Sql,141.3,,Scan,Auto,N,High,Y,N,Portable Repeater 1C; ACS portable; W7ACS
+75,443.0000,448.0000,5.0000 MHz,Plus,Auto,U34P2A,Y,T Sql,103.5,,Scan,Auto,N,High,Y,N,Portable Repeater 2A; ACS portable; W7ACS
+76,443.0000,448.0000,5.0000 MHz,Plus,Auto,U35P2B,Y,T Sql,123.0,,Scan,Auto,N,High,Y,N,Portable Repeater 2B; ACS portable; W7ACS
+77,443.0000,448.0000,5.0000 MHz,Plus,Auto,U36P2C,Y,T Sql,141.3,,Scan,Auto,N,High,Y,N,Portable Repeater 2C; ACS portable; W7ACS
 78,444.9500,449.9500,5.0000 MHz,Plus,Auto,U41CPK,Y,Tone,118.8,,Scan,Auto,N,High,N,N,WA EMD Capitol Pk; N7UJK; BeachNet
 79,443.5500,448.5500,5.0000 MHz,Plus,Auto,U42MSV,Y,Tone,103.5,,Scan,Auto,N,High,N,N,MST VAMC UHF; WW7MST; MST tactical 70cm and 2m repeaters on the VAMC are currently linked
 80,444.8250,449.8250,5.0000 MHz,Plus,Auto,U43MSN,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"MST UWMC Northwest; WW7MST; MST tactical, broken (2025/09)"
