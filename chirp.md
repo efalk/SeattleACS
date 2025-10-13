@@ -39,6 +39,11 @@ And hit **Paste**
 
 ![Select destination for data](images/chirp5.png)
 
+## Repeat as needed
+
+If you don't copy the entire database in one swell foop, then go back and copy/paste the next
+bunch of records and so forth.
+
 ## Write data back to the radio
 
 Write the data back to the radio (**Radio > Upload to radio…**)
