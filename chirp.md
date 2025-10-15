@@ -1,6 +1,8 @@
 
 # Loading and installing a CSV file for CHIRP
 
+A short video: https://www.youtube.com/watch?v=ehvOrtVYogs
+
 ## Launch CHIRP
 
 ## Load the current radio data

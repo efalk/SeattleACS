@@ -3,6 +3,10 @@ Note: git files can be found at https://github.com/efalk/SeattleACS/
 Instructions for CHIRP: https://github.com/efalk/SeattleACS/blob/main/chirp.md
 Instructions for RT: https://github.com/efalk/SeattleACS/blob/main/rt.md
 
+Short instructional videos:
+  Chirp:      https://www.youtube.com/watch?v=ehvOrtVYogs
+  RT Systems: https://www.youtube.com/watch?v=n52Fra0JfIA
+
 
 Files for programming radios for Seattle Emergency Hub and ACS.
 

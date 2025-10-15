@@ -1,9 +1,12 @@
 
 # Loading and installing a CSV file for RT Systems software
 
-These instructions were written for FT-60 Programmer, but with few
-or no changes should work across the board for RT Systems software.
-If you run into issues feel free to contact me, KK7NNS au gmail.com
+Short video: https://www.youtube.com/watch?v=n52Fra0JfIA
+
+These instructions were written for FT-60 Programmer and have been
+tested with FTM-7250 as well, with few or no changes should work
+across the board for RT Systems software.  If you run into issues
+feel free to contact me, KK7NNS au gmail.com
 
 ## Launch RT Systems software
 
