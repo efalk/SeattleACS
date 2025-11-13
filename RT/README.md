@@ -27,7 +27,7 @@ Either download from the radio (**Communications > Get Data From Radio**)
 
 Or load a previously-saved image file (**File > Open…**, select image file)
 
-![Image loaded into RT Systems](images/rt1.png)
+![Image loaded into RT Systems](../images/rt1.png)
 
 ## Load the CSV data into a new tab
 
@@ -35,12 +35,12 @@ Or load a previously-saved image file (**File > Open…**, select image file)
 
 **File > Import …**, select e.g. `RT/2m.csv`)
 
-![CSV file loaded into RT Systems](images/rt2.png)
+![CSV file loaded into RT Systems](../images/rt2.png)
 
 This import dialog looks complicated, but all you need to do is
 choose **Select all** and then **Apply** and then dismiss the dialog.
 
-![CSV file loaded into RT Systems](images/rt3.png)
+![CSV file loaded into RT Systems](../images/rt3.png)
 
 ## Copy the programming data
 
@@ -53,18 +53,18 @@ and choose which entries you copy.
 So what you do now is select a block of entries from the CSV file and hit **Copy**.
 *Note: select multiple entries in the leftmost column.*
 
-![Several rows selected from CSV file](images/rt4.png)
+![Several rows selected from CSV file](../images/rt4.png)
 
 ## Paste the data
 
 Now switch to the tab that contains your radio data, and select the first row where you want to
 paste the data.
 
-![Select destination for data](images/rt5.png)
+![Select destination for data](../images/rt5.png)
 
 And hit **Paste**
 
-![Select destination for data](images/rt6.png)
+![Select destination for data](../images/rt6.png)
 
 ## Repeat as needed
 

@@ -1,7 +1,7 @@
 Note: git files can be found at https://github.com/efalk/SeattleACS/
 
-Instructions for CHIRP: https://github.com/efalk/SeattleACS/blob/main/chirp.md
-Instructions for RT: https://github.com/efalk/SeattleACS/blob/main/rt.md
+Instructions for CHIRP: https://github.com/efalk/SeattleACS/blob/main/Chirp/README.md
+Instructions for RT: https://github.com/efalk/SeattleACS/blob/main/RT/README.md
 
 Short instructional videos:
   Chirp:      https://www.youtube.com/watch?v=ehvOrtVYogs
@@ -26,17 +26,19 @@ Icom/		Programming files for Icom
 
 Each subdirectory contains some or all of the following:
 
-2m.csv		ACS frequencies, 2m band
-220.csv		ACS frequencies, 1.25m band
-70cm.csv	ACS frequencies, 70cm band
-6m.csv		ACS frequencies, 6m band
-data.csv	ACS frequencies, data
-narrow.csv	upcoming narrow band frequencies
-noaa.csv	NOAA weather frequencies
-hub.csv		Seattle emergency hub GMRS frequencies
-Hub_GMRS.csv	Same, for GMRS radios.
+2m.csv          ACS frequencies, 2m band
+220.csv         ACS frequencies, 1.25m band
+70cm.csv        ACS frequencies, 70cm band
+6m.csv          ACS frequencies, 6m band
+data.csv        ACS frequencies, data
+narrow.csv      upcoming narrow band frequencies
+noaa.csv        NOAA weather frequencies
+hub.csv         Seattle emergency hub GMRS frequencies
+Hub_GMRS.csv    Same, for GMRS radios.
 
-Tools				Various programs to convert ICS217 spreadsheet to code plugs
+Utilities:
+
+Tools/		Various programs to convert ICS217 spreadsheet to code plugs
 
 
 My own preferred workflow is as follows:
@@ -49,6 +51,8 @@ My own preferred workflow is as follows:
 This process lets you store csv entries into whatever memories you like in the
 radio, and lets you update the radio without losing other data. The "-s" option
 is not needed if you do it this way.
+
+See the README files in the Chirp/ and RT/ subdirectories for more detailed instructions.
 
 
 If you would like to contribute, send changes to me at KK7NNS au gmail.com or

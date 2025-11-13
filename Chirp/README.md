@@ -23,13 +23,13 @@ Either download from the radio (**Radio > Download from radio …**)
 
 Or load a previously-saved image file (**File > Open…**, select `.img` file)
 
-![Image loaded into CHIRP](images/chirp1.png)
+![Image loaded into CHIRP](../images/chirp1.png)
 
 ## Load the CSV data into another tab
 
 **File > Open …**, select e.g. `Chirp/2m.csv`)
 
-![CSV file loaded into CHIRP](images/chirp2.png)
+![CSV file loaded into CHIRP](../images/chirp2.png)
 
 ## Copy the programming data
 
@@ -40,18 +40,18 @@ pick and choose which entries you copy.
 
 So what you do now is select a block of entries from the CSV file and hit **Copy**.
 
-![Several rows selected from CSV file](images/chirp3.png)
+![Several rows selected from CSV file](../images/chirp3.png)
 
 ## Paste the data
 
 Now switch to the tab that contains your radio data, and select the first row where you want to
 paste the data.
 
-![Select destination for data](images/chirp4.png)
+![Select destination for data](../images/chirp4.png)
 
 And hit **Paste**
 
-![Select destination for data](images/chirp5.png)
+![Select destination for data](../images/chirp5.png)
 
 ## Repeat as needed
 
