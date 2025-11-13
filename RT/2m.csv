@@ -1,0 +1,47 @@
+n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment
+1,146.9600,146.3600,600 kHz,Minus,Auto,V01PSR,Y,Tone,103.5,,Scan,Auto,N,High,N,N,PSRG; coordination; WW7PSR; Allstar 2462
+2,146.9600,146.9600,,Simplex,Auto,V02PSO,Y,Tone,103.5,,Scan,Auto,N,High,N,N,PSRG Output; coordination simplex
+3,147.0000,146.4000,600 kHz,Minus,Auto,V03DXC,Y,Tone,103.5,,Scan,Auto,N,High,N,N,WW DX Club; tactical; W7DX
+4,145.1300,144.5300,600 kHz,Minus,Auto,V04WSE,Y,Tone,103.5,,Scan,Auto,N,High,N,N,West Seattle VHF; tactical; W7AW; shared non-protected
+5,146.5200,146.5200,,Simplex,Auto,V21652,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex Calling 146.52; simplex calling
+6,146.5400,146.5400,,Simplex,Auto,V22654,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 146.54; simplex
+7,146.5600,146.5600,,Simplex,Auto,V23656,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 146.56; simplex
+8,146.5800,146.5800,,Simplex,Auto,V24658,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 146.58; simplex
+9,147.4800,147.4800,,Simplex,Auto,V25748,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 147.48; simplex; Shilshole Bay Hub
+10,147.5200,147.5200,,Simplex,Auto,V26752,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 147.52; simplex
+11,147.5400,147.5400,,Simplex,Auto,V27754,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 147.54; simplex
+12,147.5600,147.5600,,Simplex,Auto,V28756,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 147.56; simplex
+13,147.5800,147.5800,,Simplex,Auto,V29758,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 147.58; simplex
+14,147.6000,147.6000,,Simplex,Auto,V30760,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 147.60; simplex
+15,147.0800,147.6800,600 kHz,Plus,Auto,V41KCA,Y,Tone,103.5,,Scan,Auto,N,High,N,N,KC ARES Cougar; KC ARES; WA EMD R6; WW7STR
+16,145.1100,144.5100,600 kHz,Minus,Auto,V42SAR,Y,Tone,127.3,,Scan,Auto,N,High,N,N,KC SAR/ECC Rattlesnake; KC7SAR
+17,146.8200,146.2200,600 kHz,Minus,Auto,V43LED,Y,Tone,103.5,,Scan,Auto,N,High,N,N,K7LED Rattlesnake; NTS; SATERN
+18,145.3300,144.7300,600 kHz,Minus,Auto,V45BEA,Y,Tone,179.9,,Scan,Auto,N,High,N,N,BEARS Tiger VHF; K7NWS Tiger Mt W
+19,146.9000,146.3000,600 kHz,Minus,Auto,V46MSV,Y,Tone,103.5,,Scan,Auto,N,High,N,N,MST VAMC VHF; MST Tactical; WW7MST 70cm and 2m repeaters on the VAMC are currently linked
+20,147.1400,147.7400,600 kHz,Plus,Auto,V47BLD,Y,Tone,123.0,,Scan,Auto,N,High,N,N,WA EMD Baldi Mt; WB7DOB Baldi Mt
+21,147.0600,147.6600,600 kHz,Plus,Auto,V48BFW,Y,Tone,110.9,,Scan,Auto,N,High,N,N,WA EMD Baw Faw Pk; K7PG Baw Faw Pk; was V82
+22,145.4900,144.8900,600 kHz,Minus,Auto,V51KRK,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Kirkland VHF; K7LWH Bellevue
+23,145.3100,144.7100,600 kHz,Minus,Auto,V52RED,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Redmond VHF; KC7IYE Redmond
+24,147.1600,147.7600,600 kHz,Plus,Auto,V53MRC,Y,Tone,146.2,,Scan,Auto,N,High,N,N,Mercer Is VHF; W7MIR Mercer Is
+25,147.1000,147.7000,600 kHz,Plus,Auto,V54ESF,Y,Tone,123.0,,Scan,Auto,N,High,N,N,ESFR VHF; KC7RAS Cougar Mt
+26,147.2600,147.8600,600 kHz,Plus,Auto,V56MPV,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Maple Valley; KF7NPL Maple Valley
+27,147.3200,147.9200,600 kHz,Plus,Auto,V57KNT,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Kent VHF; K7CST Kent
+28,147.2400,147.8400,600 kHz,Plus,Auto,V58AUB,Y,Tone,123.0,,Scan,Auto,N,High,N,N,Auburn VHF; K7SYE Auburn
+29,146.6600,146.0600,600 kHz,Minus,Auto,V59HLN,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Highline ARC VHF; NC7G Seatac
+30,147.0400,147.6400,600 kHz,Plus,Auto,V60FDW,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Federal Way VHF; WA7FW Federal Way
+31,147.3400,147.9400,600 kHz,Plus,Auto,V61BTH,Y,Tone,100.0,,Scan,Auto,N,High,N,N,Bothell; K6RFK Woodinville
+32,146.7800,146.1800,600 kHz,Minus,Auto,V71SLY,Y,DCS,,172,Scan,Auto,N,High,N,N,Snohomish Co Lynwood; WA7DEM Lynwood
+33,146.9250,146.3250,600 kHz,Minus,Auto,V72SGF,Y,Tone,156.7,,Scan,Auto,N,High,Y,N,Snohomish Co Granite Falls; WA7DEM Green Mt
+34,145.4300,144.8300,600 kHz,Minus,Auto,V73KSD,Y,Tone,88.5,,Scan,Auto,N,High,N,N,Kitsap Co Silverdale; KD7WDG Silverdale
+35,145.3700,144.7700,600 kHz,Minus,Auto,V74PGR,Y,Tone,136.5,,Scan,Auto,N,High,N,N,Pierce Co Grass; W7AAO Grass Mt; WA EMD
+36,145.4700,144.8700,600 kHz,Minus,Auto,V75PCP,Y,Tone,100.0,,Scan,Auto,N,High,N,N,Pierce Co Cap Pk; K7CPR Capitol Pk; WA EMD
+37,147.2200,147.8200,600 kHz,Plus,Auto,V76ISL,Y,Tone,127.3,,Scan,Auto,N,High,N,N,Island Co South; W7AVM Clinton
+38,145.3900,144.7900,600 kHz,Minus,Auto,V77GRH,Y,Tone,118.8,,Scan,Auto,N,High,N,N,Gray's Harbor Co VHF; W7EOC Cosmopolis
+39,147.3600,147.9600,600 kHz,Plus,Auto,V78KCR,Y,Tone,131.8,,Scan,Auto,N,High,N,N,Kittitas Co; WR7KCR Cle Elum (Sky Meadows)
+40,146.6200,146.0200,600 kHz,Minus,Auto,V81GLD,Y,Tone,103.5,,Scan,Auto,N,High,N,N,WW7RA Gold VHF; wide area
+41,146.4750,147.4750,1.0000 MHz,Plus,Auto,V83SLB,Y,Tone,110.9,,Scan,Auto,N,High,N,N,K7SLB Cougar; wide area; note non-standard split
+42,147.3600,147.9600,600 kHz,Plus,Auto,V84SMP,Y,Tone,141.3,,Scan,Auto,N,High,N,N,WR7KCR Stampede Pass; I-90 travel
+43,146.7200,146.1200,600 kHz,Minus,Auto,V85EBG,Y,Tone,131.8,,Scan,Auto,N,High,N,N,WR7KCR Ellensburg; I-90 travel
+44,146.8400,146.2400,600 kHz,Minus,Auto,V86LAR,Y,None,,,Scan,Auto,N,High,N,N,W7LT Larch Mt; I-5 travel; Multnomah Co (OR) ARES
+45,147.3000,147.9000,600 kHz,Plus,Auto,V87SIS,Y,Tone,88.5,,Scan,Auto,N,High,N,N,3 Sisters; 3 Sisters
+46,145.1700,144.5700,600 kHz,Minus,Auto,V88BEL,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Belfair; Belfair

@@ -1,0 +1,71 @@
+n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment
+1,444.5500,449.5500,5.0000 MHz,Plus,Auto,U01CLM,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Columbia Center; coordination; W7ACS; Allstar 48844
+2,444.5500,444.5500,,Simplex,Auto,U02CLO,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Columbia Center Output; coordination simplex
+3,440.5250,445.5250,5.0000 MHz,Plus,Auto,U03BH1,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Beacon Hill 1; tactical; W7ACS; Beacon Tower
+4,442.3000,447.3000,5.0000 MHz,Plus,Auto,U04BH2,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Beacon Hill 2; tactical; W7ACS; Beacon Tower; Allstar 48832
+5,443.0250,448.0250,5.0000 MHz,Plus,Auto,U05CH1,Y,Tone,141.3,,Scan,Auto,N,High,N,N,"Capitol Hill 1; tactical; W7ACS; KP Hospital, Allstar 48841"
+6,442.8750,447.8750,5.0000 MHz,Plus,Auto,U06CH2,Y,Tone,141.3,,Scan,Auto,N,High,N,N,"Capitol Hill 2; tactical; W7ACS; Capitol Park, Allstar 48842"
+7,443.4750,448.4750,5.0000 MHz,Plus,Auto,U07MAG,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Magnolia; tactical; W7ACS; Allstar 48836
+8,443.6500,448.6500,5.0000 MHz,Plus,Auto,U08MPL,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Maple Leaf; tactical; W7ACS
+9,440.6000,445.6000,5.0000 MHz,Plus,Auto,U09LFP,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Lake Forest Park; tactical; W7ACS; Allstar 48834
+10,444.7000,449.7000,5.0000 MHz,Plus,Auto,U10QA1,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Queen Anne 1; tactical; WW7SEA; Allstar 48847
+11,441.8000,446.8000,5.0000 MHz,Plus,Auto,U11WSE,Y,Tone,141.3,,Scan,Auto,N,High,N,N,West Seattle UHF; tactical; W7AW
+12,443.3750,448.3750,5.0000 MHz,Plus,Auto,U12SSC,Y,Tone,103.5,,Scan,Auto,N,High,N,N,South Seattle College; tactical; K7RSD
+13,443.2000,448.2000,5.0000 MHz,Plus,Auto,U13WCR,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Westcrest; tactical; W7ACS
+14,444.4250,449.4250,5.0000 MHz,Plus,Auto,U14QA2,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Queen Anne 2; tactical; WW7SEA; KOMO Tower
+15,444.3750,449.3750,5.0000 MHz,Plus,Auto,U15CH3,Y,Tone,88.5,,Scan,Auto,N,High,N,N,Capitol Hill 3; tactical; AJ7JA; Madison/Pine
+16,443.5250,448.5250,5.0000 MHz,Plus,Auto,U16CH4,Y,Tone,110.9,,Scan,Auto,N,High,N,N,Capitol Hill 4; tactical; K7SLB; Madison/Pine
+17,440.0000,445.0000,5.0000 MHz,Plus,Auto,U17PR1,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Portable Repeater 1; ACS portable; W7ACS
+18,443.0000,448.0000,5.0000 MHz,Plus,Auto,U18PR2,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Portable Repeater 2; ACS portable; W7ACS
+19,445.8000,445.8000,,Simplex,Auto,U21580,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 445.800; simplex
+20,445.8250,445.8250,,Simplex,Auto,U22582,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 445.825; simplex
+21,445.8500,445.8500,,Simplex,Auto,U23585,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 445.850; simplex
+22,445.8750,445.8750,,Simplex,Auto,U24587,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 445.875; simplex
+23,445.9000,445.9000,,Simplex,Auto,U25559,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 445.900; simplex
+24,445.9750,445.9750,,Simplex,Auto,U26597,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex 445.975; simplex
+25,446.0000,446.0000,,Simplex,Auto,U27600,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Simplex Calling 446.000; simplex calling
+26,440.0000,445.0000,5.0000 MHz,Plus,Auto,U31P1A,Y,T Sql,103.5,,Scan,Auto,N,High,Y,N,Portable Repeater 1A; ACS portable; W7ACS
+27,440.0000,445.0000,5.0000 MHz,Plus,Auto,U32P1B,Y,T Sql,123.0,,Scan,Auto,N,High,Y,N,Portable Repeater 1B; ACS portable; W7ACS
+28,440.0000,445.0000,5.0000 MHz,Plus,Auto,U33P1C,Y,T Sql,141.3,,Scan,Auto,N,High,Y,N,Portable Repeater 1C; ACS portable; W7ACS
+29,443.0000,448.0000,5.0000 MHz,Plus,Auto,U34P2A,Y,T Sql,103.5,,Scan,Auto,N,High,Y,N,Portable Repeater 2A; ACS portable; W7ACS
+30,443.0000,448.0000,5.0000 MHz,Plus,Auto,U35P2B,Y,T Sql,123.0,,Scan,Auto,N,High,Y,N,Portable Repeater 2B; ACS portable; W7ACS
+31,443.0000,448.0000,5.0000 MHz,Plus,Auto,U36P2C,Y,T Sql,141.3,,Scan,Auto,N,High,Y,N,Portable Repeater 2C; ACS portable; W7ACS
+32,444.9500,449.9500,5.0000 MHz,Plus,Auto,U41CPK,Y,Tone,118.8,,Scan,Auto,N,High,N,N,WA EMD Capitol Pk; N7UJK; BeachNet
+33,443.5500,448.5500,5.0000 MHz,Plus,Auto,U42MSV,Y,Tone,103.5,,Scan,Auto,N,High,N,N,MST VAMC UHF; WW7MST; MST tactical 70cm and 2m repeaters on the VAMC are currently linked
+34,444.8250,449.8250,5.0000 MHz,Plus,Auto,U43MSN,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"MST UWMC Northwest; WW7MST; MST tactical, broken (2025/09)"
+35,443.6750,448.6750,5.0000 MHz,Plus,Auto,U44MST,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"MST Tacoma General Hosp; WW7MST; MST tactical operational, not linked"
+36,440.5500,445.5500,5.0000 MHz,Plus,Auto,U45MSO,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"MST St Peter Hosp Olympia; WW7MST; MST tactical operational, not linked"
+37,441.5500,446.5500,5.0000 MHz,Plus,Auto,U46ARC,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Red Cross NW Region; WW7ATS Cougar Mt
+38,440.3000,445.3000,5.0000 MHz,Plus,Auto,U51SLN,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Shoreline UHF; W7AUX Shoreline; liaison preferred
+39,441.0750,446.0750,5.0000 MHz,Plus,Auto,U52KRK,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Kirkland UHF; K7LWH Kirkland
+40,440.6750,445.6750,5.0000 MHz,Plus,Auto,U53RED,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Redmond UHF; N6OBY Redmond
+41,440.1500,445.1500,5.0000 MHz,Plus,Auto,U54MER,Y,Tone,103.5,,Scan,Auto,N,High,Y,N,Mercer Is UHF; W7MIR Mercer Is
+42,441.1000,446.1000,5.0000 MHz,Plus,Auto,U55BEL,Y,Tone,156.7,,Scan,Auto,N,High,N,N,Bellevue; K7BEL Bellevue
+43,440.2500,445.2500,5.0000 MHz,Plus,Auto,U56SAM,Y,Tone,123.0,,Scan,Auto,N,High,N,N,ESFR UHF; N7ERP Cougar Mt
+44,441.8250,446.8250,5.0000 MHz,Plus,Auto,U57SQV,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Snoq Valley UHF; KE7GFZ Cougar Mt
+45,444.9250,449.9250,5.0000 MHz,Plus,Auto,U58SNQ,Y,Tone,85.4,,Scan,Auto,N,High,Y,N,Snoqualmie UHF; N7SNO Snoqualmie
+46,443.7000,448.7000,5.0000 MHz,Plus,Auto,U59DES,Y,Tone,123.0,,Scan,Auto,N,High,N,N,Des Moines; WA7DES Des Moines
+47,441.9750,446.9750,5.0000 MHz,Plus,Auto,U60RNT,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Renton; K7FDF Renton
+48,443.1000,448.1000,5.0000 MHz,Plus,Auto,U61HLN,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Highline ARC UHF; WA7ST Seatac
+49,444.7750,449.7750,5.0000 MHz,Plus,Auto,U62KDS,Y,Tone,173.8,,Scan,Auto,N,High,N,N,Bellevue Alternate; KI7DS Bellevue
+50,442.9500,447.9500,5.0000 MHz,Plus,Auto,U63FED,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Federal Way UHF; WA7FW Federal Way
+51,443.5000,448.5000,5.0000 MHz,Plus,Auto,U64VSH,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Vashon/Maury Is; W7VMI Vashon Is
+52,441.1250,446.1250,5.0000 MHz,Plus,Auto,U65BUR,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Burien; W7BUR Burien
+53,442.8250,447.8250,5.0000 MHz,Plus,Auto,U66SL2,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Shoreline UHF Alternate; W7AUX Shoreline; in-city preferred
+54,442.0000,447.0000,5.0000 MHz,Plus,Auto,U67NSE,Y,Tone,141.3,,Scan,Auto,N,High,N,N,"Northshore, Kenmore, LFP; NE7MC Kenmore"
+55,443.7250,448.7250,5.0000 MHz,Plus,Auto,U71SMT,Y,Tone,156.7,,Scan,Auto,N,High,Y,N,Snohomish Co Mntlk Ter; WA7DEM Mountlake Terrace;  PRIMARY for Northshore RACES - Northshore Emergency Management Coalition NEMCo Lake Forest Park & Kenmore
+56,444.4750,449.4750,5.0000 MHz,Plus,Auto,U72BAI,Y,Tone,103.5,,Scan,Auto,N,High,Y,N,Bainbridge Is; W7NPC Bainbridge Is
+57,441.7750,446.7750,5.0000 MHz,Plus,Auto,U81PER,Y,Tone,103.5,,Scan,Auto,N,High,N,N,PSE Rattlesnake; W7PSE Network
+58,441.7000,446.7000,5.0000 MHz,Plus,Auto,U82PEB,Y,Tone,103.5,,Scan,Auto,N,High,N,N,PSE Baldi; W7PSE Network
+59,441.7500,446.7500,5.0000 MHz,Plus,Auto,U83PEG,Y,Tone,103.5,,Scan,Auto,N,High,N,N,PSE Green Mt; W7PSE Network
+60,441.7250,446.7250,5.0000 MHz,Plus,Auto,U84PEA,Y,Tone,103.5,,Scan,Auto,N,High,N,N,PSE Anacortes; W7PSE Network
+61,442.4250,447.4250,5.0000 MHz,Plus,Auto,U85PEY,Y,Tone,103.5,,Scan,Auto,N,High,N,N,PSE Mt Blyn; W7PSE Network
+62,443.6250,448.6250,5.0000 MHz,Plus,Auto,U86PES,Y,Tone,103.5,,Scan,Auto,N,High,N,N,PSE Sumner; W7PSE Network
+63,443.4000,448.4000,5.0000 MHz,Plus,Auto,U87PPC,Y,Tone,123.0,,Scan,Auto,N,High,N,N,K7PP Cougar; K7PP Network; CTCSS 151.4
+64,441.2000,446.2000,5.0000 MHz,Plus,Auto,U88PPG,Y,Tone,123.0,,Scan,Auto,N,High,N,N,K7PP Gold; K7PP Network
+65,441.3000,446.3000,5.0000 MHz,Plus,Auto,U89PPK,Y,Tone,123.0,,Scan,Auto,N,High,N,N,K7PP KO Pk; K7PP Network; CTCSS 151.4
+66,444.6500,449.6500,5.0000 MHz,Plus,Auto,U90TIG,Y,Tone,131.8,,Scan,Auto,N,High,N,N,WA7HJR Tiger; Evergreen Intertie
+67,442.6500,447.6500,5.0000 MHz,Plus,Auto,U91GLD,Y,Tone,103.5,,Scan,Auto,N,High,N,N,WW7RA Gold UHF; wide area
+68,440.9500,445.9500,5.0000 MHz,Plus,Auto,U92BCK,Y,Tone,110.9,,Scan,Auto,N,High,N,N,K7DK Buck Mt; wide area
+69,444.6000,449.6000,5.0000 MHz,Plus,Auto,U93LSQ,Y,Tone,103.5,,Scan,Auto,N,High,N,N,K7LWH Lincoln Square; K7LWH Bellevue
+70,440.1000,445.1000,5.0000 MHz,Plus,Auto,U94SLB,Y,Tone,110.9,,Scan,Auto,N,High,N,N,K7SLB Cougar; K7SLB Cougar Mt (formerly Ch 9)

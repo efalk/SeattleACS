@@ -10,33 +10,31 @@ Short instructional videos:
 
 Files for programming radios for Seattle Emergency Hub and ACS.
 
-csv files are either for Chirp, or RT Systems software (Yaesu FT-60)
+csv files are either for Chirp, RT Systems software, or Icom (tested with IC-705)
 
-The RT Systems files might work on any RT Systems software. They has been
-successfully tested with Explorer QRZ-1 and other radios. If you find a radio this
-doesn't work with, feel free to contact me off line; I'll see what needs
-to be changed.
+The RT Systems files might work on any RT Systems software. They
+has been successfully tested with Yaesu FT-60, FTM-7250, Explorer
+QRZ-1 and other radios. If you find a radio this doesn't work with,
+feel free to contact me off line; I'll see what needs to be changed.
 
 W7ACS_ICS-217A_20230505.csv     Seattle ACS ics-217 frequency list
 W7ACS_ICS-217A_20240131.csv     Seattle ACS ics-217 frequency list
 
-ACS_VHF_UHF_RT.csv              ACS frequencies from W7ACS_ICS-217A_20250922_FINAL.xlsx
-ACS_VHF_UHF_chirp.csv           ACS frequencies from W7ACS_ICS-217A_20250922_FINAL.xlsx
-ACS_LOW_RT.csv                  ACS frequencies from W7ACS_ICS-217A_20250922_FINAL.xlsx
-ACS_LOW_chirp.csv               ACS frequencies from W7ACS_ICS-217A_20250922_FINAL.xlsx
-ACS_220_RT.csv                  ACS frequencies from W7ACS_ICS-217A_20250922_FINAL.xlsx
-ACS_220_chirp.csv               ACS frequencies from W7ACS_ICS-217A_20250922_FINAL.xlsx
-ACS_DATA_RT.csv                 ACS frequencies from W7ACS_ICS-217A_20250922_FINAL.xlsx
-ACS_DATA_chirp.csv              ACS frequencies from W7ACS_ICS-217A_20250922_FINAL.xlsx
-ACS_UHF_NARROW_RT.csv           New ACS frequencies for UHF narrow band
-ACS_UHF_NARROW_chirp.csv        New ACS frequencies for UHF narrow band
-ACS_HUB_RT.csv                  Seattle emergency hub frequencies
-ACS_HUB_chirp.csv               Seattle emergency hub frequencies
-Hub_RT.csv                      GMRS frequencies and repeaters for emergency hubs
-Hub_chirp.csv                   GMRS frequencies and repeaters for emergency hubs
-Hub_GMRS_chirp.csv              Same, for GMRS radios.
-NOAA_RT.csv                     NOAA weather frequencies
-NOAA_chirp.csv                  NOAA weather frequencies
+Chirp/		Programming files for Chirp
+RT/			Programming files for RT Systems
+Icom/		Programming files for Icom
+
+Each subdirectory contains some or all of the following:
+
+2m.csv		ACS frequencies, 2m band
+220.csv		ACS frequencies, 1.25m band
+70cm.csv	ACS frequencies, 70cm band
+6m.csv		ACS frequencies, 6m band
+data.csv	ACS frequencies, data
+narrow.csv	upcoming narrow band frequencies
+noaa.csv	NOAA weather frequencies
+hub.csv		Seattle emergency hub GMRS frequencies
+Hub_GMRS.csv	Same, for GMRS radios.
 
 Tools				Various programs to convert ICS217 spreadsheet to code plugs
 

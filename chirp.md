@@ -1,3 +1,15 @@
+# The files in this subdirectory
+
+* 2m.csv — 2m band
+* 220.csv — 1.25m band
+* 70cm.csv — 70cm band
+* 6m.csv — 6m band
+* data.csv — data channels
+* hub.csv — frequencies used by Seattle Emergency Hubs
+* hub\_GMRS.csv — same, for programming GMRS radios
+* narrow.csv — upcoming narrow band frequencies
+* noaa.csv — NOAA weather frequencies
+* winlink.csv — Winlink frequencies
 
 # Loading and installing a CSV file for CHIRP
 
@@ -5,7 +17,7 @@ A short video: https://www.youtube.com/watch?v=ehvOrtVYogs
 
 ## Launch CHIRP
 
-## Load the current radio data
+## Download the current radio data
 
 Either download from the radio (**Radio > Download from radio …**)
 
@@ -15,7 +27,7 @@ Or load a previously-saved image file (**File > Open…**, select `.img` file)
 
 ## Load the CSV data into another tab
 
-**File > Open …**, select e.g. `ACS_VHF_UHF_chirp.csv`)
+**File > Open …**, select e.g. `Chirp/2m.csv`)
 
 ![CSV file loaded into CHIRP](images/chirp2.png)
 

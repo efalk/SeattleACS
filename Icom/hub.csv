@@ -1,0 +1,10 @@
+CH No,Name,Frequency,Dup,Offset,Tone,Repeater Tone,cToneFreq,DtcsCode,DtcsPolarity,Mode,TStep,Skip
+1,H1WSEA GMRS 1 West Seattle,462.55,DUP+,5.0,Tone,103.5Hz,88.5,23,NN,FM,5,
+2,H2BHIL GMRS 2 Beacon Hill,462.575,DUP+,5.0,Tone,103.5Hz,88.5,23,NN,FM,5,
+3,H3CAPH GMRS 3 Capitol Hill,462.6,DUP+,5.0,Tone,103.5Hz,88.5,23,NN,FM,5,
+4,H4MAG GMRS 4 Magnolia,462.625,DUP+,5.0,Tone,100.0Hz,88.5,23,NN,FM,5,
+5,H6MAPL GMRS 6 Maple Leaf,462.675,DUP+,5.0,Tone,141.3Hz,88.5,23,NN,FM,5,
+6,H4ETIG GMRS 4 East Tiger,462.625,DUP+,5.0,Tone,141.3Hz,88.5,23,NN,FM,5,
+7,H5OLYM GMRS 5 Olympia,462.65,DUP+,5.0,Tone,141.3Hz,88.5,23,NN,FM,5,
+8,H7LKFP GMRS 7 Lake Forest Park,462.725,DUP+,5.0,Tone,141.3Hz,88.5,23,NN,FM,5,
+9,H7SNOH GMRS 7 Snohomish,462.725,DUP+,5.0,Tone,141.3Hz,88.5,23,NN,FM,5,

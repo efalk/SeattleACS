@@ -1,3 +1,14 @@
+# The files in this subdirectory
+
+* 2m.csv — 2m band
+* 220.csv — 1.25m band
+* 70cm.csv — 70cm band
+* 6m.csv — 6m band
+* data.csv — data channels
+* hub.csv — frequencies used by Seattle Emergency Hubs
+* narrow.csv — upcoming narrow band frequencies
+* noaa.csv — NOAA weather frequencies
+* winlink.csv — Winlink frequencies
 
 # Loading and installing a CSV file for RT Systems software
 
@@ -10,7 +21,7 @@ feel free to contact me, KK7NNS au gmail.com
 
 ## Launch RT Systems software
 
-## Load the current radio data
+## Download the current radio data
 
 Either download from the radio (**Communications > Get Data From Radio**)
 
@@ -22,7 +33,7 @@ Or load a previously-saved image file (**File > Open…**, select image file)
 
 **File > New**
 
-**File > Import …**, select e.g. `ACS_VHF_UHF_rt.csv`)
+**File > Import …**, select e.g. `RT/2m.csv`)
 
 ![CSV file loaded into RT Systems](images/rt2.png)
 
