@@ -31,7 +31,7 @@ import string
 import sys
 
 import common
-import ics217
+import channel
 
 class Chirp(object):
     @staticmethod
@@ -41,25 +41,24 @@ class Chirp(object):
         csvout.writerow(["Location","Name","Frequency","Duplex","Offset","Tone","rToneFreq","cToneFreq","DtcsCode","DtcsPolarity","RxDtcsCode","CrossMode","Mode","TStep","Skip","Power","Comment","URCALL","RPT1CALL","RPT2CALL","DVCODE"])
 
     @staticmethod
-    def write(icsrec: ics217, csvout: csv.writer, count: int, bank: int):
+    def write(rec: channel.Channel, csvout: csv.writer, count: int, bank: int):
         """Write out one record. This may throw an exception if any of
         the ics-217 fields are not valid."""
-        Chan = icsrec.Chan       # memory #, 0-based
-        Config = icsrec.Config
-        Name = icsrec.Name       # memory label
-        Rxfreq = icsrec.Rxfreq       # RX freq
-        Mode = icsrec.Mode
-        Wide = icsrec.Txwid
-        Txfreq = icsrec.Txfreq       # RX freq
-        Txtone = icsrec.Txtone
-        Rxtone = icsrec.Rxtone
+        Chan = rec.Chan       # memory #, 0-based
+        Name = rec.Name       # memory label
+        Rxfreq = rec.Rxfreq       # RX freq
+        Mode = rec.Mode
+        Wide = rec.Wide
+        Txfreq = rec.Txfreq       # RX freq
+        Txtone = rec.Txtone
+        Rxtone = rec.Rxtone
 
         if not Txtone: Txtone = 'CSQ'
         if not Rxtone or Rxtone.startswith('TSQ'): Rxtone = Txtone
 
         # Derived values
         Offset = float(Txfreq) - float(Rxfreq)
-        if Config == 'Simplex' or Txfreq == Rxfreq: Duplex = ''
+        if Txfreq == Rxfreq: Duplex = ''
         elif Offset > 0: Duplex = '+'
         else: Duplex = '-'
 
@@ -105,7 +104,7 @@ class Chirp(object):
                     cToneFreq = Rxtone
                     ToneMode = 'Cross'
 
-        Comment = icsrec.getComment()
+        Comment = rec.Comment
 
         if Mode == 'F':
             if Wide == 'N': Wide = 'NFM'

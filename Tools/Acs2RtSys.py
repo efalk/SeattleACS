@@ -12,7 +12,7 @@ import string
 import sys
 
 import common
-import ics217
+import channel
 
 class RtSys(object):
     """This is the "generic" RT Systems code. It generates output that
@@ -32,18 +32,18 @@ class RtSys(object):
         csvout.writerow(["n","Receive Frequency","Transmit Frequency","Offset Frequency","Offset Direction","Operating Mode","Name","Show Name","Tone Mode","CTCSS","DCS","Skip","Step","Clock Shift","Tx Power","Tx Narrow","Pager Enable"] + Banks + ["Comment"])
 
     @staticmethod
-    def write(icsrec: ics217, csvout: csv.writer, count: int, bank: int):
+    def write(rec: channel.Channel, csvout: csv.writer, count: int, bank: int):
         """Write out one record. This may throw an exception if any of
         the ics-217 fields are not valid."""
         # There are some derived values here, so we compute them now.
-        Chan = icsrec.Chan       # memory #, 0-based
-        Config = icsrec.Config
-        Name = icsrec.Name       # memory label
-        Rxfreq = icsrec.Rxfreq       # RX freq
-        Wide = icsrec.Txwid
-        Txfreq = icsrec.Txfreq       # RX freq
-        Txtone = icsrec.Txtone
-        Rxtone = icsrec.Rxtone
+        Chan = rec.Chan       # memory #, 0-based
+        Name = rec.Name       # memory label
+        Rxfreq = rec.Rxfreq       # RX freq
+        Wide = rec.Wide
+        Txfreq = rec.Txfreq       # RX freq
+        Txtone = rec.Txtone
+        Rxtone = rec.Rxtone
+        Comment = rec.Comment
         if bank is not None and bank >= 1 and bank <= 10:
             Banks = ["N,"] * 10
             Banks[bank-1] = 'Y,'
@@ -54,15 +54,15 @@ class RtSys(object):
         if not Rxtone or Rxtone.startswith('TSQ'): Rxtone = Txtone
 
         # Derived values
-        Offset = float(icsrec.Offset)
-        if Config == 'Simplex' or Txfreq == Rxfreq:
+        Offset = float(rec.Offset)
+        if Txfreq == Rxfreq:
             Offset_s = ''
         elif abs(Offset) < 1.0:
             Offset_s = "%.0f kHz" % (abs(Offset)*1000.)
         else:
             Offset_s = "%.4f MHz" % abs(Offset)
 
-        if Config == 'Simplex' or Txfreq == Rxfreq:
+        if Txfreq == Rxfreq:
             OpMode = "Simplex"
         elif Offset > 0:
             OpMode = "Plus"
@@ -94,8 +94,6 @@ class RtSys(object):
                 ToneMode = 'T DCS'
             else:
                 ToneMode = 'T Sql'
-
-        Comment = icsrec.getComment()
 
         # <ch>                  1-1000                  column header is blank, column ignored
         # Receive Frequency     146.96000
