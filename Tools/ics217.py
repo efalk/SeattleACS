@@ -41,21 +41,13 @@ class ics217(channel.Channel):
         """Create an ics217 object from a list of csv values. Caller
         must have already vetted the input. The parse() function
         below can handle that."""
-        this.Group = None
-        this.Chan = line[0]     # memory #, 0-based
+        super().__init__(None, line[0], line[7], line[4], None,
+            line[2], line[3], line[9], line[6], line[10], line[5], "High")
         this.Config = line[1]
-        this.Name = line[2]     # memory label
-        this.Comment = line[3]
-        this._Rxfreq = line[4]     # RX freq
-        this.Wide = line[5]
-        this.Rxtone = line[6]
-        this._Txfreq = line[7]     # TX freq
         this.Txwid = line[8]
-        this.Txtone = line[9]
-        this.Mode = line[10]
         this.Remarks = line[11]
-        this._Offset = None
-        if this.Mode == 'A' and float(this.Rxfreq) >= 100.0: this.Mode = 'F'
+        if this.Mode == 'A' and float(this.Rxfreq) >= 50.0: this.Mode = 'F'
+        this.Comment = this.getComment()
 
     def __repr__(this):
         return f'''ics217({repr(this.Chan)}, {repr(this.Config)}, {repr(this.Name)}, {repr(this.Comment)}, {repr(this.Rxfreq)}, {repr(this.Wide)}, {repr(this.Rxtone)}, {repr(this.Txfreq)}, {repr(this.Txwid)}, {repr(this.Txtone)}, {repr(this.Mode)}, {repr(this.Remarks)})'''

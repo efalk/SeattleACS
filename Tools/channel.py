@@ -23,7 +23,7 @@
 #    converted if necessary
 #
 #  offset
-#    difference between txfreq and rxfreq
+#    difference between txfreq and rxfreq: txfreq-rxfreq
 #
 #    It's not necessary to set all of txfreq, rxfreq, and offset.
 #    For simplex, just set one of txfreq or rxfreq (or set them both
@@ -40,6 +40,8 @@
 #  rxtone
 #    numeric CTCSS tone or Dnnn. Unset implies "CSQ".
 #
+#  mode: AM, FM, etc.
+#
 #  wide: 'W', 'N'
 #
 #  power:
@@ -50,7 +52,7 @@
 import sys
 import decimal
 
-# Schema (ACS 217):
+# Schema:
 #   0 group, usually blank
 #   1 CH#
 #   2 txfreq
@@ -60,8 +62,9 @@ import decimal
 #   6 comment
 #   7 txtone
 #   8 rxtone
-#   9 wide
-#  10 power
+#   9 mode
+#  10 wide
+#  11 power
 
 
 def csvget(value):
@@ -74,13 +77,38 @@ def csvget(value):
 
 
 class Channel(object):
+    """Create one channel object. Caller is responsible for ensuring that
+    txfreq and rxfreq are both valid. If offset is not provided, it will
+    be computed from txfreq and rxfreq. All other fields must be provided."""
     def __init__(self, group, channel, txfreq, rxfreq, offset,
         name, comment, txtone, rxtone, mode, wide, power):
+        if offset is None:
+            try:
+                tf = decimal.Decimal(txfreq)
+                rf = decimal.Decimal(rxfreq)
+                offset = str(tf - rf)
+            except:
+                pass    # no helping it
+        if txfreq is None:
+            try:
+                rf = decimal.Decimal(rxfreq)
+                off = decimal.Decimal(offset)
+                txfreq = str(rf + off)
+            except:
+                pass    # no helping it
+        if rxfreq is None:
+            try:
+                tf = decimal.Decimal(txfreq)
+                off = decimal.Decimal(offset)
+                rxfreq = str(tf - off)
+            except:
+                pass    # no helping it
+
         self.Group = group
         self.Chan = channel
-        self._Txfreq = txfreq
-        self._Rxfreq = rxfreq
-        self._Offset = offset
+        self.Txfreq = txfreq
+        self.Rxfreq = rxfreq
+        self.Offset = offset
         self.Name = name
         self.Comment = comment
         self.Txtone = txtone
@@ -90,48 +118,11 @@ class Channel(object):
         self.Power = power
 
     def __repr__(self):
-        return f'''Channel({repr(self.Group)}, {repr(self.Chan)}, {repr(self._Txfreq)}, {repr(self._Rxfreq)}, {repr(self._Offset)}, {repr(self.Name)}, {repr(self.Comment)}, {repr(self.Txtone)}, {repr(self.Rxtone)}, {repr(self.Mode)}, {repr(self.Wide)}, {repr(self.Power)})'''
-
-    # Note: offset = uplink - downlink
-    @property
-    def Txfreq(self):
-        if self._Txfreq is not None:
-            return self._Txfreq
-        try:
-            rxfreq = decimal.Decimal(self._Rxfreq)
-            offset = decimal.Decimal(self._Offset)
-            txfreq = rxfreq + offset
-            return str(txfreq)
-        except:
-            return None
-
-    @property
-    def Rxfreq(self):
-        if self._Rxfreq is not None:
-            return self._Rxfreq
-        try:
-            txfreq = decimal.Decimal(self._Txfreq)
-            offset = decimal.Decimal(self._Offset)
-            rxfreq = txfreq - offset
-            return str(rxfreq)
-        except:
-            return None
-
-    @property
-    def Offset(self):
-        if self._Offset is not None:
-            return self._Offset
-        try:
-            txfreq = decimal.Decimal(self._Txfreq)
-            rxfreq = decimal.Decimal(self._Rxfreq)
-            offset = txfreq - rxfreq
-            return str(offset)
-        except:
-            return None
+        return f'''Channel({repr(self.Group)}, {repr(self.Chan)}, {repr(self.Txfreq)}, {repr(self.Rxfreq)}, {repr(self.Offset)}, {repr(self.Name)}, {repr(self.Comment)}, {repr(self.Txtone)}, {repr(self.Rxtone)}, {repr(self.Mode)}, {repr(self.Wide)}, {repr(self.Power)})'''
 
     @staticmethod
     def FromValues(line):
-        """Given a list, most likely provided by the csv module, return
+        """Given a list, most likely provided by a csv module, return
         a channel object or None if the list can't be parsed."""
         if len(line) < 12:
             return None
@@ -145,9 +136,9 @@ class Channel(object):
         """Convert to a list of values."""
         return [self.Group,
                 self.Chan,
-                self._Txfreq,
-                self._Rxfreq,
-                self._Offset,
+                self.Txfreq,
+                self.Rxfreq,
+                self.Offset,
                 self.Name,
                 self.Comment,
                 self.Txtone,
