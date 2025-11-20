@@ -1,0 +1,18 @@
+ICOM schema
+
+
+CH		Memory location, starting at 1 (or zero?)
+Name		e.g. "PSRG" or "V08 WWSE West Sea"
+Operating Freq	e.g. 146.960000
+DUP		DUP-, DUP+, or blank
+Offset Freq	e.g. 0.60000
+TS		12.5k
+Mode		FM
+Skip		blank
+Tone		DTCS(T)/TSQL(R)
+Repeater Tone	103.5
+TSQL Freq	88.5
+DTCS		023
+DTCS Polarity	Both N
+
+
