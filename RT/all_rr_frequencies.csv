@@ -1,0 +1,152 @@
+n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment
+1,146.960,146.360,600 kHz,Minus,Auto,WW7PSR,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Capitol Hill, Seattle, WA"
+2,52.870,51.170,1.7000 MHz,Minus,Auto,WW7PSR,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Seattle
+3,53.410,51.710,1.7000 MHz,Minus,Auto,W7PFR,Y,Tone,100,,Scan,Auto,N,High,N,N,Eatonville
+4,443.975,448.975,5.0000 MHz,Plus,Auto,W7PFR,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Eatonville
+5,444.425,449.425,5.0000 MHz,Plus,Auto,WW7SEA,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Seattle
+6,444.700,449.700,5.0000 MHz,Plus,Auto,WW7SEA,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Seattle
+7,147.000,146.400,600 kHz,Minus,Auto,W7DX,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Redmond
+8,145.150,144.550,600 kHz,Minus,Auto,W7JCR,Y,Tone,114.8,,Scan,Auto,N,High,N,N,Port Townsend
+9,440.725,445.725,5.0000 MHz,Plus,Auto,AA7MI,Y,Tone,114.8,,Scan,Auto,N,High,N,N,Marrowstone Isl.
+10,146.775,146.175,600 kHz,Minus,Auto,WA7DEM,Y,Tone,156.7,,Scan,Auto,N,High,Y,N,"Lynnwood, WA"
+11,146.925,146.325,600 kHz,Minus,Auto,WA7DEM,Y,Tone,156.7,,Scan,Auto,N,High,Y,N,"Granite Falls, WA"
+12,224.380,222.780,1.6000 MHz,Minus,Auto,WA7DEM,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Marysville, WA"
+13,442.975,447.975,5.0000 MHz,Plus,Auto,WA7DEM,Y,Tone,156.7,,Scan,Auto,N,High,Y,N,"Clearview, WA"
+14,443.725,448.725,5.0000 MHz,Plus,Auto,WA7DEM,Y,Tone,156.7,,Scan,Auto,N,High,Y,N,"Mountlake Terrace, WA"
+15,444.025,449.025,5.0000 MHz,Plus,Auto,WA7DEM,Y,Tone,156.7,,Scan,Auto,N,High,Y,N,"Edmonds, WA"
+16,444.200,449.200,5.0000 MHz,Plus,Auto,WA7DEM,Y,Tone,156.7,,Scan,Auto,N,High,Y,N,"Marysville, WA"
+17,444.300,449.300,5.0000 MHz,Plus,Auto,WA7DEM,Y,Tone,156.7,,Scan,Auto,N,High,Y,N,"Darrington, WA"
+18,147.160,147.760,600 kHz,Plus,Auto,W7MIR,Y,Tone,146.2,,Scan,Auto,N,High,N,N,"Mercer Island, WA"
+19,440.150,445.150,5.0000 MHz,Plus,Auto,W7MIR,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Mercer Island, WA"
+20,147.100,147.700,600 kHz,Plus,Auto,W7DG,Y,Tone,114.8,,Scan,Auto,N,High,N,N,"Longview, WA"
+21,147.300,147.900,600 kHz,Plus,Auto,W7DG,Y,Tone,114.8,,Scan,Auto,N,High,N,N,"Woodland, WA"
+22,224.140,222.540,1.6000 MHz,Minus,Auto,W7DG,Y,Tone,114.8,,Scan,Auto,N,High,N,N,"Longview, WA"
+23,444.900,449.900,5.0000 MHz,Plus,Auto,W7DG,Y,Tone,114.8,,Scan,Auto,N,High,N,N,"Longview, WA"
+24,147.340,147.940,600 kHz,Plus,Auto,K6RFK,Y,Tone,100,,Scan,Auto,N,High,N,N,"Woodinville, WA"
+25,442.775,447.775,5.0000 MHz,Plus,Auto,K6RFK,Y,Tone,100,,Scan,Auto,N,High,N,N,"Woodinville, WA"
+26,145.370,144.770,600 kHz,Minus,Auto,W7AAO,Y,Tone,136.5,,Scan,Auto,N,High,N,N,"Enumclaw, WA"
+27,146.640,146.040,600 kHz,Minus,Auto,W7AAO,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Edgewood, WA"
+28,927.850,902.850,25.0000 MHz,Minus,Auto,W7AAO,Y,Tone,114.8,,Scan,Auto,N,High,N,N,"Buckley, WA"
+29,146.760,146.160,600 kHz,Minus,Auto,WA7FW,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Federal Way, WA"
+30,147.040,147.640,600 kHz,Plus,Auto,WA7FW,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Federal Way, WA"
+31,442.925,447.925,5.0000 MHz,Plus,Auto,WA7FW,Y,None,,,Scan,Auto,N,High,N,N,"Federal Way, WA"
+32,442.950,447.950,5.0000 MHz,Plus,Auto,WA7FW,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Federal Way, WA"
+33,442.100,447.100,5.0000 MHz,Plus,Auto,KC7EQO,Y,Tone,100,,Scan,Auto,N,High,N,N,"Blyn, WA"
+34,146.620,146.020,600 kHz,Minus,Auto,KC7Z,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Gold Mtn, WA"
+35,442.650,447.650,5.0000 MHz,Plus,Auto,KC7Z,Y,Tone,103.5,,Scan,Auto,N,High,Y,N,"Gold Mtn, WA"
+36,444.075,449.075,5.0000 MHz,Plus,Auto,KC7Z,Y,Tone,103.5,,Scan,Auto,N,High,Y,N,"Bremerton, WA"
+37,145.330,144.730,600 kHz,Minus,Auto,K7NWS,Y,Tone,179.9,,Scan,Auto,N,High,N,N,"Tiger Mtn West, WA"
+38,224.340,222.740,1.6000 MHz,Minus,Auto,K7NWS,Y,Tone,110.9,,Scan,Auto,N,High,N,N,"Tiger Mtn West, WA"
+39,442.075,447.075,5.0000 MHz,Plus,Auto,K7NWS,Y,Tone,110.9,,Scan,Auto,N,High,N,N,"Tiger Mtn West, WA"
+40,53.030,51.330,1.7000 MHz,Minus,Auto,K7CH,Y,Tone,114.8,,Scan,Auto,N,High,N,N,"Baw Faw Peak, WA"
+44,443.325,448.325,5.0000 MHz,Plus,Auto,N9VW,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Cougar Mtn.
+45,147.100,147.700,600 kHz,Plus,Auto,KC7RAS,Y,Tone,123,,Scan,Auto,N,High,N,N,"Cougar Mtn, WA"
+46,147.360,147.960,600 kHz,Plus,Auto,W7PIG,Y,Tone,127.3,,Scan,Auto,N,High,N,N,"Camano Island, WA"
+47,223.880,222.280,1.6000 MHz,Minus,Auto,W7PIG,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Camano Island, WA"
+48,441.050,446.050,5.0000 MHz,Plus,Auto,W7PIG,Y,Tone,127.3,,Scan,Auto,N,High,N,N,"Camano Island, WA"
+49,223.960,222.360,1.6000 MHz,Minus,Auto,WA7TBP,Y,Tone,123,,Scan,Auto,N,High,N,N,"Carnation, WA"
+50,224.020,222.420,1.6000 MHz,Minus,Auto,W7AUX,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Shoreline, WA"
+51,440.300,445.300,5.0000 MHz,Plus,Auto,W7AUX,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Shoreline, WA"
+52,442.825,447.825,5.0000 MHz,Plus,Auto,W7AUX,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Shoreline, WA"
+53,927.638,902.638,25.0000 MHz,Minus,Auto,W7AUX,Y,Tone,114.8,,Scan,Auto,N,High,N,N,"Shoreline, WA"
+54,444.450,449.450,5.0000 MHz,Plus,Auto,K7CH,Y,Tone,100,,Scan,Auto,N,High,N,N,"Baw Faw Peak, WA"
+55,146.820,146.220,600 kHz,Minus,Auto,K7LED,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Tiger Mtn East, WA"
+56,224.120,222.520,1.6000 MHz,Minus,Auto,K7LED,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Tiger Mtn East, WA"
+57,53.290,51.590,1.7000 MHz,Minus,Auto,W7AW,Y,Tone,100,,Scan,Auto,N,High,N,N,West Seattle
+58,145.130,144.530,600 kHz,Minus,Auto,W7AW,Y,Tone,103.5,,Scan,Auto,N,High,N,N,14858;West Seattle
+59,441.800,446.800,5.0000 MHz,Plus,Auto,W7AW,Y,Tone,141.3,,Scan,Auto,N,High,N,N,West Seattle
+60,145.190,144.590,600 kHz,Minus,Auto,N7GDE,Y,Tone,127.3,,Scan,Auto,N,High,N,N,"Lyman Mtn, WA"
+61,146.720,146.120,600 kHz,Minus,Auto,N7SK,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Shelton, WA"
+62,443.250,448.250,5.0000 MHz,Plus,Auto,N7SK,Y,Tone,100,,Scan,Auto,N,High,N,N,"Shelton, WA"
+63,927.413,902.413,25.0000 MHz,Minus,Auto,N7SK,Y,Tone,114.8,,Scan,Auto,N,High,N,N,"Shelton, WA"
+64,147.180,147.780,600 kHz,Plus,Auto,WA7LAW,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Everett, WA"
+65,444.575,449.575,5.0000 MHz,Plus,Auto,WA7LAW,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Everett, WA"
+66,147.280,147.880,600 kHz,Plus,Auto,K7PP,Y,Tone,123,,Scan,Auto,N,High,N,N,"Mt Octopus, WA"
+67,441.200,446.200,5.0000 MHz,Plus,Auto,K7PP,Y,Tone,123,,Scan,Auto,N,High,N,N,"Gold Mtn, WA"
+68,441.300,446.300,5.0000 MHz,Plus,Auto,K7PP,Y,Tone,123,,Scan,Auto,N,High,N,N,"Ko Peak, WA"
+69,443.400,448.400,5.0000 MHz,Plus,Auto,K7PP,Y,Tone,123,,Scan,Auto,N,High,N,N,"Cougar Mtn, WA"
+70,441.175,446.175,5.0000 MHz,Plus,Auto,KC7Z,Y,Tone,103.5,,Scan,Auto,N,High,Y,N,"Gold Mtn, WA"
+71,147.320,147.920,600 kHz,Plus,Auto,WA7MV,Y,Tone,100.0,,Scan,Auto,N,High,N,N,206;Tunk Mtn.
+72,146.720,146.120,600 kHz,Minus,Auto,WA7MV,Y,Tone,100.0,,Scan,Auto,N,High,N,N,400;Benson Creek
+73,444.800,449.800,5.0000 MHz,Plus,Auto,WA7MV,Y,Tone,110.9,,Scan,Auto,N,High,N,N,646;Winthrop
+74,145.490,144.890,600 kHz,Minus,Auto,K7LWH,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Kirkland
+75,224.360,222.760,1.6000 MHz,Minus,Auto,K7LWH,Y,Tone,103.5,,Scan,Auto,N,High,N,N,5326;Kirkland
+76,441.075,446.075,5.0000 MHz,Plus,Auto,K7LWH,Y,Tone,103.5,,Scan,Auto,N,High,N,N,162;Kirkland
+78,53.170,51.470,1.7000 MHz,Minus,Auto,K7LWH,Y,Tone,100,,Scan,Auto,N,High,N,N,165;Kirkland
+79,146.880,146.280,600 kHz,Minus,Auto,WR7VHF,Y,Tone,123.0,,Scan,Auto,N,High,N,N,283;Spokane
+80,147.340,147.940,600 kHz,Plus,Auto,WR7VHF,Y,Tone,123.0,,Scan,Auto,N,High,N,N,290;Spokane
+81,444.600,449.600,5.0000 MHz,Plus,Auto,WR7VHF,Y,Tone,123.0,,Scan,Auto,N,High,N,N,17283;Spokane
+82,145.490,144.890,600 kHz,Minus,Auto,K7JEP,Y,Tone,136.5,,Scan,Auto,N,High,N,N,"43;Hoodoo Mtn, ID"
+83,444.550,449.550,5.0000 MHz,Plus,Auto,K7JEP,Y,None,,,Scan,Auto,N,High,N,N,"23257;Blanchard, ID"
+84,147.000,147.600,600 kHz,Plus,Auto,K7RHT,Y,Tone,131.8,,Scan,Auto,N,High,N,N,17116;Table Mtn.
+85,444.450,449.450,5.0000 MHz,Plus,Auto,K7RHT,Y,Tone,131.8,,Scan,Auto,N,High,N,N,17115;Table Mtn.
+86,147.240,147.840,600 kHz,Plus,Auto,KC7VQR,Y,Tone,192.8,,Scan,Auto,N,High,N,N,181;Yakima Canyon
+87,440.325,445.325,5.0000 MHz,Plus,Auto,W6TQF,Y,Tone,100.0,,Scan,Auto,N,High,N,N,"18543;Augspurger Mtn, WA"
+88,145.250,144.650,600 kHz,Minus,Auto,KB7APU,Y,Tone,186.2,,Scan,Auto,N,High,N,N,16535;Red Mountain
+89,145.350,144.750,600 kHz,Minus,Auto,N7MHE,Y,Tone,100.0,,Scan,Auto,N,High,N,N,"390;Saddle Mtn, WA"
+90,224.940,223.340,1.6000 MHz,Minus,Auto,K7SWI,Y,Tone,100.0,,Scan,Auto,N,High,N,N,"21198;Squaw Butte, ID"
+91,444.375,449.375,5.0000 MHz,Plus,Auto,K7SWI,Y,Tone,100.0,,Scan,Auto,N,High,N,N,"21386;Squaw Butte, ID"
+92,146.740,146.140,600 kHz,Minus,Auto,N7UBO,Y,Tone,100.0,,Scan,Auto,N,High,N,N,"19067;Squaw Butte, ID"
+93,146.920,146.320,600 kHz,Minus,Auto,KI7PWR,Y,Tone,100.0,,Scan,Auto,N,High,N,N,"21717;Hat Butte, ID"
+94,442.000,447.000,5.0000 MHz,Plus,Auto,NE7MC,Y,Tone,141.3,,Scan,Auto,N,High,N,N,19962;Kenmore
+95,145.170,144.570,600 kHz,Minus,Auto,NM7E,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Belfair, WA"
+96,224.260,222.660,1.6000 MHz,Minus,Auto,NM7E,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Belfair, WA"
+97,440.525,445.525,5.0000 MHz,Plus,Auto,W7ACS,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Seattle
+98,440.600,445.600,5.0000 MHz,Plus,Auto,W7ACS,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Lake Forest Park
+99,442.300,447.300,5.0000 MHz,Plus,Auto,W7ACS,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Seattle
+100,442.875,447.875,5.0000 MHz,Plus,Auto,W7ACS,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Seattle
+101,443.025,448.025,5.0000 MHz,Plus,Auto,W7ACS,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Seattle
+102,443.200,448.200,5.0000 MHz,Plus,Auto,W7ACS,Y,Tone,141.3,,Scan,Auto,N,High,N,N,White Center
+103,443.475,448.475,5.0000 MHz,Plus,Auto,W7ACS,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Seattle
+104,443.650,448.650,5.0000 MHz,Plus,Auto,W7ACS,Y,Tone,141.3,,Scan,Auto,N,High,N,N,North Seattle
+105,444.550,449.550,5.0000 MHz,Plus,Auto,W7ACS,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Seattle
+106,145.275,144.675,600 kHz,Minus,Auto,KK7DFL,Y,Tone,100,,Scan,Auto,N,High,Y,N,23719;Olympia
+107,145.210,144.610,600 kHz,Minus,Auto,W7DK,Y,Tone,141.3,,Scan,Auto,N,High,N,N,324;Tacoma
+108,147.280,147.880,600 kHz,Plus,Auto,W7DK,Y,Tone,103.5,,Scan,Auto,N,High,N,N,324;Tacoma
+109,147.380,147.980,600 kHz,Plus,Auto,W7DK,Y,Tone,103.5,,Scan,Auto,N,High,N,N,325;Crawford Mtn.
+110,440.625,445.625,5.0000 MHz,Plus,Auto,W7DK,Y,Tone,103.5,,Scan,Auto,N,High,N,N,549;Tacoma
+111,443.925,448.925,5.0000 MHz,Plus,Auto,W7FLY,Y,Tone,100,,Scan,Auto,N,High,N,N,Lynnwood
+112,443.100,448.100,5.0000 MHz,Plus,Auto,WA7ST,Y,Tone,103.5,,Scan,Auto,N,High,N,N,2779;SeaTac
+113,146.660,146.060,600 kHz,Minus,Auto,NC7G,Y,Tone,103.5,,Scan,Auto,N,High,N,N,2780;SeaTac
+114,441.125,446.125,5.0000 MHz,Plus,Auto,W7BUR,Y,Tone,103.5,,Scan,Auto,N,High,N,N,19061;Burien
+115,443.700,448.700,5.0000 MHz,Plus,Auto,WA7DES,Y,Tone,123,,Scan,Auto,N,High,N,N,22114;Des Moines
+116,146.70,146.10,600 kHz,Minus,Auto,N7MHE,Y,Tone,100.0,,Scan,Auto,N,High,N,N,"Moses Lake, WA"
+117,444.475,449.475,5.0000 MHz,Plus,Auto,W7NPC,Y,Tone,103.5,,Scan,Auto,N,High,Y,N,480;Bainbridge Isl.
+120,147.280,147.880,600 kHz,Plus,Auto,KB7ARA,Y,None,,,Scan,Auto,N,High,N,N,80;Pikes Peak
+121,147.320,147.920,600 kHz,Plus,Auto,KA7FVV,Y,Tone,103.5,,Scan,Auto,N,High,N,N,17271;West Twin
+122,147.360,147.960,600 kHz,Plus,Auto,N7WRR,Y,None,,,Scan,Auto,N,High,N,N,366;Stensgar Mtn.
+123,147.380,147.980,600 kHz,Plus,Auto,N7WRQ,Y,Tone,100.0,,Scan,Auto,N,High,N,N,78;Mica Peak
+124,440.075,445.075,5.0000 MHz,Plus,Auto,N7OEP,Y,Tone,103.5,,Scan,Auto,N,High,N,N,9876;Enumclaw
+125,443.175,448.175,5.0000 MHz,Plus,Auto,N7OEP,Y,Tone,107.2,,Scan,Auto,N,High,N,N,9912;Enumclaw
+126,53.330,51.630,1.7000 MHz,Minus,Auto,N7OEP,Y,Tone,100,,Scan,Auto,N,High,N,N,375;Baldi Mtn.
+127,145.250,144.650,600 kHz,Minus,Auto,KB7APU,Y,Tone,186.2,,Scan,Auto,N,High,N,N,16535;Red Mountain
+128,441.425,446.425,5.0000 MHz,Plus,Auto,N7KN,Y,Tone,110.9,,Scan,Auto,N,High,N,N,Whidbey Isl.
+129,442.725,447.725,5.0000 MHz,Plus,Auto,N7YRC,Y,Tone,127.3,,Scan,Auto,N,High,N,N,7099;Cowiche Mtn.
+130,444.750,449.750,5.0000 MHz,Plus,Auto,N7YRC,Y,Tone,131.8,,Scan,Auto,N,High,N,N,17413;Lookout Point
+131,53.930,52.230,1.7000 MHz,Minus,Auto,N7YRC,Y,None,,,Scan,Auto,N,High,N,N,21604;Cowiche
+132,145.230,144.630,600 kHz,Minus,Auto,N3KPU,Y,Tone,146.2,,Scan,Auto,N,High,N,N,9851;Graham
+133,442.750,447.750,5.0000 MHz,Plus,Auto,KE7YYD,Y,Tone,100,,Scan,Auto,N,High,N,N,13889;JBLM
+134,147.320,147.920,600 kHz,Plus,Auto,K7CST,Y,Tone,103.5,,Scan,Auto,N,High,N,N,9852;Kent
+135,146.860,146.260,600 kHz,Minus,Auto,WA7SAR,Y,Tone,123.0,,Scan,Auto,N,High,N,N,106;Darland Mtn.
+136,147.080,147.680,600 kHz,Plus,Auto,WA7SAR,Y,Tone,123.0,,Scan,Auto,N,High,N,N,95;King Mtn.
+137,444.600,449.600,5.0000 MHz,Plus,Auto,WA7SAR,Y,Tone,123.0,,Scan,Auto,N,High,N,N,476;Yakima
+138,146.700,146.100,600 kHz,Minus,Auto,N7JN,Y,Tone,131.8,,Scan,Auto,N,High,N,N,6196;San Juan Isl.
+139,224.480,222.880,1.6000 MHz,Minus,Auto,N7JN,Y,Tone,103.5,,Scan,Auto,N,High,N,N,6394;Mt. Constitution
+140,443.450,448.450,5.0000 MHz,Plus,Auto,N7JN,Y,Tone,103.5,,Scan,Auto,N,High,N,N,368;Mt. Constitution
+141,224.160,222.560,1.6000 MHz,Minus,Auto,W7ECG,Y,Tone,156.7,,Scan,Auto,N,High,N,N,8854;Lookout Mtn.
+142,442.250,447.250,5.0000 MHz,Plus,Auto,W7ECG,Y,Tone,156.7,,Scan,Auto,N,High,N,N,7393;Lookout Mtn.
+143,442.825,447.825,5.0000 MHz,Plus,Auto,W7ECG,Y,Tone,156.7,,Scan,Auto,N,High,N,N,7100;Ferndale
+144,146.860,146.260,600 kHz,Minus,Auto,W7AVM,Y,Tone,127.3,,Scan,Auto,N,High,N,N,Whidbey Isl.
+145,147.220,147.820,600 kHz,Plus,Auto,W7AVM,Y,Tone,127.3,,Scan,Auto,N,High,N,N,345;Whidbey Isl.
+146,147.020,147.620,600 kHz,Plus,Auto,KB7ARA,Y,None,,,Scan,Auto,N,High,N,N,"31;Lookout Pass, MT"
+147,441.100,446.100,5.0000 MHz,Plus,Auto,K7BEL,Y,Tone,156.7,,Scan,Auto,N,High,N,N,"489;Bellevue, WA"
+148,147.080,147.680,600 kHz,Plus,Auto,WW7ATS,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Cougar Mtn, WA"
+149,147.875,147.275,600 kHz,Minus,Auto,WW7STR,Y,Tone,88.5,,Scan,Auto,N,High,Y,N,"Cougar Mtn, WA"
+150,224.440,222.840,1.6000 MHz,Minus,Auto,WW7STR,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"16503;Cougar Mtn, WA"
+151,441.550,446.550,5.0000 MHz,Plus,Auto,WW7ATS,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"601;Cougar Mtn, WA"
+152,442.150,447.150,5.0000 MHz,Plus,Auto,WW7STR,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Cougar Mtn, WA"
+153,444.850,449.850,5.0000 MHz,Plus,Auto,WW7STR,Y,Tone,103.5,,Scan,Auto,N,High,N,N,"Cougar Mtn, WA"
+154,927.2125,902.2125,25.0000 MHz,Minus,Auto,WW7STR,Y,Tone,114.8,,Scan,Auto,N,High,Y,N,"Cougar Mtn, WA"
+155,146.7000,146.1000,600 kHz,Minus,Auto,W7EAT,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Eatonville
+156,224.1800,222.5800,1.6000 MHz,Minus,Auto,W7EAT,Y,Tone,103.5,,Scan,Auto,N,High,N,N,Graham
+157,440.9500,445.9500,5.0000 MHz,Plus,Auto,K7DK,Y,Tone,110.9,,Scan,Auto,N,High,N,N,Buck Mtn.
