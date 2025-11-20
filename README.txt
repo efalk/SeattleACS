@@ -1,4 +1,4 @@
-Note: git files can be found at https://github.com/efalk/SeattleACS/
+Note: these files can be found at https://github.com/efalk/SeattleACS/
 
 Instructions for CHIRP: https://github.com/efalk/SeattleACS/blob/main/Chirp/README.md
 Instructions for RT: https://github.com/efalk/SeattleACS/blob/main/RT/README.md

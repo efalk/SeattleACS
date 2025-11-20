@@ -34,12 +34,12 @@ import channel
 
 class Icom(object):
     @staticmethod
-    def header(csvout: csv.writer, bank: int):
+    def header(csvout: csv.writer, recFilter):
         """Write out the header line for the CSV file."""
         csvout.writerow(["CH No","Name","Frequency","Dup","Offset","Tone","Repeater Tone","cToneFreq","DtcsCode","DtcsPolarity","Mode","TStep","Skip"])
 
     @staticmethod
-    def write(rec: channel.Channel, csvout: csv.writer, count: int, bank: int):
+    def write(rec: channel.Channel, csvout: csv.writer, count: int, recFilter):
         """Write out one record. This may throw an exception if any of
         the ics-217 fields are not valid."""
         Chan = rec.Chan       # memory #, 0-based
@@ -87,7 +87,7 @@ class Icom(object):
         freq = f"{float(Rxfreq):g}"
 
         # All ACS Frequencies are FM. Note that at least the IC-705 and CS-705 software don't support NFM.
-        RadioMode = 'FM'
+        RadioMode = Mode
 
         # Create names matching Icom format - simplified
         # Extract first part of comment for simple name

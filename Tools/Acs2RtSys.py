@@ -23,16 +23,17 @@ class RtSys(object):
     # TODO: RxTone, RxDCS. For now, always set to CSQ.
 
     @staticmethod
-    def header(csvout: csv.writer, bank: int):
+    def header(csvout: csv.writer, recFilter):
         """Write out the header line for the CSV file."""
-        if bank is not None and bank >= 1 and bank <= 10:
+        banks = recFilter.get('banks')
+        if banks:
             Banks = [f"Bank {i}," for i in range(1,11)]
         else:
             Banks = []
         csvout.writerow(["n","Receive Frequency","Transmit Frequency","Offset Frequency","Offset Direction","Operating Mode","Name","Show Name","Tone Mode","CTCSS","DCS","Skip","Step","Clock Shift","Tx Power","Tx Narrow","Pager Enable"] + Banks + ["Comment"])
 
     @staticmethod
-    def write(rec: channel.Channel, csvout: csv.writer, count: int, bank: int):
+    def write(rec: channel.Channel, csvout: csv.writer, count: int, recFilter):
         """Write out one record. This may throw an exception if any of
         the ics-217 fields are not valid."""
         # There are some derived values here, so we compute them now.
@@ -44,10 +45,8 @@ class RtSys(object):
         Txtone = rec.Txtone
         Rxtone = rec.Rxtone
         Comment = rec.Comment
-        if bank is not None and bank >= 1 and bank <= 10:
-            Banks = ["N,"] * 10
-            Banks[bank-1] = 'Y,'
-        else:
+        banks = recFilter.get('banks')
+        if not banks:
             Banks = []
 
         if not Txtone: Txtone = 'CSQ'

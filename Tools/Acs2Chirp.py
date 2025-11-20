@@ -35,13 +35,13 @@ import channel
 
 class Chirp(object):
     @staticmethod
-    def header(csvout: csv.writer, bank: int):
+    def header(csvout: csv.writer, recFilter):
         """Write out the header line for the CSV file."""
         #print("Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPolarity,RxDtcsCode,CrossMode,Mode,TStep,Skip,Power,Comment,URCALL,RPT1CALL,RPT2CALL,DVCODE", file=ofile)
         csvout.writerow(["Location","Name","Frequency","Duplex","Offset","Tone","rToneFreq","cToneFreq","DtcsCode","DtcsPolarity","RxDtcsCode","CrossMode","Mode","TStep","Skip","Power","Comment","URCALL","RPT1CALL","RPT2CALL","DVCODE"])
 
     @staticmethod
-    def write(rec: channel.Channel, csvout: csv.writer, count: int, bank: int):
+    def write(rec: channel.Channel, csvout: csv.writer, count: int, recFilter):
         """Write out one record. This may throw an exception if any of
         the ics-217 fields are not valid."""
         Chan = rec.Chan       # memory #, 0-based

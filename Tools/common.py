@@ -47,11 +47,8 @@ def main(writer, usage=usage):
     reader = csv.reader(ifile)
     csvout = csv.writer(sys.stdout)
 
-    bands = None
-    count = 1
-    bank = None
-    newEntries = False
-    regex = None
+    start = 1
+    recFilter = {}
     try:
         (optlist, args) = getopt.getopt(sys.argv[1:], 'hb:s:B:NR:v', ['help'])
         for flag, value in optlist:
@@ -59,16 +56,16 @@ def main(writer, usage=usage):
                 print(usage)
                 return 0
             elif flag == '-b':
-                bands = None if value == "all" else value
+                recFilter['bands'] = None if value == "all" else value
             elif flag == '-N':
-                newEntries = True
+                recFilter['newEntries'] = True
             elif flag == '-R':
-                regex = re.compile(value)
+                recFilter['regex'] = re.compile(value)
             elif flag == '-B':
-                bank = getInt(value)
+                recFilter['banks'] = [value]
             elif flag == '-s':
-                count = getInt(value)
-                if count is None:
+                start = getInt(value)
+                if start is None:
                     print(f"-s '{value}' needs to be an integer", file=sys.stderr)
                     return 2
             elif flag == '-v':
@@ -78,23 +75,33 @@ def main(writer, usage=usage):
         print(usage, file=sys.stderr)
         return 2
 
-    writer.header(csvout, bank)
+    return process(reader, ics217.ics217, csvout, writer, start, recFilter)
 
-    for line in reader:
+
+def process(csvin, reader, csvout, writer, start, recFilter):
+    writer.header(csvout, recFilter)
+
+    # If the "Chan" property of a record is a legit integer, it's used
+    # as the record number for the output (adjusted for start). Else, we
+    # increment a counter.
+    count = 1
+
+    for line in csvin:
         if verbose >= 2:
             print(line, file=sys.stderr)
-        acsRec = ics217.parse(line, bands, newEntries, regex)
-        if not acsRec:
+        rec = reader.parse(line, recFilter)
+        if not rec:
             continue
 
         try:
-            if verbose: print(acsRec, file=sys.stderr)
-            writer.write(acsRec, csvout, count, bank)
+            if verbose: print(rec, file=sys.stderr)
+            if rec.Chan.isdigit(): count = int(rec.Chan)
+            writer.write(rec, csvout, start+count-1, recFilter)
         except Exception as e:
             # Parse failures are normal, don't report them; they just clutter
             # the output.
             if verbose:
-                print("Failed to write: ", acsRec, file=sys.stderr)
+                print("Failed to write: ", rec, file=sys.stderr)
                 print(e, file=sys.stderr)
             continue
 
