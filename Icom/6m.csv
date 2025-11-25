@@ -15,7 +15,7 @@ CH No,Name,Frequency,Dup,Offset,Tone,Repeater Tone,cToneFreq,DtcsCode,DtcsPolari
 14,L32251 Simplex 52.51,52.51,,0,,88.5Hz,88.5,23,NN,FM,5,
 15,L33253 Simplex 52.53,52.53,,0,,88.5Hz,88.5,23,NN,FM,5,
 16,L34255 Simplex 52.55,52.55,,0,,88.5Hz,88.5,23,NN,FM,5,
-17,L35259 Data Simplex 52.59,52.59,,0,,88.5Hz,88.5,23,NN,FM,5,
+17,L35259 Data Simplex 52.59,52.59,,0,,88.5Hz,88.5,23,NN,D,5,
 18,L41GRS WA EMD Grass Mt,53.87,DUP-,1.7,Tone,100.0Hz,88.5,23,NN,FM,5,
 19,L43ASH WA DNR Ashford,53.39,DUP-,1.7,Tone,100.0Hz,88.5,23,NN,FM,5,
 20,L52RED Redmond,53.07,DUP-,1.7,Tone,100.0Hz,88.5,23,NN,FM,5,

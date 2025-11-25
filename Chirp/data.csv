@@ -56,7 +56,7 @@ Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPola
 55,440950,440.9500,,0.000000,,88.5,88.5,023,NN,023,Tone->Tone,FM,5.0,,5.0W,D54: Data 440.950,,,,
 56,441000,441.0000,,0.000000,,88.5,88.5,023,NN,023,Tone->Tone,FM,5.0,,5.0W,D55: Data Calling 441.000; Digital Voice simplex calling,,,,
 57,440850,440.8500,,0.000000,,88.5,88.5,023,NN,023,Tone->Tone,FM,5.0,,5.0W,D56: Data 440.850; Kitsap County DEM; VARAFM,,,,
-58,D52600,52.6000,,2.000000,,88.5,88.5,023,NN,023,Tone->Tone,FM,5.0,,5.0W,D60: Data 52.600; W7ACS-6 Queen Anne VARAFM,,,,
+58,D52600,52.6000,,0.000000,,88.5,88.5,023,NN,023,Tone->Tone,FM,5.0,,5.0W,D60: Data 52.600; W7ACS-6 Queen Anne VARAFM,,,,
 59,D50600,50.6000,,0.000000,,88.5,88.5,023,NN,023,Tone->Tone,FM,5.0,,5.0W,D61: Data 50.60,,,,
 60,D50620,50.6200,,0.000000,,88.5,88.5,023,NN,023,Tone->Tone,FM,5.0,,5.0W,D62: Data 50.62,,,,
 61,D50640,50.6400,,0.000000,,88.5,88.5,023,NN,023,Tone->Tone,FM,5.0,,5.0W,D63: Data 50.64,,,,

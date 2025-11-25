@@ -56,7 +56,7 @@ n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operati
 55,440.9500,440.9500,,Simplex,Auto,440950,Y,None,,,Scan,Auto,N,High,N,N,D54: Data 440.950
 56,441.0000,441.0000,,Simplex,Auto,441000,Y,None,,,Scan,Auto,N,High,N,N,D55: Data Calling 441.000; Digital Voice simplex calling
 57,440.8500,440.8500,,Simplex,Auto,440850,Y,None,,,Scan,Auto,N,High,N,N,D56: Data 440.850; Kitsap County DEM; VARAFM
-58,52.6000,50.6000,,Simplex,Auto,D52600,Y,None,,,Scan,Auto,N,High,N,N,D60: Data 52.600; W7ACS-6 Queen Anne VARAFM
+58,52.6000,52.6000,,Simplex,Auto,D52600,Y,None,,,Scan,Auto,N,High,N,N,D60: Data 52.600; W7ACS-6 Queen Anne VARAFM
 59,50.6000,50.6000,,Simplex,Auto,D50600,Y,None,,,Scan,Auto,N,High,N,N,D61: Data 50.60
 60,50.6200,50.6200,,Simplex,Auto,D50620,Y,None,,,Scan,Auto,N,High,N,N,D62: Data 50.62
 61,50.6400,50.6400,,Simplex,Auto,D50640,Y,None,,,Scan,Auto,N,High,N,N,D63: Data 50.64
