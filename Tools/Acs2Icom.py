@@ -1,35 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf8 -*-
 
-usage = """Convert CSV file from ACS 217 spreadsheet to the format Icom's programming software (such as CS-705) uses
-
-  Acs2Icom.py < W7ACS_ICS-217A_20240131.csv > ACS_icom.csv
-
-  Options:
-        -b <band>       Any combination of the letters VULTDH, or "all"
-                                V = VHF (2m band)
-                                U = UHF (70cm band)
-                                L = Low frequency (6m band)
-                                T = 220 MHz band (1.25m band)
-                                D = digital
-                                H = Seattle Emergency Hubs GMRS
-                            default is VU
-        -s <n>          Start numbering at <n>; default is 1
-        -v              verbose
-
-Generates CSV files compatible with Icom radio software.
-"""
-
 import csv
-import errno
-import getopt
-import os
-import re
-import signal
-import string
-import sys
 
-import common
 import channel
 
 class Icom(object):
@@ -101,12 +74,3 @@ class Icom(object):
         SimpleName = SimpleName.replace(',', '')
 
         csvout.writerow([ChannelNum, SimpleName, freq, Duplex, OffsetValue, ToneMode, RepeaterTone, cToneFreq, DtcsCode, 'NN', RadioMode, 5, ''])
-
-
-if __name__ == '__main__':
-  signal.signal(signal.SIGPIPE, signal.SIG_DFL)
-  try:
-    sys.exit(common.main(Icom, usage))
-  except KeyboardInterrupt as e:
-    print(file=sys.stderr)
-    sys.exit(1)

@@ -23,67 +23,67 @@ all: ${CSV_FILES}
 # Chirp
 
 Chirp/2m.csv: ${ICS217} | Chirp
-	./Tools/Acs2Chirp.py -b V < ${ICS217} > $@
+	./Tools/Acs2Csv.py --Chirp -b V < ${ICS217} > $@
 
 Chirp/70cm.csv: ${ICS217} | Chirp
-	./Tools/Acs2Chirp.py -b U < ${ICS217} > $@
+	./Tools/Acs2Csv.py --Chirp -b U < ${ICS217} > $@
 
 Chirp/220.csv: ${ICS217} | Chirp
-	./Tools/Acs2Chirp.py -b T < ${ICS217} > $@
+	./Tools/Acs2Csv.py --Chirp -b T < ${ICS217} > $@
 
 Chirp/narrow.csv: ${ICS217} | Chirp
-	./Tools/Acs2Chirp.py -R 'U..N' < ${ICS217} > $@
+	./Tools/Acs2Csv.py --Chirp -R 'U..N' < ${ICS217} > $@
 
 Chirp/6m.csv: ${ICS217} | Chirp
-	./Tools/Acs2Chirp.py -b L < ${ICS217} > $@
+	./Tools/Acs2Csv.py --Chirp -b L < ${ICS217} > $@
 
 Chirp/data.csv: ${ICS217} | Chirp
-	./Tools/Acs2Chirp.py -b D < ${ICS217} > $@
+	./Tools/Acs2Csv.py --Chirp -b D < ${ICS217} > $@
 
 Chirp/hub.csv: ${ICS217} | Chirp
-	./Tools/Acs2Chirp.py -b H < ${ICS217} > $@
+	./Tools/Acs2Csv.py --Chirp -b H < ${ICS217} > $@
 
 
 # RT Systems
 
 RT/2m.csv: ${ICS217} | RT
-	./Tools/Acs2RtSys.py -b V < ${ICS217} > $@
+	./Tools/Acs2Csv.py --RtSys -b V < ${ICS217} > $@
 
 RT/70cm.csv: ${ICS217} | RT
-	./Tools/Acs2RtSys.py -b U < ${ICS217} > $@
+	./Tools/Acs2Csv.py --RtSys -b U < ${ICS217} > $@
 
 RT/220.csv: ${ICS217} | RT
-	./Tools/Acs2RtSys.py -b T < ${ICS217} > $@
+	./Tools/Acs2Csv.py --RtSys -b T < ${ICS217} > $@
 
 RT/narrow.csv: ${ICS217} | RT
-	./Tools/Acs2RtSys.py -R 'U..N' < ${ICS217} > $@
+	./Tools/Acs2Csv.py --RtSys -R 'U..N' < ${ICS217} > $@
 
 RT/6m.csv: ${ICS217} | RT
-	./Tools/Acs2RtSys.py -b L < ${ICS217} > $@
+	./Tools/Acs2Csv.py --RtSys -b L < ${ICS217} > $@
 
 RT/data.csv: ${ICS217} | RT
-	./Tools/Acs2RtSys.py -b D < ${ICS217} > $@
+	./Tools/Acs2Csv.py --RtSys -b D < ${ICS217} > $@
 
 RT/hub.csv: ${ICS217} | RT
-	./Tools/Acs2RtSys.py -b H < ${ICS217} > $@
+	./Tools/Acs2Csv.py --RtSys -b H < ${ICS217} > $@
 
 
 # ICOM
 
 Icom/2m.csv: ${ICS217} | Icom
-	./Tools/Acs2Icom.py -b V < ${ICS217} > $@
+	./Tools/Acs2Csv.py --Icom -b V < ${ICS217} > $@
 
 Icom/70cm.csv: ${ICS217} | Icom
-	./Tools/Acs2Icom.py -b U < ${ICS217} > $@
+	./Tools/Acs2Csv.py --Icom -b U < ${ICS217} > $@
 
 Icom/6m.csv: ${ICS217} | Icom
-	./Tools/Acs2Icom.py -b L < ${ICS217} > $@
+	./Tools/Acs2Csv.py --Icom -b L < ${ICS217} > $@
 
 Icom/data.csv: ${ICS217} | Icom
-	./Tools/Acs2Icom.py -b D < ${ICS217} > $@
+	./Tools/Acs2Csv.py --Icom -b D < ${ICS217} > $@
 
 Icom/hub.csv: ${ICS217} | Icom
-	./Tools/Acs2Icom.py -b H < ${ICS217} > $@
+	./Tools/Acs2Csv.py --Icom -b H < ${ICS217} > $@
 
 
 %.html: %.md

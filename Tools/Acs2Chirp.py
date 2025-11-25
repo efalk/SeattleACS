@@ -1,36 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf8 -*-
 
-usage = """Convert CSV file from ACS 217 spreadsheet to format CHIRP uses
-
-  Acs2Chirp.py < W7ACS_ICS-217A_20240131.csv > ACS_chirp.csv
-
-  Options:
-        -b <band>       Any combination of the letters VULTDH, or "all"
-                                V = VHF (2m band)
-                                U = UHF (70cm band)
-                                L = Low frequency (6m band)
-                                T = 220 MHz band (1.25m band)
-                                D = digital
-                                H = Seattle Emergency Hubs GMRS
-                            default is VU
-        -s <n>          Start numbering at <n>; default is 1
-        -v              verbose
-
-Generates CSV files compatible with CHIRP software.  These files
-should work with any radio, but if not, please contact Ed Falk,
-KK7NNS au gmail.com directly and we'll figure it out.
-"""
 
 import csv
-import errno
-import getopt
-import os
-import signal
-import string
-import sys
 
-import common
 import channel
 
 class Chirp(object):
@@ -143,11 +116,3 @@ class Chirp(object):
 
         csvout.writerow([count, Name, Rxfreq, Duplex, f"{abs(Offset):.6f}", ToneMode, rToneFreq, cToneFreq, RxDtcsCode, 'NN', RxDtcsCode, CrossMode, Wide, 5.00, '', '5.0W', Comment, '', '', '', ''])
 
-
-if __name__ == '__main__':
-  signal.signal(signal.SIGPIPE, signal.SIG_DFL)
-  try:
-    sys.exit(common.main(Chirp, usage))
-  except KeyboardInterrupt as e:
-    print(file=sys.stderr)
-    sys.exit(1)

@@ -6,51 +6,30 @@ import getopt
 import re
 import sys
 
-usage = f"""Convert CSV file from ACS 217 spreadsheet to format RT Systems uses
-
-  {sys.argv[0]} < W7ACS_ICS-217A_20240131.csv > ACS_RT.csv
-
-  Options:
-        -b <band>       Any combination of the letters VULTDH, or "all"
-                                V = VHF (2m band)
-                                U = UHF (70cm band)
-                                L = Low frequency (6m band)
-                                T = 220 MHz band (1.25m band)
-                                D = digital
-                                H = Seattle Emergency Hubs GMRS
-                            Default is all
-        -N              Use the 'U..N' entries (default is don't use)
-        -R <regex>      Use regex to select entries, e.g. 'V' or 'U..N'
-        -s <n>          Start numbering at <n>; default is 1
-        -B <bank>       Select bank for devices that use it (i.e. FT-60)
-        -v              Increase verbosity
-"""
-
-# TODO: add an option to specify the output format. Currently, only "RtSys"
-# exists.
-
-
-# Convert CSV file from ACS 217 spreadsheet to format RT Systems uses for FT-60
-
 import ics217
+from Acs2Chirp import Chirp
+from Acs2RtSys import RtSys
+from Acs2Icom import Icom
 
 # See below for the ics217 subclasses responsible for formatting the
 # output.
 
 verbose = 0
 
-def main(writer, usage=usage):
+def main(reader, usage):
     global verbose
     ifile = sys.stdin
     #ifile = open('foo.csv','r')
 
-    reader = csv.reader(ifile)
+    csvin = csv.reader(ifile)
     csvout = csv.writer(sys.stdout)
+    writer = Chirp
 
     start = 1
     recFilter = {}
     try:
-        (optlist, args) = getopt.getopt(sys.argv[1:], 'hb:s:B:NR:v', ['help'])
+        (optlist, args) = getopt.getopt(sys.argv[1:], 'hb:s:B:NR:v',
+            ['help', 'Chirp', 'RtSys', 'Icom'])
         for flag, value in optlist:
             if flag in ('-h', '--help'):
                 print(usage)
@@ -70,12 +49,18 @@ def main(writer, usage=usage):
                     return 2
             elif flag == '-v':
                 verbose += 1
+            elif flag == '--Chirp':
+                writer = Chirp
+            elif flag == '--RtSys':
+                writer = RtSys
+            elif flag == '--Icom':
+                writer = Icom
     except getopt.GetoptError as e:
         print(e, file=sys.stderr)
         print(usage, file=sys.stderr)
         return 2
 
-    return process(reader, ics217.ics217, csvout, writer, start, recFilter)
+    return process(csvin, reader, csvout, writer, start, recFilter)
 
 
 def process(csvin, reader, csvout, writer, start, recFilter):

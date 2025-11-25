@@ -4,14 +4,7 @@
 # Convert CSV file from ACS 217 spreadsheet to format RT Systems uses for FT-60
 
 import csv
-import errno
-import getopt
-import os
-import signal
-import string
-import sys
 
-import common
 import channel
 
 class RtSys(object):
@@ -115,11 +108,3 @@ class RtSys(object):
 
         Wide = 'Y' if Wide=="N" else 'N'
         csvout.writerow([count, Rxfreq, Txfreq, Offset_s, OpMode, 'Auto', Name, 'Y' if Name else 'N', ToneMode, CTCSS, DCS, 'Scan', 'Auto', 'N', 'High', Wide, 'N'] + Banks + [Comment])
-
-if __name__ == '__main__':
-    signal.signal(signal.SIGPIPE, signal.SIG_DFL)
-    try:
-      sys.exit(common.main(RtSys))
-    except KeyboardInterrupt as e:
-      print(file=sys.stderr)
-      sys.exit(1)

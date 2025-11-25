@@ -46,7 +46,8 @@ class ics217(channel.Channel):
         this.Config = line[1]
         this.Txwid = line[8]
         this.Remarks = line[11]
-        if this.Mode == 'A' and float(this.Rxfreq) >= 50.0: this.Mode = 'F'
+        if this.Mode == 'A':
+            this.Mode = 'FM' if float(this.Rxfreq) >= 50.0 else 'AM'
         this.Comment = this.getComment()
 
     def __repr__(this):
