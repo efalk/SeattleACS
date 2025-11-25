@@ -90,6 +90,7 @@ class Chirp(object):
         else:
             if Wide == 'W': Wide = 'FM'
             elif Wide == 'N': Wide = 'NFM'
+        # TODO: other modes? e.g. "MF" appears in the ACS database
 
         # Output (Chirp):
         #  Location  Memory location, starting at 1

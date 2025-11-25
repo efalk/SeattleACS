@@ -6,7 +6,7 @@
 #
 # Typical usage:
 #
-#    import ics217
+#    from ics217 import ics217
 #
 #    reader = csv.reader(sys.stdin)
 #
@@ -57,7 +57,8 @@ class ics217(channel.Channel):
         return f'''{csvget(this.Chan)},{csvget(this.Config)},{csvget(this.Name)},{csvget(this.Comment)},{csvget(this.Rxfreq)},{csvget(this.Wide)},{csvget(this.Rxtone)},{csvget(this.Txfreq)},{csvget(this.Txwid)},{csvget(this.Txtone)},{csvget(this.Mode)},{csvget(this.Remarks)}'''
 
     def getComment(this):
-        """Return a reasonable comment for this item"""
+        """Return a reasonable comment for this item; incorporate the
+        channel id, comment, and remarks."""
         try:
             c = []
             if this.Chan not in this.Name: c.append(this.Chan + ': ')

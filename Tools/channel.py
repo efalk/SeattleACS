@@ -4,7 +4,7 @@
 # This is the base class for holding radio programming
 # info.
 #
-# Channel class holds the following values
+# Channel class holds the following values:
 #
 #  group
 #    Not commonly used. Some radios, e.g. TK-780, divide the
@@ -12,7 +12,9 @@
 #
 #  channel
 #    The channel number. Caller is responsible for making sure
-#    this works for the radio in question.
+#    this works for the radio in question. ACS 217 files have channel
+#    numbers like "V01" or "U22" so obviously the software is going to
+#    have to provide its own numbering when writing out the CSV files.
 #
 #  txfreq
 #    Transmit frequency, Hz. Specify as a string; it will be

@@ -5,7 +5,7 @@
 #
 # Typical usage:
 #
-#    import rr
+#    from rr import rr
 #
 #    reader = csv.reader(sys.stdin)
 #

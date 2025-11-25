@@ -92,7 +92,7 @@ class RtSys(object):
         # Transmit Frequency    146.36000
         # Offset Frequency      600 kHz | 5.00000 MHz | (blank)
         # Offset Direction      Minus | Plus | Simplex
-        # Operating Mode        FM | AM
+        # Operating Mode        FM | AM; RtSystems also accepts "Auto".
         # Name                  e.g. PSRG
         # Show Name             Y
         # Tone Mode             None, Tone, DCS (others ignored for now)
