@@ -53,8 +53,11 @@ class ics217(channel.Channel):
         this.Txwid = line[8]
         this.Remarks = line[11]
         # For Mode "A", guess AM vs FM
+        # Otherwise, all ACS frequencies are FM
         if this.Mode == 'A':
             this.Mode = 'FM' if float(this.Rxfreq) >= 50.0 else 'AM'
+        elif this.Mode != 'D':
+            this.Mode = 'FM'
         this.Comment = this.getComment()
 
     def __repr__(this):
