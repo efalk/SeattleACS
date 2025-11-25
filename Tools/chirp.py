@@ -79,10 +79,10 @@ class Chirp(object):
 
         Comment = rec.Comment
 
-        if Mode == 'F':
+        if Mode == 'FM':
             if Wide == 'N': Wide = 'NFM'
             else: Wide = 'FM'
-        elif Mode == 'A':
+        elif Mode == 'AM':
             if Wide == 'N': Wide = 'NAM'
             else: Wide = 'AM'
         elif Mode == 'D':

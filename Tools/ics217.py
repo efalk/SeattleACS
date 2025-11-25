@@ -41,11 +41,18 @@ class ics217(channel.Channel):
         """Create an ics217 object from a list of csv values. Caller
         must have already vetted the input. The parse() function
         below can handle that."""
-        super().__init__(None, line[0], line[7], line[4], None,
+        rxfreq = line[4]
+        txfreq = line[7]
+        # Just a quick sanity check
+        if line[1] == 'Simplex' and txfreq != rxfreq:
+            print(f'Warning: Channel {line[0]}, {line[2]}, Simplex rxfreq {rxfreq} does not match txfreq {txfreq}', file=sys.stderr)
+            txfreq = rxfreq
+        super().__init__(None, line[0], txfreq, rxfreq, None,
             line[2], line[3], line[9], line[6], line[10], line[5], "High")
         this.Config = line[1]
         this.Txwid = line[8]
         this.Remarks = line[11]
+        # For Mode "A", guess AM vs FM
         if this.Mode == 'A':
             this.Mode = 'FM' if float(this.Rxfreq) >= 50.0 else 'AM'
         this.Comment = this.getComment()
@@ -71,7 +78,7 @@ class ics217(channel.Channel):
             return ''.join(c)
         except Exception as e:
             print(this, e, file=sys.stderr)
-            raise
+            return this.Comment
 
     @staticmethod
     def parse(line, recFilter, cls=None):
