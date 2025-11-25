@@ -7,9 +7,9 @@ import re
 import sys
 
 import ics217
-from Acs2Chirp import Chirp
-from Acs2RtSys import RtSys
-from Acs2Icom import Icom
+from chirp import Chirp
+from rtsys import RtSys
+from icom import Icom
 
 # See below for the ics217 subclasses responsible for formatting the
 # output.

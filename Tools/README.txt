@@ -1,19 +1,20 @@
 
-Acs2RtSys.py			Convert ACS 217 spreadsheet csv to RT systems
-Acs2Chirp.py			Convert ACS 217 spreadsheet csv to Chirp
+rtsys.py			Write RT systems format
+chirp.py			Write Chirp format
 Chirp2RtSys.py			Convert Chirp csv to RT systems
 ics217.py			Class that reads ACS 217 spreadsheet csv
 common.py			Common code for converters
 
 
-The Acs2*.py programs read a W7ACS_ICS-217 csv file and write out a csv file
-compatible with RT Systems or Chirp, respectively. By default, only the "V" and "U"
-entries are used, but this can be changed with the -b option.
+The Acs2Csv.py program reads a W7ACS_ICS-217 csv file and write out
+a csv file compatible with RT Systems or Chirp, respectively. By
+default, only the "V" and "U" entries are used, but this can be
+changed with the -b option.
 
 Options are:
 
 	-b _bands_	Any combination of letters from VULTD, default is VU
-			Run "Acs2Chirp --help" for the full list.
+			Run "Acs2Csv --help" for the full list.
 
 	-s _n_		Start output line numbering at _n_, default is 1
 

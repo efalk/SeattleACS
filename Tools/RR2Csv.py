@@ -27,9 +27,9 @@ import sys
 
 import common
 from rr import rr
-from Acs2Chirp import Chirp
-from Acs2RtSys import RtSys
-from Acs2Icom import Icom
+from chirp import Chirp
+from rtsys import RtSys
+from icom import Icom
 
 verbose = 0
 
