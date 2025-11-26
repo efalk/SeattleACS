@@ -1,12 +1,12 @@
 n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment
 1,144.3500,144.3500,,Simplex,Auto,144350,Y,None,,,Scan,Auto,N,High,N,N,D01: Data 144.350
 2,144.3900,144.3900,,Simplex,Auto,144390,Y,None,,,Scan,Auto,N,High,N,N,D02: Data 144.390; APRS
-3,144.9000,144.9000,,Simplex,Auto,144900,Y,None,,,Scan,Auto,N,High,N,N,"D03: Data 144.900; W7ACS-7 Queen Anne, KD7DK-10 Ballard, both VARAFM"
-4,144.9100,144.9100,,Simplex,Auto,144910,Y,None,,,Scan,Auto,N,High,N,N,D04: Data 144.910
+3,144.9000,144.9000,,Simplex,Auto,144900,Y,None,,,Scan,Auto,N,High,N,N,D03: Data 144.900
+4,144.9100,144.9100,,Simplex,Auto,144910,Y,None,,,Scan,Auto,N,High,N,N,D04: Data 144.910; W7ACS-5 FirstHill VARAFM
 5,144.9300,144.9300,,Simplex,Auto,144930,Y,None,,,Scan,Auto,N,High,N,N,D05: Data 144.930; K7XTN-10 VARAFM
 6,144.9500,144.9500,,Simplex,Auto,144950,Y,None,,,Scan,Auto,N,High,N,N,D06: Data 144.950; W7EFR-10; K7CST-10
-7,144.9700,144.9700,,Simplex,Auto,144970,Y,None,,,Scan,Auto,N,High,N,N,D07: Data 144.970
-8,144.8700,144.8700,,Simplex,Auto,144870,Y,None,,,Scan,Auto,N,High,N,N,D08: Data 144.870; W7ACS-5 FirstHill VARAFM
+7,144.9700,144.9700,,Simplex,Auto,144970,Y,None,,,Scan,Auto,N,High,N,N,"D07: Data 144.970; W7ACS-7 Queen Anne, KD7DK-10 Ballard, both VARAFM"
+8,144.8700,144.8700,,Simplex,Auto,144870,Y,None,,,Scan,Auto,N,High,N,N,D08: Data 144.870
 9,144.9900,144.9900,,Simplex,Auto,144990,Y,None,,,Scan,Auto,N,High,N,N,D09: Data 144.990; ACS data simplex
 10,145.0100,145.0100,,Simplex,Auto,145010,Y,None,,,Scan,Auto,N,High,N,N,D10: Data 145.010
 11,145.0300,145.0300,,Simplex,Auto,145030,Y,None,,,Scan,Auto,N,High,N,N,D11: Data 145.030; W7MIR-10 VARAFM; WA7AUB-10
