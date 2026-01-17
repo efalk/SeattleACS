@@ -5,6 +5,7 @@ import csv
 import getopt
 import re
 import sys
+import traceback
 
 import ics217
 from chirp import Chirp
@@ -19,9 +20,7 @@ verbose = 0
 def main(reader, usage):
     global verbose
     ifile = sys.stdin
-    #ifile = open('foo.csv','r')
 
-    csvin = csv.reader(ifile)
     csvout = csv.writer(sys.stdout)
     writer = Chirp
 
@@ -41,7 +40,7 @@ def main(reader, usage):
             elif flag == '-R':
                 recFilter['regex'] = re.compile(value)
             elif flag == '-B':
-                recFilter['banks'] = [value]
+                recFilter['banks'] = value
             elif flag == '-s':
                 start = getInt(value)
                 if start is None:
@@ -59,6 +58,10 @@ def main(reader, usage):
         print(e, file=sys.stderr)
         print(usage, file=sys.stderr)
         return 2
+
+    if args:
+        ifile = open(args[0],'r')
+    csvin = csv.reader(ifile)
 
     return process(csvin, reader, csvout, writer, start, recFilter)
 
@@ -88,6 +91,7 @@ def process(csvin, reader, csvout, writer, start, recFilter):
             if verbose:
                 print("Failed to write: ", rec, file=sys.stderr)
                 print(e, file=sys.stderr)
+                traceback.print_exc(5, sys.stderr)
             continue
 
         count += 1

@@ -38,54 +38,17 @@ class RtSys(object):
         Txtone = rec.Txtone
         Rxtone = rec.Rxtone
         Comment = rec.Comment
-        banks = recFilter.get('banks')
-        if not banks:
-            Banks = []
 
-        if not Txtone: Txtone = 'CSQ'
-        if not Rxtone or Rxtone.startswith('TSQ'): Rxtone = Txtone
+        derived = RtSys.Derived(rec, recFilter)
+        Txtone = derived.Txtone
+        Rxtone = derived.Rxtone
+        Offset_s = derived.Offset
+        OpMode = derived.OpMode
+        ToneMode = derived.ToneMode
+        banks = derived.banks
 
-        # Derived values
-        Offset = float(rec.Offset)
-        if Txfreq == Rxfreq:
-            Offset_s = ''
-        elif abs(Offset) < 1.0:
-            Offset_s = "%.0f kHz" % (abs(Offset)*1000.)
-        else:
-            Offset_s = "%.4f MHz" % abs(Offset)
-
-        if Txfreq == Rxfreq:
-            OpMode = "Simplex"
-        elif Offset > 0:
-            OpMode = "Plus"
-        else:
-            OpMode = "Minus"
-
-        CTCSS = ''
-        DCS = ''
-
-        # There are nine possibilities for Txtone/Rxtone
-        # This radio doesn't support different Tx/Rx tones.
-        if Txtone == 'CSQ':
-            ToneMode = 'None'   # Rx tone or DCS not supported
-        elif Txtone[0] == 'D':
-            DCS = Txtone[1:]
-            if Rxtone.startswith('CSQ'):
-                ToneMode = 'DCS'
-            elif Rxtone[0] == 'D':
-                ToneMode = 'DCS'    # TODO: should this be 'D Code'?
-            else:
-                CTCSS = Rxtone
-                ToneMode = 'D Tone'
-        else:
-            CTCSS = Txtone
-            if Rxtone.startswith('CSQ'):
-                ToneMode = 'Tone'   # Most common case
-            elif Rxtone[0] == 'D':
-                DCS = Rxtone[1:]
-                ToneMode = 'T DCS'
-            else:
-                ToneMode = 'T Sql'
+        CTCSS = derived.CTCSS
+        DCS = derived.DCS
 
         # <ch>                  1-1000                  column header is blank, column ignored
         # Receive Frequency     146.96000
@@ -107,4 +70,91 @@ class RtSys(object):
         # Comment               any string
 
         Wide = 'Y' if Wide=="N" else 'N'
-        csvout.writerow([count, Rxfreq, Txfreq, Offset_s, OpMode, 'Auto', Name, 'Y' if Name else 'N', ToneMode, CTCSS, DCS, 'Scan', 'Auto', 'N', 'High', Wide, 'N'] + Banks + [Comment])
+        csvout.writerow([count, Rxfreq, Txfreq, Offset_s, OpMode, 'Auto', Name, 'Y' if Name else 'N', ToneMode, CTCSS, DCS, 'Scan', 'Auto', 'N', 'High', Wide, 'N'] + banks + [Comment])
+
+
+    class Derived:
+        """Represents the derived values used by RT Systems"""
+        def __init__(self, rec: channel.Channel, recFilter):
+            """Contains the following derived values:
+                Txtone
+                Rxtone
+                Offset: e.g. "n.nnnn MHz" or "nnn kHz" or ''
+                OpMode: "Simple", "Plus", "Minus"
+                ToneMode: e.g. "None", "T Sql", "DCS", "D Tone", etc.
+                CTCSS: e.g. "103.5"
+                DCS: e.g. "D23"
+            self.CTCSS = CTCSS
+            self.DCS = DCS
+            """
+            # There are some derived values here, so we compute them now.
+            Rxfreq = rec.Rxfreq
+            Txfreq = rec.Txfreq
+            Txtone = rec.Txtone
+            Rxtone = rec.Rxtone
+
+            if not Txtone: Txtone = 'CSQ'
+            if not Rxtone or Rxtone.startswith('TSQ'): Rxtone = Txtone
+
+            # Derived values
+            Offset = float(rec.Offset)
+            if Txfreq == Rxfreq:
+                Offset_s = ''
+            elif abs(Offset) < 1.0:
+                Offset_s = "%.0f kHz" % (abs(Offset)*1000.)
+            else:
+                Offset_s = "%.4f MHz" % abs(Offset)
+
+            if Txfreq == Rxfreq:
+                OpMode = "Simplex"
+            elif Offset > 0:
+                OpMode = "Plus"
+            else:
+                OpMode = "Minus"
+
+            CTCSS = ''
+            DCS = ''
+
+            # There are nine possibilities for Txtone/Rxtone
+            # This radio doesn't support different Tx/Rx tones.
+            if Txtone == 'CSQ':
+                ToneMode = 'None'   # Rx tone or DCS not supported
+            elif Txtone[0] == 'D':
+                DCS = Txtone[1:]
+                if Rxtone.startswith('CSQ'):
+                    ToneMode = 'DCS'
+                elif Rxtone[0] == 'D':
+                    ToneMode = 'DCS'    # TODO: should this be 'D Code'?
+                else:
+                    CTCSS = Rxtone
+                    ToneMode = 'D Tone'
+            else:
+                CTCSS = Txtone
+                if Rxtone.startswith('CSQ'):
+                    ToneMode = 'Tone'   # Most common case
+                elif Rxtone[0] == 'D':
+                    DCS = Rxtone[1:]
+                    ToneMode = 'T DCS'
+                else:
+                    ToneMode = 'T Sql'
+
+            banklist = recFilter.get('banks')
+            if banklist:
+                banks = ['N']*10
+                try:
+                    for bank in banklist.split(','):
+                        banks[int(bank)-1] = 'Y'
+                except exception as e:
+                    print(e)
+                    banks = []
+            else:
+                banks = []
+
+            self.Txtone = Txtone
+            self.Rxtone = Rxtone
+            self.Offset = Offset_s
+            self.OpMode = OpMode
+            self.ToneMode = ToneMode
+            self.CTCSS = CTCSS
+            self.DCS = DCS
+            self.banks = banks

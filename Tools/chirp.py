@@ -10,8 +10,10 @@ class Chirp(object):
     @staticmethod
     def header(csvout: csv.writer, recFilter):
         """Write out the header line for the CSV file."""
-        #print("Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPolarity,RxDtcsCode,CrossMode,Mode,TStep,Skip,Power,Comment,URCALL,RPT1CALL,RPT2CALL,DVCODE", file=ofile)
-        csvout.writerow(["Location","Name","Frequency","Duplex","Offset","Tone","rToneFreq","cToneFreq","DtcsCode","DtcsPolarity","RxDtcsCode","CrossMode","Mode","TStep","Skip","Power","Comment","URCALL","RPT1CALL","RPT2CALL","DVCODE"])
+        csvout.writerow(["Location","Name","Frequency","Duplex","Offset","Tone",
+            "rToneFreq","cToneFreq","DtcsCode","DtcsPolarity","RxDtcsCode",
+            "CrossMode","Mode","TStep","Skip","Power","Comment","URCALL",
+            "RPT1CALL","RPT2CALL","DVCODE"])
 
     @staticmethod
     def write(rec: channel.Channel, csvout: csv.writer, count: int, recFilter):
