@@ -1,0 +1,6 @@
+Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPolarity,RxDtcsCode,CrossMode,Mode,TStep,Skip,Power,Comment,URCALL,RPT1CALL,RPT2CALL,DVCODE
+1,MURS 1,151.82,,0.000000,,88.5,88.5,023,NN,023,Tone->Tone,NFM,5.0,,5.0W,,,,,
+2,MURS 2,151.88,,0.000000,,88.5,88.5,023,NN,023,Tone->Tone,NFM,5.0,,5.0W,,,,,
+3,MURS 3,151.94,,0.000000,,88.5,88.5,023,NN,023,Tone->Tone,NFM,5.0,,5.0W,,,,,
+4,BlueDot,154.57,,0.000000,,88.5,88.5,023,NN,023,Tone->Tone,NFM,5.0,,5.0W,4: ,,,,
+5,GreenDot,154.60,,0.000000,,88.5,88.5,023,NN,023,Tone->Tone,NFM,5.0,,5.0W,5: ,,,,

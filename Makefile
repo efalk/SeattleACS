@@ -10,9 +10,9 @@ ICS217 = W7ACS_ICS-217A_WORKING.csv
 DIRS := Chirp RT Icom
 
 CHIRP_FILES := Chirp/2m.csv Chirp/70cm.csv Chirp/220.csv Chirp/6m.csv \
-	Chirp/data.csv Chirp/narrow.csv Chirp/hub.csv
+	Chirp/data.csv Chirp/narrow.csv Chirp/hub.csv Chirp/murs.csv
 RT_FILES := RT/2m.csv RT/70cm.csv RT/220.csv RT/6m.csv RT/data.csv \
-	RT/narrow.csv RT/hub.csv
+	RT/narrow.csv RT/hub.csv RT/murs.csv
 ICOM_FILES := Icom/2m.csv Icom/70cm.csv Icom/6m.csv Icom/data.csv \
 	Icom/hub.csv
 
@@ -43,6 +43,9 @@ Chirp/data.csv: ${ICS217} | Chirp
 Chirp/hub.csv: ${ICS217} | Chirp
 	./Tools/Acs2Csv.py --Chirp -b H < ${ICS217} > $@
 
+Chirp/murs.csv: ${ICS217} | Chirp
+	./Tools/Acs2Csv.py --Chirp < murs.csv > $@
+
 
 # RT Systems
 
@@ -66,6 +69,9 @@ RT/data.csv: ${ICS217} | RT
 
 RT/hub.csv: ${ICS217} | RT
 	./Tools/Acs2Csv.py --RtSys -b H < ${ICS217} > $@
+
+RT/murs.csv: ${ICS217} | Chirp
+	./Tools/Acs2Csv.py --RtSys < murs.csv > $@
 
 
 # ICOM

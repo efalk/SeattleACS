@@ -10,6 +10,7 @@
 * narrow.csv — upcoming narrow band frequencies
 * noaa.csv — NOAA weather frequencies
 * winlink.csv — Winlink frequencies
+* murs.csv — Multi-Use Radio Service
 
 # Loading and installing a CSV file for CHIRP
 

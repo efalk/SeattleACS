@@ -1,0 +1,6 @@
+n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment
+1,151.82,151.82,,Simplex,Auto,MURS 1,Y,None,,,Scan,Auto,N,High,Y,N,
+2,151.88,151.88,,Simplex,Auto,MURS 2,Y,None,,,Scan,Auto,N,High,Y,N,
+3,151.94,151.94,,Simplex,Auto,MURS 3,Y,None,,,Scan,Auto,N,High,Y,N,
+4,154.57,154.57,,Simplex,Auto,BlueDot,Y,None,,,Scan,Auto,N,High,Y,N,4: 
+5,154.60,154.60,,Simplex,Auto,GreenDot,Y,None,,,Scan,Auto,N,High,Y,N,5: 

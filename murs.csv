@@ -1,0 +1,6 @@
+Ch #,"Channel Configuration",Display Name,Channel/Repeater Name,RX Freq,N/W,"Rx Tone, CC/TS/TG",TX Freq,N/W,"Tx Tone, CC/TS/TG",Mode,Remarks,
+1,Simplex,MURS 1,,151.82,N,CSQ,151.82,N,CSQ,F,
+2,Simplex,MURS 2,,151.88,N,CSQ,151.88,N,CSQ,F,
+3,Simplex,MURS 3,,151.94,N,CSQ,151.94,N,CSQ,F,
+4,Simplex,BlueDot,,154.57,N,CSQ,154.57,N,CSQ,F,
+5,Simplex,GreenDot,,154.60,N,CSQ,154.60,N,CSQ,F,
