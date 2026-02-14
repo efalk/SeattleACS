@@ -90,8 +90,7 @@ class Chirp(object):
         elif Mode == 'D':
             Wide = 'DIG'
         else:
-            if Wide == 'W': Wide = 'FM'
-            elif Wide == 'N': Wide = 'NFM'
+            Wide = Mode
         # TODO: other modes? e.g. "MF" appears in the ACS database
 
         # Output (Chirp):
