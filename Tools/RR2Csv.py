@@ -6,9 +6,10 @@ usage = """Convert CSV file from Repeater Roundabout spreadsheet to format CHIRP
   RR2Chirp.py < all_rr_frequencies.csv > rr_chirp.csv
 
   Options:
-        --Chirp         output for Chirp (default)
-        --RT            output for RT Systems
-        --Icom          output for Icom
+        --Chirp         Output for Chirp (default)
+        --RT            Output for RT Systems
+        --Icom          Output for Icom
+        --IC-92         Output for Icom-92, RT Systems
         -B <bank>       Select bank for devices that use it (i.e. FT-60)
         -s <n>          Start numbering at <n>; default is 1
         -R <regex>      Use regex to select entries, e.g. 'V' or 'U..N'
@@ -30,6 +31,7 @@ from rr import rr
 from chirp import Chirp
 from rtsys import RtSys
 from icom import Icom
+from rt_ic92 import RtSysIc92
 
 verbose = 0
 
@@ -46,7 +48,7 @@ def main(reader, usage=usage):
 
     regex = None
     try:
-        (optlist, args) = getopt.getopt(sys.argv[1:], 'hs:B:R:v', ['help', 'Chirp', 'RtSys', 'Icom'])
+        (optlist, args) = getopt.getopt(sys.argv[1:], 'hs:B:R:v', ['help', 'Chirp', 'RtSys', 'Icom', 'IC-92'])
         for flag, value in optlist:
             if flag in ('-h', '--help'):
                 print(usage)
@@ -66,6 +68,8 @@ def main(reader, usage=usage):
                 writer = RtSys
             elif flag == '--Icom':
                 writer = Icom
+            elif flag == '--Icom':
+                writer = RtSysIc92
     except getopt.GetoptError as e:
         print(e, file=sys.stderr)
         print(usage, file=sys.stderr)

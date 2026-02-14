@@ -11,6 +11,7 @@ import ics217
 from chirp import Chirp
 from rtsys import RtSys
 from icom import Icom
+from rt_ic92 import RtSysIc92
 
 # See below for the ics217 subclasses responsible for formatting the
 # output.
@@ -28,7 +29,7 @@ def main(reader, usage):
     recFilter = {}
     try:
         (optlist, args) = getopt.getopt(sys.argv[1:], 'hb:s:B:NR:v',
-            ['help', 'Chirp', 'RtSys', 'Icom'])
+            ['help', 'Chirp', 'RtSys', 'IC-92', 'Icom'])
         for flag, value in optlist:
             if flag in ('-h', '--help'):
                 print(usage)
@@ -54,6 +55,8 @@ def main(reader, usage):
                 writer = RtSys
             elif flag == '--Icom':
                 writer = Icom
+            elif flag == '--IC-92':
+                writer = RtSysIc92
     except getopt.GetoptError as e:
         print(e, file=sys.stderr)
         print(usage, file=sys.stderr)

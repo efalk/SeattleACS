@@ -15,8 +15,9 @@ usage = f"""Convert CSV file from ACS 217 spreadsheet to formats radios use
 
   Options:
         --Chirp         Output for Chirp (default)
-        --RT            Output for RT Systems
+        --RtSys         Output for RT Systems
         --Icom          Output for Icom
+        --IC-92         Output for Icom-92, RT Systems
         -b <band>       Any combination of the letters VULTDH, or "all"
                                 V = VHF (2m band)
                                 U = UHF (70cm band)
