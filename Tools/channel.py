@@ -51,6 +51,7 @@
 #    if necessary. Subclasses that write out CSV files are
 #    responsible for converting if necessary.
 
+
 import sys
 import decimal
 
@@ -87,27 +88,36 @@ class Channel(object):
             args = args[0]
         group, channel, txfreq, rxfreq, offset, \
             name, comment, txtone, rxtone, mode, wide, power = args
-        if offset is None:
+        if not txfreq:
+            if offset:
+                try:
+                    rf = decimal.Decimal(rxfreq)
+                    off = decimal.Decimal(offset)
+                    txfreq = str(rf + off)
+                except:
+                    pass    # no helping it
+            else:
+                txfreq = rxfreq
+        if not rxfreq:
+            if offset:
+                try:
+                    tf = decimal.Decimal(txfreq)
+                    off = decimal.Decimal(offset)
+                    rxfreq = str(tf - off)
+                except:
+                    pass    # no helping it
+            else:
+                rxfreq = txfreq
+        if not offset:
             try:
                 tf = decimal.Decimal(txfreq)
                 rf = decimal.Decimal(rxfreq)
                 offset = str(tf - rf)
             except:
                 pass    # no helping it
-        if txfreq is None:
-            try:
-                rf = decimal.Decimal(rxfreq)
-                off = decimal.Decimal(offset)
-                txfreq = str(rf + off)
-            except:
-                pass    # no helping it
-        if rxfreq is None:
-            try:
-                tf = decimal.Decimal(txfreq)
-                off = decimal.Decimal(offset)
-                rxfreq = str(tf - off)
-            except:
-                pass    # no helping it
+
+        if not txtone: txtone = 'CSQ'
+        if not rxtone: rxtone = 'CSQ'
 
         self.Group = group
         self.Chan = channel
@@ -161,13 +171,16 @@ class Channel(object):
         if len(line) < 12: return None
         if regex and not regex.match(line[1]):
             return None
-        # line[4] must be a valid rx frequency
-        if not line[4]:
+        # At least one of rxfreq, txfreq must be provided
+        if not line[2] and not line[3]:
             return None
         try:
-            rxfreq = float(line[4])
+            txfreq = float(line[2])
         except:
-            return None
+            try:
+                rxfreq = float(line[3])
+            except:
+                return None
         try:
             return cls(line)
         except Exception as e:
@@ -179,7 +192,7 @@ class Channel(object):
 # ---- program
 
 
-usage = f"""Convert CSV file from ACS 217 spreadsheet to formats radios use
+usage = f"""Convert CSV file to formats radios use
 
   {sys.argv[0]} < W7ACS_ICS-217A_20240131.csv > Chirp/acs.csv
 
@@ -196,6 +209,28 @@ usage = f"""Convert CSV file from ACS 217 spreadsheet to formats radios use
 Generates CSV files to be used as code plugs.  These files
 should work with any radio, but if not, please contact Ed Falk,
 KK7NNS au gmail.com directly and we'll figure it out.
+
+Input file format:
+
+A CSV file with the following columns:
+
+  group       sub-group within radio; typically empty
+  channel     channel #
+  txfreq      transmit (uplink) frequency, MHz
+  rxfreq      recieve (downlink) frequency, MHz
+  offset      difference between uplink, downlink, MHz
+  name        display name in radio
+  comment     comment
+  txtone      CTCSS tone or DCS code for tx, may be nn.n, Dnn, or CSQ
+  rxtone      CTCSS tone or DCS code for rx, usually empty for CSQ
+  mode        AM, FM, M=digital voice, D=data, etc.
+  wide        W/N
+  power       watts or "HIGH" or "LOW". May be blank.
+
+At least one of txfreq or rxfreq must be provided; if one is missing,
+but offset is provided, the other is computed. If offset is missing
+or zero, then txfreq and rxfreq are equal.
+If offset is not provided, it is computed as txfreq-rxfreq
 """
 
 
