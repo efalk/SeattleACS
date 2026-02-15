@@ -1,11 +1,23 @@
-,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment
-1,430.8000,430.8000,,Simplex,Auto,Beacon,Y,None,,,Scan,Auto,N,High,N,N,Data 430.800; W7ACS-10 Beacon A
-2,430.8250,430.8250,,Simplex,Auto,W7MIR,Y,None,,,Scan,Auto,N,High,N,N,Data 430.825; W7MIR-11 VARA FM
-3,430.8500,430.8500,,Simplex,Auto,FirstH,Y,None,,,Scan,Auto,N,High,N,N,Data 430.850; W7ACS-12 First Hill A
-4,440.8500,440.8500,,Simplex,Auto,KD7WDG,Y,None,,,Scan,Auto,N,High,N,N,Data 440.850; W7ACS-13 First Hill; KD7WDG VARA
-5,430.9500,430.9500,,Simplex,Auto,CAP-A,Y,None,,,Scan,Auto,N,High,N,N,Data 430.950; W7ACS-14 Capitol Park A
-6,439.9500,439.9500,,Simplex,Auto,CAP-B,Y,None,,,Scan,Auto,N,High,N,N,Data 439.950; W7ACS-15 Capitol Park B
-7,430.8750,430.8750,,Simplex,Auto,MAGNOL,Y,None,,,Scan,Auto,N,High,N,N,Data 430.875; W7ACS-9 Magnolia
-8,431.0000,431.0000,,Simplex,Auto,Broadview,Y,None,,,Scan,Auto,N,High,N,N,Data 431.000; W7ACS-8 Broadview (Northwest)
-9,144.9000,144.9000,,Simplex,Auto,KD7DK,Y,None,,,Scan,Auto,N,High,N,N,Data 144.900; KD7DK-10 VARA
-10,144.87,144.87,,Simplex,Auto,NewWL,Y,None,,,Scan,Auto,N,High,N,N,Data 144.87
+n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment
+1,144.9100,144.9100,,Simplex,Auto,W7ACS-5,Y,None,,,Scan,Auto,N,High,N,N,D04: Data 144.910; W7ACS-5 FirstHill VARAFM
+2,144.9300,144.9300,,Simplex,Auto,K7XTN-10,Y,None,,,Scan,Auto,N,High,N,N,D05: Data 144.930; K7XTN-10 VARAFM
+3,144.9700,144.9700,,Simplex,Auto,W7ACS-7,Y,None,,,Scan,Auto,N,High,N,N,"D07: Data 144.970; W7ACS-7 Queen Anne, KD7DK-10 Ballard, both VARAFM"
+4,145.0300,145.0300,,Simplex,Auto,W7MIR-10,Y,None,,,Scan,Auto,N,High,N,N,D11: Data 145.030; W7MIR-10 VARAFM; WA7AUB-10
+5,145.0500,145.0500,,Simplex,Auto,K7NHV-10,Y,None,,,Scan,Auto,N,High,N,N,D12: Data 145.050; K7NHV-10 VARAFM; W7AUX-10 (packet)
+6,145.0700,145.0700,,Simplex,Auto,W7VMI-10,Y,None,,,Scan,Auto,N,High,N,N,D13: Data 145.070; W7VMI-10 VARAFM
+7,145.6500,145.6500,,Simplex,Auto,W7AUX-11,Y,None,,,Scan,Auto,N,High,N,N,D23: Data 145.650; W7AUX-11 VARAFM
+8,430.8000,430.8000,,Simplex,Auto,W7ACS-10,Y,None,,,Scan,Auto,N,High,N,N,D31: Data 430.800; W7ACS-10 Beacon 1 VARAFM
+9,430.8250,430.8250,,Simplex,Auto,W7MIR-11,Y,None,,,Scan,Auto,N,High,N,N,D32: Data 430.825; W7MIR-11 VARAFM
+10,430.8500,430.8500,,Simplex,Auto,W7ACS-12,Y,None,,,Scan,Auto,N,High,N,N,D33: Data 430.850; W7ACS-12 First Hill 1 VARAFM
+11,430.8750,430.8750,,Simplex,Auto,W7ACS-9,Y,None,,,Scan,Auto,N,High,N,N,D34: Data 430.875; W7ACS-9 Magnolia VARAFM
+12,430.9500,430.9500,,Simplex,Auto,W7ACS-14,Y,None,,,Scan,Auto,N,High,N,N,D37: Data 430.950; W7ACS-14 Capitol Park 1 VARAFM
+13,439.8000,439.8000,,Simplex,Auto,W7ACS-11,Y,None,,,Scan,Auto,N,High,N,N,D40: Data 439.800; W7ACS-11 Beacon 2 VARAFM
+14,439.8250,439.8250,,Simplex,Auto,NC7G-10,Y,None,,,Scan,Auto,N,High,N,N,D41: Data 439.825; NC7G-10 VARAFM
+15,439.8500,439.8500,,Simplex,Auto,W7AW-10,Y,None,,,Scan,Auto,N,High,N,N,D42: Data 439.850; W7AW-10 VARAFM (planned)
+16,439.9500,439.9500,,Simplex,Auto,W7ACS-15,Y,None,,,Scan,Auto,N,High,N,N,D46: Data 439.950; W7ACS-15 Capitol Park 2 VARAFM
+17,439.9750,439.9750,,Simplex,Auto,W7ACS-8,Y,None,,,Scan,Auto,N,High,N,N,D47: Data 439.975; W7ACS-8 Broadview (Northwest) VARAFM
+18,440.8500,440.8500,,Simplex,Auto,W7ACS-13,Y,None,,,Scan,Auto,N,High,N,N,D50: Data 440.850; W7ACS-13 First Hill 2; KD7WDG VARAFM
+19,440.9000,440.9000,,Simplex,Auto,WA7AUB-10,Y,None,,,Scan,Auto,N,High,N,N,D52: Data 440.900; WA7AUB-10 VARAFM
+20,440.8500,440.8500,,Simplex,Auto,NK7Y,Y,None,,,Scan,Auto,N,High,N,N,D56: Data 440.850; Kitsap County DEM; VARAFM
+21,52.6000,52.6000,,Simplex,Auto,W7ACS-6,Y,None,,,Scan,Auto,N,High,N,N,D60: Data 52.600; W7ACS-6 Queen Anne VARAFM
+22,223.5800,223.5800,,Simplex,Auto,NK7Y,Y,None,,,Scan,Auto,N,High,N,N,D97: Data 223.580; Kitsap County DEM; VARAFM

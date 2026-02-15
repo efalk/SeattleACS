@@ -10,11 +10,14 @@ ICS217 = W7ACS_ICS-217A_WORKING.csv
 DIRS := Chirp RT Icom Ic92
 
 CHIRP_FILES := Chirp/2m.csv Chirp/70cm.csv Chirp/220.csv Chirp/6m.csv \
-	Chirp/data.csv Chirp/narrow.csv Chirp/hub.csv Chirp/murs.csv
+	Chirp/data.csv Chirp/narrow.csv Chirp/hub.csv Chirp/murs.csv \
+	Chirp/winlink.csv
 RT_FILES := RT/2m.csv RT/70cm.csv RT/220.csv RT/6m.csv RT/data.csv \
-	RT/narrow.csv RT/hub.csv RT/murs.csv
+	RT/narrow.csv RT/hub.csv RT/murs.csv \
+	RT/winlink.csv
 ICOM_FILES := Icom/2m.csv Icom/70cm.csv Icom/6m.csv Icom/data.csv \
-	Icom/hub.csv
+	Icom/hub.csv \
+	Icom/winlink.csv
 IC92_FILES := Ic92/2m.csv Ic92/70cm.csv
 
 CSV_FILES := ${CHIRP_FILES} ${RT_FILES} ${ICOM_FILES} ${IC92_FILES}
@@ -47,6 +50,9 @@ Chirp/hub.csv: ${ICS217} | Chirp
 Chirp/murs.csv: ${ICS217} | Chirp
 	./Tools/Acs2Csv.py --Chirp < murs.csv > $@
 
+Chirp/winlink.csv: winlink.csv | Chirp
+	./Tools/Acs2Csv.py --Chirp < winlink.csv > $@
+
 
 # RT Systems
 
@@ -74,6 +80,9 @@ RT/hub.csv: ${ICS217} | RT
 RT/murs.csv: ${ICS217} | Chirp
 	./Tools/Acs2Csv.py --RtSys < murs.csv > $@
 
+RT/winlink.csv: winlink.csv | Chirp
+	./Tools/Acs2Csv.py --RtSys < winlink.csv > $@
+
 
 # ICOM
 
@@ -91,6 +100,9 @@ Icom/data.csv: ${ICS217} | Icom
 
 Icom/hub.csv: ${ICS217} | Icom
 	./Tools/Acs2Csv.py --Icom -b H < ${ICS217} > $@
+
+Icom/winlink.csv: winlink.csv | Icom
+	./Tools/Acs2Csv.py --Icom < winlink.csv > $@
 
 # ICOM IC-92
 
