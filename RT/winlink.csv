@@ -7,8 +7,8 @@ n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operati
 6,439.9500,439.9500,,Simplex,Auto,Cap B,Y,None,,,Scan,Auto,N,High,N,N,D46: Data 439.950; W7ACS-15 Capitol Park 2 VARAFM
 7,430.8750,430.8750,,Simplex,Auto,Magnol,Y,None,,,Scan,Auto,N,High,N,N,D34: Data 430.875; W7ACS-9 Magnolia VARAFM
 8,439.9750,439.9750,,Simplex,Auto,BroadV,Y,None,,,Scan,Auto,N,High,N,N,D47: Data 439.975; W7ACS-8 Broadview (Northwest) VARAFM
-9,144.9700,144.9700,,Simplex,Auto,QueenA,Y,None,,,Scan,Auto,N,High,N,N,"D07: Data 144.970; W7ACS-7 Queen Anne, KD7DK-10 Ballard"
-10,144.9700,144.9700,,Simplex,Auto,Ballard,Y,None,,,Scan,Auto,N,High,N,N,"D07: Data 144.970; W7ACS-7 Queen Anne, KD7DK-10 Ballard"
+9,144.9700,144.9700,,Simplex,Auto,QueenA,Y,None,,,Scan,Auto,N,High,N,N,D07: Data 144.970; W7ACS-7 Queen Anne
+10,144.9700,144.9700,,Simplex,Auto,Ballard,Y,None,,,Scan,Auto,N,High,N,N,D07: Data 144.970; KD7DK-10 Ballard
 11,52.6000,52.6000,,Simplex,Auto,QueenA,Y,None,,,Scan,Auto,N,High,N,N,D60: Data 52.600; W7ACS-6 Queen Anne VARAFM
 12,144.9100,144.9100,,Simplex,Auto,Hill,Y,None,,,Scan,Auto,N,High,N,N,D04: Data 144.910; W7ACS-5 FirstHill VARAFM
 13,144.9300,144.9300,,Simplex,Auto,K7XTN-10,Y,None,,,Scan,Auto,N,High,N,N,D05: Data 144.930; K7XTN-10 VARAFM
