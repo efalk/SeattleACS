@@ -47,7 +47,7 @@ Chirp/data.csv: ${ICS217} | Chirp
 Chirp/hub.csv: ${ICS217} | Chirp
 	./Tools/Acs2Csv.py --Chirp -b H < ${ICS217} > $@
 
-Chirp/murs.csv: ${ICS217} | Chirp
+Chirp/murs.csv: murs.csv | Chirp
 	./Tools/Acs2Csv.py --Chirp < murs.csv > $@
 
 Chirp/winlink.csv: winlink.csv | Chirp
@@ -77,7 +77,7 @@ RT/data.csv: ${ICS217} | RT
 RT/hub.csv: ${ICS217} | RT
 	./Tools/Acs2Csv.py --RtSys -b H < ${ICS217} > $@
 
-RT/murs.csv: ${ICS217} | Chirp
+RT/murs.csv: murs.csv | Chirp
 	./Tools/Acs2Csv.py --RtSys < murs.csv > $@
 
 RT/winlink.csv: winlink.csv | Chirp
