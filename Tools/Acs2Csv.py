@@ -39,14 +39,13 @@ KK7NNS au gmail.com directly and we'll figure it out.
 
 import common
 import channel
-from ics217 import ics217
 
 
 
 if __name__ == '__main__':
   signal.signal(signal.SIGPIPE, signal.SIG_DFL)
   try:
-    sys.exit(common.main(ics217, usage))
+    sys.exit(common.main(None, usage))
   except KeyboardInterrupt as e:
     print(file=sys.stderr)
     sys.exit(1)

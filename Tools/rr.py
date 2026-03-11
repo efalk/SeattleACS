@@ -37,6 +37,20 @@ from channel import csvget
 
 class rr(channel.Channel):
     """Represents one Repeater Roundabout record. See above for list of fields."""
+
+    # INPUT SECTION (there is no output section)
+
+    @staticmethod
+    def probe(line: list):
+        """Examine line to see if the input is in Repeater Roundabout format. Return
+        None if not. Anything else is true."""
+        return len(line) >= 13 and \
+            line[1] == "Callsign" and \
+            line[2] == "Output (MHz)" and \
+            line[3] == "Offset (MHz)" and \
+            line[4] == "Tone (Hz)" and \
+            line[7] == "Mode"
+
     def __init__(this, line):
         """Create an rr object from a list of csv values. Caller
         must have already vetted the input. The parse() function
