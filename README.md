@@ -42,10 +42,11 @@ Each subdirectory contains some or all of the following:
 * hub.csv         Seattle emergency hub GMRS frequencies
 * Hub\_GMRS.csv    Same, for GMRS radios.
 * murs.csv        Multi-Use Radio Service
+* winlink.csv     Frequencies used with Winlink
 
 ## Utilities:
 
-Tools/		Various programs to convert ICS217 spreadsheet to code plugs
+* Tools/		Various programs to convert ICS217 spreadsheet to code plugs
 
 
 My own preferred workflow is as follows:
