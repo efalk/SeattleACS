@@ -12,6 +12,8 @@ from chirp import Chirp
 from rtsys import RtSys
 from icom import Icom
 from rt_ic92 import RtSysIc92
+from rr import rr
+from channel import Channel
 
 # See below for the ics217 subclasses responsible for formatting the
 # output.
@@ -70,6 +72,24 @@ def main(reader, usage):
 
 
 def process(csvin, reader, csvout, writer, start, recFilter):
+
+    def findReader(csvin):
+        readers = [ics217.ics217, Chirp, RtSys, rr, Channel]
+        for line in csvin:
+            if verbose >= 2:
+                print(line, file=sys.stderr)
+            for r in readers:
+                if r.probe(line):
+                    return r
+        return None
+
+    # If reader not specified, scan the input to determine the format.
+    if not reader:
+        reader = findReader(csvin)
+
+    if not reader:
+        raise Exception("Unable to determine input format")
+
     writer.header(csvout, recFilter)
 
     # If the "Chan" property of a record is a legit integer, it's used

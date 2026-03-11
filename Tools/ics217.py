@@ -36,7 +36,21 @@ import channel
 from channel import csvget
 
 class ics217(channel.Channel):
-    """Represents one ICS217 record. See above for list of fields."""
+    """Represents one ACS ICS217 record. See above for list of fields."""
+
+    # INPUT SECTION
+
+    @staticmethod
+    def probe(line: list):
+        """Examine line to see if the input is in Chirp format. Return
+        None if not. Anything else is true."""
+        return len(line) >= 11 and \
+            line[2] == "Display Name" and \
+            line[3] == "Channel/Repeater Name" and \
+            line[4] == "RX Freq" and \
+            line[5] == "N/W" and \
+            line[7] == "TX Freq"
+
     def __init__(this, line):
         """Create an ics217 object from a list of csv values. Caller
         must have already vetted the input. The parse() function

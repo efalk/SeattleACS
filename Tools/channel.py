@@ -80,10 +80,33 @@ def csvget(value):
 
 
 class Channel(object):
-    """Create one channel object. Caller is responsible for ensuring that
-    txfreq and rxfreq are both valid. If offset is not provided, it will
-    be computed from txfreq and rxfreq. All other fields must be provided."""
+    """Channel data base class. Can parse a generic format."""
+
+    # INPUT SECTION (there is no output section)
+
+    @staticmethod
+    def probe(line: list):
+        """Examine line to see if the input is in Chirp format. Return
+        None if not. Anything else is true."""
+        return len(line) >= 12 and \
+            line[0] == "group" and \
+            line[1] == "chan" and \
+            line[2] == "txfreq" and \
+            line[3] == "rxfreq" and \
+            line[4] == "offset" and \
+            line[5] == "name" and \
+            line[6] == "comment" and \
+            line[7] == "txtone" and \
+            line[8] == "rxtone" and \
+            line[9] == "mode" and \
+            line[10] == "wide" and \
+            line[11] == "power"
+
+
     def __init__(self, *args):
+        """Create one channel object. Caller is responsible for ensuring that
+        txfreq and rxfreq are both valid. If offset is not provided, it will
+        be computed from txfreq and rxfreq. All other fields must be provided."""
         if len(args) == 1:
             args = args[0]
         group, channel, txfreq, rxfreq, offset, \
