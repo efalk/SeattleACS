@@ -8,6 +8,10 @@ import sys
 
 import channel
 
+ValidModes = ["WFM", "FM", "NFM", "AM", "NAM", "DV", "USB", "LSB", "CW", "RTTY",
+                "DIG", "PKT", "NCW", "NCWR, CWR", "P25", "Auto", "RTTYR", "FSK",
+                "FSKR", "DMR", "DN"]
+
 class Chirp(channel.Channel):
 
     # INPUT SECTION
@@ -27,7 +31,7 @@ class Chirp(channel.Channel):
             line[8] == "DtcsCode" and \
             line[9] == "DtcsPolarity"
 
-    def __init__(this, line):
+    def __init__(this, recFilter: dict, line):
         """Create a Chirp object from a list of csv values. Caller
         must have already vetted the input. The parse() function
         below can handle that."""
@@ -97,7 +101,7 @@ class Chirp(channel.Channel):
             wide = 'N'
             Mode = Mode[1:]
 
-        super().__init__(None, Chan, None, Freq, Offset,
+        super().__init__(recFilter, None, Chan, None, Freq, Offset,
             Name, Comment, txtone, rxtone, Mode, wide, Power)
 
 
@@ -116,7 +120,7 @@ class Chirp(channel.Channel):
         except Exception as e:
             return None
         try:
-            return cls(line)
+            return cls(recFilter, line)
         except Exception as e:
             print("Failed to parse: ", line, file=sys.stderr)
             print(e, file=sys.stderr)
@@ -145,6 +149,7 @@ class Chirp(channel.Channel):
         Txfreq = rec.Txfreq       # RX freq
         Txtone = rec.Txtone
         Rxtone = rec.Rxtone
+        Skip = 'S' if rec.Skip else ''
 
         if not Txtone: Txtone = 'CSQ'
         if not Rxtone or Rxtone.startswith('TSQ'): Rxtone = Txtone
@@ -207,8 +212,10 @@ class Chirp(channel.Channel):
             else: Wide = 'AM'
         elif Mode == 'D':
             Wide = 'DIG'
-        else:
+        elif Mode in ValidModes:
             Wide = Mode
+        else:
+            Wide = 'DIG'
         # TODO: other modes? e.g. "MF" appears in the ACS database
 
         # Output (Chirp):
@@ -234,5 +241,5 @@ class Chirp(channel.Channel):
         #  RPT2CALL  <blank>
         #  DVCODE    <blank>
 
-        csvout.writerow([count, Name, Rxfreq, Duplex, f"{abs(Offset):.6f}", ToneMode, rToneFreq, cToneFreq, RxDtcsCode, 'NN', RxDtcsCode, CrossMode, Wide, 5.00, '', '5.0W', Comment, '', '', '', ''])
+        csvout.writerow([count, Name, Rxfreq, Duplex, f"{abs(Offset):.6f}", ToneMode, rToneFreq, cToneFreq, RxDtcsCode, 'NN', RxDtcsCode, CrossMode, Wide, 5.00, Skip, '5.0W', Comment, '', '', '', ''])
 

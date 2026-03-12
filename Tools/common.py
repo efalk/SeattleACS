@@ -14,6 +14,7 @@ from icom import Icom
 from rt_ic92 import RtSysIc92
 from rr import rr
 from channel import Channel
+from wwara import WWARA
 
 # See below for the ics217 subclasses responsible for formatting the
 # output.
@@ -31,7 +32,7 @@ def main(reader, usage):
     recFilter = {}
     try:
         (optlist, args) = getopt.getopt(sys.argv[1:], 'hb:s:B:NR:v',
-            ['help', 'Chirp', 'RtSys', 'IC-92', 'Icom'])
+            ['help', 'Chirp', 'RtSys', 'IC-92', 'Icom', 'skip'])
         for flag, value in optlist:
             if flag in ('-h', '--help'):
                 print(usage)
@@ -44,6 +45,8 @@ def main(reader, usage):
                 recFilter['regex'] = re.compile(value)
             elif flag == '-B':
                 recFilter['banks'] = value
+            elif flag == '--skip':
+                recFilter['skip'] = True
             elif flag == '-s':
                 start = getInt(value)
                 if start is None:
@@ -74,7 +77,7 @@ def main(reader, usage):
 def process(csvin, reader, csvout, writer, start, recFilter):
 
     def findReader(csvin):
-        readers = [ics217.ics217, Chirp, RtSys, rr, Channel]
+        readers = [ics217.ics217, Chirp, RtSys, rr, Channel, WWARA]
         for line in csvin:
             if verbose >= 2:
                 print(line, file=sys.stderr)
@@ -106,7 +109,7 @@ def process(csvin, reader, csvout, writer, start, recFilter):
 
         try:
             if verbose: print(rec, file=sys.stderr)
-            if rec.Chan.isdigit(): count = int(rec.Chan)
+            if rec.Chan and rec.Chan.isdigit(): count = int(rec.Chan)
             writer.write(rec, csvout, start+count-1, recFilter)
         except Exception as e:
             # Parse failures are normal, don't report them; they just clutter

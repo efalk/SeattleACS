@@ -6,25 +6,25 @@
 #
 # Channel class holds the following values:
 #
-#  group
+#  Group
 #    Not commonly used. Some radios, e.g. TK-780, divide the
 #    channels into groups. Normally leave this unset.
 #
-#  channel
+#  Channel
 #    The channel number. Caller is responsible for making sure
 #    this works for the radio in question. ACS 217 files have channel
 #    numbers like "V01" or "U22" so obviously the software is going to
 #    have to provide its own numbering when writing out the CSV files.
 #
-#  txfreq
+#  Txfreq
 #    Transmit frequency, Hz. Specify as a string; it will be
 #    converted if necessary
 #
-#  rxfreq
+#  Rxfreq
 #    Receive frequency, Hz. Specify as a string; it will be
 #    converted if necessary
 #
-#  offset
+#  Offset
 #    difference between txfreq and rxfreq: txfreq-rxfreq
 #
 #    It's not necessary to set all of txfreq, rxfreq, and offset.
@@ -32,24 +32,27 @@
 #    to the same value). For duplex, set two and the third will be
 #    derived if needed.
 #
-#  name
+#  Name
 #
-#  comment
+#  Comment
 #
-#  txtone
+#  Txtone
 #    numeric CTCSS tone or Dnnn. Unset implies "CSQ".
 #
-#  rxtone
+#  Rxtone
 #    numeric CTCSS tone or Dnnn. Unset implies "CSQ".
 #
-#  mode: AM, FM, etc.
+#  Mode: AM, FM, etc.
 #
-#  wide: 'W', 'N'
+#  Wide: 'W', 'N'
 #
-#  power:
+#  Power:
 #    Prefer a number representing watts. "high", "med", "low"
 #    if necessary. Subclasses that write out CSV files are
 #    responsible for converting if necessary.
+#
+#  Skip:
+#    This channel should not be included in scans
 
 
 import sys
@@ -103,7 +106,7 @@ class Channel(object):
             line[11] == "power"
 
 
-    def __init__(self, *args):
+    def __init__(self, recFilter: dict, *args):
         """Create one channel object. Caller is responsible for ensuring that
         txfreq and rxfreq are both valid. If offset is not provided, it will
         be computed from txfreq and rxfreq. All other fields must be provided."""
@@ -154,6 +157,7 @@ class Channel(object):
         self.Mode = mode
         self.Wide = wide
         self.Power = power
+        self.Skip = 'skip' in recFilter
 
     def __repr__(self):
         return f'''Channel({repr(self.Group)}, {repr(self.Chan)}, {repr(self.Txfreq)}, {repr(self.Rxfreq)}, {repr(self.Offset)}, {repr(self.Name)}, {repr(self.Comment)}, {repr(self.Txtone)}, {repr(self.Rxtone)}, {repr(self.Mode)}, {repr(self.Wide)}, {repr(self.Power)})'''
@@ -205,7 +209,7 @@ class Channel(object):
             except:
                 return None
         try:
-            return cls(line)
+            return cls(recFilter, line)
         except Exception as e:
             print("Failed to parse: ", line, file=sys.stderr)
             print(e, file=sys.stderr)
