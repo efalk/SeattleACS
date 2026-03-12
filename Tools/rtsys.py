@@ -36,7 +36,7 @@ class RtSys(channel.Channel):
             RtSys.hasBanks = True
         return isRt
 
-    def __init__(this, line):
+    def __init__(this, recFilter: dict, line):
         """Create an RtSys object from a list of csv values. Caller
         must have already vetted the input. The parse() function
         below can handle that."""
@@ -75,8 +75,8 @@ class RtSys(channel.Channel):
         elif toneMode == 'D Tone':
             txtone = 'D' + DCS; rxtone = ctcss
 
-        super().__init__(None, chan, txfreq, rxfreq, None, name, comment, txtone, rxtone,
-            mode, 'N' if narrow == 'Y' else 'W', power)
+        super().__init__(recFilter, None, chan, txfreq, rxfreq, None, name, comment,
+            txtone, rxtone, mode, 'N' if narrow == 'Y' else 'W', power)
 
         this.banks = banks
 
@@ -92,7 +92,7 @@ class RtSys(channel.Channel):
             return None
         try:
             rxfreq = float(line[1])
-            return cls(line)
+            return cls(recFilter, line)
         except Exception as e:
             print("Failed to parse: ", line, file=sys.stderr)
             print(e, file=sys.stderr)
@@ -126,6 +126,7 @@ class RtSys(channel.Channel):
         Txtone = rec.Txtone
         Rxtone = rec.Rxtone
         Comment = rec.Comment
+        Skip = '' if rec.Skip else 'Scan'
 
         derived = RtSys.Derived(rec, recFilter)
         Txtone = derived.Txtone
@@ -158,7 +159,7 @@ class RtSys(channel.Channel):
         # Comment               any string
 
         Wide = 'Y' if Wide=="N" else 'N'
-        csvout.writerow([count, Rxfreq, Txfreq, Offset_s, OpMode, 'Auto', Name, 'Y' if Name else 'N', ToneMode, CTCSS, DCS, 'Scan', 'Auto', 'N', 'High', Wide, 'N'] + banks + [Comment])
+        csvout.writerow([count, Rxfreq, Txfreq, Offset_s, OpMode, 'Auto', Name, 'Y' if Name else 'N', ToneMode, CTCSS, DCS, Skip, 'Auto', 'N', 'High', Wide, 'N'] + banks + [Comment])
 
 
     class Derived:

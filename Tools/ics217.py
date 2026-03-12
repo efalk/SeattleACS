@@ -51,7 +51,7 @@ class ics217(channel.Channel):
             line[5] == "N/W" and \
             line[7] == "TX Freq"
 
-    def __init__(this, line):
+    def __init__(this, recFilter: dict, line):
         """Create an ics217 object from a list of csv values. Caller
         must have already vetted the input. The parse() function
         below can handle that."""
@@ -61,7 +61,7 @@ class ics217(channel.Channel):
         if line[1] == 'Simplex' and txfreq != rxfreq:
             print(f'Warning: Channel {line[0]}, {line[2]}, Simplex rxfreq {rxfreq} does not match txfreq {txfreq}', file=sys.stderr)
             txfreq = rxfreq
-        super().__init__(None, line[0], txfreq, rxfreq, None,
+        super().__init__(recFilter, None, line[0], txfreq, rxfreq, None,
             line[2], line[3], line[9], line[6], line[10], line[5], "High")
         this.Config = line[1]
         this.Txwid = line[8]
@@ -114,7 +114,7 @@ class ics217(channel.Channel):
         if regex and not regex.match(line[0]):
             return None
         try:
-            return cls(line)
+            return cls(recFilter, line)
         except Exception as e:
             print("Failed to parse: ", line, file=sys.stderr)
             print(e, file=sys.stderr)

@@ -51,7 +51,7 @@ class rr(channel.Channel):
             line[4] == "Tone (Hz)" and \
             line[7] == "Mode"
 
-    def __init__(this, line):
+    def __init__(this, recFilter: dict, line):
         """Create an rr object from a list of csv values. Caller
         must have already vetted the input. The parse() function
         below can handle that."""
@@ -60,7 +60,7 @@ class rr(channel.Channel):
         if mode.startswith('NB'):
             mode = mode[2:]
             wide = 'N'
-        super().__init__(None, line[0], None, line[2], line[3],
+        super().__init__(recFilter, None, line[0], None, line[2], line[3],
             line[1], line[5], line[4], 'CSQ', mode, wide, 'high')
         this.Remarks = line[6]
         this.Group = line[8]
@@ -101,7 +101,7 @@ class rr(channel.Channel):
         if regex and not regex.match(line[1]):
             return None
         try:
-            return cls(line)
+            return cls(recFilter, line)
         except Exception as e:
             print("Failed to parse: ", line, file=sys.stderr)
             print(e, file=sys.stderr)

@@ -30,6 +30,7 @@ usage = f"""Convert CSV file from ACS 217 spreadsheet to formats radios use
         -R <regex>      Use regex to select entries, e.g. 'V' or 'U..N'
         -s <n>          Start numbering at <n>; default is 1
         -B <banks>      Select banks for devices that use it (i.e. FT-60)
+        --skip          Set the "scan skip" flag for all entries
         -v              Increase verbosity
 
 Generates CSV files to be used as code plugs.  These files
