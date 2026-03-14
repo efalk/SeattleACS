@@ -24,6 +24,7 @@ usage = f"""Convert CSV file from ACS 217 spreadsheet to formats radios use
                                 L = Low frequency (6m band)
                                 T = 220 MHz band (1.25m band)
                                 D = digital
+                                G = GMRS
                                 H = Seattle Emergency Hubs GMRS
                             Default is all
         -N              Use the 'U..N' entries (default is don't use)

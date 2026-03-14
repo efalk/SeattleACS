@@ -6,13 +6,13 @@ import csv
 import decimal
 import sys
 
-import channel
+from channel import Channel
 
 ValidModes = ["WFM", "FM", "NFM", "AM", "NAM", "DV", "USB", "LSB", "CW", "RTTY",
                 "DIG", "PKT", "NCW", "NCWR, CWR", "P25", "Auto", "RTTYR", "FSK",
                 "FSKR", "DMR", "DN"]
 
-class Chirp(channel.Channel):
+class Chirp(Channel):
 
     # INPUT SECTION
 
@@ -120,7 +120,8 @@ class Chirp(channel.Channel):
         except Exception as e:
             return None
         try:
-            return cls(recFilter, line)
+            rval = cls(recFilter, line)
+            return rval if rval.testFilter(recFilter) else None
         except Exception as e:
             print("Failed to parse: ", line, file=sys.stderr)
             print(e, file=sys.stderr)
@@ -138,7 +139,7 @@ class Chirp(channel.Channel):
             "RPT1CALL","RPT2CALL","DVCODE"])
 
     @staticmethod
-    def write(rec: channel.Channel, csvout: csv.writer, count: int, recFilter):
+    def write(rec: Channel, csvout: csv.writer, count: int, recFilter):
         """Write out one record. This may throw an exception if any of
         the ics-217 fields are not valid."""
         Chan = rec.Chan       # memory #, 0-based

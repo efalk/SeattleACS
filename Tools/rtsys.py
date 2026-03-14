@@ -92,7 +92,8 @@ class RtSys(channel.Channel):
             return None
         try:
             rxfreq = float(line[1])
-            return cls(recFilter, line)
+            rval = cls(recFilter, line)
+            return rval if rval.testFilter(recFilter) else None
         except Exception as e:
             print("Failed to parse: ", line, file=sys.stderr)
             print(e, file=sys.stderr)
