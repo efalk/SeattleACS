@@ -163,33 +163,6 @@ class Channel(object):
         return f'''Channel({repr(self.Group)}, {repr(self.Chan)}, {repr(self.Txfreq)}, {repr(self.Rxfreq)}, {repr(self.Offset)}, {repr(self.Name)}, {repr(self.Comment)}, {repr(self.Txtone)}, {repr(self.Rxtone)}, {repr(self.Mode)}, {repr(self.Wide)}, {repr(self.Power)})'''
 
     @staticmethod
-    def FromValues(line):
-        """Given a list, most likely provided by a csv module, return
-        a channel object or None if the list can't be parsed."""
-        if len(line) < 12:
-            return None
-        try:
-            return Channel(*line)
-        except Exception as e:
-            print(f"Failed to parse input: {e}", file=sys.stderr)
-            return None
-
-    def ToValues(self):
-        """Convert to a list of values."""
-        return [self.Group,
-                self.Chan,
-                self.Txfreq,
-                self.Rxfreq,
-                self.Offset,
-                self.Name,
-                self.Comment,
-                self.Txtone,
-                self.Rxtone,
-                self.Mode,
-                self.Wide,
-                self.Power]
-
-    @staticmethod
     def parse(line, recFilter, cls=None):
         """Given a list, most likely provided by the csv module, return
         an ics217 object or None if the list can't be parsed."""
@@ -209,12 +182,31 @@ class Channel(object):
             except:
                 return None
         try:
-            return cls(recFilter, line)
+            rval = cls(recFilter, line)
+            return rval if rval.testFilter(recFilter) else None
         except Exception as e:
             print("Failed to parse: ", line, file=sys.stderr)
             print(e, file=sys.stderr)
             return None
 
+    bandList = ((1.8,54.0,'L'), (144.0,148.0,'V'), (219.0,225.0,'T'),
+        (420.0,450.0,'U'), (462.55,467.725,'G'))
+
+    def testFilter(self, recFilter):
+        """Confirm that this record passes the filter."""
+        bands = recFilter.get('bands')
+        if bands:   # VULTGH
+            found = False
+            if 'H' in bands: bands += 'G'   # H and G are the same band
+            rxfreq = float(self.Rxfreq)
+            for band in Channel.bandList:
+                if rxfreq >= band[0] and rxfreq <= band[1]:
+                    found = True
+                    if band[2] not in bands: return False
+                    break
+            if not found:       # not in any of our bands; should not happen
+                return False
+        return True
 
 # ---- program
 
