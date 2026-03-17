@@ -7,14 +7,11 @@ import re
 import sys
 import traceback
 
-import ics217
+# These two are used for both reading and writing, so import them
+# now. Other plugins only imported on demand. This is especially important
+# for the UpdateWwara script which only handles a WWARA imports.
 from chirp import Chirp
 from rtsys import RtSys
-from icom import Icom
-from rt_ic92 import RtSysIc92
-from rr import rr
-from channel import Channel
-from wwara import WWARA
 
 # See below for the ics217 subclasses responsible for formatting the
 # output.
@@ -59,8 +56,10 @@ def main(reader, usage):
             elif flag == '--RtSys':
                 writer = RtSys
             elif flag == '--Icom':
+                from icom import Icom
                 writer = Icom
             elif flag == '--IC-92':
+                from rt_ic92 import RtSysIc92
                 writer = RtSysIc92
     except getopt.GetoptError as e:
         print(e, file=sys.stderr)
@@ -77,7 +76,11 @@ def main(reader, usage):
 def process(csvin, reader, csvout, writer, start, recFilter):
 
     def findReader(csvin):
-        readers = [ics217.ics217, Chirp, RtSys, rr, Channel, WWARA]
+        from ics217 import ics217
+        from rr import rr
+        from channel import Channel
+        from wwara import WWARA
+        readers = [ics217, Chirp, RtSys, rr, Channel, WWARA]
         for line in csvin:
             if verbose >= 2:
                 print(line, file=sys.stderr)
