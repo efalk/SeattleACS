@@ -48,8 +48,9 @@ class Chirp(Channel):
         DtcsPol = line[9]
         RxDtcsCode = line[10]  # DTCS Polarity
         CrossMode = line[11]   # Tone->Tone, DTCS->, ->DTCS, DTCS->Tone, ->Tone, DTCS->DTCS, Tone->
-        Mode = line[12]    # WFM, FM, NFM, AM, NAM, DV, USB, LSB, CW, RTTY, DIG, PKT, NCW, NCWR,
-                           # CWR, P25, Auto, RTTYR, FSK, FSKR, DMR, DN
+        Mode = line[12]    # WFM, FM, NFM, AM, NAM, DV, USB, LSB, CW, RTTY,
+                           # DIG, PKT, NCW, NCWR, CWR, P25, Auto, RTTYR,
+                           # FSK, FSKR, DMR, DN
         TStep = line[13]   # Tuning Step, e.g. 5.0
         Skip = line[14]    # <blank> S
         Power = line[15]   # E.g. "5.0W"

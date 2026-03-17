@@ -1,0 +1,155 @@
+/* Document-wide settings */
+
+body {
+    color:#1b2f01;
+    font-family:"Open Sans"; font-size:14px;
+    margin: 20px;
+}
+
+/* Keep embedded object sizes under control
+img, object, embed {max-width: 100%;}
+*/
+
+.imgLink:hover{opacity:0.8;}
+
+/* Header-specific settings */
+
+/* Header enclosed in a box. Top corners rounded. */
+header {
+    font-family:courier;
+    text-align:center;
+    padding:10px 20px 12px 20px;
+    position:relative;
+    box-shadow: 1px 1px 12px 2px #aaa;
+    border-radius:12px 12px 0px 0px;
+    background: lightblue;
+}
+
+.welcome {
+    font-family:courier;
+    font-size:.75in;
+    margin-bottom:1px;
+    margin-top:1px;
+    /* background: lightgreen; */
+}
+
+.welcome p { margin-top: 10px; margin-bottom: 10px; }
+
+.tab {margin-right:5em;}
+
+/* Main body styles */
+
+.page-content {
+    margin-top: 0px;
+    background:#ffffe5;
+    padding: 10px;
+    box-shadow: 1px 1px 12px 2px #aaa;
+    border-radius:0px 0px 12px 12px;
+}
+
+.page-content p,li {
+    max-width: 8in;
+}
+
+ul a{text-decoration:none;}
+ul a:hover{text-decoration:underline;}
+
+#stitchlen {
+    float: left;
+    border: 1px solid black;
+    background: silver;
+}
+
+#stitchwid {
+    border: 1px solid black;
+    background: silver;
+}
+
+#canvas {
+    float: left;
+    border: 1px solid black;
+    margin-right: 3em;
+    background: white;
+}
+
+#discDrawing {
+    float: right;
+    border: 1px solid black;
+    background: white;
+}
+
+#preview {
+    float: right;
+    border: 1px solid black;
+    background: white;
+    clear: right;
+}
+
+.col {
+    float: left;
+}
+
+.codeWindow {
+    margin: 1em;
+    background: white;
+    font-family: monospace;
+    border-style: solid;
+    border-color: #ccc;
+    overflow: scroll;
+    width: 80ch;
+    height: 40ex;
+    white-space: pre;
+}
+
+.copyIcon {
+    visibility: hidden;
+    cursor: pointer;
+    margin-left: 1em;
+    font-family: monospace;
+    width: 80ch;
+    text-align: right;
+    position: relative;
+}
+
+.popupText {
+  visibility: hidden;
+}
+
+.popupBox {
+  cursor: pointer;
+  width: 300px;
+  font-weight: normal;
+  background-color: white;
+  color: black;
+  text-align: start;
+  border-style: solid;
+  border-radius: 6px;
+  box-shadow: 8px 8px 12px 2px #aaa;
+  padding: 8px;
+  position: absolute;
+  z-index: 1;
+  top: -5ex;
+  left: 8em;
+  margin-left: -80px;
+}
+
+.hidden {
+  display: none;
+}
+
+.qmark {
+  cursor: pointer;
+  margin-left: 1ch;
+  vertical-align: center;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  width: 2ex;
+  height: 2ex;
+  border-radius: 1.1ex;
+  color: blue;
+  background: white;
+  border: thin solid blue;
+  position: relative;
+}
+
