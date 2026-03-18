@@ -28,8 +28,8 @@ def main(reader, usage):
     start = 1
     recFilter = {}
     try:
-        (optlist, args) = getopt.getopt(sys.argv[1:], 'hb:s:B:NR:v',
-            ['help', 'Chirp', 'RtSys', 'IC-92', 'Icom', 'skip'])
+        (optlist, args) = getopt.getopt(sys.argv[1:], 'hb:s:B:NR:lv',
+            ['help', 'Chirp', 'RtSys', 'IC-92', 'Icom', 'sparse', 'skip'])
         for flag, value in optlist:
             if flag in ('-h', '--help'):
                 print(usage)
@@ -49,6 +49,10 @@ def main(reader, usage):
                 if start is None:
                     print(f"-s '{value}' needs to be an integer", file=sys.stderr)
                     return 2
+            elif flag == '-l':
+                recFilter['longName'] = True
+            elif flag == '--sparse':
+                recFilter['sparse'] = True
             elif flag == '-v':
                 verbose += 1
             elif flag == '--Chirp':
