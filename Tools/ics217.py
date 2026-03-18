@@ -27,13 +27,16 @@
 #   8 Tx narrow/wide: W, N
 #   9 TX tone: "CSQ" or a Frequency e.g. 103.5
 #  10 Mode: A, F, MF, MP, D; almost always "A"
-#  11 Remarks
+#  11 Remarks, e.g. "Tactical; W7DX" or "simplex calling"
 
 
+import re
 import sys
 
 import channel
 from channel import csvget
+from channel import callsign_re
+from channel import callsign_l_re
 
 class ics217(channel.Channel):
     """Represents one ACS ICS217 record. See above for list of fields."""
@@ -42,7 +45,7 @@ class ics217(channel.Channel):
 
     @staticmethod
     def probe(line: list):
-        """Examine line to see if the input is in Chirp format. Return
+        """Examine line to see if the input is in ACS format. Return
         None if not. Anything else is true."""
         return len(line) >= 11 and \
             line[2] == "Display Name" and \
@@ -55,17 +58,17 @@ class ics217(channel.Channel):
         """Create an ics217 object from a list of csv values. Caller
         must have already vetted the input. The parse() function
         below can handle that."""
-        rxfreq = line[4]
-        txfreq = line[7]
+        chan, config, name, comment, rxfreq, wide, rxtone, txfreq, \
+            txwid, txtone, mode, remarks = line[:12]
         # Just a quick sanity check
-        if line[1] == 'Simplex' and txfreq != rxfreq:
-            print(f'Warning: Channel {line[0]}, {line[2]}, Simplex rxfreq {rxfreq} does not match txfreq {txfreq}', file=sys.stderr)
+        if config == 'Simplex' and txfreq != rxfreq:
+            print(f'Warning: Channel {chan}, {name}, Simplex rxfreq {rxfreq} does not match txfreq {txfreq}', file=sys.stderr)
             txfreq = rxfreq
-        super().__init__(recFilter, None, line[0], txfreq, rxfreq, None,
-            line[2], line[3], line[9], line[6], line[10], line[5], "High")
-        this.Config = line[1]
-        this.Txwid = line[8]
-        this.Remarks = line[11]
+        super().__init__(recFilter, None, chan, txfreq, rxfreq, None,
+            name, comment, txtone, rxtone, mode, wide, "High")
+        this.Config = config
+        this.Txwid = txwid
+        this.Remarks = remarks
         # For Mode "A", guess AM vs FM
         # Otherwise, all ACS frequencies are FM
         if this.Mode == 'A':
@@ -73,6 +76,8 @@ class ics217(channel.Channel):
         elif this.Mode != 'D':
             this.Mode = 'FM'
         this.Comment = this.getComment()
+        if recFilter.get('longName'):
+            this.Name = this.getName2()
 
     def __repr__(this):
         return f'''ics217({repr(this.Chan)}, {repr(this.Config)}, {repr(this.Name)}, {repr(this.Comment)}, {repr(this.Rxfreq)}, {repr(this.Wide)}, {repr(this.Rxtone)}, {repr(this.Txfreq)}, {repr(this.Txwid)}, {repr(this.Txtone)}, {repr(this.Mode)}, {repr(this.Remarks)})'''
@@ -96,6 +101,29 @@ class ics217(channel.Channel):
         except Exception as e:
             print(this, e, file=sys.stderr)
             return this.Comment
+
+    def getName(this):
+        """Override superclass, we'll get to this later."""
+        return this.Name
+
+    def getName2(this):
+        """Return a reasonable name for this item; incorporate the
+        name, comment, and remarks."""
+        # Let's see if we can find a call sign buried in the comment or
+        # remarks.
+        # Call this after calling getComment()
+        # If the name is entirely digits, but a callsign can be found in the
+        # comment, use that instead.
+        if this.Name.isdigit():
+            mo = callsign_re.search(this.Comment)
+            if mo:
+                this.Name = mo.group()
+        name = super().getName()
+        # ACS 217 entries usually contain the channel # as part of the name.
+        # If not, add it.
+        if not name.startswith(this.Chan):
+            name = this.Chan + ' ' + name
+        return name
 
     @staticmethod
     def parse(line, recFilter, cls=None):

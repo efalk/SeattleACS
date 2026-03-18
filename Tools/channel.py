@@ -54,7 +54,7 @@
 #  Skip:
 #    This channel should not be included in scans
 
-
+import re
 import sys
 import decimal
 
@@ -72,6 +72,8 @@ import decimal
 #  10 wide
 #  11 power
 
+callsign_re = re.compile(r'''[A-Z]+\d[A-Z]+(-\d+)?''')  # callsign with optional -nn
+callsign_l_re = re.compile(r'''[A-Z]+\d[A-Z]+-\d+''')   # callsign with non-optional -nn
 
 def csvget(value):
     """Return numeric value in a form suitable for a csv file"""
@@ -158,9 +160,49 @@ class Channel(object):
         self.Wide = wide
         self.Power = power
         self.Skip = 'skip' in recFilter
+        if recFilter.get('longName'):
+            self.Name = self.getName()
 
     def __repr__(self):
         return f'''Channel({repr(self.Group)}, {repr(self.Chan)}, {repr(self.Txfreq)}, {repr(self.Rxfreq)}, {repr(self.Offset)}, {repr(self.Name)}, {repr(self.Comment)}, {repr(self.Txtone)}, {repr(self.Rxtone)}, {repr(self.Mode)}, {repr(self.Wide)}, {repr(self.Power)})'''
+
+    def getName(this):
+        """Return a reasonable long-form name for this item; incorporate the
+        name and comment."""
+        # If the name field is not a call sign and a call sign can be
+        # found in the comment, append that call sign to the name. If
+        # call sign with a dash, e.g. KK7ABC-10 is found, prefer that
+        # to a simple call sign.
+        #print(f"name:{this.Name}, comment:{this.Comment}")
+        mo_l = callsign_l_re.search(this.Comment)
+        mo = callsign_re.search(this.Comment)
+        if not this.Name:
+            # No name at all, look for a callsign in the comment, else the first
+            # word of the comment, else nothing.
+            if mo_l:
+                return mo_l.group()
+            if mo:
+                return mo.group()
+            if this.Comment:
+                return this.Comment.split()[0]
+            return this.Name
+        elif callsign_l_re.search(this.Name):     # Can't really improve on this
+            return this.Name
+        elif callsign_re.search(this.Name):
+            # Callsign but no dash; look for one with a dash in the comment
+            if mo_l:
+                return this.Name + ' ' + mo_l.group()
+            else:
+                return this.Name
+        else:
+            # No callsign in the name, look for one in the comment
+            if mo_l:
+                return this.Name + ' ' + mo_l.group()
+            if mo:
+                return this.Name + ' ' + mo.group()
+            else:
+                return this.Name
+
 
     @staticmethod
     def parse(line, recFilter, cls=None):
