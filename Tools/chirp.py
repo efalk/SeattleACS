@@ -153,9 +153,6 @@ class Chirp(Channel):
         Rxtone = rec.Rxtone
         Skip = 'S' if rec.Skip else ''
 
-        if not Txtone: Txtone = 'CSQ'
-        if not Rxtone or Rxtone.startswith('TSQ'): Rxtone = Txtone
-
         # Derived values
         Offset = float(Txfreq) - float(Rxfreq)
         if Txfreq == Rxfreq: Duplex = ''
@@ -170,8 +167,8 @@ class Chirp(Channel):
         # There are nine possibilities for Txtone/Rxtone
         # (Actually ten because you could have Tone->Tone with
         # different frequencies)
-        if Txtone == 'CSQ':
-            if Rxtone.startswith('CSQ'):
+        if not Txtone:
+            if not Rxtone:
                 ToneMode = ''
             elif Rxtone[0] == 'D':
                 ToneMode = 'DTCS-R'
@@ -181,7 +178,7 @@ class Chirp(Channel):
                 ToneMode = 'TSQL-R'
         elif Txtone[0] == 'D':
             RxDtcsCode = Txtone[1:]
-            if Rxtone.startswith('CSQ'):
+            if not Rxtone:
                 ToneMode = 'DTCS'   # Chirp doesn't seem to support this case
             elif Rxtone[0] == 'D':
                 ToneMode = 'DTCS'
@@ -191,7 +188,7 @@ class Chirp(Channel):
                 CrossMode = 'DTCS->Tone'
         else:
             rToneFreq = cToneFreq = Txtone
-            if Rxtone.startswith('CSQ'):
+            if not Rxtone:
                 ToneMode = 'Tone'   # Most common case
             elif Rxtone[0] == 'D':
                 RxDtcsCode = Rxtone[1:]

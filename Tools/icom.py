@@ -25,9 +25,6 @@ class Icom(object):
         Rxtone = rec.Rxtone
         Comment = rec.Comment
 
-        if not Txtone: Txtone = 'CSQ'
-        if not Rxtone or Rxtone.startswith('TSQ'): Rxtone = Txtone
-
         # Derived values
         Offset = float(Txfreq) - float(Rxfreq)
         if Txfreq == Rxfreq: 
@@ -46,7 +43,7 @@ class Icom(object):
         DtcsCode = '23'
 
         # Handle tone settings
-        if Txtone == 'CSQ':
+        if not Txtone:
             ToneMode = ''
             RepeaterTone = '88.5Hz'
         elif Txtone[0] == 'D':
