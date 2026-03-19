@@ -76,6 +76,8 @@ def main(reader, usage):
 
     return process(csvin, reader, csvout, writer, start, recFilter)
 
+def round_down(n,r): return n-n%r
+def round_up(n,r):   return round_down(n+r-1,r)
 
 def process(csvin, reader, csvout, writer, start, recFilter):
 
@@ -102,22 +104,37 @@ def process(csvin, reader, csvout, writer, start, recFilter):
 
     writer.header(csvout, recFilter)
 
-    # If the "Chan" property of a record is a legit integer, it's used
-    # as the record number for the output (adjusted for start). Else, we
-    # increment a counter.
-    count = 1
+    # The default numbering system is to pack output records tightly, with
+    # strictly increasing record numbers. If "sparse" is set, we take the existing
+    # record number (starting with 1) as an offset relative to "start".
+    # Some records (e.g. ACS ICS 217) have leading or trailing letters, which
+    # we need to remove to get the record number. If the leading character
+    # changes, we take that as a signal to jump up to the next multiple of 50.
+    sparse = recFilter.get('sparse')
+    recno = 1
+    maxrec = -1
+    leader = None
 
     for line in csvin:
-        if verbose >= 2:
+        if verbose >= 3:
             print(line, file=sys.stderr)
         rec = reader.parse(line, recFilter)
         if not rec:
             continue
 
         try:
-            if verbose: print(rec, file=sys.stderr)
-            if rec.Chan and rec.Chan.isdigit(): count = int(rec.Chan)
-            writer.write(rec, csvout, start+count-1, recFilter)
+            if verbose >= 2: print(rec, file=sys.stderr)
+            if sparse and rec.Chan != None:
+                chan = rec.Chan
+                if not chan[0].isdigit():
+                    if not leader: leader = chan[0]
+                    elif chan[0] != leader:
+                        leader = chan[0]
+                        start = round_up(start + maxrec - 1, 50) + 1
+                recno = getInt(getDigits(chan), recno)
+            if recno > maxrec: maxrec = recno
+            writer.write(rec, csvout, start+recno-1, recFilter)
+            recno += 1
         except Exception as e:
             # Parse failures are normal, don't report them; they just clutter
             # the output.
@@ -127,15 +144,20 @@ def process(csvin, reader, csvout, writer, start, recFilter):
                 traceback.print_exc(5, sys.stderr)
             continue
 
-        count += 1
 
+
+digits_re = re.compile(r'''\d+''')
+
+def getDigits(s):
+    if s.isdigit(): return s
+    mo = digits_re.search(s)
+    return mo.group() if mo else None
 
 def getInt(s, dflt=None):
     try:
         return int(s)
     except:
         return dflt
-
 
 if __name__ == '__main__':
     sys.exit(main())
