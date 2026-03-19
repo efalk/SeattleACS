@@ -183,9 +183,6 @@ class RtSys(channel.Channel):
             Txtone = rec.Txtone
             Rxtone = rec.Rxtone
 
-            if not Txtone: Txtone = 'CSQ'
-            if not Rxtone or Rxtone.startswith('TSQ'): Rxtone = Txtone
-
             # Derived values
             Offset = float(rec.Offset)
             if Txfreq == Rxfreq:
@@ -207,11 +204,11 @@ class RtSys(channel.Channel):
 
             # There are nine possibilities for Txtone/Rxtone
             # This radio doesn't support different Tx/Rx tones.
-            if Txtone == 'CSQ':
+            if not Txtone:
                 ToneMode = 'None'   # Rx tone or DCS not supported
             elif Txtone[0] == 'D':
                 DCS = Txtone[1:]
-                if Rxtone.startswith('CSQ'):
+                if not Rxtone:
                     ToneMode = 'DCS'
                 elif Rxtone[0] == 'D':
                     ToneMode = 'DCS'    # TODO: should this be 'D Code'?
@@ -220,7 +217,7 @@ class RtSys(channel.Channel):
                     ToneMode = 'D Tone'
             else:
                 CTCSS = Txtone
-                if Rxtone.startswith('CSQ'):
+                if not Rxtone:
                     ToneMode = 'Tone'   # Most common case
                 elif Rxtone[0] == 'D':
                     DCS = Rxtone[1:]

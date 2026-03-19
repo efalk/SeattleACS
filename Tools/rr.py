@@ -61,7 +61,7 @@ class rr(channel.Channel):
             mode = mode[2:]
             wide = 'N'
         super().__init__(recFilter, None, line[0], None, line[2], line[3],
-            line[1], line[5], line[4], 'CSQ', mode, wide, 'high')
+            line[1], line[5], line[4], None, mode, wide, 'high')
         this.Remarks = line[6]
         this.Group = line[8]
         this.Website = line[9]

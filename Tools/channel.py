@@ -37,10 +37,10 @@
 #  Comment
 #
 #  Txtone
-#    numeric CTCSS tone or Dnnn. Unset implies "CSQ".
+#    numeric CTCSS tone or Dnnn.
 #
 #  Rxtone
-#    numeric CTCSS tone or Dnnn. Unset implies "CSQ".
+#    numeric CTCSS tone or Dnnn.
 #
 #  Mode: AM, FM, etc.
 #
@@ -143,9 +143,6 @@ class Channel(object):
                 offset = str(tf - rf)
             except:
                 pass    # no helping it
-
-        if not txtone: txtone = 'CSQ'
-        if not rxtone: rxtone = 'CSQ'
 
         self.Group = group
         self.Chan = channel
@@ -282,7 +279,7 @@ A CSV file with the following columns:
   offset      difference between uplink, downlink, MHz
   name        display name in radio
   comment     comment
-  txtone      CTCSS tone or DCS code for tx, may be nn.n, Dnn, or CSQ
+  txtone      CTCSS tone or DCS code for tx, may be nn.n, Dnn, or empty
   rxtone      CTCSS tone or DCS code for rx, usually empty for CSQ
   mode        AM, FM, M=digital voice, D=data, etc.
   wide        W/N

@@ -22,12 +22,16 @@
 #   3 comment, e.g. "PSRG" or "KC ARES Tiger"
 #   4 Rx freq
 #   5 narrow/wide: W, N
-#   6 RX tone: "CSQ" or a frequency
+#   6 RX tone: "CSQ", "CSQ†", "TSQ", or a frequency
 #   7 Tx Freq, typically for repeater uplink
 #   8 Tx narrow/wide: W, N
 #   9 TX tone: "CSQ" or a Frequency e.g. 103.5
 #  10 Mode: A, F, MF, MP, D; almost always "A"
 #  11 Remarks, e.g. "Tactical; W7DX" or "simplex calling"
+#
+# CSQ† means that you should use CSQ, but tone (same as txtone) is
+# available if you want it.
+# TSQ means that tone squelch is encouraged, same as txtone.
 
 
 import re
@@ -64,6 +68,9 @@ class ics217(channel.Channel):
         if config == 'Simplex' and txfreq != rxfreq:
             print(f'Warning: Channel {chan}, {name}, Simplex rxfreq {rxfreq} does not match txfreq {txfreq}', file=sys.stderr)
             txfreq = rxfreq
+        if txtone == 'CSQ': txtone = None
+        if rxtone.startswith('CSQ'): rxtone = None
+        elif rxtone.startswith('TSQ'): rxtone = txtone
         super().__init__(recFilter, None, chan, txfreq, rxfreq, None,
             name, comment, txtone, rxtone, mode, wide, "High")
         this.Config = config

@@ -43,7 +43,7 @@ class VX7R(object):
                 "RPT+" if Shift > 0 else "RPT-"
         Tone = icsrec.Txtone
 
-        if Tone.startswith('CSQ'):
+        if not Tone:
             TSDCS = 'OFF'
             Tone = ''
             Dcs = ''
