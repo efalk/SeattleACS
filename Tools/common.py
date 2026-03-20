@@ -120,31 +120,38 @@ def process(csvin, reader, csvout, writer, start, recFilter):
     for line in csvin:
         if verbose >= 3:
             print(line, file=sys.stderr)
-        rec = reader.parse(line, recFilter)
-        if not rec:
+        recs = reader.parse(line, recFilter)
+        if not recs:
             continue
 
-        try:
-            if verbose >= 2: print(rec, file=sys.stderr)
-            if sparse and rec.Chan != None:
-                chan = rec.Chan
-                if not chan[0].isdigit():
-                    if not leader: leader = chan[0]
-                    elif chan[0] != leader:
-                        leader = chan[0]
-                        start = round_up(start + maxrec - 1, 50) + 1
-                recno = getInt(getDigits(chan), recno)
-            if recno > maxrec: maxrec = recno
-            writer.write(rec, csvout, start+recno-1, recFilter)
-            recno += 1
-        except Exception as e:
-            # Parse failures are normal, don't report them; they just clutter
-            # the output.
-            if verbose:
-                print("Failed to write: ", rec, file=sys.stderr)
-                print(e, file=sys.stderr)
-                traceback.print_exc(5, sys.stderr)
-            continue
+        # Some plugins, i.e. wwara, can return a list instead of a single
+        # record. The "sparse" option is not compatible with this feature.
+        if isinstance(recs, list):
+            sparse = False
+        else:
+            recs = [recs]
+        for rec in recs:
+            try:
+                if verbose >= 2: print(rec, file=sys.stderr)
+                if sparse and rec.Chan != None:
+                    chan = rec.Chan
+                    if not chan[0].isdigit():
+                        if not leader: leader = chan[0]
+                        elif chan[0] != leader:
+                            leader = chan[0]
+                            start = round_up(start + maxrec - 1, 50) + 1
+                    recno = getInt(getDigits(chan), recno)
+                if recno > maxrec: maxrec = recno
+                writer.write(rec, csvout, start+recno-1, recFilter)
+                recno += 1
+            except Exception as e:
+                # Parse failures are normal, don't report them; they just clutter
+                # the output.
+                if verbose:
+                    print("Failed to write: ", rec, file=sys.stderr)
+                    print(e, file=sys.stderr)
+                    traceback.print_exc(5, sys.stderr)
+                continue
 
 
 
