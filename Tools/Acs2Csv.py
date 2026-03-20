@@ -15,7 +15,7 @@ usage = f"""Convert CSV file from ACS 217 spreadsheet to formats radios use
 
   Options:
     Input filtering:
-        -b <band>       Any combination of the letters VULTDH, or "all"
+        -b <bands>      Any combination of the letters VULTDH, or "all"
                                 V = VHF (2m band)
                                 U = UHF (70cm band)
                                 L = Low frequency (6m band)
@@ -24,6 +24,16 @@ usage = f"""Convert CSV file from ACS 217 spreadsheet to formats radios use
                                 G = GMRS
                                 H = Seattle Emergency Hubs GMRS
                             Default is all
+        -m <modes>      Filter by mode. Any combination of the following:
+                                A = AM
+                                F = FM
+                                L = lsb
+                                U = usb
+                                C = CW
+                                D = DMR
+                                S = DSTAR
+                                V = Digital Voice (DV)
+                                d = other digital
         -N              Use the 'U..N' entries (default is don't use)
         -R <regex>      Use regex to select entries, e.g. 'V' or 'U..N'
 

@@ -149,10 +149,17 @@ class ics217(channel.Channel):
         if regex and not regex.match(line[0]):
             return None
         try:
-            return cls(recFilter, line)
+            rval = cls(recFilter, line)
+            return rval if rval.testFilter(recFilter) else None
         except Exception as e:
             print("Failed to parse: ", line, file=sys.stderr)
             print(e, file=sys.stderr)
             return None
 
+    def testFilter(self, recFilter):
+        """Confirm that this record passes the filter."""
+        modes = recFilter.get('modes')
+        if modes and not self._checkMode(modes):
+            return False
+        return True
 

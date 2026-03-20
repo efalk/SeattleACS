@@ -28,7 +28,7 @@ def main(reader, usage):
     start = 1
     recFilter = {}
     try:
-        (optlist, args) = getopt.getopt(sys.argv[1:], 'hb:s:B:NR:lv',
+        (optlist, args) = getopt.getopt(sys.argv[1:], 'hbm:s:B:NR:lv',
             ['help', 'Chirp', 'RtSys', 'IC-92', 'Icom', 'sparse', 'skip'])
         for flag, value in optlist:
             if flag in ('-h', '--help'):
@@ -36,6 +36,8 @@ def main(reader, usage):
                 return 0
             elif flag == '-b':
                 recFilter['bands'] = None if value == "all" else value
+            elif flag == '-m':
+                recFilter['modes'] = None if value == "all" else value
             elif flag == '-N':
                 recFilter['newEntries'] = True
             elif flag == '-R':
