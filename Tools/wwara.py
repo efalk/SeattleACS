@@ -87,7 +87,8 @@ class WWARA(channel.Channel):
             link, fm_wide, fm_narrow, dstar_dv, dstar_dd, dmr, \
             dmr_color_code, fusion, fusion_dsq, p25_phase_1, p25_phase_2, \
             p25_nac, nxdn_digital, nxdn_mixed, nxdn_ran, atv, datv, \
-            races, ares, wx, url, latitude, longitude, expiration_date, comment = line
+            races, ares, wx, url, latitude, longitude, expiration_date, comment \
+                = line[:38]
 
         mode = 'FM' if float(input_freq) > 100.0 else 'AM'
         wide = 'W'
@@ -135,7 +136,9 @@ class WWARA(channel.Channel):
     @staticmethod
     def parse(line, recFilter, cls=None):
         """Given a list, most likely provided by the csv module, return
-        a WWARA object or None if the list can't be parsed."""
+        a list of WWARA objects or None if the record can't be parsed. Note
+        that this function may return a list of results for multi-mode
+        repeaters."""
         if not cls: cls = WWARA
         if len(line) < 38: return None
         # line[3] is RX freq; if that's blank, then the entire record is invalid
@@ -145,12 +148,38 @@ class WWARA(channel.Channel):
             rxfreq = float(line[3])
         except Exception as e:
             return None
-        try:
-            rval = cls(recFilter, line)
-            return rval if rval.testFilter(recFilter) else None
-        except Exception as e:
-            print("Failed to parse: ", line, file=sys.stderr)
-            print(e, file=sys.stderr)
-            return None
+        rval = []
+        # See what modes this repeater supports
+        _, _, _, _, _, _, _, _, _, _, _, _, _, \
+            _, fm_wide, fm_narrow, dstar_dv, dstar_dd, dmr, \
+            dmr_color_code, fusion, _, p25_phase_1, p25_phase_2, \
+            p25_nac, nxdn_digital, nxdn_mixed, nxdn_ran, atv, datv, \
+            _, _, _, _, _, _, _, _ = line[:38]
+
+        def addRecord(rval, flags, mode):
+            if 'Y' in flags:
+                try:
+                    rec = cls(recFilter, line)
+                    if rec.testFilter(recFilter):
+                        rec.Mode = mode
+                        rval.append(rec)
+                        return True
+                except Exception as e:
+                    print("Failed to parse: ", line, file=sys.stderr)
+                    print(e, file=sys.stderr)
+                return False
+
+        addRecord(rval, fm_wide + fm_narrow, 'FM')
+        addRecord(rval, dstar_dv + dstar_dd, 'DSTAR')
+        if addRecord(rval, dmr, 'DMR'):
+            rval[-1].Comment += f' (color={dmr_color_code})'
+        # fusion, _,
+        if addRecord(rval, p25_phase_1 + p25_phase_2, 'P25'):
+            rval[-1].Comment += f' (nac={p25_nac})'
+        addRecord(rval, nxdn_digital + nxdn_mixed, 'NXDN')
+        # nxdn_ran
+        addRecord(rval, atv, 'ATV')
+        addRecord(rval, datv, 'DATV')
+        return rval
 
 
