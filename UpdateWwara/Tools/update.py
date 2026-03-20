@@ -1,6 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf8 -*-
 
+"""Simple script to download the latest repeater list from WWARA and
+process it into Chirp and RT Systems code plugs.
+
+Exit codes:
+    0 success
+    1 success, but nothing needs to be done
+    2 user error
+    3 system error
+"""
+
 import csv
 import errno
 import glob
@@ -39,7 +49,8 @@ def main():
 
     if os.path.exists(filename):
         # Nothing to do
-        return 0
+        print(f'File "{filename}" has already been processed, nothing to do')
+        return 1
 
     if not os.path.exists("Chirp"):
         os.mkdir("Chirp")
@@ -47,14 +58,18 @@ def main():
     if not os.path.exists("RtSys"):
         os.mkdir("RtSys")
 
-    rval = os.system(f'./Tools/Wwara2Csv.py --Chirp "New/{filename}" > Chirp/wwara_chirp.csv')
+    cmd = f'./Tools/Wwara2Csv.py -v --Chirp "New/{filename}" > Chirp/wwara_chirp.csv'
+    if verbose: print("About to execute", cmd)
+    rval = os.system(cmd)
     if rval:
-        print("Generate Chirp failed", file=sys.stderr)
+        print(f"Generate Chirp failed, ret={rval}", file=sys.stderr)
         return 3
 
-    rval = os.system(f'./Tools/Wwara2Csv.py --RtSys "New/{filename}" > RtSys/wwara_rt.csv')
+    cmd = f'./Tools/Wwara2Csv.py -v --RtSys "New/{filename}" > RtSys/wwara_rt.csv'
+    if verbose: print("About to execute", cmd)
+    rval = os.system(cmd)
     if rval:
-        print("Generate RT Sys failed", file=sys.stderr)
+        print(f"Generate RT Sys failed, ret={rval}", file=sys.stderr)
         return 3
 
     csvfiles = glob.glob('*.csv')
@@ -69,7 +84,7 @@ def main():
     mo = re.match(r'''WWARA-rptrlist-(\d\d\d\d)(\d\d)(\d\d).csv''', filename)
     if not mo:
         print(f"Error: unable to extract date from \"{filename}\"")
-        return 2
+        return 3
 
     data["year"] = mo.group(1)
     data["month"] = mo.group(2)
