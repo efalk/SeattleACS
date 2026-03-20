@@ -42,6 +42,8 @@ from channel import csvget
 from channel import callsign_re
 from channel import callsign_l_re
 
+digits_name_re = re.compile(r'''D?\d+$''')
+
 class ics217(channel.Channel):
     """Represents one ACS ICS217 record. See above for list of fields."""
 
@@ -83,8 +85,6 @@ class ics217(channel.Channel):
         elif this.Mode != 'D':
             this.Mode = 'FM'
         this.Comment = this.getComment()
-        if recFilter.get('longName'):
-            this.Name = this.getName2()
 
     def __repr__(this):
         return f'''ics217({repr(this.Chan)}, {repr(this.Config)}, {repr(this.Name)}, {repr(this.Comment)}, {repr(this.Rxfreq)}, {repr(this.Wide)}, {repr(this.Rxtone)}, {repr(this.Txfreq)}, {repr(this.Txwid)}, {repr(this.Txtone)}, {repr(this.Mode)}, {repr(this.Remarks)})'''
@@ -109,11 +109,7 @@ class ics217(channel.Channel):
             print(this, e, file=sys.stderr)
             return this.Comment
 
-    def getName(this):
-        """Override superclass, we'll get to this later."""
-        return this.Name
-
-    def getName2(this):
+    def getLongName(this):
         """Return a reasonable name for this item; incorporate the
         name, comment, and remarks."""
         # Let's see if we can find a call sign buried in the comment or
@@ -121,11 +117,16 @@ class ics217(channel.Channel):
         # Call this after calling getComment()
         # If the name is entirely digits, but a callsign can be found in the
         # comment, use that instead.
-        if this.Name.isdigit():
+        if digits_name_re.match(this.Name):
+            mo = callsign_l_re.search(this.Comment)
+            if mo:
+                return this.Chan + ' ' + mo.group()
             mo = callsign_re.search(this.Comment)
             if mo:
-                this.Name = mo.group()
-        name = super().getName()
+                return this.Chan + ' ' + mo.group()
+            else:
+                return this.Chan + ' ' + this.Name
+        name = super().getLongName()
         # ACS 217 entries usually contain the channel # as part of the name.
         # If not, add it.
         if not name.startswith(this.Chan):

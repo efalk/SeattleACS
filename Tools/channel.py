@@ -157,13 +157,11 @@ class Channel(object):
         self.Wide = wide
         self.Power = power
         self.Skip = 'skip' in recFilter
-        if recFilter.get('longName'):
-            self.Name = self.getName()
 
     def __repr__(self):
         return f'''Channel({repr(self.Group)}, {repr(self.Chan)}, {repr(self.Txfreq)}, {repr(self.Rxfreq)}, {repr(self.Offset)}, {repr(self.Name)}, {repr(self.Comment)}, {repr(self.Txtone)}, {repr(self.Rxtone)}, {repr(self.Mode)}, {repr(self.Wide)}, {repr(self.Power)})'''
 
-    def getName(this):
+    def getLongName(this):
         """Return a reasonable long-form name for this item; incorporate the
         name and comment."""
         # If the name field is not a call sign and a call sign can be
