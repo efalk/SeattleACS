@@ -228,24 +228,39 @@ class Channel(object):
             print(e, file=sys.stderr)
             return None
 
-    bandList = ((1.8,54.0,'L'), (144.0,148.0,'V'), (219.0,225.0,'T'),
-        (420.0,450.0,'U'), (462.55,467.725,'G'))
+    bandList = {'L':(1.8,54.0), 'V':(144.0,148.0), 'T':(219.0,225.0),
+        'U':(420.0,450.0), 'G':(462.55,467.725)}
+    modeList = {'A':"AM", 'F':"FM", 'L':"LSB", 'U':"USB", 'C':"CW",
+        'S':'DSTAR', 'D':"DMR", 'V':"DV",}
 
     def testFilter(self, recFilter):
         """Confirm that this record passes the filter."""
         bands = recFilter.get('bands')
-        if bands:   # VULTGH
-            found = False
-            if 'H' in bands: bands += 'G'   # H and G are the same band
-            rxfreq = float(self.Rxfreq)
-            for band in Channel.bandList:
-                if rxfreq >= band[0] and rxfreq <= band[1]:
-                    found = True
-                    if band[2] not in bands: return False
-                    break
-            if not found:       # not in any of our bands; should not happen
-                return False
+        if bands and not self._checkBand(bands):   # VULTGH
+            return False
+        modes = recFilter.get('modes')
+        if modes and not self._checkMode(modes):
+            return False
         return True
+
+    def _checkBand(self, bands):
+        if 'H' in bands: bands += 'G'   # H and G are the same band
+        rxfreq = float(self.Rxfreq)
+        for c in bands:
+            if c in Channel.bandList:
+                freqs = Channel.bandList[c]
+                if rxfreq >= freqs[0] and rxfreq <= freqs[1]:
+                    return True
+        return False
+
+    def _checkMode(self, modes):
+        mode = self.Mode.upper()
+        for c in modes:
+            if c in Channel.modeList and Channel.modeList[c] == mode:
+                return True
+            elif c == 'd' and mode not in Channel.modeList.values():
+                return True
+        return False
 
 # ---- program
 
