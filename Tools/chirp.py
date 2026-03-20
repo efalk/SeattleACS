@@ -154,6 +154,7 @@ class Chirp(Channel):
         Skip = 'S' if rec.Skip else ''
 
         # Derived values
+        if recFilter.get('longName'): Name = rec.getLongName()
         Offset = float(Txfreq) - float(Rxfreq)
         if Txfreq == Rxfreq: Duplex = ''
         elif Offset > 0: Duplex = '+'
