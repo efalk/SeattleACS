@@ -1,0 +1,4 @@
+EXCLUDES
+Makefile
+*.md
+*.swp
