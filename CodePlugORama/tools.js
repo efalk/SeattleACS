@@ -118,8 +118,8 @@ function inputSelection() {
     const fileInput = form.elements["fileInput"];
     const dropArea = document.getElementById("drop-area");
     // TODO: index of "Upload" changes if the options in "source" change.
-    // fileInput.hidden = source.selectedIndex != 7;
-    dropArea.hidden = source.selectedIndex != 7;
+    // fileInput.hidden = source.selectedIndex != 8;
+    dropArea.hidden = source.selectedIndex != 8;
 }
 
 function setupDnD() {
