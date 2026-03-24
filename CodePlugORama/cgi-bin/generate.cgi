@@ -14,8 +14,8 @@ from chirp import Chirp
 from rtsys import RtSys
 from icom import Icom
 
-SOURCEDIR = "../Sources"    # Depends on your server.
-#SOURCEDIR = "./Sources"    # Depends on your server.
+#SOURCEDIR = "../Sources"    # Depends on your server.
+SOURCEDIR = "./Sources"    # Depends on your server.
 
 _sources = {'ACS ICS 217': 'W7ACS_ICS-217A_WORKING.csv',
     'ACS Winlink list': 'winlink.csv',
@@ -50,7 +50,6 @@ def main():
         #print(source)
         if not source: die("Invalid form submission")
         ifile = getInputFile(source, form)
-        #print(ifile)
     except NameError as e:
         die(f"Invalid form submission\n{e}")
 
@@ -119,8 +118,9 @@ def main():
 
 def getInputFile(source: str, form: cgi.FieldStorage):
     if source not in _sources: die("Invalid form submission")
-    ifilename = os.path.join(SOURCEDIR, _sources[source])
+    ifilename = _sources[source]
     if ifilename:
+        ifilename = os.path.join(SOURCEDIR, _sources[source])
         try:
             return open(ifilename, "r")
         except Exception as e:
