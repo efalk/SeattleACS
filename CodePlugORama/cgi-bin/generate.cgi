@@ -15,11 +15,13 @@ from rtsys import RtSys
 from icom import Icom
 
 SOURCEDIR = "../Sources"    # Depends on your server.
+#SOURCEDIR = "./Sources"    # Depends on your server.
 
 _sources = {'ACS ICS 217': 'W7ACS_ICS-217A_WORKING.csv',
     'ACS Winlink list': 'winlink.csv',
     'Repeater Roundabout': 'RepeaterRoundabout.csv',
     'Seattle emergency hubs': 'hub_GMRS.csv',
+    'Medical Services Team': 'ww7mst.csv',
     'WWARA': 'WWARA-rptrlist-20260317.csv',
     'GMRS': 'gmrs.csv',
     'MURS': 'murs.csv',

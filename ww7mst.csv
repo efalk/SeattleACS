@@ -1,0 +1,6 @@
+group,chan,txfreq,rxfreq,offset,name,comment,txtone,rxtone,mode,wide,power
+,1,,146.90,-0.6,VA HOS,"VA Hospital, Beacon Hill, Seattle",103.5,,FM,Y,5.0W
+,2,,443.550,+5.0,VA HOS,"VA Hospital, Beacon Hill, Seattle",103.5,,FM,Y,5.0W
+,3,,444.825,+5.0,NW HOS,"NW Hospital, Seattle", 103.5,,FM,Y,5.0W
+,4,,443.675,+5.0,TAC HOS,"Tacoma General Hospital, Tacoma", 103.5,,FM,Y,5.0W
+,5,,444.825,+5.0,StPete,"St. Peter Hospital, Olympia", 103.5,,FM,Y,5.0W

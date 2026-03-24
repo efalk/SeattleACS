@@ -14,14 +14,16 @@ customize the output.
 <form action="./cgi-bin/generate.cgi" method=POST enctype="multipart/form-data" name="mainForm">
 <h2>Select source:</h2>
 <p><label for="source">Source:</label> <select id="source" name="source" onchange="inputSelection()">
+<!-- NOTE: edit the javascript if you change this list -->
 <option>ACS ICS 217</option>
 <option>ACS Winlink list</option>
 <option>Repeater Roundabout</option>
 <option>Seattle emergency hubs</option>
+<option>Medical Services Team</option>
 <option>WWARA</option>
 <option>GMRS</option>
 <option>MURS</option>
-<option>Upload …</option>
+<option>Upload …</option> <!-- Note the index of this item -->
 </select>
 </p>
 

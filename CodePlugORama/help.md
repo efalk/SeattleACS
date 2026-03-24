@@ -182,28 +182,28 @@ CSV files exported from Chirp contain the following fields:
 |Duplex|	off, +, -, or <blank>|
 |Offset|	e.g. 0.60000|
 |Tone|	one of:|
-||	  <blank>	no tone|
-||	  **Tone** — Tone on TX using rToneFreq|
-||	  **TSQL** — Tone on TX & RX using rToneFreq|
-||	  **DTCS** — DTCS on TX & RX using DtcsCode|
-||	  **TSQL-R** — Tone on RX using rToneFreq|
-||	  **DTCS-R** — DTCS on RX using DtcsCode|
-||	  **Cross** — see CrossMode|
-||	  note: see https://chirp.danplanet.com/projects/chirp/wiki/DevelopersToneModes for cases where cToneFreq is used instead.|
+||<blank>	no tone|
+||**Tone** — Tone on TX using rToneFreq|
+||**TSQL** — Tone on TX & RX using rToneFreq|
+||**DTCS** — DTCS on TX & RX using DtcsCode|
+||**TSQL-R** — Tone on RX using rToneFreq|
+||**DTCS-R** — DTCS on RX using DtcsCode|
+||**Cross** — see CrossMode|
+||note: see https://chirp.danplanet.com/projects/chirp/wiki/DevelopersToneModes for cases where cToneFreq is used instead.|
 |rToneFreq|e.g. 103.5, required, even if not used|
 |cToneFreq|required, even if not used|
 |DtcsCode|e.g. 023, required, even if not used|
 |DtcsPolarity|e.g. NN|
 |RxDtcsCode|e.g. 023, required, even if not used|
 |CrossMode|covers more complex cases than **Tone** can describe. one of:|
-||	  **Tone->Tone** — TX rToneFreq; RX cToneFreq|
-||	  **Tone->DTCS** — TX rToneFreq; RX DtcsCode|
-||	  **DTCS->Tone** — TX DtcsCode; RX rToneFreq|
-||	  **DTCS->** — TX DtcsCode|
-||	  **->DTCS** — RX DtcsCode|
-||	  **->Tone** — RX rToneFreq|
-||	  **DTCS->DTCS**|
-|Mode|	WFM, FM, NFM, AM, NAM, DV, LSB, USB, CW, RTTY, DIG, PKT, NCW,NCWR, CWR, P25, Auto, RTTYR, FSK, FSKR, DMR, DN|
+||**Tone->Tone** — TX rToneFreq; RX cToneFreq|
+||**Tone->DTCS** — TX rToneFreq; RX DtcsCode|
+||**DTCS->Tone** — TX DtcsCode; RX rToneFreq|
+||**DTCS->** — TX DtcsCode|
+||**->DTCS** — RX DtcsCode|
+||**->Tone** — RX rToneFreq|
+||**DTCS->DTCS**|
+|Mode|WFM, FM, NFM, AM, NAM, DV, LSB, USB, CW, RTTY, DIG, PKT, NCW,NCWR, CWR, P25, Auto, RTTYR, FSK, FSKR, DMR, DN|
 |TStep|	e.g. 5.00|
 |Skip|	<blank>, S|
 |Power|	e.g. 5.0W|
@@ -219,7 +219,7 @@ The columns must be in this exact order and the header labels must match exactly
 
 RT Systems provides different software for different radios, and so their
 CSV files may vary somewhat. The scheme shown here was exported by the
-software for the Yaesun FT-60 but has been successfully read by other
+software for the Yaesu FT-60 but has been successfully read by other
 RT software and has a good chance of working on your radio.
 
 |Field name|Explanation|
@@ -327,7 +327,7 @@ also accepted.
 
 |Field name|Explanation|
 |group|Radio group number if used;  usually blank|
-|CH#|Channel (memory) number|
+|chan|Channel (memory) number|
 |txfreq|Transmit frequency or blank for simplex|
 |rxfreq|Receive frequency|
 |offset|Offset in MHz. E.g. -0.600|
