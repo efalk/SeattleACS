@@ -152,7 +152,7 @@ def process(csvin, reader, csvout, writer, start, recFilter):
                     print(e, file=sys.stderr)
                     traceback.print_exc(5, sys.stderr)
                 continue
-
+    return 0
 
 
 digits_re = re.compile(r'''\d+''')
