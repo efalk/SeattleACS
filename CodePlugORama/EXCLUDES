@@ -2,3 +2,7 @@ EXCLUDES
 Makefile
 *.md
 *.swp
+__pycache__
+header.html
+trailer.html
+Test

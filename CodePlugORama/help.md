@@ -15,7 +15,7 @@ your own in one of several [accepted formats](#accepted-formats).
 This utility was written with the members of the
 [Seattle Auxiliary Communications Service](https://www.seattleacs.org/) in
 mind. If you're not a member of the ACS, most of the stuff here won't be of
-any interest to you.
+any interest to you, except when uploading your own source.
 
 That said, let's get started.
 
