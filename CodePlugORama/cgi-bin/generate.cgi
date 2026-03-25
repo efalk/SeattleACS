@@ -3,6 +3,7 @@
 
 import cgi
 import csv
+import glob
 import io
 import os
 import sys
@@ -14,15 +15,12 @@ from chirp import Chirp
 from rtsys import RtSys
 from icom import Icom
 
-#SOURCEDIR = "../Sources"    # Depends on your server.
-SOURCEDIR = "./Sources"    # Depends on your server.
-
 _sources = {'ACS ICS 217': 'W7ACS_ICS-217A_WORKING.csv',
     'ACS Winlink list': 'winlink.csv',
     'Repeater Roundabout': 'RepeaterRoundabout.csv',
     'Seattle emergency hubs': 'hub_GMRS.csv',
     'Medical Services Team': 'ww7mst.csv',
-    'WWARA': 'WWARA-rptrlist-20260317.csv',
+    'WWARA': 'WWARA-rptrlist-*.csv',
     'GMRS': 'gmrs.csv',
     'MURS': 'murs.csv',
     'Upload …': None}
@@ -118,9 +116,15 @@ def main():
 
 def getInputFile(source: str, form: cgi.FieldStorage):
     if source not in _sources: die("Invalid form submission")
+    sourcedir = "Sources" if os.path.isdir("Sources") else "../Sources"
     ifilename = _sources[source]
     if ifilename:
-        ifilename = os.path.join(SOURCEDIR, _sources[source])
+        ifilename = os.path.join(sourcedir, _sources[source])
+        if '*' in ifilename:
+            l = glob.glob(ifilename)
+            if not l:
+                die("Internal error: source db not found")
+            ifilename = l[0]
         try:
             return open(ifilename, "r")
         except Exception as e:
