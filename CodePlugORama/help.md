@@ -285,7 +285,7 @@ In a nutshell, the format accepted by this tool is:
 |DCS_CDCSS|e.g. 023 (or blank)|
 |DTMF|ignored|
 |LINK|link access, e.g. E+echolink#|
-|FM_WIDE|Y: repeater can handle wide|
+|FM_WIDE|Y: repeater can handle wide ¹|
 |FM_NARROW|Y: repeater can handle narrow; (some repeaters can do both)|
 |DSTAR_DV|Y: dstar capable|
 |DSTAR_DD|Y: dstar capable|
@@ -318,6 +318,10 @@ record can result in multiple output records.
 
 Additional information such as the dmr color code or nxdn radio access number will
 be put into the comment field of the output.
+
+¹ There's a bug in this format: there's no "AM" column. The actual WWARA database
+lists all voice repeaters as being FM and not AM. This is not a bug in this tool. Do
+not attempt to adjust your set.
 
 ## Generic
 
