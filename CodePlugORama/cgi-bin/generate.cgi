@@ -15,6 +15,15 @@ from chirp import Chirp
 from rtsys import RtSys
 from icom import Icom
 
+# Explanation: running a test server on my system, the CWD as seen
+# by this script is "CodePlugORama". When run under production,
+# it's "CodePlugORama/cgi-bin".
+# In both cases, the generated error html is based in CodePlugORama/cgi-bin
+# and hrefs need to start with "../"
+
+_topdir = "" if os.path.isdir("Sources") else "../"
+_sourcedir = _topdir + "Sources"
+
 _sources = {'ACS ICS 217': 'W7ACS_ICS-217A_WORKING.csv',
     'ACS Winlink list': 'winlink.csv',
     'Repeater Roundabout': 'RepeaterRoundabout.csv',
@@ -41,6 +50,11 @@ def main():
     #print('Content-Type: text/plain; charset=utf-8')
     #print()
     #print(os.getcwd())
+
+    #print(f"cwd = {os.getcwd()}")
+    #print(f"topdir = {_topdir}")
+    #print(f"sourcedir = {_sourcedir}")
+    #print()
 
     # Select the source
     try:
@@ -74,12 +88,6 @@ def main():
         #print(f"modes: {modes}")
         if modes: recFilter['modes'] = modes
 
-    # TODO: incorporate some more metadata into the filename?
-    outputName = 'CodePlugORama_' + _names[form.getvalue('outputFormat')]
-    print('Content-Type: text/csv; charset=utf-8')
-    print(f'Content-Disposition: attachment; filename="{outputName}.csv"')
-    print()
-
     writer = Chirp
     outputFormat = form.getvalue('outputFormat')
     writer = _writers[outputFormat]
@@ -100,6 +108,10 @@ def main():
         recFilter['sparse'] = True
         #print("sparse")
 
+    if form.getvalue('skip'):
+        recFilter['skip'] = True
+        #print("sparse")
+
     #print()
     #print('----')
     #for key in form.keys():
@@ -110,16 +122,36 @@ def main():
     #print('----')
     # And go
     csvin = csv.reader(ifile)
+
+    reader = common.findReader(csvin)
+    if not reader:
+        filename = form['fileInput'].filename
+        print(_errorUnknownFormat % filename)
+        return 0
+
     csvout = csv.writer(sys.stdout)
-    common.process(csvin, None, csvout, writer, start, recFilter)
+
+    # OK, we've done all the sanity checks we can, time to spit out
+    # the results.
+
+    # TODO: incorporate some more metadata into the filename?
+    # Source? Timestamp?
+    outputName = 'CodePlugORama_' + _names[form.getvalue('outputFormat')]
+    print('Content-Type: text/csv; charset=utf-8')
+    print(f'Content-Disposition: attachment; filename="{outputName}.csv"')
+    print()
+    try:
+        common.process(csvin, reader, csvout, writer, start, recFilter)
+    except common.ProcessException as e:
+        print("Fatal:", e)
+        return 3
     return 0
 
 def getInputFile(source: str, form: cgi.FieldStorage):
     if source not in _sources: die("Invalid form submission")
-    sourcedir = "Sources" if os.path.isdir("Sources") else "../Sources"
     ifilename = _sources[source]
     if ifilename:
-        ifilename = os.path.join(sourcedir, _sources[source])
+        ifilename = os.path.join(_sourcedir, _sources[source])
         if '*' in ifilename:
             l = glob.glob(ifilename)
             if not l:
@@ -129,8 +161,9 @@ def getInputFile(source: str, form: cgi.FieldStorage):
             return open(ifilename, "r")
         except Exception as e:
             die(f"Internal error: {e}")
-    fileInput = form['fileInput']
-    return io.TextIOWrapper(fileInput.file, encoding='utf-8', errors='ignore')
+    else:
+        fileInput = form['fileInput']
+        return io.TextIOWrapper(fileInput.file, encoding='utf-8', errors='ignore')
 
 
 def die(message):
@@ -138,7 +171,41 @@ def die(message):
     print('Status: 400 invalid input')
     print()
     print(message)
-    sys.exit(0)
+    sys.exit(3)
+
+_errorUnknownFormat = rf"""Content-Type: text/html; charset=utf-8')
+Status: 400 unknown format
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<META name="viewport" content="width=500, initial-scale=1">
+<title>Welcome to Code Plug O'Rama</title>
+
+<link rel=StyleSheet href="../style.css" type="text/css">
+</head>
+
+<body>
+  <div id="page-wrap">
+    <header>
+      <div class="welcome">
+	<p align=center> Welcome to Code Plug O'Rama</p>
+      </div>
+    </header>
+  <div class="page-content">
+<p>Unfortunately, I was unable to determine the format of the input
+file "%s".
+Please make sure that the header line is intact and that the input
+file is in one of the formats listed in <a
+href="../help.html#accepted-formats" target="CodePlugHelp">Accepted Formats</a>.</p>
+
+</div>	<!-- wrap-content -->
+</div>	<!-- page-wrap -->
+
+</body>
+</html>
+"""
 
 if __name__ == '__main__':
     try:
@@ -146,3 +213,7 @@ if __name__ == '__main__':
     except KeyboardInterrupt as e:
         print()
         sys.exit(1)
+    except Exception as e:
+        print("Failed, error", e, sys.stderr)
+        print("Failed, error", e)
+        sys.exit(3)
