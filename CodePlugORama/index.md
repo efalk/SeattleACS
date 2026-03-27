@@ -30,6 +30,7 @@ customize the output.
 <div id="drop-area" class="drop-area" hidden=true>
   <p>Drag & drop file here or click to select</p>
   <input type="file" id="fileInput" name="fileInput">
+  <p>See <a href="help.html#accepted-formats" target="CodePlugHelp" id="drop-help">Accepted Formats</a> for information.</p>
 </div>
 
 <p class="filters"><label for="bandFilter">Filter by band:</label> <input type=checkbox id=bandFilter name="bandFilter" onclick="bandFilterVisibility()">&nbsp;
@@ -113,8 +114,9 @@ and if there are gaps in the input, there will be gaps in the output.</p>
 <a href="help.html#sparse" target="CodePlugHelp">help file</a></p>
 </span></span><br>
 </p>
-<input type=submit name="submit">
-<br>
+<p><label for="skip">Skip: </label><input type=checkbox id="skip" name="skip">
+<label for="skip"><i>(Mark all channels to be skipped on scan)</i> </p>
+<p><input type=submit name="submit"></p>
 </form>
 <div id="debug"></div>
 </html>

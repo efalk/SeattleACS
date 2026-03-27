@@ -171,6 +171,18 @@ header line. These are as follows:
 Note that since this tool accepts and writes out Chirp and Rt Systems
 formats, it can be used to translate back and forth.
 
+If your input file is not one of the formats listed there, and it's a
+reasonably commonly-used format, contact me at KK7NNS at gmail; new
+formats are very easy to add.
+
+*General notes:* These source files are mostly written for radios and not repeaters.
+This means that **rxfreq** and **txfreq** refer to the frequencies from the
+radio's point of view. They would be swapped when programming a repeater. It's
+often better to think of them as "downlink" and "uplink" respectively.
+The **offset** value is added to (or subtracted from) the rxfreq to get the txfreq.
+
+<div id="toc-A"></div>
+
 ## Chirp
 
 CSV files exported from Chirp contain the following fields:
@@ -266,7 +278,8 @@ The **Bank** columns are optional, but must either all be present or all be omit
 
 This is the format used by ARRL to publish repeater lists. The built-in "WWARA"
 database is in this format. See https://www.wwara.org/coordinations/coordination-data-files/
-for more information.
+for more information. This file format is written for repeaters, and so rxfreq and txfreq
+are swapped. This tool swaps them back before writing the output.
 
 In a nutshell, the format accepted by this tool is:
 
@@ -284,9 +297,9 @@ In a nutshell, the format accepted by this tool is:
 |CTCSS_OUT|e.g. 110.9 (or blank)|
 |DCS_CDCSS|e.g. 023 (or blank)|
 |DTMF|ignored|
-|LINK|link access, e.g. E+echolink#|
+|LINK|link access, e.g. E+<i>echolink#</i>|
 |FM_WIDE|Y: repeater can handle wide ¹|
-|FM_NARROW|Y: repeater can handle narrow; (some repeaters can do both)|
+|FM_NARROW|Y: repeater can handle narrow|
 |DSTAR_DV|Y: dstar capable|
 |DSTAR_DD|Y: dstar capable|
 |DMR|Y: dmr capable|
@@ -304,7 +317,7 @@ In a nutshell, the format accepted by this tool is:
 |RACES|N|
 |ARES|N|
 |WX|N|
-|URL|Internet URL for this station|
+|URL|internet URL for this station|
 |LATITUDE|e.g. 48.6875|
 |LONGITUDE|e.g. -122.3625|
 |EXPIRATION_DATE|e.g. 2026-02-28|
@@ -327,7 +340,7 @@ not attempt to adjust your set.
 
 If you want to write your own code plug and have it translated to other
 formats, and you're looking for something very simple, then this format is
-also accepted.
+also accepted. All RF frequencies in MHz.
 
 |Field name|Explanation|
 |group|Radio group number if used;  usually blank|
@@ -340,32 +353,37 @@ also accepted.
 |txtone|CTCSS tone for transmit, "D<i>nnn</i>" for DCS, or blank|
 |rxtone|CTCSS tone for receive, "D<i>nnn</i>" for DCS, or blank|
 |mode|FM, AM, DV, LSB, USB, CW, RTTY, DIG, PKT, NCW,NCWR, CWR, P25, Auto, RTTYR, FSK, FSKR, DMR, DN, DIG, etc.|
-|wide|Y \| N (for FM and AM)|
+|wide|W \| N|
 |power|e.g. 5.0W. "high" and "low" also accepted.|
 
-The columns must be in this exact order and the header labels must match exactly.
+The columns must be in this exact order and the header labels must match exactly:
+
+      group,chan,txfreq,rxfreq,offset,name,comment,txtone,rxtone,mode,wide,power
 
 For simplex, only the "rxfreq" column need be specified; "txfreq" and "offset"
 may be left blank. For a repeater, any two of "rxfreq", "txfreq", and "offset"
-will suffice; choose whatever is more convenient for you. "offset" is the value
-added to "rxfreq" to determine "txfreq".
+will suffice; choose whatever is more convenient for you. The tool will compute
+the third value. Note that offset is the value added to rxfreq to determine txfreq.
 
-While this tool accepts any value for the mode, there is no guarantee that the
+Entries must be quoted if they contain commas.
+
+While this tool accepts any value for the mode, there is no guarantee that your radio's
 programming software will accept it. In a few cases this tool will translate an
-unsupported mode.  E.g. for Chirp output, "DSTAR" and changed to "DIG".
+unsupported mode.  For example, for Chirp, "DSTAR" will be changed to "DIG".
 
 If you encounter problems, you'll need to change the mode in your input file to
-something the software will accept. Contact KK7NNS au gmail.com if you think of
+something the software will accept. Contact KK7NNS at gmail if you think of
 a change that's worth making here.
 
 ## ACS
 
-Format is specific to the Seattle ACS. Contact KK7NNS au gmail.com if you need more
+Format is specific to the Seattle ACS. Contact KK7NNS at gmail if you need more
 information.
 
 <html><script language="Javascript">
 <!--
 genToc(1);
+genToc(2,3, 'toc-A');
 // -->
 </script></html>
 
