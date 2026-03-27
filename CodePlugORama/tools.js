@@ -29,39 +29,6 @@ function copyFunc(src, copiedItem) {
     });
 }
 
-/**
- * Fetch the given url with the given args
- * @return the returned text or none on failure.
- */
-async function fetchData(url, args) {
-    url = url + "?" + args;
-    try {
-	response = await fetch(url);
-	if (response.ok) {
-	    return await response.text();
-	} else {
-	    return "error " + response.ok;;
-	}
-    } catch(err) {
-	return "fetch failed: " + err;
-    }
-}
-
-/**
- * Fetch the given url with the given args, then
- * display it.
- * @return the returned text.
- */
-async function fetchAndDisplay(url, args, win) {
-    txt = await fetchData(url, args);
-    if (txt) {
-	if (win && (win = document.getElementById(win))) {
-	    win.innerHTML = '<xmp>' + txt + '</xmp>';
-	}
-    }
-    return txt;
-}
-
 function enableButton(button) {
     if (button && (button = document.getElementById(button))) {
 	button.style.visibility='visible';
@@ -125,6 +92,7 @@ function inputSelection() {
 function setupDnD() {
     const dropArea = document.getElementById('drop-area');
     const fileInput = document.getElementById('fileInput');
+    const dropHelp = document.getElementById('drop-help');
 
     // Prevent defaults for all drag events
     ['dragenter', 'dragover'].forEach(eventName => {
@@ -153,6 +121,7 @@ function setupDnD() {
 	//console.log("droparea event: " + e + ", type=" + e.type + ", which=" + e.which + ", detail=" + e.detail);
 	e.stopPropagation();
 	if (e.target == fileInput) return;	// let fileInput handle it when it arrives
+	if (e.target == dropHelp) return;
 	fileInput.showPicker();
     });
 
