@@ -2,3 +2,4 @@
 *.icloud
 .*.swp
 __pycache__
+tags

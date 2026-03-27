@@ -7,9 +7,10 @@ import re
 import sys
 import traceback
 
-# These two are used for both reading and writing, so import them
+# These are used for both reading and writing, so import them
 # now. Other plugins only imported on demand. This is especially important
 # for the UpdateWwara script which only handles a WWARA imports.
+from channel import Channel
 from chirp import Chirp
 from rtsys import RtSys
 
@@ -78,24 +79,26 @@ def main(reader, usage):
 
     return process(csvin, reader, csvout, writer, start, recFilter)
 
+def findReader(csvin) -> Channel:
+    """Examine a CSV file to determine which of several known formats
+    it is. Return Channel object or None"""
+    from ics217 import ics217
+    from rr import rr
+    from wwara import WWARA
+    from nerd import NERD
+    readers = [ics217, Chirp, RtSys, rr, Channel, WWARA, NERD]
+    for line in csvin:
+        if verbose >= 2:
+            print(line, file=sys.stderr)
+        for r in readers:
+            if r.probe(line):
+                return r
+    return None
+
 def round_down(n,r): return n-n%r
 def round_up(n,r):   return round_down(n+r-1,r)
 
 def process(csvin, reader, csvout, writer, start, recFilter):
-
-    def findReader(csvin):
-        from ics217 import ics217
-        from rr import rr
-        from channel import Channel
-        from wwara import WWARA
-        readers = [ics217, Chirp, RtSys, rr, Channel, WWARA]
-        for line in csvin:
-            if verbose >= 2:
-                print(line, file=sys.stderr)
-            for r in readers:
-                if r.probe(line):
-                    return r
-        return None
 
     # If reader not specified, scan the input to determine the format.
     if not reader:
