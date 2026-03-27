@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf8 -*-
 
-# Parse lines from the WWARA-217 spreadsheet, e.g. WWARA-rptrlist-20260311.csv
+# Parse lines from the WWARA spreadsheet, e.g. WWARA-rptrlist-20260311.csv
+# Western Washington Amateur Radio Association
+# https://www.wwara.org/coordinations/coordination-data-files/
 #
 # Typical usage:
 #
@@ -10,8 +12,8 @@
 #    reader = csv.reader(sys.stdin)
 #
 #    for l in reader:
-#        acsRec = WWARA.parse(l)
-#        if not acsRec:
+#        rec = WWARA.parse(l)
+#        if not rec:
 #           continue            # this is fine; not all records contain data
 
 # Schema:
@@ -63,7 +65,7 @@ import channel
 from channel import csvget
 
 class WWARA(channel.Channel):
-    """Represents one ACS ICS217 record. See above for list of fields."""
+    """Represents one WWARA record. See above for list of fields."""
 
     # INPUT SECTION (there is no output section)
 
@@ -109,7 +111,7 @@ class WWARA(channel.Channel):
     @staticmethod
     def getComment(fc_record_id, city, state, call, races, ares, url, latitude, longitude, comment):
         """Return a reasonable comment for this item; incorporate the
-        channel id, comment, and remarks."""
+        city, state, comment, and other fields."""
         try:
             c = []
             if city: c.append(city); c.append(', ')
