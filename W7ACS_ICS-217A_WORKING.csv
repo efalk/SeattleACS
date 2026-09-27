@@ -60,9 +60,9 @@ V88,Repeater,V88BEL,Belfair,145.1700,W,CSQ†,144.5700,W,103.5,A,Belfair
 Analog Voice — UHF (70cm),,,,,,,,,,,
 U01,Repeater,U01CLM,Columbia Center,444.5500,W,CSQ†,449.5500,W,141.3,A,coordination; W7ACS; Allstar 48844
 U02,Simplex,U02CLO,Columbia Center Output,444.5500,W,CSQ,444.5500,W,141.3,A,coordination simplex
-U03,Repeater,U03BH1,Beacon Hill 1,440.5250,W,CSQ†,445.5250,W,141.3,A,tactical; W7ACS; Beacon Tower
+U03,Repeater,U03BH1,Beacon Hill 1,440.5250,N,CSQ†,445.5250,N,123.0,A,tactical; W7ACS; Beacon Tower
 U04,Repeater,U04BH2,Beacon Hill 2,442.3000,W,CSQ†,447.3000,W,141.3,A,tactical; W7ACS; Beacon Tower; Allstar 48832
-U05,Repeater,U05CH1,Capitol Hill 1,443.0250,W,CSQ†,448.0250,W,141.3,A,"tactical; W7ACS; KP Hospital, Allstar 48841"
+U05,Repeater,U05CH1,Capitol Hill 1,443.0250,N,CSQ†,448.0250,N,123.0,A,"tactical; W7ACS; KP Hospital, Allstar 48841"
 U06,Repeater,U06CH2,Capitol Hill 2,442.8750,W,CSQ†,447.8750,W,141.3,A,"tactical; W7ACS; Capitol Park, Allstar 48842"
 U07,Repeater,U07MAG,Magnolia,443.4750,W,CSQ†,448.4750,W,141.3,A,tactical; W7ACS; Allstar 48836
 U08,Repeater,U08MPL,Maple Leaf,443.6500,W,CSQ†,448.6500,W,141.3,A,tactical; W7ACS

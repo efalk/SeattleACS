@@ -1,9 +1,9 @@
 n,Receive Frequency,Transmit Frequency,Offset Frequency,Offset Direction,Operating Mode,Name,Show Name,Tone Mode,CTCSS,DCS,Skip,Step,Clock Shift,Tx Power,Tx Narrow,Pager Enable,Comment
 1,444.5500,449.5500,5.0000 MHz,Plus,Auto,U01CLM,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Columbia Center; coordination; W7ACS; Allstar 48844
 2,444.5500,444.5500,,Simplex,Auto,U02CLO,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Columbia Center Output; coordination simplex
-3,440.5250,445.5250,5.0000 MHz,Plus,Auto,U03BH1,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Beacon Hill 1; tactical; W7ACS; Beacon Tower
+3,440.5250,445.5250,5.0000 MHz,Plus,Auto,U03BH1,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,Beacon Hill 1; tactical; W7ACS; Beacon Tower
 4,442.3000,447.3000,5.0000 MHz,Plus,Auto,U04BH2,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Beacon Hill 2; tactical; W7ACS; Beacon Tower; Allstar 48832
-5,443.0250,448.0250,5.0000 MHz,Plus,Auto,U05CH1,Y,Tone,141.3,,Scan,Auto,N,High,N,N,"Capitol Hill 1; tactical; W7ACS; KP Hospital, Allstar 48841"
+5,443.0250,448.0250,5.0000 MHz,Plus,Auto,U05CH1,Y,Tone,123.0,,Scan,Auto,N,High,Y,N,"Capitol Hill 1; tactical; W7ACS; KP Hospital, Allstar 48841"
 6,442.8750,447.8750,5.0000 MHz,Plus,Auto,U06CH2,Y,Tone,141.3,,Scan,Auto,N,High,N,N,"Capitol Hill 2; tactical; W7ACS; Capitol Park, Allstar 48842"
 7,443.4750,448.4750,5.0000 MHz,Plus,Auto,U07MAG,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Magnolia; tactical; W7ACS; Allstar 48836
 8,443.6500,448.6500,5.0000 MHz,Plus,Auto,U08MPL,Y,Tone,141.3,,Scan,Auto,N,High,N,N,Maple Leaf; tactical; W7ACS

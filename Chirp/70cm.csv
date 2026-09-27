@@ -1,9 +1,9 @@
 Location,Name,Frequency,Duplex,Offset,Tone,rToneFreq,cToneFreq,DtcsCode,DtcsPolarity,RxDtcsCode,CrossMode,Mode,TStep,Skip,Power,Comment,URCALL,RPT1CALL,RPT2CALL,DVCODE
 1,U01CLM,444.5500,+,5.000000,Tone,141.3,141.3,023,NN,023,Tone->Tone,FM,5.0,,5.0W,Columbia Center; coordination; W7ACS; Allstar 48844,,,,
 2,U02CLO,444.5500,,0.000000,Tone,141.3,141.3,023,NN,023,Tone->Tone,FM,5.0,,5.0W,Columbia Center Output; coordination simplex,,,,
-3,U03BH1,440.5250,+,5.000000,Tone,141.3,141.3,023,NN,023,Tone->Tone,FM,5.0,,5.0W,Beacon Hill 1; tactical; W7ACS; Beacon Tower,,,,
+3,U03BH1,440.5250,+,5.000000,Tone,123.0,123.0,023,NN,023,Tone->Tone,NFM,5.0,,5.0W,Beacon Hill 1; tactical; W7ACS; Beacon Tower,,,,
 4,U04BH2,442.3000,+,5.000000,Tone,141.3,141.3,023,NN,023,Tone->Tone,FM,5.0,,5.0W,Beacon Hill 2; tactical; W7ACS; Beacon Tower; Allstar 48832,,,,
-5,U05CH1,443.0250,+,5.000000,Tone,141.3,141.3,023,NN,023,Tone->Tone,FM,5.0,,5.0W,"Capitol Hill 1; tactical; W7ACS; KP Hospital, Allstar 48841",,,,
+5,U05CH1,443.0250,+,5.000000,Tone,123.0,123.0,023,NN,023,Tone->Tone,NFM,5.0,,5.0W,"Capitol Hill 1; tactical; W7ACS; KP Hospital, Allstar 48841",,,,
 6,U06CH2,442.8750,+,5.000000,Tone,141.3,141.3,023,NN,023,Tone->Tone,FM,5.0,,5.0W,"Capitol Hill 2; tactical; W7ACS; Capitol Park, Allstar 48842",,,,
 7,U07MAG,443.4750,+,5.000000,Tone,141.3,141.3,023,NN,023,Tone->Tone,FM,5.0,,5.0W,Magnolia; tactical; W7ACS; Allstar 48836,,,,
 8,U08MPL,443.6500,+,5.000000,Tone,141.3,141.3,023,NN,023,Tone->Tone,FM,5.0,,5.0W,Maple Leaf; tactical; W7ACS,,,,

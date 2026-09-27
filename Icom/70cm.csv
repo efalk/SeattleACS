@@ -1,9 +1,9 @@
 CH No,Name,Frequency,Dup,Offset,Tone,Repeater Tone,cToneFreq,DtcsCode,DtcsPolarity,Mode,TStep,Skip
 1,U01CLM Columbia Center,444.55,DUP+,5.0,Tone,141.3Hz,88.5,23,NN,FM,5,
 2,U02CLO Columbia Center Output,444.55,,0,Tone,141.3Hz,88.5,23,NN,FM,5,
-3,U03BH1 Beacon Hill 1,440.525,DUP+,5.0,Tone,141.3Hz,88.5,23,NN,FM,5,
+3,U03BH1 Beacon Hill 1,440.525,DUP+,5.0,Tone,123.0Hz,88.5,23,NN,FM,5,
 4,U04BH2 Beacon Hill 2,442.3,DUP+,5.0,Tone,141.3Hz,88.5,23,NN,FM,5,
-5,U05CH1 Capitol Hill 1,443.025,DUP+,5.0,Tone,141.3Hz,88.5,23,NN,FM,5,
+5,U05CH1 Capitol Hill 1,443.025,DUP+,5.0,Tone,123.0Hz,88.5,23,NN,FM,5,
 6,U06CH2 Capitol Hill 2,442.875,DUP+,5.0,Tone,141.3Hz,88.5,23,NN,FM,5,
 7,U07MAG Magnolia,443.475,DUP+,5.0,Tone,141.3Hz,88.5,23,NN,FM,5,
 8,U08MPL Maple Leaf,443.65,DUP+,5.0,Tone,141.3Hz,88.5,23,NN,FM,5,
