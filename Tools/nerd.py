@@ -122,13 +122,13 @@ class NERD(channel.Channel):
             wide = 'N'
             mode = mode[1:]
 
-        comment = NERD.getComment(comment, city, st, status)
+        comment = NERD.getComment(comment, city, st, status, mode)
 
         super().__init__(recFilter, None, None, txfreq, rxfreq, None,
             call, comment, codeIn, codeOut, mode, wide, None)
 
     @staticmethod
-    def getComment(comment, city, st, status):
+    def getComment(comment, city, st, status, mode):
         """Return a reasonable comment for this item; incorporate the
         comment, city, and state"""
         c = []
@@ -147,6 +147,8 @@ class NERD(channel.Channel):
                 print(this, e, file=sys.stderr)
         if status:
             c.append(' (' + status + ')')
+        if mode and mode not in ('AM', 'FM'):
+            c.append(' (' + mode + ')')
         return ''.join(c)
 
     @staticmethod

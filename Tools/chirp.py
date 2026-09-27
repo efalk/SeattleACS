@@ -203,6 +203,7 @@ class Chirp(Channel):
                     ToneMode = 'Cross'
 
         Comment = rec.Comment
+        DvMode = ''
 
         if Mode == 'FM':
             if Wide == 'N': Wide = 'NFM'
@@ -210,6 +211,10 @@ class Chirp(Channel):
         elif Mode == 'AM':
             if Wide == 'N': Wide = 'NAM'
             else: Wide = 'AM'
+        elif Mode == 'DV':
+            Wide = 'DV'
+            DvMode = rToneFreq if rToneFreq else cToneFreq
+            rToneFreq = cToneFreq = ''
         elif Mode == 'D':
             Wide = 'DIG'
         elif Mode in ValidModes:
@@ -241,5 +246,5 @@ class Chirp(Channel):
         #  RPT2CALL  <blank>
         #  DVCODE    <blank>
 
-        csvout.writerow([count, Name, Rxfreq, Duplex, f"{abs(Offset):.6f}", ToneMode, rToneFreq, cToneFreq, RxDtcsCode, 'NN', RxDtcsCode, CrossMode, Wide, 5.00, Skip, '5.0W', Comment, '', '', '', ''])
+        csvout.writerow([count, Name, Rxfreq, Duplex, f"{abs(Offset):.6f}", ToneMode, rToneFreq, cToneFreq, RxDtcsCode, 'NN', RxDtcsCode, CrossMode, Wide, 5.00, Skip, '5.0W', Comment, '', '', '', DvMode])
 

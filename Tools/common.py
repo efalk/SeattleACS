@@ -29,7 +29,7 @@ def main(reader, usage):
     start = 1
     recFilter = {}
     try:
-        (optlist, args) = getopt.getopt(sys.argv[1:], 'hbm:s:B:NR:lv',
+        (optlist, args) = getopt.getopt(sys.argv[1:], 'hb:m:s:B:NR:lv',
             ['help', 'Chirp', 'RtSys', 'IC-92', 'Icom', 'sparse', 'skip'])
         for flag, value in optlist:
             if flag in ('-h', '--help'):

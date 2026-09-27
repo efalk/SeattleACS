@@ -1,0 +1,69 @@
+Anytone 878 schema
+
+May work with other Anytone radios
+
+In the sample files I found, every single field was quoted. I don't
+know if this is required.
+
+  Header			example
+
+  No.				1
+  Channel Name			Local 1 SCE
+  Receive Frequency		440.77500
+  Transmit Frequency		445.77500
+  Channel Type			D-Digital
+  Transmit Power		High
+  Band Width			12.5K
+  CTCSS/DCS Decode		Off
+  CTCSS/DCS Encode		Off
+  Contact			Local 1
+  Contact Call Type		Group Call
+  Contact TG/DMR ID		3181
+  Radio ID			KD7DGF
+  Busy Lock/TX Permit		Same Color Code
+  Squelch Mode			Carrier
+  Optional Signal		Off
+  DTMF ID			1
+  2Tone ID			1
+  5Tone ID			1
+  PTT ID			Off
+  RX Color Code			1
+  Slot				1
+  Scan List			Seattle/Central
+  Receive Group List		None
+  PTT Prohibit			Off
+  Reverse			Off
+  Simplex TDMA			Off
+  Slot Suit			Off
+  AES Digital Encryption	Normal Encryption
+  Digital Encryption		Off
+  Call Confirmation		Off
+  Talk Around(Simplex)		Off
+  Work Alone			Off
+  Custom CTCSS			251.1
+  2TONE Decode			1
+  Ranging			Off
+  Through Mode			Off
+  APRS RX			Off
+  Analog APRS PTT Mode		Off
+  Digital APRS PTT Mode		Off
+  APRS Report Type		Off
+  Digital APRS Report Channel	1
+  Correct Frequency[Hz]		0
+  SMS Confirmation		Off
+  Exclude channel from roaming	0
+  DMR MODE			1
+  DataACK Disable		0
+  R5toneBot			0
+  R5ToneEot			0
+  Auto Scan			0
+  Ana Aprs Mute			0
+  Send Talker Alias		0
+  AnaAprsTxPath			0
+  ARC4				0
+  ex_emg_kind			0
+  TxCC				1
+
+441.850 + 103.5
+145.750 103.5
+145.590 simplex
